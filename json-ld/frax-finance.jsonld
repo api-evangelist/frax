@@ -1,0 +1,127 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "apis": "https://apis.io/",
+    "frax": "https://frax.finance/"
+  },
+  "@type": "Organization",
+  "@id": "https://frax.finance",
+  "name": "Frax Finance",
+  "description": "Frax Finance is a fractional-algorithmic stablecoin protocol offering FRAX (USD-pegged stablecoin), FPI (Frax Price Index stablecoin pegged to a consumer goods basket), frxETH (liquid ETH staking derivative), and supporting DeFi infrastructure including Fraxswap, Fraxlend, and Fraxtal L2.",
+  "url": "https://frax.finance",
+  "sameAs": [
+    "https://github.com/FraxFinance",
+    "https://twitter.com/fraxfinance",
+    "https://t.me/fraxfinance",
+    "https://discord.com/invite/fraxfinance",
+    "https://gov.frax.finance"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://docs.frax.finance"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Frax Finance APIs",
+    "itemListElement": [
+      {
+        "@type": "WebAPI",
+        "@id": "https://api.frax.finance/v1",
+        "name": "Frax Finance API v1",
+        "description": "Returns aggregated protocol data across Frax Finance including core token metrics (FRAX, FXS, FPI, FPIS, frxETH, sfrxETH, veFXS), liquidity staking pool positions, AMO holdings across Curve, Convex, lending, and liquidity subsystems, plus collateral ratio and decentralization ratio.",
+        "documentation": "https://docs.frax.finance/smart-contracts/api",
+        "termsOfService": "https://frax.finance",
+        "provider": {
+          "@type": "Organization",
+          "name": "Frax Finance",
+          "url": "https://frax.finance"
+        },
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://api.frax.finance",
+          "serviceType": "REST API"
+        }
+      },
+      {
+        "@type": "WebAPI",
+        "@id": "https://api.frax.finance/v2",
+        "name": "Frax Finance API v2",
+        "description": "Comprehensive v2 API covering FRAX balance sheets, sFRAX summaries, Frax Ferry cross-chain bridge, Fraxswap DEX pools and tokens, frxETH liquid staking validators, FXB bonds, gauges, FPI/FPIS stablecoins, frxUSD, sfrxUSD, lFRAX, and governance proposals across multiple blockchain networks.",
+        "documentation": "https://docs.frax.finance/smart-contracts/api",
+        "termsOfService": "https://frax.finance",
+        "provider": {
+          "@type": "Organization",
+          "name": "Frax Finance",
+          "url": "https://frax.finance"
+        },
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://api.frax.finance",
+          "serviceType": "REST API"
+        }
+      }
+    ]
+  },
+  "knowsAbout": [
+    {
+      "@type": "Thing",
+      "name": "FRAX Stablecoin",
+      "description": "USD-pegged fractional-algorithmic stablecoin"
+    },
+    {
+      "@type": "Thing",
+      "name": "FXS",
+      "description": "Frax Shares governance and utility token"
+    },
+    {
+      "@type": "Thing",
+      "name": "frxETH",
+      "description": "Frax liquid staking ETH derivative"
+    },
+    {
+      "@type": "Thing",
+      "name": "sfrxETH",
+      "description": "Staked frxETH yield-bearing token"
+    },
+    {
+      "@type": "Thing",
+      "name": "FPI",
+      "description": "Frax Price Index stablecoin pegged to a CPI basket"
+    },
+    {
+      "@type": "Thing",
+      "name": "FPIS",
+      "description": "Frax Price Index Shares governance token"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fraxswap",
+      "description": "Frax native DEX with TWAMM (Time-Weighted Average Market Maker)"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fraxlend",
+      "description": "Frax native lending protocol"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fraxtal",
+      "description": "Frax native L2 blockchain"
+    },
+    {
+      "@type": "Thing",
+      "name": "AMO",
+      "description": "Algorithmic Market Operations for collateral management"
+    },
+    {
+      "@type": "Thing",
+      "name": "Frax Ferry",
+      "description": "Frax cross-chain bridge protocol"
+    },
+    {
+      "@type": "Thing",
+      "name": "FXB",
+      "description": "Frax Bonds auction protocol"
+    }
+  ]
+}
