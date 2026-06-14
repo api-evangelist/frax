@@ -1,0 +1,117 @@
+name: Frax Finance
+description: >
+  Frax Finance is a fractional-algorithmic stablecoin protocol offering FRAX
+  (USD-pegged stablecoin), FPI (Frax Price Index stablecoin pegged to a consumer
+  goods basket), frxETH (liquid ETH staking derivative), and supporting DeFi
+  infrastructure including Fraxswap, Fraxlend, and Fraxtal L2. The protocol
+  operates Algorithmic Market Operations (AMOs) to manage collateral and generate
+  revenue, and exposes public REST APIs for querying token supply, collateral
+  ratios, AMO positions, pool APRs, and frxETH staking analytics.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/frax/refs/heads/main/apis.yml
+created: "2026-06-14"
+modified: "2026-06-14"
+specificationVersion: "0.19"
+tags:
+  - DeFi
+  - Stablecoin
+  - Fractional-Algorithmic
+  - Ethereum
+  - frxETH
+  - Liquid Staking
+  - AMO
+  - Collateral
+apis:
+  - name: Frax Finance Combined Data API
+    description: >
+      Returns aggregated protocol data across Frax Finance including core token
+      metrics (FRAX, FXS, FPI, FPIS, frxETH, sfrxETH, veFXS), liquidity staking
+      pool positions, AMO (Algorithmic Market Operations) holdings across Curve,
+      Convex, lending, and liquidity subsystems, plus collateral ratio and
+      decentralization ratio.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.frax.finance/smart-contracts/api
+    baseURL: https://api.frax.finance
+    tags:
+      - FRAX
+      - FXS
+      - frxETH
+      - AMO
+      - Collateral
+      - Protocol Data
+    properties:
+      - type: Documentation
+        url: https://docs.frax.finance/smart-contracts/api
+      - type: OpenAPI
+        url: https://api.frax.finance/v1/docs
+      - type: OpenAPI
+        url: https://api.frax.finance/v2/docs
+    contact:
+      - FN: Frax Finance
+        url: https://frax.finance
+        email: ""
+  - name: Frax Finance Pools API
+    description: >
+      Returns an array of liquidity pool and farm objects across Ethereum,
+      Arbitrum, Avalanche, and BSC. Each object includes the pool identifier,
+      chain, platform (Convex, Curve, Balancer, Fraxswap, Uniswap, etc.), LP
+      and farm contract addresses, pool token and reward token lists, total
+      liquidity locked (USD), current APY, maximum APY, and per-token reward
+      breakdowns with APR percentages and USD value per day. Covers 270+ pools.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.frax.finance/smart-contracts/api
+    baseURL: https://api.frax.finance
+    tags:
+      - Liquidity Pools
+      - APY
+      - Farming
+      - Rewards
+      - Multi-chain
+    properties:
+      - type: Documentation
+        url: https://docs.frax.finance/smart-contracts/api
+      - type: OpenAPI
+        url: https://api.frax.finance/v1/docs
+      - type: OpenAPI
+        url: https://api.frax.finance/v2/docs
+    contact:
+      - FN: Frax Finance
+        url: https://frax.finance
+        email: ""
+common:
+  - type: Website
+    url: https://frax.finance
+  - type: Documentation
+    url: https://docs.frax.finance
+  - type: API Documentation
+    url: https://docs.frax.finance/smart-contracts/api
+  - type: OpenAPI
+    url: https://api.frax.finance/v1/docs
+  - type: OpenAPI
+    url: https://api.frax.finance/v2/docs
+  - type: Subgraphs
+    url: https://thegraph.com/explorer/profile/0x6e74053a3798e0fc9a9775f7995316b27f21c4d2?view=Subgraphs
+  - type: GitHub
+    url: https://github.com/FraxFinance
+  - type: Governance
+    url: https://gov.frax.finance
+  - type: Discord
+    url: https://discord.com/invite/fraxfinance
+  - type: Twitter
+    url: https://twitter.com/fraxfinance
+  - type: Telegram
+    url: https://t.me/fraxfinance
+  - type: TermsOfService
+    url: https://frax.finance
+  - type: Pricing
+    url: https://frax.finance
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/frax/refs/heads/main/rate-limits/rate-limits.yml
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/frax/refs/heads/main/plans/plans.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/frax/refs/heads/main/finops/finops.yml
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
+    email: info@apievangelist.com

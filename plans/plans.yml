@@ -1,0 +1,28 @@
+name: Frax Finance API Plans
+description: >
+  Frax Finance provides its public REST APIs (combineddata, pools) and GraphQL
+  subgraphs at no cost with no authentication required. There are no formal
+  tiered pricing plans for API access. The protocol is open-source and
+  permissionless; all data endpoints are freely accessible. Revenue is generated
+  by the protocol itself through AMO operations and DeFi activity rather than
+  API subscriptions.
+plans:
+  - name: Public (Free)
+    description: >
+      Unrestricted, unauthenticated access to all public Frax Finance REST API
+      endpoints including /combineddata/ and /pools. No API key required. No
+      formal SLA. Rate limits are not publicly documented but standard Cloudflare
+      protection applies.
+    url: https://docs.frax.finance/smart-contracts/api
+    price: 0.00
+    currency: USD
+    unit: month
+    features:
+      - GET /combineddata/ — aggregated token, AMO, and collateral data
+      - GET /pools — 270+ liquidity pool APY and reward data
+      - Access to Swagger docs at /v1/docs and /v2/docs
+      - GraphQL subgraphs via The Graph (free tier)
+    rateLimit:
+      requests: null
+      period: null
+      notes: No publicly documented rate limits; Cloudflare edge protection in place

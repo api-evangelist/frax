@@ -1,0 +1,35 @@
+name: Frax Finance API Rate Limits
+description: >
+  Frax Finance does not publish formal rate limit policies for its public REST
+  API endpoints (api.frax.finance). The API is hosted behind Cloudflare, which
+  provides DDoS protection and may throttle abusive traffic at the edge.
+  No API keys, quotas, or documented per-IP or per-endpoint limits are in
+  place as of June 2026. Consumers should implement client-side backoff and
+  caching to avoid triggering Cloudflare bot protections.
+rateLimits:
+  - endpoint: "https://api.frax.finance/combineddata/"
+    method: GET
+    documented: false
+    notes: >
+      No published limit. Data refreshes on each blockchain block; polling more
+      frequently than once per 12 seconds provides no additional value for
+      Ethereum mainnet data.
+  - endpoint: "https://api.frax.finance/pools"
+    method: GET
+    documented: false
+    notes: >
+      No published limit. Pool APY data is updated periodically; recommend
+      caching for at least 60 seconds between requests.
+  - endpoint: "https://api.frax.finance/v1/docs"
+    method: GET
+    documented: false
+    notes: Swagger UI documentation endpoint; not a data API.
+  - endpoint: "https://api.frax.finance/v2/docs"
+    method: GET
+    documented: false
+    notes: Swagger UI documentation endpoint; not a data API.
+recommendations:
+  - Cache /combineddata/ responses for at least 12 seconds (Ethereum block time)
+  - Cache /pools responses for at least 60 seconds
+  - Implement exponential backoff on 429 or 5xx responses
+  - Use The Graph subgraph for historical time-series data queries to reduce REST API load

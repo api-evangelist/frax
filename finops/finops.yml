@@ -1,0 +1,39 @@
+name: Frax Finance API FinOps
+description: >
+  Frax Finance's public REST APIs are free to use with no direct cost to
+  consumers. The protocol generates revenue through its AMO (Algorithmic Market
+  Operations) — deploying protocol-owned collateral into yield-generating DeFi
+  positions across Curve, Convex, Fraxlend, Aave, Compound, and Uniswap V3 —
+  rather than charging for API access. Protocol revenue accrues to veFXS holders
+  via buybacks and yield distribution. There are no subscription fees, usage
+  charges, or overage costs for API consumers.
+costs:
+  apiAccess:
+    model: free
+    price: 0.00
+    currency: USD
+    notes: >
+      All public endpoints (combineddata, pools, Swagger docs) are free and
+      unauthenticated. No API key purchase or subscription required.
+  subgraphAccess:
+    model: free-tier-available
+    provider: The Graph
+    url: https://thegraph.com/explorer/profile/0x6e74053a3798e0fc9a9775f7995316b27f21c4d2?view=Subgraphs
+    notes: >
+      Frax Finance subgraphs on The Graph are accessible via The Graph's free
+      query allocation. High-volume consumers may need to pay GRT for additional
+      queries under The Graph's decentralized network model.
+protocolRevenue:
+  sources:
+    - AMO yield on Curve and Convex positions
+    - Fraxlend interest income
+    - Aave and Compound lending yield
+    - Uniswap V3 LP fees
+    - frxETH validator staking rewards (net of frxETH holder distributions)
+  distribution:
+    - veFXS holders receive protocol revenue share
+    - FXS buybacks and burns reduce supply
+budgetingGuidance:
+  - No API cost line item needed for standard usage
+  - Factor in The Graph GRT costs if running high-volume historical subgraph queries
+  - Infrastructure costs (caching layer, CDN) should be provisioned client-side to avoid rate throttling
