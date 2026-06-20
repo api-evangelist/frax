@@ -7,7 +7,7 @@ description: >
   operates Algorithmic Market Operations (AMOs) to manage collateral and generate
   revenue, and exposes public REST APIs for querying token supply, collateral
   ratios, AMO positions, pool APRs, and frxETH staking analytics.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/frax/refs/heads/main/apis.yml
 created: "2026-06-14"
 modified: "2026-06-14"
@@ -29,7 +29,7 @@ apis:
       pool positions, AMO (Algorithmic Market Operations) holdings across Curve,
       Convex, lending, and liquidity subsystems, plus collateral ratio and
       decentralization ratio.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.frax.finance/smart-contracts/api
     baseURL: https://api.frax.finance
     tags:
@@ -58,7 +58,7 @@ apis:
       and farm contract addresses, pool token and reward token lists, total
       liquidity locked (USD), current APY, maximum APY, and per-token reward
       breakdowns with APR percentages and USD value per day. Covers 270+ pools.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.frax.finance/smart-contracts/api
     baseURL: https://api.frax.finance
     tags:
