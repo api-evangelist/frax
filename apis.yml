@@ -79,6 +79,8 @@ apis:
         url: https://frax.finance
         email: ""
 common:
+  - type: AgenticAccess
+    url: agentic-access/frax-agentic-access.yml
   - type: DomainSecurity
     url: security/frax-domain-security.yml
   - type: Website

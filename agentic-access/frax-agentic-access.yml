@@ -1,0 +1,994 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/frax-finance-v1.json, openapi/frax-finance-v2.json
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 96
+  by_action_class:
+    connected: 93
+    acting: 3
+  by_consequence:
+    read: 93
+    write: 3
+  human_in_the_loop_required: 0
+operations:
+- path: /v1/amodata_v2/amo-allocations
+  method: get
+  operationId: V1Controller_getAMOAllocations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/amodata_v2/{filter}
+  method: get
+  operationId: V1Controller_getAMOData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/collateraldata/{filter}
+  method: get
+  operationId: V1Controller_getCollateralData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/combineddata
+  method: get
+  operationId: V1Controller_getCombinedData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/gauge/info
+  method: get
+  operationId: V1Controller_getGaugeInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/gauge/voter-info/{address}
+  method: get
+  operationId: V1Controller_getGaugeVoterInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/lockedstakedata
+  method: post
+  operationId: v1GetLockedStakeData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/pools
+  method: get
+  operationId: V1Controller_getPools
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/pools/{farmAddress}
+  method: get
+  operationId: V1Controller_getPoolByFarmAddress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/priceitems/coin-stats
+  method: get
+  operationId: V1Controller_getCoinStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/priceitems/circulating-fxs-details
+  method: get
+  operationId: V1Controller_getCirculatingFxsDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/priceitems/circulating-fpis-details
+  method: get
+  operationId: V1Controller_getCirculatingFpisDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/priceitems/daily-coin-stats/{coinType}
+  method: get
+  operationId: V1Controller_getDailyCoinStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/priceitems/total-supply/{coinType}
+  method: get
+  operationId: V1Controller_getCoinTotalSupply
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/priceitems/circulating-supply/{coinType}
+  method: get
+  operationId: V1Controller_getCoinCirculatingSupply
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/priceitems/{filter}
+  method: get
+  operationId: V1Controller_getPriceItems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/stakedata
+  method: post
+  operationId: v1GetStakeData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/stakedata/choices
+  method: get
+  operationId: v1GetStakeChoices
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/stakedata/user-stake-info
+  method: post
+  operationId: v1GetUserStakeData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/lockedvefxsdata
+  method: get
+  operationId: V1Controller_getLockedVeFXSData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/vefxsdata/{filter}
+  method: get
+  operationId: V1Controller_getVeFXSData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/lockedvefpisdata
+  method: get
+  operationId: V1Controller_getLockedVeFPISData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/vefpisdata/{filter}
+  method: get
+  operationId: V1Controller_getVeFPISData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frax/balance-sheet/latest
+  method: get
+  operationId: getFraxBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frax/balance-sheet/latest/export
+  method: get
+  operationId: exportFraxBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frax/sfrax/summary/latest
+  method: get
+  operationId: getLatestSfraxSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frax/sfrax/summary/history
+  method: get
+  operationId: listHistoricalSfraxSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frax/user/{userAddress}/sfrax-summary
+  method: get
+  operationId: getUserSfraxSummary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frax/user/{userAddress}/sfrax-daily-earnings
+  method: get
+  operationId: getUserSfraxDailyEarnings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxferry/trips
+  method: get
+  operationId: listFraxFerryTrips
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxferry/trips/{batchId}
+  method: get
+  operationId: getFraxFerryTripDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxferry/ferry
+  method: get
+  operationId: listAllFraxFerries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxferry/ferry/{ferryKey}
+  method: get
+  operationId: getFraxFerry
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxferry/transactions
+  method: get
+  operationId: listFraxFerryTransactions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxferry/transactions/volume
+  method: get
+  operationId: getFraxFerryTransactionVolume
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxferry/historical-stats
+  method: get
+  operationId: getFraxFerryHistoricalStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/tokens
+  method: get
+  operationId: listFraxswapTokens
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/tokens/{tokenAddress}
+  method: get
+  operationId: getFraxswapTokensByAddress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/tokens/{tokenAddress}/pools
+  method: get
+  operationId: getFraxswapPoolsForToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/tokens/{tokenAddress}/history
+  method: get
+  operationId: getDailyHistoryForToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/pools
+  method: get
+  operationId: listFraxswapPools
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/pools/{poolAddress}
+  method: get
+  operationId: getFraxswapPoolsByAddress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/pools/{poolAddress}/history
+  method: get
+  operationId: getDailyHistoryForPool
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/transactions
+  method: get
+  operationId: getFraxswapTransactions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/twamm-orders
+  method: get
+  operationId: getTwammOrders
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/twamm-orders/{chain}/{pool}/{orderId}
+  method: get
+  operationId: getTwammOrder
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/twamm-orders/{chain}/{pool}/{orderId}/history
+  method: get
+  operationId: getTwammOrderDailyHistory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fraxswap/history
+  method: get
+  operationId: getDailyHistoryByChain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/validators
+  method: get
+  operationId: listAllValidators
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/summary/history
+  method: get
+  operationId: listHistoricalSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/summary/latest
+  method: get
+  operationId: getLatestFrxethSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/collateral
+  method: get
+  operationId: getFrxethCollateralData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/diversity
+  method: get
+  operationId: getFrxethValidatorDiversity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/staking-reward-cycles
+  method: get
+  operationId: listStakingRewardCycles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/frxeth-redemptions/tickets/active
+  method: get
+  operationId: listActiveFrxethRedemptionsTickets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/frxeth-redemptions/tickets/history
+  method: get
+  operationId: listHistoricalFrxethRedemptionsTickets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/frxeth-redemptions/latest-state
+  method: get
+  operationId: getFrxethRedemptionContractLatestState
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/user/{userAddress}/frxeth-redemptions
+  method: get
+  operationId: getUserFrxethRedemptionsSummary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/user/{userAddress}/sfrxeth-summary
+  method: get
+  operationId: getUserSfrxethSummary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxeth/user/{userAddress}/sfrxeth-daily-earnings
+  method: get
+  operationId: getUserSfrxethDailyEarnings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fxb/auctions
+  method: get
+  operationId: V2FxbController_getAuctions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fxb/bonds
+  method: get
+  operationId: V2FxbController_getBonds
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fxb/bonds/{maturityDate}
+  method: get
+  operationId: V2FxbController_getBondForMaturityDate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fxb/bonds/{maturityDate}/auctions/{auctionNumber}
+  method: get
+  operationId: V2FxbController_getBondAuctionDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fxb/summary/history
+  method: get
+  operationId: V2FxbController_getFxbSummaryHistory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fxb/recent-transactions
+  method: get
+  operationId: V2FxbController_getFxbRecentAuctionTransactions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges
+  method: get
+  operationId: listGauges
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges/{gaugeAddress}
+  method: get
+  operationId: getGaugeBasicInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges/cycles
+  method: get
+  operationId: listGaugeCycles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges/cycles/history
+  method: get
+  operationId: listGaugeCycleHistoricalOutcome
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges/cycles/next
+  method: get
+  operationId: getGaugeNextCycleEstimate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges/cycles/{cycleKey}
+  method: get
+  operationId: getGaugeCycleByKey
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges/cycles/{cycleKey}/daily
+  method: get
+  operationId: listGaugeCycleDailyData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gauges/voter-participation
+  method: get
+  operationId: listGaugeVoterParticipation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fpifpis/fpi-stats
+  method: get
+  operationId: getFpiStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fpifpis/fpi-collateral
+  method: get
+  operationId: getFpiCollateralData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fpifpis/summary/latest
+  method: get
+  operationId: getFpiFpisLatestSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fpifpis/summary/history
+  method: get
+  operationId: listFpiFpisHistoricalSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fpifpis/distribution/{token}
+  method: get
+  operationId: getFpiFpisLatestTokenDistribution
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fpifpis/income-expense/summary
+  method: get
+  operationId: getFpiIncomeExpenseSummary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/fpifpis/income-expense/detail
+  method: get
+  operationId: getFpiIncomeExpenseDetail
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gov/{protocol}/safes
+  method: get
+  operationId: listAllFraxGovSafes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gov/{protocol}/safes/{chain}/{safeAddress}
+  method: get
+  operationId: getFraxGovSafe
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gov/{protocol}/proposals
+  method: get
+  operationId: listAllFraxGovProposals
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gov/{protocol}/proposals/{chain}/{governorAddress}/{proposalId}
+  method: get
+  operationId: getFraxGovProposal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/gov/{protocol}/voters
+  method: get
+  operationId: listAllFraxGovVoters
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxusd/balance-sheet/latest
+  method: get
+  operationId: getFrxusdBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxusd/balance-sheet/latest/export
+  method: get
+  operationId: exportFrxusdBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxusd/summary-stats/latest
+  method: get
+  operationId: getLatestFrxusdSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/frxusd/summary-stats/history
+  method: get
+  operationId: listHistoricalFrxusdSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/sfrxusd/balance-sheet/latest
+  method: get
+  operationId: getSfrxusdBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/sfrxusd/balance-sheet/latest/export
+  method: get
+  operationId: exportSfrxusdBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/sfrxusd/summary-stats/latest
+  method: get
+  operationId: getLatestSfrxusdSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/sfrxusd/summary-stats/history
+  method: get
+  operationId: listHistoricalSfrxusdSummaryData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/lfrax/balance-sheet/latest
+  method: get
+  operationId: getLegacyFraxBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v2/lfrax/balance-sheet/latest/export
+  method: get
+  operationId: exportLegacyFraxDollarBalanceSheetLatestData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
