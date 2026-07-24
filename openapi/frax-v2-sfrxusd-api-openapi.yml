@@ -1,0 +1,243 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge v2-sfrxusd API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v2-sfrxusd
+paths:
+  /v2/sfrxusd/balance-sheet/latest:
+    get:
+      operationId: getSfrxusdBalanceSheetLatestData
+      summary: Returns the latest sfrxUSD balance sheet data
+      description: Returns the latest sfrxUSD balance sheet data
+      parameters: []
+      responses:
+        '200':
+          description: Returns the latest sfrxUSD balance sheet data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SfrxusdBalanceSheetLatestResponse'
+      tags:
+      - v2-sfrxusd
+  /v2/sfrxusd/balance-sheet/latest/export:
+    get:
+      operationId: exportSfrxusdBalanceSheetLatestData
+      summary: Returns a CSV of the latest sfrxUSD balance sheet data
+      description: Returns a CSV of the latest sfrxUSD balance sheet data
+      parameters: []
+      responses:
+        '200':
+          description: Returns a CSV of the latest sfrxUSD balance sheet data
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+      tags:
+      - v2-sfrxusd
+  /v2/sfrxusd/summary-stats/latest:
+    get:
+      operationId: getLatestSfrxusdSummaryData
+      summary: Get the latest sfrxUSD summary data.
+      description: Get the latest sfrxUSD summary data.
+      parameters: []
+      responses:
+        '200':
+          description: Get the latest sfrxUSD summary data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SfrxusdSummaryInfo'
+      tags:
+      - v2-sfrxusd
+  /v2/sfrxusd/summary-stats/history:
+    get:
+      operationId: listHistoricalSfrxusdSummaryData
+      summary: Returns a list historical sfrxUSD summary data.
+      description: Returns a list historical sfrxUSD summary data.
+      parameters:
+      - name: range
+        required: true
+        in: query
+        description: Timeframe
+        schema:
+          enum:
+          - 1d
+          - 7d
+          - 30d
+          - 90d
+          - 180d
+          - 365d
+          - ytd
+          - all
+          type: string
+      responses:
+        '200':
+          description: Returns a list historical sfrxUSD summary data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SfrxusdSummaryInfoResponse'
+      tags:
+      - v2-sfrxusd
+components:
+  schemas:
+    SfrxusdSummaryInfo:
+      type: object
+      properties:
+        intervalTimestamp:
+          format: date-time
+          type: string
+        blockNumberEthereum:
+          type: number
+        blockNumberFraxtal:
+          type: number
+        sfrxusdCirculatingSupply:
+          type: number
+        sfrxusdCirculatingMarketCap:
+          type: number
+        sfrxusdTotalSupply:
+          type: number
+        sfrxusdTotalMarketCap:
+          type: number
+        frxusdPerSfrxusd:
+          type: number
+        sfrxusdApr:
+          type: number
+        sfrxusdApy:
+          type: number
+        frxusdPrice:
+          type: number
+        sfrxusdPrice:
+          type: number
+      required:
+      - intervalTimestamp
+      - blockNumberEthereum
+      - blockNumberFraxtal
+      - sfrxusdCirculatingSupply
+      - sfrxusdCirculatingMarketCap
+      - sfrxusdTotalSupply
+      - sfrxusdTotalMarketCap
+      - frxusdPerSfrxusd
+      - sfrxusdApr
+      - sfrxusdApy
+      - frxusdPrice
+      - sfrxusdPrice
+    SfrxusdBalanceSheetItem:
+      type: object
+      properties:
+        category:
+          type: string
+        chain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - base
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - linea
+          - mantle
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - scroll
+          - sonic
+          - solana
+          - stable
+          - zksync
+        address:
+          type: string
+        contractAddress:
+          type: string
+        tokenAddress:
+          type: string
+        tokenSymbol:
+          type: string
+        totalValueUsd:
+          type: number
+        tokenQuantity:
+          type: number
+        tokenQuantityE18:
+          type: string
+        description:
+          type: string
+      required:
+      - category
+      - chain
+      - address
+      - contractAddress
+      - tokenAddress
+      - tokenSymbol
+      - totalValueUsd
+      - tokenQuantity
+      - tokenQuantityE18
+      - description
+    SfrxusdBalanceSheetLatestResponse:
+      type: object
+      properties:
+        asOfBlock:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        asOfTimestamp:
+          format: date-time
+          type: string
+        tokenPriceUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        totalAssets:
+          type: number
+        totalLiabilities:
+          type: number
+        assets:
+          description: List of sfrxUSD balance sheet assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
+        liabilities:
+          description: List of sfrxUSD balance sheet liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
+      required:
+      - asOfBlock
+      - asOfTimestamp
+      - tokenPriceUsd
+      - totalAssets
+      - totalLiabilities
+      - assets
+      - liabilities
+    SfrxusdSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of sfrxUSD summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdSummaryInfo'
+      required:
+      - items
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs

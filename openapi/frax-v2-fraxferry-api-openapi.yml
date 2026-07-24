@@ -1,0 +1,1048 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge v2-fraxferry API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v2-fraxferry
+paths:
+  /v2/fraxferry/trips:
+    get:
+      operationId: listFraxFerryTrips
+      summary: Returns a list of departed Frax Ferry trips for the optionally-given request parameters
+      description: Returns a list of departed Frax Ferry trips for the optionally-given request parameters
+      parameters:
+      - name: srcChain
+        required: false
+        in: query
+        description: The name of the source blockchain/network.
+        schema:
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+          type: string
+      - name: destChain
+        required: false
+        in: query
+        description: The name of the destination blockchain/network.
+        schema:
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+          type: string
+      - name: tokenSymbol
+        required: false
+        in: query
+        description: The token symbol.
+        schema:
+          minLength: 1
+          maxLength: 20
+          type: string
+      - name: ferryKey
+        required: false
+        in: query
+        description: The unique key for the Ferry, a set of contracts for a single token on two different chains.
+        schema:
+          minLength: 1
+          maxLength: 70
+          type: string
+      responses:
+        '200':
+          description: Returns a list of departed Frax Ferry trips for the optionally-given request parameters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxFerryTripsResponse'
+      tags:
+      - v2-fraxferry
+  /v2/fraxferry/trips/{batchId}:
+    get:
+      operationId: getFraxFerryTripDetails
+      summary: Returns details about a single FraxFerry trip
+      description: Returns details about a single FraxFerry trip
+      parameters:
+      - name: batchId
+        required: true
+        in: path
+        description: The batch ID number, or 'pending' for embarked, but not departed, trips.
+        schema:
+          minLength: 1
+          maxLength: 20
+          type: string
+      - name: destChain
+        required: false
+        in: query
+        description: The name of the destination blockchain/network.
+        schema:
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+          type: string
+      - name: ferryKey
+        required: false
+        in: query
+        description: The unique key for the Ferry, a set of contracts for a single token on two different chains.
+        schema:
+          minLength: 1
+          maxLength: 70
+          type: string
+      responses:
+        '200':
+          description: Returns details about a single FraxFerry trip.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxFerryTripDetailResponse'
+      tags:
+      - v2-fraxferry
+  /v2/fraxferry/ferry:
+    get:
+      operationId: listAllFraxFerries
+      summary: Returns a list of all Frax Ferry summary info
+      description: Returns a list of all Frax Ferry summary info
+      parameters: []
+      responses:
+        '200':
+          description: Returns a list of all Frax Ferry summary info.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxFerrySummaryInfoResponse'
+      tags:
+      - v2-fraxferry
+  /v2/fraxferry/ferry/{ferryKey}:
+    get:
+      operationId: getFraxFerry
+      summary: Returns details about a Frax Ferry
+      description: Returns details about a Frax Ferry
+      parameters:
+      - name: ferryKey
+        required: true
+        in: path
+        description: The unique key for the Ferry, a set of contracts for a single token on two different chains.
+        schema:
+          minLength: 1
+          maxLength: 70
+          type: string
+      responses:
+        '200':
+          description: Returns details about a Frax Ferry.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxFerryDetailResponse'
+      tags:
+      - v2-fraxferry
+  /v2/fraxferry/transactions:
+    get:
+      operationId: listFraxFerryTransactions
+      summary: Returns a list of Frax Ferry transactions for the given criteria
+      description: Returns a list of Frax Ferry transactions for the given criteria
+      parameters:
+      - name: user
+        required: false
+        in: query
+        description: The hex address of the user. Input is case insensitive.
+        schema:
+          minLength: 42
+          maxLength: 42
+          pattern: ^0x[a-fA-F0-9]{40}$
+          type: string
+      responses:
+        '200':
+          description: Returns a list of Frax Ferry transactions for the given criteria.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxFerryTransactionResponse'
+      tags:
+      - v2-fraxferry
+  /v2/fraxferry/transactions/volume:
+    get:
+      operationId: getFraxFerryTransactionVolume
+      summary: Returns a list of Frax Ferry transaction volume info
+      description: Returns a list of Frax Ferry transaction volume info
+      parameters: []
+      responses:
+        '200':
+          description: Returns a list of Frax Ferry transaction volume info.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxFerryTransactionVolumeResponse'
+      tags:
+      - v2-fraxferry
+  /v2/fraxferry/historical-stats:
+    get:
+      operationId: getFraxFerryHistoricalStats
+      summary: Returns Frax Ferry overall transactions, token quantities, and USD value
+      description: Returns Frax Ferry overall transactions, token quantities, and USD value
+      parameters:
+      - name: timeUnitGrouping
+        required: true
+        in: query
+        description: Timeframe unit
+        schema:
+          enum:
+          - all
+          - year
+          - month
+          - week
+          - day
+          - hour
+          type: string
+      responses:
+        '200':
+          description: Returns Frax Ferry overall transactions, token quantities, and USD value.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxFerryAggregateHistoricalStatsResponse'
+      tags:
+      - v2-fraxferry
+components:
+  schemas:
+    FraxFerryDetailResponse:
+      type: object
+      properties:
+        ferryInfo:
+          description: Frax Ferry summary information. Contains two entries (one for each source chain).
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerrySummaryInfo'
+        trips:
+          description: Frax Ferry trip details with transactions.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTripDetailResponse'
+      required:
+      - ferryInfo
+      - trips
+    FraxFerryTransactionVolumeResponse:
+      type: object
+      properties:
+        items:
+          description: Array of Frax Ferry transaction volume information.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTransactionVolumeInfo'
+      required:
+      - items
+    FraxFerryTransactionResponse:
+      type: object
+      properties:
+        transactions:
+          description: Array of Frax Ferry transaction information.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTransactionInfo'
+      required:
+      - transactions
+    FraxFerryTripTransaction:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        userNativeAddress:
+          type: string
+        recipientAddress:
+          type: string
+        recipientNativeAddress:
+          type: string
+        embarkTransactionChain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        embarkTransactionHash:
+          type: string
+        embarkTimestampSec:
+          type: number
+        tokenQuantityRaw:
+          type: string
+        tokenQuantityDec:
+          type: number
+        tokenQuantityAfterFeeRaw:
+          type: string
+        tokenQuantityAfterFeeDec:
+          type: number
+        ferryTransactionIndex:
+          type: number
+      required:
+      - userAddress
+      - userNativeAddress
+      - recipientAddress
+      - recipientNativeAddress
+      - embarkTransactionChain
+      - embarkTransactionHash
+      - embarkTimestampSec
+      - tokenQuantityRaw
+      - tokenQuantityDec
+      - tokenQuantityAfterFeeRaw
+      - tokenQuantityAfterFeeDec
+      - ferryTransactionIndex
+    FraxFerrySummaryInfo:
+      type: object
+      properties:
+        ferryKey:
+          type: string
+        name:
+          type: string
+        tokenSymbol:
+          type: string
+        sourceChain:
+          type: string
+          description: The name of the source blockchain/network.
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        sourceContractAddress:
+          type: string
+        sourceContractNativeAddress:
+          type: string
+          description: The native address.
+        sourceTokenAddress:
+          type: string
+        sourceTokenNativeAddress:
+          type: string
+          description: The native address.
+        destinationChain:
+          type: string
+          description: The name of the destination blockchain/network.
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        destinationContractAddress:
+          type: string
+        destinationContractNativeAddress:
+          type: string
+          description: The native address.
+        destinationTokenAddress:
+          type: string
+        destinationTokenNativeAddress:
+          type: string
+          description: The native address.
+        feeMin:
+          type: string
+          description: The minimum fee subtracted from the quantity of the source token. Returned as a BigNumber.
+        feeMax:
+          type: string
+          description: The maximum fee subtracted from the quantity of the source token. Returned as a BigNumber.
+        feeRate:
+          type: string
+          description: The rate (per 10,000 and bounded by the min/max fee constants) used to calculate the fee that gets subtracted from the quantity of the source token. Returned as a BigNumber.
+        departIntervalSec:
+          type: number
+          description: The minimum amount of time the ferry waits between departing.
+        disembarkIntervalSec:
+          type: number
+          description: The minimum amount of time the ferry waits between disembarking.
+        tokenQuantity24h:
+          type: number
+        fees24h:
+          type: number
+        transactionQuantity24h:
+          type: number
+        tokenQuantity7d:
+          type: number
+        fees7d:
+          type: number
+        transactionQuantity7d:
+          type: number
+        tokenQuantity30d:
+          type: number
+        fees30d:
+          type: number
+        transactionQuantity30d:
+          type: number
+        tokenQuantityAll:
+          type: number
+        feesAll:
+          type: number
+        transactionQuantityAll:
+          type: number
+        destinationContractBalance:
+          type: number
+        sourceContractBalance:
+          type: number
+      required:
+      - ferryKey
+      - name
+      - tokenSymbol
+      - sourceChain
+      - sourceContractAddress
+      - sourceContractNativeAddress
+      - sourceTokenAddress
+      - sourceTokenNativeAddress
+      - destinationChain
+      - destinationContractAddress
+      - destinationContractNativeAddress
+      - destinationTokenAddress
+      - destinationTokenNativeAddress
+      - feeMin
+      - feeMax
+      - feeRate
+      - departIntervalSec
+      - disembarkIntervalSec
+      - tokenQuantity24h
+      - fees24h
+      - transactionQuantity24h
+      - tokenQuantity7d
+      - fees7d
+      - transactionQuantity7d
+      - tokenQuantity30d
+      - fees30d
+      - transactionQuantity30d
+      - tokenQuantityAll
+      - feesAll
+      - transactionQuantityAll
+      - destinationContractBalance
+      - sourceContractBalance
+    FraxFerrySummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: Array of Frax Ferry summary information.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerrySummaryInfo'
+      required:
+      - items
+    FraxFerryTrip:
+      type: object
+      properties:
+        batchId:
+          type: number
+          description: The global unique ID of the ferry departure. When embarked transactions have not yet departed, this field will be `null`.
+          nullable: true
+        ferryKey:
+          type: string
+        name:
+          type: string
+        sourceChain:
+          type: string
+          description: The name of the source blockchain/network.
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        sourceContractAddress:
+          type: string
+        sourceContractNativeAddress:
+          type: string
+        destinationChain:
+          type: string
+          description: The name of the destination blockchain/network.
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        destinationContractAddress:
+          type: string
+        destinationContractNativeAddress:
+          type: string
+        departTimestampSec:
+          type: number
+          nullable: true
+        disembarkTimestampSec:
+          type: number
+          nullable: true
+        sourceTokenAddress:
+          type: string
+        sourceTokenNativeAddress:
+          type: string
+        destinationTokenAddress:
+          type: string
+        destinationTokenNativeAddress:
+          type: string
+        tokenSymbol:
+          type: string
+        batchNumber:
+          type: number
+          nullable: true
+        startIndex:
+          type: number
+          description: The start index of the transaction array from the other ferry contract that is included in a batch of this ferry.
+          nullable: true
+        endIndex:
+          type: number
+          nullable: true
+        batchHash:
+          type: string
+          nullable: true
+        departTxHash:
+          type: string
+          nullable: true
+        disembarkTxHash:
+          type: string
+          nullable: true
+        minEmbarkTimestampSec:
+          type: number
+        maxEmbarkTimestampSec:
+          type: number
+        tokenQuantity:
+          type: number
+        tokenQuantityAfterFees:
+          type: number
+        numberOfTransactions:
+          type: number
+          description: The total count transactions included in a ferry trip.
+        numberOfUsers:
+          type: number
+          description: The unique count of users making a ferry trip.
+        numberOfRecipients:
+          type: number
+          description: The unique count of recipients disembarking from ferry trips.
+        status:
+          type: string
+          enum:
+          - EMBARKING
+          - LAST_CALL
+          - EN_ROUTE
+          - ARRIVED
+          - DISEMBARKED
+          - UNDER_INSPECTION
+          - JETTISONED
+          - UNKNOWN
+      required:
+      - batchId
+      - ferryKey
+      - name
+      - sourceChain
+      - sourceContractAddress
+      - sourceContractNativeAddress
+      - destinationChain
+      - destinationContractAddress
+      - destinationContractNativeAddress
+      - departTimestampSec
+      - disembarkTimestampSec
+      - sourceTokenAddress
+      - sourceTokenNativeAddress
+      - destinationTokenAddress
+      - destinationTokenNativeAddress
+      - tokenSymbol
+      - batchNumber
+      - startIndex
+      - endIndex
+      - batchHash
+      - departTxHash
+      - disembarkTxHash
+      - minEmbarkTimestampSec
+      - maxEmbarkTimestampSec
+      - tokenQuantity
+      - tokenQuantityAfterFees
+      - numberOfTransactions
+      - numberOfUsers
+      - numberOfRecipients
+      - status
+    FraxFerryTripsResponse:
+      type: object
+      properties:
+        trips:
+          description: Array of Frax Ferry trips.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTrip'
+      required:
+      - trips
+    FraxFerryTransactionInfo:
+      type: object
+      properties:
+        uid:
+          type: number
+        userAddress:
+          type: string
+        userNativeAddress:
+          type: string
+        recipientAddress:
+          type: string
+        recipientNativeAddress:
+          type: string
+        ferryKey:
+          type: string
+        name:
+          type: string
+        sourceChain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        sourceContractAddress:
+          type: string
+        sourceContractNativeAddress:
+          type: string
+        sourceTokenAddress:
+          type: string
+        sourceTokenNativeAddress:
+          type: string
+        destinationChain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        destinationContractAddress:
+          type: string
+        destinationContractNativeAddress:
+          type: string
+        destinationTokenAddress:
+          type: string
+        destinationTokenNativeAddress:
+          type: string
+        tokenSymbol:
+          type: string
+        embarkTimestampSec:
+          type: number
+        departTimestampSec:
+          type: number
+          nullable: true
+        disembarkTimestampSec:
+          type: number
+          nullable: true
+        tokenQuantityRaw:
+          type: string
+        tokenQuantityDec:
+          type: number
+        tokenQuantityAfterFeeRaw:
+          type: string
+        tokenQuantityAfterFeeDec:
+          type: number
+        cancelChainTransactionId:
+          type: number
+          nullable: true
+        batchId:
+          type: number
+          nullable: true
+        ferryTransactionIndex:
+          type: number
+          nullable: true
+        batchNumber:
+          type: number
+          nullable: true
+        startIndex:
+          type: number
+          nullable: true
+        endIndex:
+          type: number
+          nullable: true
+        batchHash:
+          type: string
+          nullable: true
+        embarkTransactionHash:
+          type: string
+          nullable: true
+        departTransactionHash:
+          type: string
+          nullable: true
+        disembarkTransactionHash:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum:
+          - EMBARKING
+          - LAST_CALL
+          - EN_ROUTE
+          - ARRIVED
+          - DISEMBARKED
+          - UNDER_INSPECTION
+          - JETTISONED
+          - UNKNOWN
+      required:
+      - uid
+      - userAddress
+      - userNativeAddress
+      - recipientAddress
+      - recipientNativeAddress
+      - ferryKey
+      - name
+      - sourceChain
+      - sourceContractAddress
+      - sourceContractNativeAddress
+      - sourceTokenAddress
+      - sourceTokenNativeAddress
+      - destinationChain
+      - destinationContractAddress
+      - destinationContractNativeAddress
+      - destinationTokenAddress
+      - destinationTokenNativeAddress
+      - tokenSymbol
+      - embarkTimestampSec
+      - departTimestampSec
+      - disembarkTimestampSec
+      - tokenQuantityRaw
+      - tokenQuantityDec
+      - tokenQuantityAfterFeeRaw
+      - tokenQuantityAfterFeeDec
+      - cancelChainTransactionId
+      - batchId
+      - ferryTransactionIndex
+      - batchNumber
+      - startIndex
+      - endIndex
+      - batchHash
+      - embarkTransactionHash
+      - departTransactionHash
+      - disembarkTransactionHash
+      - status
+    FraxFerryAggregateStatsInfo:
+      type: object
+      properties:
+        embarkTimestamp:
+          format: date-time
+          type: string
+          description: The truncated date for the requested time unit grouping.Value is `null` when requesting all-time data
+          nullable: true
+        tokenSymbol:
+          type: string
+        destinationChain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        transactionCount:
+          type: number
+        tokenQuantityDec:
+          type: number
+        totalValueUsd:
+          type: number
+          description: Sum of the value of the transactions at the time they embark (before fees)
+        totalFeesUsd:
+          type: number
+          description: Sum of the value of the fees paid
+      required:
+      - embarkTimestamp
+      - tokenSymbol
+      - destinationChain
+      - transactionCount
+      - tokenQuantityDec
+      - totalValueUsd
+      - totalFeesUsd
+    FraxFerryAggregateHistoricalStatsResponse:
+      type: object
+      properties:
+        timeGrouping:
+          type: string
+          enum:
+          - all
+          - year
+          - month
+          - week
+          - day
+          - hour
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryAggregateStatsInfo'
+      required:
+      - timeGrouping
+      - details
+    FraxFerryTransactionVolumeInfo:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        userNativeAddress:
+          type: string
+        recipientAddress:
+          type: string
+        recipientNativeAddress:
+          type: string
+        ferryKey:
+          type: string
+        name:
+          type: string
+        sourceChain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        sourceContractAddress:
+          type: string
+        sourceContractNativeAddress:
+          type: string
+        sourceTokenAddress:
+          type: string
+        sourceTokenNativeAddress:
+          type: string
+        destinationChain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        destinationContractAddress:
+          type: string
+        destinationContractNativeAddress:
+          type: string
+        destinationTokenAddress:
+          type: string
+        destinationTokenNativeAddress:
+          type: string
+        tokenSymbol:
+          type: string
+        tokenQuantityDec:
+          type: number
+        transactionCount:
+          type: number
+      required:
+      - userAddress
+      - userNativeAddress
+      - recipientAddress
+      - recipientNativeAddress
+      - ferryKey
+      - name
+      - sourceChain
+      - sourceContractAddress
+      - sourceContractNativeAddress
+      - sourceTokenAddress
+      - sourceTokenNativeAddress
+      - destinationChain
+      - destinationContractAddress
+      - destinationContractNativeAddress
+      - destinationTokenAddress
+      - destinationTokenNativeAddress
+      - tokenSymbol
+      - tokenQuantityDec
+      - transactionCount
+    FraxFerryTripDetailResponse:
+      type: object
+      properties:
+        trip:
+          description: Summary info for the specific Frax Ferry trip.
+          allOf:
+          - $ref: '#/components/schemas/FraxFerryTrip'
+        transactions:
+          description: Array of Frax Ferry trip transactions.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTripTransaction'
+      required:
+      - trip
+      - transactions
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs

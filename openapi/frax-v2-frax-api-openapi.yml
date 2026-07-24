@@ -1,0 +1,432 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge v2-frax API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v2-frax
+paths:
+  /v2/frax/balance-sheet/latest:
+    get:
+      operationId: getFraxBalanceSheetLatestData
+      summary: Returns the latest FRAX balance sheet data
+      description: Returns the latest FRAX balance sheet data
+      parameters: []
+      responses:
+        '200':
+          description: Returns the latest FRAX balance sheet data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraxBalanceSheetLatestResponse'
+      tags:
+      - v2-frax
+  /v2/frax/balance-sheet/latest/export:
+    get:
+      operationId: exportFraxBalanceSheetLatestData
+      summary: Returns a CSV of the latest FRAX balance sheet data
+      description: Returns a CSV of the latest FRAX balance sheet data
+      parameters: []
+      responses:
+        '200':
+          description: Returns a CSV of the latest FRAX balance sheet data
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+      tags:
+      - v2-frax
+  /v2/frax/sfrax/summary/latest:
+    get:
+      operationId: getLatestSfraxSummaryData
+      summary: Get the latest sFRAX summary data.
+      description: Get the latest sFRAX summary data.
+      parameters: []
+      responses:
+        '200':
+          description: Get the latest sFRAX summary data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SfraxSummaryInfo'
+      tags:
+      - v2-frax
+  /v2/frax/sfrax/summary/history:
+    get:
+      operationId: listHistoricalSfraxSummaryData
+      summary: Returns a list historical sFRAX summary data.
+      description: Returns a list historical sFRAX summary data.
+      parameters:
+      - name: range
+        required: true
+        in: query
+        description: Timeframe
+        schema:
+          enum:
+          - 1d
+          - 7d
+          - 30d
+          - 90d
+          - 180d
+          - 365d
+          - ytd
+          - all
+          type: string
+      responses:
+        '200':
+          description: Returns a list historical sFRAX summary data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SfraxSummaryInfoResponse'
+      tags:
+      - v2-frax
+  /v2/frax/user/{userAddress}/sfrax-summary:
+    get:
+      operationId: getUserSfraxSummary
+      summary: Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.
+      description: Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.
+      parameters:
+      - name: userAddress
+        required: true
+        in: path
+        description: The hex address of the user. Input is case insensitive.
+        example: '0x5180db0237291A6449DdA9ed33aD90a38787621c'
+        schema:
+          minLength: 42
+          maxLength: 42
+          pattern: ^0x[a-fA-F0-9]{40}$
+          type: string
+      responses:
+        '200':
+          description: Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SfraxUserSummaryResponse'
+      tags:
+      - v2-frax
+  /v2/frax/user/{userAddress}/sfrax-daily-earnings:
+    get:
+      operationId: getUserSfraxDailyEarnings
+      summary: Get the daily sFRAX earnings for a user.
+      description: Get the daily sFRAX earnings for a user.
+      parameters:
+      - name: userAddress
+        required: true
+        in: path
+        description: The hex address of the user. Input is case insensitive.
+        example: '0x5180db0237291A6449DdA9ed33aD90a38787621c'
+        schema:
+          minLength: 42
+          maxLength: 42
+          pattern: ^0x[a-fA-F0-9]{40}$
+          type: string
+      responses:
+        '200':
+          description: Get the daily sFRAX earnings for a user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SfraxUserDailyEarningsResponse'
+      tags:
+      - v2-frax
+components:
+  schemas:
+    SfraxUserDailyEarningsResponse:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        dailyData:
+          type: array
+          items:
+            $ref: '#/components/schemas/SfraxUserDailyEarningsItem'
+      required:
+      - userAddress
+      - dailyData
+    SfraxUserPositionSummary:
+      type: object
+      properties:
+        latestUnitPriceUsd:
+          type: number
+        latestUnitPriceFrax:
+          type: number
+        latestPriceAsOfTimestamp:
+          format: date-time
+          type: string
+        totalUnrealizedFraxBasis:
+          type: number
+        totalUnrealizedFraxValue:
+          type: number
+        totalUnrealizedFraxGain:
+          type: number
+        lots:
+          type: array
+          items:
+            $ref: '#/components/schemas/SfraxUserLot'
+      required:
+      - latestUnitPriceUsd
+      - latestUnitPriceFrax
+      - latestPriceAsOfTimestamp
+      - totalUnrealizedFraxBasis
+      - totalUnrealizedFraxValue
+      - totalUnrealizedFraxGain
+      - lots
+    SfraxUserLot:
+      type: object
+      properties:
+        blockNumber:
+          type: number
+        timestamp:
+          format: date-time
+          type: string
+        timestampSec:
+          type: number
+        quantitySfraxOriginal:
+          type: number
+        quantitySfraxRemaining:
+          type: number
+        unitCostUsd:
+          type: number
+        unitCostFrax:
+          type: number
+        realizedMarketValueUsd:
+          type: number
+        realizedMarketValueFrax:
+          type: number
+        unrealizedMarketValueUsd:
+          type: number
+        unrealizedMarketValueFrax:
+          type: number
+        unrealizedFraxGain:
+          type: number
+      required:
+      - blockNumber
+      - timestamp
+      - timestampSec
+      - quantitySfraxOriginal
+      - quantitySfraxRemaining
+      - unitCostUsd
+      - unitCostFrax
+      - realizedMarketValueUsd
+      - realizedMarketValueFrax
+      - unrealizedMarketValueUsd
+      - unrealizedMarketValueFrax
+      - unrealizedFraxGain
+    SfraxUserDailyEarningsItem:
+      type: object
+      properties:
+        timestamp:
+          format: date-time
+          type: string
+        timestampSec:
+          type: number
+        eodSfraxBalanceTotal:
+          type: number
+        eodSfraxBalanceBreakdown:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        earnings:
+          type: number
+      required:
+      - timestamp
+      - timestampSec
+      - eodSfraxBalanceTotal
+      - eodSfraxBalanceBreakdown
+      - earnings
+    SfraxSummaryInfo:
+      type: object
+      properties:
+        intervalTimestamp:
+          format: date-time
+          type: string
+        blockNumber:
+          type: number
+        sfraxTotalAssets:
+          type: number
+        sfraxStoredTotalAssets:
+          type: number
+        sfraxTotalSupply:
+          type: number
+        sfraxFraxPrice:
+          type: number
+        sfraxApr:
+          type: number
+        sfraxApy:
+          type: number
+        fraxPriceUsd:
+          type: number
+      required:
+      - intervalTimestamp
+      - blockNumber
+      - sfraxTotalAssets
+      - sfraxStoredTotalAssets
+      - sfraxTotalSupply
+      - sfraxFraxPrice
+      - sfraxApr
+      - sfraxApy
+      - fraxPriceUsd
+    FraxBalanceSheetItem:
+      type: object
+      properties:
+        category:
+          type: string
+        chain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - base
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - linea
+          - mantle
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - scroll
+          - sonic
+          - solana
+          - stable
+          - zksync
+        address:
+          type: string
+        contractAddress:
+          type: string
+        tokenAddress:
+          type: string
+        tokenSymbol:
+          type: string
+        totalValueUsd:
+          type: number
+        tokenQuantity:
+          type: number
+        tokenQuantityE18:
+          type: string
+        description:
+          type: string
+      required:
+      - category
+      - chain
+      - address
+      - contractAddress
+      - tokenAddress
+      - tokenSymbol
+      - totalValueUsd
+      - tokenQuantity
+      - tokenQuantityE18
+      - description
+    SfraxUserSummaryResponse:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        positionSummary:
+          $ref: '#/components/schemas/SfraxUserPositionSummary'
+        balanceSummary:
+          $ref: '#/components/schemas/SfraxUserBalanceSummary'
+      required:
+      - userAddress
+      - positionSummary
+      - balanceSummary
+    SfraxSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of sFRAX summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfraxSummaryInfo'
+      required:
+      - items
+    SfraxUserBalanceSummary:
+      type: object
+      properties:
+        sfraxBalanceE18:
+          type: string
+        sfraxBalanceDec:
+          type: number
+        balanceBreakdownE18:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: string
+        balanceBreakdownDec:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+      required:
+      - sfraxBalanceE18
+      - sfraxBalanceDec
+      - balanceBreakdownE18
+      - balanceBreakdownDec
+    FraxBalanceSheetLatestResponse:
+      type: object
+      properties:
+        asOfBlock:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        asOfTimestamp:
+          format: date-time
+          type: string
+        tokenPriceUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        categorySummaryUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        totalAssets:
+          type: number
+        totalLiabilities:
+          type: number
+        totalLockedLiquidity:
+          type: number
+        assets:
+          description: List of FRAX balance sheet assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBalanceSheetItem'
+        liabilities:
+          description: List of FRAX balance sheet liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBalanceSheetItem'
+      required:
+      - asOfBlock
+      - asOfTimestamp
+      - tokenPriceUsd
+      - categorySummaryUsd
+      - totalAssets
+      - totalLiabilities
+      - totalLockedLiquidity
+      - assets
+      - liabilities
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs

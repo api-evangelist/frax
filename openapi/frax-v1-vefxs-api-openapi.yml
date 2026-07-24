@@ -1,0 +1,139 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge v1-vefxs API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v1-vefxs
+paths:
+  /v1/lockedvefxsdata:
+    get:
+      operationId: V1Controller_getLockedVeFXSData
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockedVeFXSDataResponse'
+      tags:
+      - v1-vefxs
+  /v1/vefxsdata/{filter}:
+    get:
+      operationId: V1Controller_getVeFXSData
+      parameters:
+      - name: filter
+        required: true
+        in: path
+        description: Timeframe
+        schema:
+          enum:
+          - all-time
+          - 1-year
+          - 6-months
+          - 3-months
+          - 1-month
+          - 1-week
+          - 1-day
+          - 8-hours
+          - 1-hour
+          - 15-minutes
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VefxsDataResponse'
+      tags:
+      - v1-vefxs
+components:
+  schemas:
+    LockedVeFXSDataResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        unlocked_sum:
+          type: number
+        locked_sum:
+          type: number
+        buckets:
+          type: array
+          items:
+            $ref: '#/components/schemas/LockedVefxsStakeBucketAggregate'
+      required:
+      - token
+      - unlocked_sum
+      - locked_sum
+      - buckets
+    VefxsItem:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        vefxs_supply:
+          type: number
+        fxs_locked:
+          type: number
+        fxs_locked_pct_of_circulating:
+          type: number
+        fxs_locked_pct_of_total:
+          type: number
+        avg_lock_time_yrs:
+          type: number
+        pct_participating:
+          type: number
+        yield_value_usd:
+          type: number
+        apr:
+          type: number
+      required:
+      - blockNum
+      - timestamp
+      - vefxs_supply
+      - fxs_locked
+      - fxs_locked_pct_of_circulating
+      - fxs_locked_pct_of_total
+      - avg_lock_time_yrs
+      - pct_participating
+      - yield_value_usd
+      - apr
+    VefxsDataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/VefxsItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
+    LockedVefxsStakeBucketAggregate:
+      type: object
+      properties:
+        _id:
+          type: string
+        count:
+          type: number
+        total:
+          type: number
+      required:
+      - _id
+      - count
+      - total
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs

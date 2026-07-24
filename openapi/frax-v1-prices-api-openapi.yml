@@ -1,0 +1,352 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge v1-prices API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v1-prices
+paths:
+  /v1/priceitems/coin-stats:
+    get:
+      operationId: V1Controller_getCoinStats
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoinStatsResponse'
+      tags:
+      - v1-prices
+  /v1/priceitems/circulating-fxs-details:
+    get:
+      operationId: V1Controller_getCirculatingFxsDetails
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FxsSupplyBreakdownResponse'
+      tags:
+      - v1-prices
+  /v1/priceitems/circulating-fpis-details:
+    get:
+      operationId: V1Controller_getCirculatingFpisDetails
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FpisSupplyBreakdownResponse'
+      tags:
+      - v1-prices
+  /v1/priceitems/daily-coin-stats/{coinType}:
+    get:
+      operationId: V1Controller_getDailyCoinStats
+      parameters:
+      - name: coinType
+        required: true
+        in: path
+        description: FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH
+        schema:
+          enum:
+          - FPI
+          - FPIS
+          - FRAX
+          - FXS
+          - frxETH
+          - sfrxETH
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyCoinDataResponse'
+      tags:
+      - v1-prices
+  /v1/priceitems/total-supply/{coinType}:
+    get:
+      operationId: V1Controller_getCoinTotalSupply
+      parameters:
+      - name: coinType
+        required: true
+        in: path
+        description: FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH
+        schema:
+          enum:
+          - FPI
+          - FPIS
+          - FRAX
+          - FXS
+          - frxETH
+          - sfrxETH
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - v1-prices
+  /v1/priceitems/circulating-supply/{coinType}:
+    get:
+      operationId: V1Controller_getCoinCirculatingSupply
+      parameters:
+      - name: coinType
+        required: true
+        in: path
+        description: FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH
+        schema:
+          enum:
+          - FPI
+          - FPIS
+          - FRAX
+          - FXS
+          - frxETH
+          - sfrxETH
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - v1-prices
+  /v1/priceitems/{filter}:
+    get:
+      operationId: V1Controller_getPriceItems
+      parameters:
+      - name: filter
+        required: true
+        in: path
+        description: Timeframe
+        schema:
+          enum:
+          - all-time
+          - 1-year
+          - 6-months
+          - 3-months
+          - 1-month
+          - 1-week
+          - 1-day
+          - 8-hours
+          - 1-hour
+          - 15-minutes
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceItemsResponse'
+      tags:
+      - v1-prices
+components:
+  schemas:
+    FpisSupplyBreakdownResponse:
+      type: object
+      properties:
+        supply:
+          type: number
+        circulatingSupply:
+          type: number
+        balanceBreakdown:
+          type: array
+          items:
+            $ref: '#/components/schemas/BalanceBreakdownDTO'
+      required:
+      - supply
+      - circulatingSupply
+      - balanceBreakdown
+    DailyCoinDataResponse:
+      type: object
+      properties:
+        coin:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyCoinDataDTO'
+      required:
+      - coin
+      - data
+    CoinStatsResponse:
+      type: object
+      properties:
+        FPI:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        FPIS:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        FRAX:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        FXS:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        frxETH:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        sfrxETH:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        Collateral:
+          $ref: '#/components/schemas/CollateralPriceInfoDTO'
+      required:
+      - FPI
+      - FPIS
+      - FRAX
+      - FXS
+      - frxETH
+      - sfrxETH
+      - Collateral
+    PriceItemsResponse:
+      type: object
+      properties:
+        fpi:
+          $ref: '#/components/schemas/PriceHistoryDTO'
+        fpis:
+          $ref: '#/components/schemas/PriceHistoryDTO'
+        frax:
+          $ref: '#/components/schemas/PriceHistoryDTO'
+        fxs:
+          $ref: '#/components/schemas/PriceHistoryDTO'
+        frxeth:
+          $ref: '#/components/schemas/PriceHistoryDTO'
+        sfrxeth:
+          $ref: '#/components/schemas/PriceHistoryDTO'
+      required:
+      - fpi
+      - fpis
+      - frax
+      - fxs
+      - frxeth
+      - sfrxeth
+    PriceHistoryDTO:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceHistoryItemDTO'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
+    BalanceBreakdownDTO:
+      type: object
+      properties:
+        address:
+          type: string
+        name:
+          type: string
+        balance:
+          type: number
+      required:
+      - address
+      - name
+      - balance
+    DailyCoinDataDTO:
+      type: object
+      properties:
+        date:
+          type: string
+        price:
+          type: number
+        supply:
+          type: number
+        marketCap:
+          type: number
+        circulatingSupply:
+          type: number
+        circulatingMarketCap:
+          type: number
+      required:
+      - date
+      - price
+      - supply
+      - marketCap
+      - circulatingSupply
+      - circulatingMarketCap
+    PriceHistoryItemDTO:
+      type: object
+      properties:
+        coin:
+          type: string
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        price:
+          type: number
+        supply:
+          type: number
+        circulating_supply:
+          type: number
+        market_cap:
+          type: number
+        circulating_market_cap:
+          type: number
+        fxs_burned_cumulative_sum:
+          type: number
+      required:
+      - coin
+      - blockNum
+      - timestamp
+      - price
+      - supply
+      - circulating_supply
+      - market_cap
+      - circulating_market_cap
+      - fxs_burned_cumulative_sum
+    FxsSupplyBreakdownResponse:
+      type: object
+      properties:
+        supply:
+          type: number
+        circulatingSupply:
+          type: number
+        balanceBreakdown:
+          type: array
+          items:
+            $ref: '#/components/schemas/BalanceBreakdownDTO'
+      required:
+      - supply
+      - circulatingSupply
+      - balanceBreakdown
+    CollateralPriceInfoDTO:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        ratio:
+          type: number
+        total_dollar_value:
+          type: number
+        decentralization_ratio:
+          type: number
+      required:
+      - blockNum
+      - timestamp
+      - ratio
+      - total_dollar_value
+      - decentralization_ratio
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs

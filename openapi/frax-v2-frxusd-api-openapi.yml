@@ -1,0 +1,225 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge v2-frxusd API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v2-frxusd
+paths:
+  /v2/frxusd/balance-sheet/latest:
+    get:
+      operationId: getFrxusdBalanceSheetLatestData
+      summary: Returns the latest frxUSD balance sheet data
+      description: Returns the latest frxUSD balance sheet data
+      parameters: []
+      responses:
+        '200':
+          description: Returns the latest frxUSD balance sheet data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrxusdBalanceSheetLatestResponse'
+      tags:
+      - v2-frxusd
+  /v2/frxusd/balance-sheet/latest/export:
+    get:
+      operationId: exportFrxusdBalanceSheetLatestData
+      summary: Returns a CSV of the latest frxUSD balance sheet data
+      description: Returns a CSV of the latest frxUSD balance sheet data
+      parameters: []
+      responses:
+        '200':
+          description: Returns a CSV of the latest frxUSD balance sheet data
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+      tags:
+      - v2-frxusd
+  /v2/frxusd/summary-stats/latest:
+    get:
+      operationId: getLatestFrxusdSummaryData
+      summary: Get the latest frxUSD summary data.
+      description: Get the latest frxUSD summary data.
+      parameters: []
+      responses:
+        '200':
+          description: Get the latest frxUSD summary data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrxusdSummaryInfo'
+      tags:
+      - v2-frxusd
+  /v2/frxusd/summary-stats/history:
+    get:
+      operationId: listHistoricalFrxusdSummaryData
+      summary: Returns a list historical frxUSD summary data.
+      description: Returns a list historical frxUSD summary data.
+      parameters:
+      - name: range
+        required: true
+        in: query
+        description: Timeframe
+        schema:
+          enum:
+          - 1d
+          - 7d
+          - 30d
+          - 90d
+          - 180d
+          - 365d
+          - ytd
+          - all
+          type: string
+      responses:
+        '200':
+          description: Returns a list historical frxUSD summary data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrxusdSummaryInfoResponse'
+      tags:
+      - v2-frxusd
+components:
+  schemas:
+    FrxusdSummaryInfo:
+      type: object
+      properties:
+        intervalTimestamp:
+          format: date-time
+          type: string
+        blockNumberEthereum:
+          type: number
+        blockNumberFraxtal:
+          type: number
+        frxusdCirculatingSupply:
+          type: number
+        frxusdTotalSupply:
+          type: number
+        frxusdPrice:
+          type: number
+      required:
+      - intervalTimestamp
+      - blockNumberEthereum
+      - blockNumberFraxtal
+      - frxusdCirculatingSupply
+      - frxusdTotalSupply
+      - frxusdPrice
+    FrxusdBalanceSheetLatestResponse:
+      type: object
+      properties:
+        asOfBlock:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        asOfTimestamp:
+          format: date-time
+          type: string
+        tokenPriceUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        totalAssets:
+          type: number
+        totalLiabilities:
+          type: number
+        assets:
+          description: List of frxUSD balance sheet assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdBalanceSheetItem'
+        liabilities:
+          description: List of frxUSD balance sheet liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdBalanceSheetItem'
+      required:
+      - asOfBlock
+      - asOfTimestamp
+      - tokenPriceUsd
+      - totalAssets
+      - totalLiabilities
+      - assets
+      - liabilities
+    FrxusdBalanceSheetItem:
+      type: object
+      properties:
+        category:
+          type: string
+        chain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - base
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - linea
+          - mantle
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - scroll
+          - sonic
+          - solana
+          - stable
+          - zksync
+        address:
+          type: string
+        contractAddress:
+          type: string
+        tokenAddress:
+          type: string
+        tokenSymbol:
+          type: string
+        totalValueUsd:
+          type: number
+        tokenQuantity:
+          type: number
+        tokenQuantityE18:
+          type: string
+        description:
+          type: string
+      required:
+      - category
+      - chain
+      - address
+      - contractAddress
+      - tokenAddress
+      - tokenSymbol
+      - totalValueUsd
+      - tokenQuantity
+      - tokenQuantityE18
+      - description
+    FrxusdSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of frxUSD summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdSummaryInfo'
+      required:
+      - items
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs

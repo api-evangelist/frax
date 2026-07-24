@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v1-gauge
+paths:
+  /v1/gauge/info:
+    get:
+      operationId: V1Controller_getGaugeInfo
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GaugeSlice'
+      tags:
+      - v1-gauge
+  /v1/gauge/voter-info/{address}:
+    get:
+      operationId: V1Controller_getGaugeVoterInfo
+      parameters:
+      - name: address
+        required: true
+        in: path
+        description: Address
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GaugeVoterInfoResponse'
+      tags:
+      - v1-gauge
+components:
+  schemas:
+    GaugeSlice:
+      type: object
+      properties:
+        name:
+          type: string
+        gauge_index:
+          type: number
+        address:
+          type: string
+        gauge_weight:
+          type: string
+        relative_weight_now_raw:
+          type: string
+        relative_weight_now_pct:
+          type: number
+        relative_weight_next_raw:
+          type: string
+        relative_weight_next_pct:
+          type: number
+        fxs_now:
+          type: number
+        fxs_next:
+          type: number
+      required:
+      - name
+      - gauge_index
+      - address
+      - gauge_weight
+      - relative_weight_now_raw
+      - relative_weight_now_pct
+      - relative_weight_next_raw
+      - relative_weight_next_pct
+      - fxs_now
+      - fxs_next
+    GaugeVoteDTO:
+      type: object
+      properties:
+        gauge_address:
+          type: string
+        gauge_name:
+          type: string
+        vefxs_represented:
+          type: number
+        weight:
+          type: number
+        weight_pct:
+          type: number
+        last_vote_timestamp:
+          type: number
+      required:
+      - gauge_address
+      - gauge_name
+      - vefxs_represented
+      - weight
+      - weight_pct
+      - last_vote_timestamp
+    GaugeVoterInfoResponse:
+      type: object
+      properties:
+        address:
+          type: string
+        votes:
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeVoteDTO'
+        pct_weight_used:
+          type: number
+      required:
+      - address
+      - votes
+      - pct_weight_used
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs

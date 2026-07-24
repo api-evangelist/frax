@@ -1,0 +1,233 @@
+openapi: 3.0.0
+info:
+  title: Frax Finance v1-gauge v1-protocol API
+  description: The Frax Finance API
+  version: '1.0'
+  contact:
+    name: Frax Finance
+    url: https://docs.frax.finance
+    email: no-reply@frax.finance
+servers:
+- url: https://api.frax.finance
+tags:
+- name: v1-protocol
+paths:
+  /v1/amodata_v2/amo-allocations:
+    get:
+      operationId: V1Controller_getAMOAllocations
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AMOAllocationsResponse'
+      tags:
+      - v1-protocol
+  /v1/amodata_v2/{filter}:
+    get:
+      operationId: V1Controller_getAMOData
+      parameters:
+      - name: filter
+        required: true
+        in: path
+        description: Timeframe
+        schema:
+          enum:
+          - all-time
+          - 1-year
+          - 6-months
+          - 3-months
+          - 1-month
+          - 1-week
+          - 1-day
+          - 8-hours
+          - 1-hour
+          - 15-minutes
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AMODataResponse'
+      tags:
+      - v1-protocol
+  /v1/collateraldata/{filter}:
+    get:
+      operationId: V1Controller_getCollateralData
+      parameters:
+      - name: filter
+        required: true
+        in: path
+        description: Timeframe
+        schema:
+          enum:
+          - all-time
+          - 1-year
+          - 6-months
+          - 3-months
+          - 1-month
+          - 1-week
+          - 1-day
+          - 8-hours
+          - 1-hour
+          - 15-minutes
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollateralDataResponse'
+      tags:
+      - v1-protocol
+  /v1/combineddata:
+    get:
+      operationId: V1Controller_getCombinedData
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CombinedDataResponse'
+      tags:
+      - v1-protocol
+components:
+  schemas:
+    AMODataItemV2:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        version:
+          type: number
+        curve:
+          type: object
+        investor:
+          type: object
+        lending:
+          type: object
+        liquidity:
+          type: object
+        combined:
+          type: object
+      required:
+      - blockNum
+      - timestamp
+      - version
+      - curve
+      - investor
+      - lending
+      - liquidity
+      - combined
+    AMOAllocationsResponse:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        curve:
+          type: object
+        investor:
+          type: object
+        lending:
+          type: object
+        liquidity:
+          type: object
+        combined:
+          type: object
+      required:
+      - blockNum
+      - timestamp
+      - curve
+      - investor
+      - lending
+      - liquidity
+      - combined
+    ChartJSDataPackV2:
+      type: object
+      properties:
+        curve:
+          type: object
+        investor:
+          type: object
+        lending:
+          type: object
+        liquidity:
+          type: object
+        combined:
+          type: object
+      required:
+      - curve
+      - investor
+      - lending
+      - liquidity
+      - combined
+    PriceHistoryPack:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollateralItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
+    CombinedDataResponse:
+      type: object
+      properties: {}
+    CollateralDataResponse:
+      type: object
+      properties:
+        history:
+          $ref: '#/components/schemas/PriceHistoryPack'
+        pie_data:
+          type: object
+      required:
+      - history
+      - pie_data
+    CollateralItem:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        decentralization_ratio:
+          type: number
+        ratio:
+          type: number
+        total_dollar_value:
+          type: number
+      required:
+      - blockNum
+      - timestamp
+      - decentralization_ratio
+      - ratio
+      - total_dollar_value
+    AMODataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AMODataItemV2'
+        chartjs:
+          $ref: '#/components/schemas/ChartJSDataPackV2'
+      required:
+      - full_items
+      - chartjs
+externalDocs:
+  description: Open V2 Docs
+  url: /v2/docs
