@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-frax API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-frax",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns the latest FRAX balance sheet data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frax/balance-sheet/latest"
+          },
+          "docs": "Returns the latest FRAX balance sheet data"
+        },
+        {
+          "info": {
+            "name": "Returns a CSV of the latest FRAX balance sheet data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frax/balance-sheet/latest/export"
+          },
+          "docs": "Returns a CSV of the latest FRAX balance sheet data"
+        },
+        {
+          "info": {
+            "name": "Get the latest sFRAX summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frax/sfrax/summary/latest"
+          },
+          "docs": "Get the latest sFRAX summary data."
+        },
+        {
+          "info": {
+            "name": "Returns a list historical sFRAX summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frax/sfrax/summary/history",
+            "params": [
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          },
+          "docs": "Returns a list historical sFRAX summary data."
+        },
+        {
+          "info": {
+            "name": "Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frax/user/:userAddress/sfrax-summary",
+            "params": [
+              {
+                "name": "userAddress",
+                "value": "0x5180db0237291A6449DdA9ed33aD90a38787621c",
+                "type": "path",
+                "description": "The hex address of the user. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns all-time sFRAX gains, profit, etc and the latest balance info for the user."
+        },
+        {
+          "info": {
+            "name": "Get the daily sFRAX earnings for a user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frax/user/:userAddress/sfrax-daily-earnings",
+            "params": [
+              {
+                "name": "userAddress",
+                "value": "0x5180db0237291A6449DdA9ed33aD90a38787621c",
+                "type": "path",
+                "description": "The hex address of the user. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Get the daily sFRAX earnings for a user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

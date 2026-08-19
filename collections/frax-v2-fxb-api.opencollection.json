@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-fxb API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-fxb",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V2FxbController_getAuctions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fxb/auctions"
+          }
+        },
+        {
+          "info": {
+            "name": "V2FxbController_getBonds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fxb/bonds",
+            "params": [
+              {
+                "name": "showAll",
+                "value": "",
+                "type": "query",
+                "description": "By default, only the main FXB AMO auction bonds are shown. Set `showAll=true` to show all bonds, including those with no supply."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "V2FxbController_getBondForMaturityDate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fxb/bonds/:maturityDate",
+            "params": [
+              {
+                "name": "maturityDate",
+                "value": "",
+                "type": "path",
+                "description": "The maturity date of the FXB in yyyy-MM-dd format"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "V2FxbController_getBondAuctionDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fxb/bonds/:maturityDate/auctions/:auctionNumber",
+            "params": [
+              {
+                "name": "maturityDate",
+                "value": "",
+                "type": "path",
+                "description": "The maturity date of the FXB in yyyy-MM-dd format"
+              },
+              {
+                "name": "auctionNumber",
+                "value": "",
+                "type": "path",
+                "description": "The auction number/index"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "V2FxbController_getFxbSummaryHistory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fxb/summary/history",
+            "params": [
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "V2FxbController_getFxbRecentAuctionTransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fxb/recent-transactions"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,533 @@
+{
+  "item": [
+    {
+      "id": "bf2fd0cc-c24a-4ae4-b1fa-bfc40c3d9a84",
+      "name": "v2-fxb",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "82d54bed-d595-4565-bd93-21a6f36cc9b7",
+          "name": "V2Fxb Controller get Auctions",
+          "request": {
+            "name": "V2Fxb Controller get Auctions",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "fxb",
+                "auctions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5af4945b-a90a-4dde-92fb-2dd803073cb2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fxb",
+                    "auctions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"auctions\": [\n    {\n      \"auctionAddress\": \"string\",\n      \"auctionOwnerAddress\": \"string\",\n      \"auctionNumber\": 5604.320471545748,\n      \"auctionStartTimestamp\": \"1955-05-20T18:38:14.678Z\",\n      \"auctionExpiryTimestamp\": \"2002-11-21T09:06:01.498Z\",\n      \"auctionEndTimestamp\": \"1967-12-13T22:08:51.609Z\",\n      \"totalSellAmount\": 77.58578741099531,\n      \"sellAmountRemaining\": 7561.9822714246,\n      \"totalAmountSold\": 2675.240986294264,\n      \"totalAmountCollected\": 5066.917357838632,\n      \"startPrice\": 4375.4977210954185,\n      \"currentPrice\": 5314.548487081114,\n      \"priceDecay\": \"string\",\n      \"minPrice\": 9057.072382508555,\n      \"priceSlippage\": \"string\",\n      \"buyTokenAddress\": \"string\",\n      \"currentMinYieldToMaturity\": 1814.7429515920132,\n      \"currentMaxYieldToMaturity\": 4656.837159026439,\n      \"hasExpired\": true,\n      \"hasEnded\": false,\n      \"bond\": {\n        \"id\": 5254.125347608012,\n        \"chain\": \"ethereum\",\n        \"symbol\": \"string\",\n        \"name\": \"string\",\n        \"address\": \"string\",\n        \"createdTimestamp\": \"1956-02-25T04:14:08.900Z\",\n        \"maturityTimestamp\": \"1968-09-16T11:37:03.868Z\",\n        \"maturity\": \"string\",\n        \"factoryAddress\": \"string\"\n      }\n    },\n    {\n      \"auctionAddress\": \"string\",\n      \"auctionOwnerAddress\": \"string\",\n      \"auctionNumber\": 3185.518671020019,\n      \"auctionStartTimestamp\": \"1963-08-15T09:37:53.817Z\",\n      \"auctionExpiryTimestamp\": \"2017-09-13T08:04:58.569Z\",\n      \"auctionEndTimestamp\": \"2000-08-25T19:22:40.008Z\",\n      \"totalSellAmount\": 3927.1732684127082,\n      \"sellAmountRemaining\": 9358.083919191231,\n      \"totalAmountSold\": 4502.422977682161,\n      \"totalAmountCollected\": 4310.640312124427,\n      \"startPrice\": 7356.642611447538,\n      \"currentPrice\": 3944.9309993373804,\n      \"priceDecay\": \"string\",\n      \"minPrice\": 3842.105677041221,\n      \"priceSlippage\": \"string\",\n      \"buyTokenAddress\": \"string\",\n      \"currentMinYieldToMaturity\": 861.9175732395579,\n      \"currentMaxYieldToMaturity\": 8898.481420824719,\n      \"hasExpired\": false,\n      \"hasEnded\": false,\n      \"bond\": {\n        \"id\": 30.648887590412066,\n        \"chain\": \"fraxtal\",\n        \"symbol\": \"string\",\n        \"name\": \"string\",\n        \"address\": \"string\",\n        \"createdTimestamp\": \"1949-11-23T22:23:14.801Z\",\n        \"maturityTimestamp\": \"2016-10-20T17:17:37.785Z\",\n        \"maturity\": \"string\",\n        \"factoryAddress\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2749ecac-90a6-45f7-9a60-d59fe6dc4891",
+          "name": "V2Fxb Controller get Bonds",
+          "request": {
+            "name": "V2Fxb Controller get Bonds",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "fxb",
+                "bonds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "showAll",
+                  "value": "",
+                  "description": "By default, only the main FXB AMO auction bonds are shown. Set `showAll=true` to show all bonds, including those with no supply."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "821fb22c-0ab6-4d11-94e4-8837e9a7bc36",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fxb",
+                    "bonds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "showAll",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bonds\": [\n    {\n      \"id\": 9400.180818213033,\n      \"chain\": \"ethereum\",\n      \"symbol\": \"string\",\n      \"name\": \"string\",\n      \"address\": \"string\",\n      \"createdTimestamp\": \"1991-02-03T01:23:46.347Z\",\n      \"maturityTimestamp\": \"1958-10-31T03:07:36.834Z\",\n      \"maturity\": \"string\",\n      \"factoryAddress\": \"string\"\n    },\n    {\n      \"id\": 5024.096193263993,\n      \"chain\": \"fraxtal\",\n      \"symbol\": \"string\",\n      \"name\": \"string\",\n      \"address\": \"string\",\n      \"createdTimestamp\": \"1983-01-07T11:33:35.351Z\",\n      \"maturityTimestamp\": \"2016-12-29T00:00:34.545Z\",\n      \"maturity\": \"string\",\n      \"factoryAddress\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d07a5d9-d1f2-474e-b139-766db55f3302",
+          "name": "V2Fxb Controller get Bond For Maturity Date",
+          "request": {
+            "name": "V2Fxb Controller get Bond For Maturity Date",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "fxb",
+                "bonds",
+                ":maturityDate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "maturityDate",
+                  "description": "(Required) The maturity date of the FXB in yyyy-MM-dd format"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "875f3992-9b22-48a4-8d0d-ff26e942031c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fxb",
+                    "bonds",
+                    ":maturityDate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "maturityDate",
+                      "description": "(Required) The maturity date of the FXB in yyyy-MM-dd format"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fxb\": {\n    \"id\": 9259.123320826926,\n    \"chain\": \"fraxtal\",\n    \"symbol\": \"string\",\n    \"name\": \"string\",\n    \"address\": \"string\",\n    \"createdTimestamp\": \"2020-12-12T02:35:39.049Z\",\n    \"maturityTimestamp\": \"1965-07-17T01:29:13.412Z\",\n    \"maturity\": \"string\",\n    \"factoryAddress\": \"string\"\n  },\n  \"auctions\": [\n    {\n      \"auctionAddress\": \"string\",\n      \"auctionOwnerAddress\": \"string\",\n      \"auctionNumber\": 795.4185429409777,\n      \"auctionStartTimestamp\": \"1970-08-18T14:55:44.861Z\",\n      \"auctionExpiryTimestamp\": \"2013-12-13T00:34:32.025Z\",\n      \"auctionEndTimestamp\": \"1987-02-06T10:13:21.418Z\",\n      \"totalSellAmount\": 3411.788084126338,\n      \"sellAmountRemaining\": 7266.588347521344,\n      \"totalAmountSold\": 3439.3669842274144,\n      \"totalAmountCollected\": 54.52843777474903,\n      \"startPrice\": 3614.7801965484236,\n      \"currentPrice\": 996.2468862238893,\n      \"priceDecay\": \"string\",\n      \"minPrice\": 7563.727190026297,\n      \"priceSlippage\": \"string\",\n      \"buyTokenAddress\": \"string\",\n      \"currentMinYieldToMaturity\": 6183.263975766138,\n      \"currentMaxYieldToMaturity\": 2282.1757940933417,\n      \"hasExpired\": true,\n      \"hasEnded\": true\n    },\n    {\n      \"auctionAddress\": \"string\",\n      \"auctionOwnerAddress\": \"string\",\n      \"auctionNumber\": 178.5673474224725,\n      \"auctionStartTimestamp\": \"2016-01-22T17:33:38.101Z\",\n      \"auctionExpiryTimestamp\": \"1993-05-21T03:08:33.010Z\",\n      \"auctionEndTimestamp\": \"1997-05-24T20:16:19.126Z\",\n      \"totalSellAmount\": 2273.6295731278688,\n      \"sellAmountRemaining\": 7100.579648301211,\n      \"totalAmountSold\": 9575.55712597548,\n      \"totalAmountCollected\": 7801.193124913747,\n      \"startPrice\": 5762.654313769939,\n      \"currentPrice\": 2257.647119929487,\n      \"priceDecay\": \"string\",\n      \"minPrice\": 6052.551490651968,\n      \"priceSlippage\": \"string\",\n      \"buyTokenAddress\": \"string\",\n      \"currentMinYieldToMaturity\": 9837.26887056581,\n      \"currentMaxYieldToMaturity\": 4253.729567224581,\n      \"hasExpired\": true,\n      \"hasEnded\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62154a5b-f4ac-47be-bf89-9aa3656e7586",
+          "name": "V2Fxb Controller get Bond Auction Details",
+          "request": {
+            "name": "V2Fxb Controller get Bond Auction Details",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "fxb",
+                "bonds",
+                ":maturityDate",
+                "auctions",
+                ":auctionNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "maturityDate",
+                  "description": "(Required) The maturity date of the FXB in yyyy-MM-dd format"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "auctionNumber",
+                  "description": "(Required) The auction number/index"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e5e2e55b-2172-4c07-bbfe-70fef2c7d5b8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fxb",
+                    "bonds",
+                    ":maturityDate",
+                    "auctions",
+                    ":auctionNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "maturityDate",
+                      "description": "(Required) The maturity date of the FXB in yyyy-MM-dd format"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "auctionNumber",
+                      "description": "(Required) The auction number/index"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fxb\": {\n    \"id\": 8371.57585166275,\n    \"chain\": \"fraxtal\",\n    \"symbol\": \"string\",\n    \"name\": \"string\",\n    \"address\": \"string\",\n    \"createdTimestamp\": \"1994-06-16T05:55:09.179Z\",\n    \"maturityTimestamp\": \"1971-10-07T21:25:47.794Z\",\n    \"maturity\": \"string\",\n    \"factoryAddress\": \"string\"\n  },\n  \"auction\": {\n    \"auctionAddress\": \"string\",\n    \"auctionOwnerAddress\": \"string\",\n    \"auctionNumber\": 3360.0876988151153,\n    \"auctionStartTimestamp\": \"1971-02-16T16:13:58.803Z\",\n    \"auctionExpiryTimestamp\": \"2001-05-01T08:33:13.972Z\",\n    \"auctionEndTimestamp\": \"1967-09-25T05:12:09.445Z\",\n    \"totalSellAmount\": 8354.663110025069,\n    \"sellAmountRemaining\": 2259.648634777914,\n    \"totalAmountSold\": 7596.534122793055,\n    \"totalAmountCollected\": 2502.567178776649,\n    \"startPrice\": 724.8843567636765,\n    \"currentPrice\": 1429.8523097195991,\n    \"priceDecay\": \"string\",\n    \"minPrice\": 9605.17935115693,\n    \"priceSlippage\": \"string\",\n    \"buyTokenAddress\": \"string\",\n    \"currentMinYieldToMaturity\": 6104.673735086039,\n    \"currentMaxYieldToMaturity\": 1608.03400197448,\n    \"hasExpired\": true,\n    \"hasEnded\": false\n  },\n  \"transactions\": [\n    {\n      \"transactionHash\": \"string\",\n      \"transactionTimestamp\": \"string\",\n      \"auctionAddress\": \"string\",\n      \"auctionNumber\": 3921.4758051580443,\n      \"tokenBuyAmount\": 7104.079441609447,\n      \"tokenSellAmount\": 9359.057929972381,\n      \"bondSymbol\": \"string\",\n      \"bondAddress\": \"string\",\n      \"senderAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"lastPrice\": 7276.959907107088,\n      \"slippagePerSellToken\": 4114.331529271569,\n      \"chain\": \"ethereum\",\n      \"txIdx\": 4370.032879616087,\n      \"logIdx\": 824.7464857822384\n    },\n    {\n      \"transactionHash\": \"string\",\n      \"transactionTimestamp\": \"string\",\n      \"auctionAddress\": \"string\",\n      \"auctionNumber\": 9891.574961140459,\n      \"tokenBuyAmount\": 1104.374504604244,\n      \"tokenSellAmount\": 9878.17823263194,\n      \"bondSymbol\": \"string\",\n      \"bondAddress\": \"string\",\n      \"senderAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"lastPrice\": 9061.258960418805,\n      \"slippagePerSellToken\": 184.4632127779877,\n      \"chain\": \"ethereum\",\n      \"txIdx\": 5797.719298821486,\n      \"logIdx\": 5041.557677954367\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4cfeeb99-53f0-4ad6-8a4f-31670e90909c",
+          "name": "V2Fxb Controller get Fxb Summary History",
+          "request": {
+            "name": "V2Fxb Controller get Fxb Summary History",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "fxb",
+                "summary",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07aafedd-648a-4c75-81ec-629fa323e898",
+              "name": "Returns a list of Fraxbond price history for the requested range.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fxb",
+                    "summary",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fxbs\": [\n    \"string\",\n    \"string\"\n  ],\n  \"items\": [\n    {\n      \"timestampISO\": \"1950-04-29T02:14:43.387Z\",\n      \"fxbData\": {\n        \"key_0\": {\n          \"price\": 8093.214162874816,\n          \"ytm\": 4498.890624057282,\n          \"circulatingSupply\": 5791.279652120515,\n          \"totalSupply\": 5472.158878232526\n        }\n      }\n    },\n    {\n      \"timestampISO\": \"1996-07-08T12:13:08.837Z\",\n      \"fxbData\": {\n        \"key_0\": {\n          \"price\": 2101.700265024379,\n          \"ytm\": 3740.5226770893696,\n          \"circulatingSupply\": 38.72827064334228,\n          \"totalSupply\": 9182.12625958654\n        }\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db505505-5e8a-4ca3-a0e2-84618c123937",
+          "name": "V2Fxb Controller get Fxb Recent Auction Transactions",
+          "request": {
+            "name": "V2Fxb Controller get Fxb Recent Auction Transactions",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "fxb",
+                "recent-transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7dd7812d-135f-43b6-ae8e-1635913d6670",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fxb",
+                    "recent-transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"transactionHash\": \"string\",\n      \"transactionTimestamp\": \"string\",\n      \"auctionAddress\": \"string\",\n      \"auctionNumber\": 6412.445019333404,\n      \"tokenBuyAmount\": 5899.246341276639,\n      \"tokenSellAmount\": 6463.177957136665,\n      \"bondSymbol\": \"string\",\n      \"bondAddress\": \"string\",\n      \"senderAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"lastPrice\": 4030.503748763826,\n      \"slippagePerSellToken\": 8515.95354979843,\n      \"chain\": \"ethereum\",\n      \"txIdx\": 1232.1765741639513,\n      \"logIdx\": 1785.329581125007\n    },\n    {\n      \"transactionHash\": \"string\",\n      \"transactionTimestamp\": \"string\",\n      \"auctionAddress\": \"string\",\n      \"auctionNumber\": 8349.859604463045,\n      \"tokenBuyAmount\": 9575.489873637733,\n      \"tokenSellAmount\": 9049.846287089851,\n      \"bondSymbol\": \"string\",\n      \"bondAddress\": \"string\",\n      \"senderAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"lastPrice\": 5173.921305420335,\n      \"slippagePerSellToken\": 271.2062701892726,\n      \"chain\": \"ethereum\",\n      \"txIdx\": 9367.187170593163,\n      \"logIdx\": 3495.3661754858067\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "44937f2f-290a-450a-840f-15cba10f942e",
+    "name": "Frax Finance v1-gauge v2-fxb API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

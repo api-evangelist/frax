@@ -1,0 +1,537 @@
+{
+  "item": [
+    {
+      "id": "1ad2c382-861f-4a4e-9674-dbf5f3964cd3",
+      "name": "v1-staking",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7abe329b-f820-4eaa-983f-ca37849c8ab3",
+          "name": "Returns locked stake data for a token.",
+          "request": {
+            "name": "Returns locked stake data for a token.",
+            "description": {
+              "content": "Returns locked stake data for a token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "lockedstakedata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"token\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "813b0a86-0300-4a38-98cd-e881d3c87555",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "lockedstakedata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\",\n  \"unlocked_sum\": 8178.902942384384,\n  \"locked_sum\": 9131.837918838746,\n  \"buckets\": [\n    {\n      \"_id\": \"string\",\n      \"count\": 2428.349941922934,\n      \"total\": 8341.891906568673\n    },\n    {\n      \"_id\": \"string\",\n      \"count\": 993.9218218954815,\n      \"total\": 2944.0773737991144\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8480315a-1aed-4a41-b601-3f615f6de3cc",
+          "name": "V1Controller get Pools",
+          "request": {
+            "name": "V1Controller get Pools",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "pools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7041ce10-213c-44b5-8167-f4132507c08f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "pools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"chain\": \"string\",\n    \"platform\": \"string\",\n    \"pair\": \"string\",\n    \"pairLink\": \"string\",\n    \"logo\": \"string\",\n    \"pool_tokens\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pool_rewards\": [\n      \"string\",\n      \"string\"\n    ],\n    \"liquidity_locked\": 2234.4826164278884,\n    \"apy\": 6594.346957440085,\n    \"apy_max\": 8062.484140124086,\n    \"is_deprecated\": false,\n    \"is_stale\": false,\n    \"lp_address\": \"string\",\n    \"farm_address\": \"string\",\n    \"reward_breakdown\": {\n      \"fees\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 1136.0811034693074,\n          \"apr_max_pct\": 1945.2123519114639,\n          \"lp_price\": 6216.470593461851,\n          \"avg_lp_per_day\": 6823.039509267625,\n          \"avg_volume_per_day_usd\": 571.7218873240315,\n          \"avg_provider_fees_per_day_usd\": 675.3630287959511\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 4545.516312193751,\n          \"apr_max_pct\": 6268.124073348157,\n          \"lp_price\": 2300.131923834674,\n          \"avg_lp_per_day\": 8451.097983456108,\n          \"avg_volume_per_day_usd\": 1433.213641557045,\n          \"avg_provider_fees_per_day_usd\": 9195.077488445999\n        }\n      ],\n      \"tokens\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 4721.530702835948,\n          \"apr_max_pct\": 2877.762252668252,\n          \"token_price\": 3188.0349281682606,\n          \"tokens_per_day\": 1140.6742897191791,\n          \"usd_val_per_day\": 6944.945872605493\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 1720.190809084219,\n          \"apr_max_pct\": 5457.214913398584,\n          \"token_price\": 6293.575506915962,\n          \"tokens_per_day\": 6537.047183022227,\n          \"usd_val_per_day\": 3713.1918966488042\n        }\n      ]\n    }\n  },\n  {\n    \"identifier\": \"string\",\n    \"chain\": \"string\",\n    \"platform\": \"string\",\n    \"pair\": \"string\",\n    \"pairLink\": \"string\",\n    \"logo\": \"string\",\n    \"pool_tokens\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pool_rewards\": [\n      \"string\",\n      \"string\"\n    ],\n    \"liquidity_locked\": 8810.778065602466,\n    \"apy\": 8449.038133421536,\n    \"apy_max\": 7705.933748771981,\n    \"is_deprecated\": true,\n    \"is_stale\": true,\n    \"lp_address\": \"string\",\n    \"farm_address\": \"string\",\n    \"reward_breakdown\": {\n      \"fees\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 6523.047699064722,\n          \"apr_max_pct\": 5123.715663771202,\n          \"lp_price\": 411.7478665604113,\n          \"avg_lp_per_day\": 5224.334776415559,\n          \"avg_volume_per_day_usd\": 2032.0993558609946,\n          \"avg_provider_fees_per_day_usd\": 9537.043669543276\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 9743.303780917975,\n          \"apr_max_pct\": 775.144611777373,\n          \"lp_price\": 8407.967596684472,\n          \"avg_lp_per_day\": 1428.5613620759807,\n          \"avg_volume_per_day_usd\": 1144.3761068073643,\n          \"avg_provider_fees_per_day_usd\": 4240.486684804962\n        }\n      ],\n      \"tokens\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 660.6466123179455,\n          \"apr_max_pct\": 9540.253074509019,\n          \"token_price\": 9396.592881977773,\n          \"tokens_per_day\": 449.0354234591287,\n          \"usd_val_per_day\": 3888.680158379457\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 7505.114160435601,\n          \"apr_max_pct\": 2124.5821673517385,\n          \"token_price\": 3273.1106803580833,\n          \"tokens_per_day\": 239.20115163703514,\n          \"usd_val_per_day\": 9611.75031367553\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7805f12f-43f3-464a-b4cd-4cd227a6df42",
+          "name": "V1Controller get Pool By Farm Address",
+          "request": {
+            "name": "V1Controller get Pool By Farm Address",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "pools",
+                ":farmAddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "farmAddress",
+                  "description": "(Required) The hex address of the farm. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49d5fb05-891b-4704-870e-8298776d55ef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "pools",
+                    ":farmAddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "farmAddress",
+                      "description": "(Required) The hex address of the farm. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"chain\": \"string\",\n    \"platform\": \"string\",\n    \"pair\": \"string\",\n    \"pairLink\": \"string\",\n    \"logo\": \"string\",\n    \"pool_tokens\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pool_rewards\": [\n      \"string\",\n      \"string\"\n    ],\n    \"liquidity_locked\": 5677.926811440216,\n    \"apy\": 9234.91179114136,\n    \"apy_max\": 1024.5912050431439,\n    \"is_deprecated\": false,\n    \"is_stale\": false,\n    \"lp_address\": \"string\",\n    \"farm_address\": \"string\",\n    \"reward_breakdown\": {\n      \"fees\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 2404.0090066771722,\n          \"apr_max_pct\": 4677.688828771697,\n          \"lp_price\": 3993.5961756436723,\n          \"avg_lp_per_day\": 9568.812006007345,\n          \"avg_volume_per_day_usd\": 8864.36142826862,\n          \"avg_provider_fees_per_day_usd\": 3600.538047904374\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 4046.6824757591567,\n          \"apr_max_pct\": 1784.8532322573408,\n          \"lp_price\": 9720.847411992683,\n          \"avg_lp_per_day\": 5989.641628168893,\n          \"avg_volume_per_day_usd\": 2312.0641622495095,\n          \"avg_provider_fees_per_day_usd\": 7305.651010185813\n        }\n      ],\n      \"tokens\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 5556.267417095105,\n          \"apr_max_pct\": 228.30153998927295,\n          \"token_price\": 1766.9570817018698,\n          \"tokens_per_day\": 3040.54807440704,\n          \"usd_val_per_day\": 2868.9512548605167\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 4053.138067940979,\n          \"apr_max_pct\": 3328.2159644589206,\n          \"token_price\": 3925.1233475505987,\n          \"tokens_per_day\": 3744.8287069895227,\n          \"usd_val_per_day\": 9154.691727272986\n        }\n      ]\n    }\n  },\n  {\n    \"identifier\": \"string\",\n    \"chain\": \"string\",\n    \"platform\": \"string\",\n    \"pair\": \"string\",\n    \"pairLink\": \"string\",\n    \"logo\": \"string\",\n    \"pool_tokens\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pool_rewards\": [\n      \"string\",\n      \"string\"\n    ],\n    \"liquidity_locked\": 6048.170317412232,\n    \"apy\": 206.45194069507932,\n    \"apy_max\": 1557.8145550879085,\n    \"is_deprecated\": false,\n    \"is_stale\": true,\n    \"lp_address\": \"string\",\n    \"farm_address\": \"string\",\n    \"reward_breakdown\": {\n      \"fees\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 5537.888826216303,\n          \"apr_max_pct\": 1178.5556597784241,\n          \"lp_price\": 1329.1040377340203,\n          \"avg_lp_per_day\": 2036.6350657126786,\n          \"avg_volume_per_day_usd\": 2746.4095489181027,\n          \"avg_provider_fees_per_day_usd\": 6963.911073589861\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 8475.13377721308,\n          \"apr_max_pct\": 6953.647380571848,\n          \"lp_price\": 1709.0451232493597,\n          \"avg_lp_per_day\": 5917.077635869729,\n          \"avg_volume_per_day_usd\": 307.9513075982521,\n          \"avg_provider_fees_per_day_usd\": 4755.459262679165\n        }\n      ],\n      \"tokens\": [\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 2055.4109547050757,\n          \"apr_max_pct\": 5664.406582478332,\n          \"token_price\": 7712.383370902292,\n          \"tokens_per_day\": 296.4492903982829,\n          \"usd_val_per_day\": 4701.784482234639\n        },\n        {\n          \"symbol\": \"string\",\n          \"display_name\": \"string\",\n          \"apr_min_pct\": 7790.734768688448,\n          \"apr_max_pct\": 4542.613234493671,\n          \"token_price\": 5818.110320671858,\n          \"tokens_per_day\": 9968.800349272196,\n          \"usd_val_per_day\": 5898.065620236761\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e79369c2-a428-4b76-a75f-61b5c111ecf8",
+          "name": "Returns stake data for a token and timeframe.",
+          "request": {
+            "name": "Returns stake data for a token and timeframe.",
+            "description": {
+              "content": "Returns stake data for a token and timeframe.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "stakedata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"token\": \"<string>\",\n  \"filter\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "91bc036a-b01c-46de-9719-fe675ea1a073",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "stakedata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"token\": \"<string>\",\n  \"filter\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"full_items\": [\n    {\n      \"blockNum\": 3331.896042937702,\n      \"timestamp\": 3428.556456766968,\n      \"token\": \"string\",\n      \"supply\": 7512.543662045174,\n      \"boosted_supply\": 3871.564838109416,\n      \"lp_price\": 6763.867245518744,\n      \"lp_token_supply\": 9647.719197594985,\n      \"tvl\": 3233.5484808278093,\n      \"reward_value_usd\": 1612.7080267632944,\n      \"reward_duration\": 518.6179633679167,\n      \"apy\": 4428.214024494842,\n      \"apy_max\": 8615.963342464596,\n      \"is_stale\": true,\n      \"reward_breakdown\": {\n        \"fees\": [\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 2223.2296310380207,\n            \"apr_max_pct\": 9295.997822253637,\n            \"lp_price\": 1872.1026174236333,\n            \"avg_lp_per_day\": 7769.311828641472,\n            \"avg_volume_per_day_usd\": 3373.3246370116344,\n            \"avg_provider_fees_per_day_usd\": 4268.772223715454\n          },\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 1620.9024928600447,\n            \"apr_max_pct\": 6973.868666000688,\n            \"lp_price\": 4938.133746298336,\n            \"avg_lp_per_day\": 1739.1218378854878,\n            \"avg_volume_per_day_usd\": 8831.998292735847,\n            \"avg_provider_fees_per_day_usd\": 3330.1142133384587\n          }\n        ],\n        \"tokens\": [\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 9007.439617256206,\n            \"apr_max_pct\": 1202.3930476004275,\n            \"token_price\": 786.8488578214639,\n            \"tokens_per_day\": 2883.2128951109694,\n            \"usd_val_per_day\": 7580.645184106675\n          },\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 1072.4329614722506,\n            \"apr_max_pct\": 1340.1387176598855,\n            \"token_price\": 4980.473705884907,\n            \"tokens_per_day\": 9331.35008965071,\n            \"usd_val_per_day\": 5521.2970225047675\n          }\n        ]\n      }\n    },\n    {\n      \"blockNum\": 2983.3116382101643,\n      \"timestamp\": 7767.480397874909,\n      \"token\": \"string\",\n      \"supply\": 5202.813627654978,\n      \"boosted_supply\": 862.9673274467887,\n      \"lp_price\": 4967.743893070532,\n      \"lp_token_supply\": 8279.475087022556,\n      \"tvl\": 8958.40124567937,\n      \"reward_value_usd\": 1235.5950705938867,\n      \"reward_duration\": 2832.0523109161745,\n      \"apy\": 7456.451506465436,\n      \"apy_max\": 5157.317570028235,\n      \"is_stale\": false,\n      \"reward_breakdown\": {\n        \"fees\": [\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 2548.5510394110565,\n            \"apr_max_pct\": 664.1895907155948,\n            \"lp_price\": 5478.929468051044,\n            \"avg_lp_per_day\": 5914.6983835077945,\n            \"avg_volume_per_day_usd\": 7459.216360844048,\n            \"avg_provider_fees_per_day_usd\": 6393.704666838702\n          },\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 6254.301280808744,\n            \"apr_max_pct\": 2350.945319022465,\n            \"lp_price\": 4116.627893876138,\n            \"avg_lp_per_day\": 3389.9397651069216,\n            \"avg_volume_per_day_usd\": 2072.8664226271408,\n            \"avg_provider_fees_per_day_usd\": 93.20028426967441\n          }\n        ],\n        \"tokens\": [\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 9786.898687061826,\n            \"apr_max_pct\": 5777.925407877055,\n            \"token_price\": 7054.586581141368,\n            \"tokens_per_day\": 810.6199878814613,\n            \"usd_val_per_day\": 5881.46511223617\n          },\n          {\n            \"symbol\": \"string\",\n            \"display_name\": \"string\",\n            \"apr_min_pct\": 4692.380315679503,\n            \"apr_max_pct\": 7130.077871872638,\n            \"token_price\": 6820.984007538972,\n            \"tokens_per_day\": 9229.516804190831,\n            \"usd_val_per_day\": 5563.357371440497\n          }\n        ]\n      }\n    }\n  ],\n  \"chartjs\": {\n    \"range\": {\n      \"min\": 3399.0721222643538,\n      \"max\": 5293.22860228303\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1f3ffc4-c8ab-4869-b9d0-94e5f87f818a",
+          "name": "Returns stake choices.",
+          "request": {
+            "name": "Returns stake choices.",
+            "description": {
+              "content": "Returns stake choices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "stakedata",
+                "choices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27ad5212-3cfb-40ae-a9b8-8850168d9f12",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "stakedata",
+                    "choices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"choices\": [\n    {\n      \"key\": \"string\",\n      \"lp_logo\": \"string\",\n      \"slug\": \"string\",\n      \"urlRoute\": \"string\",\n      \"label\": \"string\",\n      \"chain\": \"boba\",\n      \"info_link\": \"string\",\n      \"add_liq_link\": \"string\",\n      \"trade_link\": \"string\",\n      \"farming_link\": \"string\",\n      \"starting_block\": 5653.969863814772,\n      \"pool_tokens\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pair_token0_decimals\": 3535.5733489774343,\n      \"pair_token1_decimals\": 9446.958969893778,\n      \"reward_tokens\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reward_token_decimals\": [\n        7387.484594178751,\n        3791.6589976011737\n      ],\n      \"external_reward_tokens\": [\n        \"string\",\n        \"string\"\n      ],\n      \"external_reward_token_decimals\": [\n        4131.514702160835,\n        6440.145854035054\n      ],\n      \"staking_enabled\": false,\n      \"timelock_enabled\": true,\n      \"vefxs_enabled\": true,\n      \"is_gauged\": true,\n      \"external_contract\": true,\n      \"has_varied_apy\": false,\n      \"reward_token_coingecko_slugs\": [\n        \"string\",\n        \"string\"\n      ],\n      \"external_reward_token_coingecko_slugs\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reward_token_bridge_types\": [\n        \"binFXS\",\n        \"solwormFXS\"\n      ],\n      \"version\": 9165.574594568683,\n      \"governance\": {\n        \"create\": {\n          \"fipId\": \"string\",\n          \"fipHash\": \"string\"\n        },\n        \"kill\": {\n          \"fipId\": \"string\",\n          \"fipHash\": \"string\"\n        }\n      }\n    },\n    {\n      \"key\": \"string\",\n      \"lp_logo\": \"string\",\n      \"slug\": \"string\",\n      \"urlRoute\": \"string\",\n      \"label\": \"string\",\n      \"chain\": \"arbitrum\",\n      \"info_link\": \"string\",\n      \"add_liq_link\": \"string\",\n      \"trade_link\": \"string\",\n      \"farming_link\": \"string\",\n      \"starting_block\": 7087.738180682747,\n      \"pool_tokens\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pair_token0_decimals\": 7279.882730817041,\n      \"pair_token1_decimals\": 336.9499157244049,\n      \"reward_tokens\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reward_token_decimals\": [\n        5731.339853621283,\n        9537.086851840066\n      ],\n      \"external_reward_tokens\": [\n        \"string\",\n        \"string\"\n      ],\n      \"external_reward_token_decimals\": [\n        7466.737370027251,\n        8907.37183727077\n      ],\n      \"staking_enabled\": false,\n      \"timelock_enabled\": false,\n      \"vefxs_enabled\": false,\n      \"is_gauged\": false,\n      \"external_contract\": false,\n      \"has_varied_apy\": false,\n      \"reward_token_coingecko_slugs\": [\n        \"string\",\n        \"string\"\n      ],\n      \"external_reward_token_coingecko_slugs\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reward_token_bridge_types\": [\n        \"polyFRAX\",\n        \"aebFXS\"\n      ],\n      \"version\": 5645.869858328846,\n      \"governance\": {\n        \"create\": {\n          \"fipId\": \"string\",\n          \"fipHash\": \"string\"\n        },\n        \"kill\": {\n          \"fipId\": \"string\",\n          \"fipHash\": \"string\"\n        }\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70e72d94-2519-4c9a-aba1-52b3fa85d1c2",
+          "name": "Returns stake data for a user.",
+          "request": {
+            "name": "Returns stake data for a user.",
+            "description": {
+              "content": "Returns stake data for a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "stakedata",
+                "user-stake-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"the_chain\": \"<string>\",\n  \"staking_choice\": \"<string>\",\n  \"staker_address\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7d205c77-8488-4582-a142-cc290a2ea67e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "stakedata",
+                    "user-stake-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"the_chain\": \"<string>\",\n  \"staking_choice\": \"<string>\",\n  \"staker_address\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lp_token_balance\": 3949.501138488769,\n  \"lp_token_bal_usd\": 5862.508851782923,\n  \"combined_weight\": 3172.6245531215036,\n  \"rewards\": [\n    {\n      \"token\": \"string\",\n      \"chain\": \"string\",\n      \"coingecko_slug\": \"string\",\n      \"price\": 6258.417367095771,\n      \"reward_balance\": 8793.161248710436,\n      \"reward_usd_value\": 7987.714319096387,\n      \"reward_rate\": \"string\"\n    },\n    {\n      \"token\": \"string\",\n      \"chain\": \"string\",\n      \"coingecko_slug\": \"string\",\n      \"price\": 6796.986301655526,\n      \"reward_balance\": 8876.497270364025,\n      \"reward_usd_value\": 7724.734727453496,\n      \"reward_rate\": \"string\"\n    }\n  ],\n  \"external_rewards\": [\n    {\n      \"token\": \"string\",\n      \"chain\": \"string\",\n      \"coingecko_slug\": \"string\",\n      \"price\": 4714.568105908471,\n      \"reward_balance\": 5702.478937357582,\n      \"reward_usd_value\": 3296.346745205754,\n      \"reward_rate\": \"string\"\n    },\n    {\n      \"token\": \"string\",\n      \"chain\": \"string\",\n      \"coingecko_slug\": \"string\",\n      \"price\": 989.3019311920436,\n      \"reward_balance\": 2201.4731645625952,\n      \"reward_usd_value\": 5562.166557282364,\n      \"reward_rate\": \"string\"\n    }\n  ],\n  \"rewards_total_usd_value\": 4983.17112147309,\n  \"unlocked_total\": 7879.451520059803,\n  \"unlocked_total_usd_value\": 3254.3819522539507,\n  \"locked_total\": 4243.019823364155,\n  \"locked_total_usd_value\": 9737.517484824968,\n  \"locked_stakes\": [\n    {\n      \"amount\": \"string\",\n      \"dollar_value\": 9239.951512623407,\n      \"ending_timestamp\": \"string\",\n      \"kek_id\": \"string\",\n      \"liquidity\": \"string\",\n      \"lock_multiplier\": \"string\",\n      \"multiplier\": \"string\",\n      \"start_timestamp\": \"string\",\n      \"tick_lower\": 5652.442970036734,\n      \"tick_upper\": 8644.757691118717,\n      \"token_id\": 6493.707825827668\n    },\n    {\n      \"amount\": \"string\",\n      \"dollar_value\": 1391.253992428686,\n      \"ending_timestamp\": \"string\",\n      \"kek_id\": \"string\",\n      \"liquidity\": \"string\",\n      \"lock_multiplier\": \"string\",\n      \"multiplier\": \"string\",\n      \"start_timestamp\": \"string\",\n      \"tick_lower\": 7353.189314029366,\n      \"tick_upper\": 4690.4737331545675,\n      \"token_id\": 4026.9411580951432\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2e1b06c1-ccde-4ec5-b906-7ad45d537875",
+    "name": "Frax Finance v1-gauge v1-staking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

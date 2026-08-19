@@ -1,0 +1,542 @@
+{
+  "item": [
+    {
+      "id": "5f60d417-b74e-4980-8d87-041577fba262",
+      "name": "v2-frax",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "361eab88-b349-4702-8163-3cd6301b4979",
+          "name": "Returns the latest FRAX balance sheet data",
+          "request": {
+            "name": "Returns the latest FRAX balance sheet data",
+            "description": {
+              "content": "Returns the latest FRAX balance sheet data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frax",
+                "balance-sheet",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f199d816-b8b0-4d94-b9c6-f1e22b8a0f0f",
+              "name": "Returns the latest FRAX balance sheet data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frax",
+                    "balance-sheet",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"asOfBlock\": {\n    \"key_0\": 9829.226742064113\n  },\n  \"asOfTimestamp\": \"1953-11-21T04:59:28.743Z\",\n  \"tokenPriceUsd\": {\n    \"key_0\": 3486.768608127252\n  },\n  \"categorySummaryUsd\": {\n    \"key_0\": 8797.87643178748,\n    \"key_1\": 6922.462558663718,\n    \"key_2\": 2542.8385737697836\n  },\n  \"totalAssets\": 5635.580279067945,\n  \"totalLiabilities\": 4174.921284637033,\n  \"totalLockedLiquidity\": 8215.656249804642,\n  \"assets\": [\n    {\n      \"category\": \"string\",\n      \"chain\": \"fantom\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 1517.2055559523112,\n      \"tokenQuantity\": 5609.6437202614325,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"chain\": \"zksync\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 413.6297621149798,\n      \"tokenQuantity\": 7643.598533734215,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"liabilities\": [\n    {\n      \"category\": \"string\",\n      \"chain\": \"moonbeam\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 9839.449907217673,\n      \"tokenQuantity\": 1353.902826651553,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"chain\": \"boba\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 317.2087585637906,\n      \"tokenQuantity\": 6304.173289710096,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20d83341-330d-4ca7-8665-a57cbba64ad6",
+          "name": "Returns a CSV of the latest FRAX balance sheet data",
+          "request": {
+            "name": "Returns a CSV of the latest FRAX balance sheet data",
+            "description": {
+              "content": "Returns a CSV of the latest FRAX balance sheet data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frax",
+                "balance-sheet",
+                "latest",
+                "export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4125f8b2-6287-45d3-bffc-a2b1942e3b47",
+              "name": "Returns a CSV of the latest FRAX balance sheet data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frax",
+                    "balance-sheet",
+                    "latest",
+                    "export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9479360-3a8a-4181-a6e4-c4daa75968ee",
+          "name": "Get the latest sFRAX summary data.",
+          "request": {
+            "name": "Get the latest sFRAX summary data.",
+            "description": {
+              "content": "Get the latest sFRAX summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frax",
+                "sfrax",
+                "summary",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1fb6f7a6-6b68-4020-9409-4464de6041d5",
+              "name": "Get the latest sFRAX summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frax",
+                    "sfrax",
+                    "summary",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"intervalTimestamp\": \"2026-02-12T18:40:40.106Z\",\n  \"blockNumber\": 6522.607493713129,\n  \"sfraxTotalAssets\": 8993.950762877892,\n  \"sfraxStoredTotalAssets\": 2072.9366730239585,\n  \"sfraxTotalSupply\": 5326.190492751255,\n  \"sfraxFraxPrice\": 8509.918165518777,\n  \"sfraxApr\": 1737.4906550833414,\n  \"sfraxApy\": 9998.673467043438,\n  \"fraxPriceUsd\": 1447.7342368243374\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "704a10a4-cf83-4d27-b191-61fa0f0b297c",
+          "name": "Returns a list historical sFRAX summary data.",
+          "request": {
+            "name": "Returns a list historical sFRAX summary data.",
+            "description": {
+              "content": "Returns a list historical sFRAX summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frax",
+                "sfrax",
+                "summary",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e91949f1-224a-4a1f-be00-c7b02ba45ec2",
+              "name": "Returns a list historical sFRAX summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frax",
+                    "sfrax",
+                    "summary",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"intervalTimestamp\": \"2003-03-15T11:14:47.264Z\",\n      \"blockNumber\": 4072.1629482950993,\n      \"sfraxTotalAssets\": 8376.283316805087,\n      \"sfraxStoredTotalAssets\": 8788.677158090562,\n      \"sfraxTotalSupply\": 2294.966379981812,\n      \"sfraxFraxPrice\": 7987.612083010782,\n      \"sfraxApr\": 8551.639232008316,\n      \"sfraxApy\": 3048.7334311129753,\n      \"fraxPriceUsd\": 9225.169623207346\n    },\n    {\n      \"intervalTimestamp\": \"1971-08-03T07:50:04.348Z\",\n      \"blockNumber\": 5921.474865391625,\n      \"sfraxTotalAssets\": 4969.071428970643,\n      \"sfraxStoredTotalAssets\": 6851.942732011601,\n      \"sfraxTotalSupply\": 6643.7618109565765,\n      \"sfraxFraxPrice\": 6529.846164719529,\n      \"sfraxApr\": 8830.142922548574,\n      \"sfraxApy\": 8099.244270741878,\n      \"fraxPriceUsd\": 9547.890058699486\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc5c0c7f-39f3-46b5-943d-f7dd1f4a2c1d",
+          "name": "Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.",
+          "request": {
+            "name": "Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.",
+            "description": {
+              "content": "Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frax",
+                "user",
+                ":userAddress",
+                "sfrax-summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userAddress",
+                  "description": "(Required) The hex address of the user. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bbad5a4e-a6c0-48dc-9bbf-b6ad734853a3",
+              "name": "Returns all-time sFRAX gains, profit, etc and the latest balance info for the user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frax",
+                    "user",
+                    ":userAddress",
+                    "sfrax-summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userAddress",
+                      "description": "(Required) The hex address of the user. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userAddress\": \"string\",\n  \"positionSummary\": {\n    \"latestUnitPriceUsd\": 4553.231363270302,\n    \"latestUnitPriceFrax\": 2207.0477092465026,\n    \"latestPriceAsOfTimestamp\": \"1987-06-03T00:27:58.786Z\",\n    \"totalUnrealizedFraxBasis\": 3170.4154519630188,\n    \"totalUnrealizedFraxValue\": 7670.311845914798,\n    \"totalUnrealizedFraxGain\": 3421.924303581121,\n    \"lots\": [\n      {\n        \"blockNumber\": 7608.635781746734,\n        \"timestamp\": \"2011-04-30T13:11:02.856Z\",\n        \"timestampSec\": 6856.538296947072,\n        \"quantitySfraxOriginal\": 9292.760758543502,\n        \"quantitySfraxRemaining\": 1431.0557751054876,\n        \"unitCostUsd\": 6721.094186138421,\n        \"unitCostFrax\": 9718.392467631671,\n        \"realizedMarketValueUsd\": 9152.542075565741,\n        \"realizedMarketValueFrax\": 570.4293475220356,\n        \"unrealizedMarketValueUsd\": 1037.8445850093676,\n        \"unrealizedMarketValueFrax\": 9155.593814019689,\n        \"unrealizedFraxGain\": 1390.2615391161844\n      },\n      {\n        \"blockNumber\": 6692.816701686192,\n        \"timestamp\": \"2026-03-14T15:44:03.625Z\",\n        \"timestampSec\": 4304.388227302101,\n        \"quantitySfraxOriginal\": 6839.97760241301,\n        \"quantitySfraxRemaining\": 114.47947177454232,\n        \"unitCostUsd\": 3499.1265137418072,\n        \"unitCostFrax\": 3525.3713627139805,\n        \"realizedMarketValueUsd\": 3958.041078805291,\n        \"realizedMarketValueFrax\": 5345.975713189008,\n        \"unrealizedMarketValueUsd\": 3483.3613508570825,\n        \"unrealizedMarketValueFrax\": 404.5145693996044,\n        \"unrealizedFraxGain\": 7969.099812919462\n      }\n    ]\n  },\n  \"balanceSummary\": {\n    \"sfraxBalanceE18\": \"string\",\n    \"sfraxBalanceDec\": 8978.259711245475,\n    \"balanceBreakdownE18\": {\n      \"key_0\": \"string\"\n    },\n    \"balanceBreakdownDec\": {\n      \"key_0\": 9585.048961377193,\n      \"key_1\": 9791.618009464488\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f4b3629-c738-4edd-ae49-17204c95b287",
+          "name": "Get the daily sFRAX earnings for a user.",
+          "request": {
+            "name": "Get the daily sFRAX earnings for a user.",
+            "description": {
+              "content": "Get the daily sFRAX earnings for a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frax",
+                "user",
+                ":userAddress",
+                "sfrax-daily-earnings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userAddress",
+                  "description": "(Required) The hex address of the user. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e69c990-7376-4ca5-99d9-085c7f503315",
+              "name": "Get the daily sFRAX earnings for a user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frax",
+                    "user",
+                    ":userAddress",
+                    "sfrax-daily-earnings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userAddress",
+                      "description": "(Required) The hex address of the user. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userAddress\": \"string\",\n  \"dailyData\": [\n    {\n      \"timestamp\": \"1987-12-07T05:09:12.768Z\",\n      \"timestampSec\": 1492.112368776697,\n      \"eodSfraxBalanceTotal\": 7140.217884339806,\n      \"eodSfraxBalanceBreakdown\": {\n        \"key_0\": 7588.202361014427,\n        \"key_1\": 6143.122035711476,\n        \"key_2\": 8223.692512487414\n      },\n      \"earnings\": 6970.729521628976\n    },\n    {\n      \"timestamp\": \"2014-08-20T09:10:36.679Z\",\n      \"timestampSec\": 7523.931338162447,\n      \"eodSfraxBalanceTotal\": 7865.364481425182,\n      \"eodSfraxBalanceBreakdown\": {\n        \"key_0\": 8704.9606339112,\n        \"key_1\": 4111.74207864728,\n        \"key_2\": 2729.3789318267504\n      },\n      \"earnings\": 2487.6614204811776\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9fbfc596-f3f6-45f7-855b-e9b7caeb248b",
+    "name": "Frax Finance v1-gauge v2-frax API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

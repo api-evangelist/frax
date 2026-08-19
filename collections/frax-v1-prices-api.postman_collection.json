@@ -1,0 +1,592 @@
+{
+  "item": [
+    {
+      "id": "c66f6d89-c6d0-4ed7-be9c-c0384b253509",
+      "name": "v1-prices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ecd36407-0d68-4132-b4fe-9b2ef2501ffa",
+          "name": "V1Controller get Coin Stats",
+          "request": {
+            "name": "V1Controller get Coin Stats",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "priceitems",
+                "coin-stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbd06e79-3a33-4e65-88a7-ac4e2fc133ca",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "priceitems",
+                    "coin-stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"FPI\": {\n    \"coin\": \"string\",\n    \"blockNum\": 2658.909419149594,\n    \"timestamp\": 8457.379599372378,\n    \"price\": 4791.400304758951,\n    \"supply\": 9578.349342039548,\n    \"circulating_supply\": 6925.050921309308,\n    \"market_cap\": 6468.423223454932,\n    \"circulating_market_cap\": 8386.240153839364,\n    \"fxs_burned_cumulative_sum\": 6213.019461267258\n  },\n  \"FPIS\": {\n    \"coin\": \"string\",\n    \"blockNum\": 7515.72393494321,\n    \"timestamp\": 9468.552304072637,\n    \"price\": 2362.0807127755506,\n    \"supply\": 5850.299627274695,\n    \"circulating_supply\": 4859.511055590371,\n    \"market_cap\": 3704.894156862432,\n    \"circulating_market_cap\": 5352.674849680331,\n    \"fxs_burned_cumulative_sum\": 2428.507428769916\n  },\n  \"FRAX\": {\n    \"coin\": \"string\",\n    \"blockNum\": 8948.115991545026,\n    \"timestamp\": 1441.756786708831,\n    \"price\": 8208.377843318773,\n    \"supply\": 1328.1426849386169,\n    \"circulating_supply\": 3589.8663173055957,\n    \"market_cap\": 4787.153522238955,\n    \"circulating_market_cap\": 5325.387280222051,\n    \"fxs_burned_cumulative_sum\": 9789.11902378505\n  },\n  \"FXS\": {\n    \"coin\": \"string\",\n    \"blockNum\": 4776.00473899371,\n    \"timestamp\": 650.0701680513732,\n    \"price\": 1979.9233045712506,\n    \"supply\": 4303.412575523801,\n    \"circulating_supply\": 2537.310219012884,\n    \"market_cap\": 8976.092504714794,\n    \"circulating_market_cap\": 3110.0870983403684,\n    \"fxs_burned_cumulative_sum\": 8501.075459285292\n  },\n  \"frxETH\": {\n    \"coin\": \"string\",\n    \"blockNum\": 8103.63054090333,\n    \"timestamp\": 1716.652766507849,\n    \"price\": 7456.200393759856,\n    \"supply\": 4749.599021866724,\n    \"circulating_supply\": 7961.50940383649,\n    \"market_cap\": 9235.60077452725,\n    \"circulating_market_cap\": 7433.132274527217,\n    \"fxs_burned_cumulative_sum\": 6157.823672542214\n  },\n  \"sfrxETH\": {\n    \"coin\": \"string\",\n    \"blockNum\": 3770.354851356649,\n    \"timestamp\": 3035.216370593974,\n    \"price\": 1534.1865980703096,\n    \"supply\": 4820.596800022352,\n    \"circulating_supply\": 797.4402747166897,\n    \"market_cap\": 276.54249188159173,\n    \"circulating_market_cap\": 1082.4635605992262,\n    \"fxs_burned_cumulative_sum\": 1499.3167731377266\n  },\n  \"Collateral\": {\n    \"blockNum\": 1850.2241565930722,\n    \"timestamp\": 8555.839072507455,\n    \"ratio\": 3074.979508425644,\n    \"total_dollar_value\": 5823.63823172082,\n    \"decentralization_ratio\": 9982.517058703228\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ee96527-d3ed-4ac6-aa62-51cb4294cc24",
+          "name": "V1Controller get Circulating Fxs Details",
+          "request": {
+            "name": "V1Controller get Circulating Fxs Details",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "priceitems",
+                "circulating-fxs-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "19e89c55-c642-4a15-a804-e8d2d3a827f3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "priceitems",
+                    "circulating-fxs-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"supply\": 5781.15520736452,\n  \"circulatingSupply\": 656.6417759285881,\n  \"balanceBreakdown\": [\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"balance\": 6223.027544731972\n    },\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"balance\": 1932.6240512938452\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51be04f9-86df-43e2-b2c0-abd384a9a4fb",
+          "name": "V1Controller get Circulating Fpis Details",
+          "request": {
+            "name": "V1Controller get Circulating Fpis Details",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "priceitems",
+                "circulating-fpis-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "62de7fd5-80fe-4093-b52b-b9d981dc12dd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "priceitems",
+                    "circulating-fpis-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"supply\": 5781.15520736452,\n  \"circulatingSupply\": 656.6417759285881,\n  \"balanceBreakdown\": [\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"balance\": 6223.027544731972\n    },\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"balance\": 1932.6240512938452\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "072d8533-9943-484b-923b-7f5ecf550c73",
+          "name": "V1Controller get Daily Coin Stats",
+          "request": {
+            "name": "V1Controller get Daily Coin Stats",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "priceitems",
+                "daily-coin-stats",
+                ":coinType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "coinType",
+                  "description": "(Required) FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fb7badc-182d-459b-8463-0463c3f3522f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "priceitems",
+                    "daily-coin-stats",
+                    ":coinType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "coinType",
+                      "description": "(Required) FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"coin\": \"string\",\n  \"data\": [\n    {\n      \"date\": \"string\",\n      \"price\": 7314.459521942646,\n      \"supply\": 6644.078587875747,\n      \"marketCap\": 1095.681083445792,\n      \"circulatingSupply\": 4593.861733602066,\n      \"circulatingMarketCap\": 691.2697099629283\n    },\n    {\n      \"date\": \"string\",\n      \"price\": 9970.195494457725,\n      \"supply\": 6085.944023833826,\n      \"marketCap\": 6173.5027857299065,\n      \"circulatingSupply\": 4081.746027014689,\n      \"circulatingMarketCap\": 5112.412696307932\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9dc8da6-3928-4c79-be14-09560aeb5ef1",
+          "name": "V1Controller get Coin Total Supply",
+          "request": {
+            "name": "V1Controller get Coin Total Supply",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "priceitems",
+                "total-supply",
+                ":coinType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "coinType",
+                  "description": "(Required) FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a938625a-10c6-438b-87d6-b228bd1f09cd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "priceitems",
+                    "total-supply",
+                    ":coinType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "coinType",
+                      "description": "(Required) FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6f133887-53fe-4b68-b644-a75041147366",
+          "name": "V1Controller get Coin Circulating Supply",
+          "request": {
+            "name": "V1Controller get Coin Circulating Supply",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "priceitems",
+                "circulating-supply",
+                ":coinType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "coinType",
+                  "description": "(Required) FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b575c2e0-4f8c-4628-86da-5fc94ac4dc18",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "priceitems",
+                    "circulating-supply",
+                    ":coinType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "coinType",
+                      "description": "(Required) FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4048aa51-01c8-4ef6-b9b9-9f1efd5f706f",
+          "name": "V1Controller get Price Items",
+          "request": {
+            "name": "V1Controller get Price Items",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "priceitems",
+                ":filter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filter",
+                  "description": "(Required) Timeframe"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ef6182f9-d6d5-4c04-8734-a0e676935e39",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "priceitems",
+                    ":filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filter",
+                      "description": "(Required) Timeframe"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fpi\": {\n    \"full_items\": [\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 7651.754877112506,\n        \"timestamp\": 847.8436544161516,\n        \"price\": 9136.882828548201,\n        \"supply\": 7222.568246481468,\n        \"circulating_supply\": 1427.734174824251,\n        \"market_cap\": 441.18205372902565,\n        \"circulating_market_cap\": 3155.4779886797946,\n        \"fxs_burned_cumulative_sum\": 9609.474226845414\n      },\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 5185.516349750961,\n        \"timestamp\": 1663.622999319645,\n        \"price\": 3429.0699897805575,\n        \"supply\": 1541.22385076234,\n        \"circulating_supply\": 9291.773192324967,\n        \"market_cap\": 5973.767784226373,\n        \"circulating_market_cap\": 6953.077595138701,\n        \"fxs_burned_cumulative_sum\": 1731.6683367441465\n      }\n    ],\n    \"chartjs\": {}\n  },\n  \"fpis\": {\n    \"full_items\": [\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 8247.685869300432,\n        \"timestamp\": 7711.830724746259,\n        \"price\": 2816.360894423351,\n        \"supply\": 2139.6544284205875,\n        \"circulating_supply\": 1262.0618895318414,\n        \"market_cap\": 31.401277507269178,\n        \"circulating_market_cap\": 8278.432044416952,\n        \"fxs_burned_cumulative_sum\": 4112.1589531519985\n      },\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 5950.790100497046,\n        \"timestamp\": 2843.816947448733,\n        \"price\": 1812.4291711159335,\n        \"supply\": 8491.135718530011,\n        \"circulating_supply\": 8335.926430168867,\n        \"market_cap\": 5295.428893657866,\n        \"circulating_market_cap\": 5748.227459375701,\n        \"fxs_burned_cumulative_sum\": 6871.354889352662\n      }\n    ],\n    \"chartjs\": {}\n  },\n  \"frax\": {\n    \"full_items\": [\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 4241.311641092345,\n        \"timestamp\": 5856.3665053686955,\n        \"price\": 9055.173736988967,\n        \"supply\": 5526.956386525401,\n        \"circulating_supply\": 2065.1200331803866,\n        \"market_cap\": 6633.448405611788,\n        \"circulating_market_cap\": 7671.522633447141,\n        \"fxs_burned_cumulative_sum\": 450.1577450047567\n      },\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 9309.783809161998,\n        \"timestamp\": 7861.1649472534655,\n        \"price\": 5347.609313554419,\n        \"supply\": 7945.416496788518,\n        \"circulating_supply\": 9692.074707666632,\n        \"market_cap\": 3426.579595482573,\n        \"circulating_market_cap\": 2101.5923845359775,\n        \"fxs_burned_cumulative_sum\": 1688.819028149262\n      }\n    ],\n    \"chartjs\": {}\n  },\n  \"fxs\": {\n    \"full_items\": [\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 4030.8039755521895,\n        \"timestamp\": 613.1696192084335,\n        \"price\": 6682.804041772256,\n        \"supply\": 1523.315506068843,\n        \"circulating_supply\": 2896.9945623006765,\n        \"market_cap\": 5142.001924382139,\n        \"circulating_market_cap\": 7399.1661016000035,\n        \"fxs_burned_cumulative_sum\": 5444.009585498505\n      },\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 6485.258836304877,\n        \"timestamp\": 1359.0335085107397,\n        \"price\": 1885.1340618308975,\n        \"supply\": 5641.599033641045,\n        \"circulating_supply\": 3211.2673186112816,\n        \"market_cap\": 4852.218612464797,\n        \"circulating_market_cap\": 2825.4936848410207,\n        \"fxs_burned_cumulative_sum\": 8183.172960132292\n      }\n    ],\n    \"chartjs\": {}\n  },\n  \"frxeth\": {\n    \"full_items\": [\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 9117.605305864532,\n        \"timestamp\": 9671.046173997162,\n        \"price\": 9811.602391770768,\n        \"supply\": 1051.2349541905685,\n        \"circulating_supply\": 4498.31320430147,\n        \"market_cap\": 6219.520840662461,\n        \"circulating_market_cap\": 2524.5943522022617,\n        \"fxs_burned_cumulative_sum\": 9183.696764337463\n      },\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 822.8269447332303,\n        \"timestamp\": 2827.252968052103,\n        \"price\": 1083.1121339692018,\n        \"supply\": 6033.455375527088,\n        \"circulating_supply\": 4399.703505245261,\n        \"market_cap\": 3803.1837351365716,\n        \"circulating_market_cap\": 9380.451906974931,\n        \"fxs_burned_cumulative_sum\": 1815.2836563861308\n      }\n    ],\n    \"chartjs\": {}\n  },\n  \"sfrxeth\": {\n    \"full_items\": [\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 7964.796098272147,\n        \"timestamp\": 6386.957443255663,\n        \"price\": 9804.37211623778,\n        \"supply\": 5519.931138126706,\n        \"circulating_supply\": 4333.356583229845,\n        \"market_cap\": 3127.55625410139,\n        \"circulating_market_cap\": 6614.1612955418905,\n        \"fxs_burned_cumulative_sum\": 2049.974851986892\n      },\n      {\n        \"coin\": \"string\",\n        \"blockNum\": 8483.970792606618,\n        \"timestamp\": 5531.22770318161,\n        \"price\": 1536.545741765557,\n        \"supply\": 2915.120341486368,\n        \"circulating_supply\": 3943.4676729418993,\n        \"market_cap\": 6690.419026866749,\n        \"circulating_market_cap\": 3936.193735113934,\n        \"fxs_burned_cumulative_sum\": 5294.932110311193\n      }\n    ],\n    \"chartjs\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bd2b9c32-e2a6-4385-815d-5c99282c0e8d",
+    "name": "Frax Finance v1-gauge v1-prices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

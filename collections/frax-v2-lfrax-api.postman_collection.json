@@ -1,0 +1,186 @@
+{
+  "item": [
+    {
+      "id": "6d9d8dc3-fbc2-4850-bd90-d12f3ee9dc03",
+      "name": "v2-lfrax",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e22af466-3462-41a2-a34c-c26b0f629604",
+          "name": "Returns the latest Legacy Frax Dollar balance sheet data",
+          "request": {
+            "name": "Returns the latest Legacy Frax Dollar balance sheet data",
+            "description": {
+              "content": "Returns the latest Legacy Frax Dollar balance sheet data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "lfrax",
+                "balance-sheet",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b8b3274-932f-4602-9dbb-27ae601edcfe",
+              "name": "Returns the latest Legacy Frax Dollar balance sheet data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "lfrax",
+                    "balance-sheet",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"asOfBlock\": {\n    \"key_0\": 2391.3119809002483,\n    \"key_1\": 5851.091105353571\n  },\n  \"asOfTimestamp\": \"2011-01-10T18:03:45.728Z\",\n  \"tokenPriceUsd\": {\n    \"key_0\": 3384.8460504372833,\n    \"key_1\": 6074.9988693033065\n  },\n  \"categorySummaryUsd\": {\n    \"key_0\": 4987.569514122716,\n    \"key_1\": 2654.807794210793\n  },\n  \"totalAssets\": 44.965122596467566,\n  \"totalLiabilities\": 8169.656391482654,\n  \"totalLockedLiquidity\": 8647.800915746178,\n  \"assets\": [\n    {\n      \"category\": \"string\",\n      \"chain\": \"optimism\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 4543.753992457539,\n      \"tokenQuantity\": 2333.376577731311,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"chain\": \"ethereum\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 3461.8707913773196,\n      \"tokenQuantity\": 6758.584971535426,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"liabilities\": [\n    {\n      \"category\": \"string\",\n      \"chain\": \"moonbeam\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 9512.782914726025,\n      \"tokenQuantity\": 9017.309161775645,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"chain\": \"fraxtal_testnet\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 3340.669194768641,\n      \"tokenQuantity\": 8690.339460269775,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4796ae5f-87e9-4dff-b2e3-ad83f0cbbba9",
+          "name": "Returns a CSV of the latest Legacy Frax Dollar balance sheet data",
+          "request": {
+            "name": "Returns a CSV of the latest Legacy Frax Dollar balance sheet data",
+            "description": {
+              "content": "Returns a CSV of the latest Legacy Frax Dollar balance sheet data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "lfrax",
+                "balance-sheet",
+                "latest",
+                "export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d8ba7b30-95f6-4cdc-9792-94a518b5da19",
+              "name": "Returns a CSV of the latest Legacy Frax Dollar balance sheet data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "lfrax",
+                    "balance-sheet",
+                    "latest",
+                    "export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d0d0d584-45a1-4fb4-aec6-c0c2eae8de0f",
+    "name": "Frax Finance v1-gauge v2-lfrax API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

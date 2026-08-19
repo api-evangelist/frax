@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-gauges API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-gauges",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of gauges.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges"
+          },
+          "docs": "Returns a list of gauges."
+        },
+        {
+          "info": {
+            "name": "Returns basic information about a gauge.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges/:gaugeAddress",
+            "params": [
+              {
+                "name": "gaugeAddress",
+                "value": "",
+                "type": "path",
+                "description": "The address of the gauge. Example: `0x127963a74c07f72d862f2bdc225226c3251bd117`."
+              }
+            ]
+          },
+          "docs": "Returns basic information about a gauge."
+        },
+        {
+          "info": {
+            "name": "Returns a list of gauge voting cycles and their starting/ending blocks.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges/cycles"
+          },
+          "docs": "Returns a list of gauge voting cycles and their starting/ending blocks."
+        },
+        {
+          "info": {
+            "name": "Returns a summarized list of each gauge cycle voting outcome.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges/cycles/history"
+          },
+          "docs": "Returns a summarized list of each gauge cycle voting outcome."
+        },
+        {
+          "info": {
+            "name": "Returns the estimated outcome of the upcoming gauge cycle.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges/cycles/next"
+          },
+          "docs": "Returns the estimated outcome of the upcoming gauge cycle."
+        },
+        {
+          "info": {
+            "name": "Returns detailed outcome of a gauge cycle.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges/cycles/:cycleKey",
+            "params": [
+              {
+                "name": "cycleKey",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the gauge voting cycle. Example: `2022-C07`."
+              }
+            ]
+          },
+          "docs": "Returns detailed outcome of a gauge cycle."
+        },
+        {
+          "info": {
+            "name": "Returns a daily summary of gauge voting allocations for a particular cycle.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges/cycles/:cycleKey/daily",
+            "params": [
+              {
+                "name": "cycleKey",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the gauge voting cycle. Example: `2022-C07`."
+              }
+            ]
+          },
+          "docs": "Returns a daily summary of gauge voting allocations for a particular cycle."
+        },
+        {
+          "info": {
+            "name": "List of voting and non-voting veFXS addresses.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gauges/voter-participation"
+          },
+          "docs": "List of voting and non-voting veFXS addresses."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,350 @@
+{
+  "item": [
+    {
+      "id": "80467c19-1705-4a32-a468-a0e679ac2283",
+      "name": "v2-sfrxusd",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d6d957c-e0a1-47d6-aaab-4c6423d843c4",
+          "name": "Returns the latest sfrxUSD balance sheet data",
+          "request": {
+            "name": "Returns the latest sfrxUSD balance sheet data",
+            "description": {
+              "content": "Returns the latest sfrxUSD balance sheet data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "sfrxusd",
+                "balance-sheet",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79770f52-fd6d-4fd0-a51f-86cbfe1da4e0",
+              "name": "Returns the latest sfrxUSD balance sheet data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "sfrxusd",
+                    "balance-sheet",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"asOfBlock\": {\n    \"key_0\": 8474.28552325135,\n    \"key_1\": 2810.411214981454\n  },\n  \"asOfTimestamp\": \"2001-08-29T06:03:06.397Z\",\n  \"tokenPriceUsd\": {\n    \"key_0\": 623.7848231358522,\n    \"key_1\": 25.317510861648795,\n    \"key_2\": 4201.916963743989\n  },\n  \"totalAssets\": 1260.8466511816275,\n  \"totalLiabilities\": 4874.935380503918,\n  \"assets\": [\n    {\n      \"category\": \"string\",\n      \"chain\": \"fantom\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 7782.845460450774,\n      \"tokenQuantity\": 6606.642897439965,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"chain\": \"moonbeam\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 776.0624710221908,\n      \"tokenQuantity\": 9948.680354526407,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"liabilities\": [\n    {\n      \"category\": \"string\",\n      \"chain\": \"bsc\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 7082.717038154039,\n      \"tokenQuantity\": 6590.188070014477,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"chain\": \"ethereum\",\n      \"address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"totalValueUsd\": 1417.1555524541257,\n      \"tokenQuantity\": 9060.525770957696,\n      \"tokenQuantityE18\": \"string\",\n      \"description\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29a074d0-eaf5-4ac0-80e1-45cbbbc59cae",
+          "name": "Returns a CSV of the latest sfrxUSD balance sheet data",
+          "request": {
+            "name": "Returns a CSV of the latest sfrxUSD balance sheet data",
+            "description": {
+              "content": "Returns a CSV of the latest sfrxUSD balance sheet data",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "sfrxusd",
+                "balance-sheet",
+                "latest",
+                "export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77a66762-999a-4163-9e45-9e30f772bf9e",
+              "name": "Returns a CSV of the latest sfrxUSD balance sheet data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "sfrxusd",
+                    "balance-sheet",
+                    "latest",
+                    "export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/csv"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/csv"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "feb97e8e-b6aa-4166-82be-e5bb259684f8",
+          "name": "Get the latest sfrxUSD summary data.",
+          "request": {
+            "name": "Get the latest sfrxUSD summary data.",
+            "description": {
+              "content": "Get the latest sfrxUSD summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "sfrxusd",
+                "summary-stats",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3adfacf-a095-4932-aacb-7053ce91c378",
+              "name": "Get the latest sfrxUSD summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "sfrxusd",
+                    "summary-stats",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"intervalTimestamp\": \"2005-05-21T11:44:19.437Z\",\n  \"blockNumberEthereum\": 8610.465528261673,\n  \"blockNumberFraxtal\": 3291.5955232678275,\n  \"sfrxusdCirculatingSupply\": 8865.20750167142,\n  \"sfrxusdCirculatingMarketCap\": 4986.506315998509,\n  \"sfrxusdTotalSupply\": 3200.935264678264,\n  \"sfrxusdTotalMarketCap\": 6318.815549605044,\n  \"frxusdPerSfrxusd\": 7155.383194956024,\n  \"sfrxusdApr\": 7551.146677624388,\n  \"sfrxusdApy\": 6268.974644881059,\n  \"frxusdPrice\": 729.6181044058114,\n  \"sfrxusdPrice\": 3917.0101993234207\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8740556a-895f-4b61-b1ed-dd3a05452ed5",
+          "name": "Returns a list historical sfrxUSD summary data.",
+          "request": {
+            "name": "Returns a list historical sfrxUSD summary data.",
+            "description": {
+              "content": "Returns a list historical sfrxUSD summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "sfrxusd",
+                "summary-stats",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e1a126d1-ffc8-4c1a-8e67-139b3c66a5ca",
+              "name": "Returns a list historical sfrxUSD summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "sfrxusd",
+                    "summary-stats",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"intervalTimestamp\": \"1990-12-11T07:24:04.626Z\",\n      \"blockNumberEthereum\": 5509.3199548582315,\n      \"blockNumberFraxtal\": 7840.692220276703,\n      \"sfrxusdCirculatingSupply\": 6458.027938163878,\n      \"sfrxusdCirculatingMarketCap\": 9519.209265204232,\n      \"sfrxusdTotalSupply\": 3866.7283873086067,\n      \"sfrxusdTotalMarketCap\": 900.2999608747119,\n      \"frxusdPerSfrxusd\": 9808.78189744957,\n      \"sfrxusdApr\": 5838.619995887637,\n      \"sfrxusdApy\": 6357.183631555191,\n      \"frxusdPrice\": 8888.302347303854,\n      \"sfrxusdPrice\": 7766.653232029951\n    },\n    {\n      \"intervalTimestamp\": \"1946-10-25T01:37:02.259Z\",\n      \"blockNumberEthereum\": 8864.316784314678,\n      \"blockNumberFraxtal\": 2350.8855508876345,\n      \"sfrxusdCirculatingSupply\": 4332.21779628283,\n      \"sfrxusdCirculatingMarketCap\": 1815.8079072485643,\n      \"sfrxusdTotalSupply\": 729.5258002961803,\n      \"sfrxusdTotalMarketCap\": 8039.526284706156,\n      \"frxusdPerSfrxusd\": 5930.604514251002,\n      \"sfrxusdApr\": 9542.443089707976,\n      \"sfrxusdApy\": 5359.761943796272,\n      \"frxusdPrice\": 5486.24792861972,\n      \"sfrxusdPrice\": 9621.095131086257\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d358baa0-4c60-4ccf-819a-1f61c26ca321",
+    "name": "Frax Finance v1-gauge v2-sfrxusd API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,676 @@
+{
+  "item": [
+    {
+      "id": "e8ac41db-5ef5-4d9e-bc7b-9e75140b711d",
+      "name": "v2-fraxferry",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a6994233-cac3-48a3-b0d1-b460e46c19d8",
+          "name": "Returns a list of departed Frax Ferry trips for the optionally-given request parameters",
+          "request": {
+            "name": "Returns a list of departed Frax Ferry trips for the optionally-given request parameters",
+            "description": {
+              "content": "Returns a list of departed Frax Ferry trips for the optionally-given request parameters",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxferry",
+                "trips"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "srcChain",
+                  "value": "<string>",
+                  "description": "The name of the source blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "key": "destChain",
+                  "value": "<string>",
+                  "description": "The name of the destination blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "key": "tokenSymbol",
+                  "value": "<string>",
+                  "description": "The token symbol."
+                },
+                {
+                  "disabled": false,
+                  "key": "ferryKey",
+                  "value": "<string>",
+                  "description": "The unique key for the Ferry, a set of contracts for a single token on two different chains."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0131b19d-1514-42e4-9a88-4fcea8794b5d",
+              "name": "Returns a list of departed Frax Ferry trips for the optionally-given request parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxferry",
+                    "trips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "srcChain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destChain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tokenSymbol",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ferryKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trips\": [\n    {\n      \"batchId\": 1629.2937956270814,\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"sourceChain\": \"polygon_zkevm\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"destinationChain\": \"optimism\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"departTimestampSec\": 1242.6059281362445,\n      \"disembarkTimestampSec\": 1281.5142646714517,\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"batchNumber\": 6268.148655753067,\n      \"startIndex\": 925.9844712669585,\n      \"endIndex\": 7263.651500418004,\n      \"batchHash\": \"string\",\n      \"departTxHash\": \"string\",\n      \"disembarkTxHash\": \"string\",\n      \"minEmbarkTimestampSec\": 5201.720384794208,\n      \"maxEmbarkTimestampSec\": 4012.955792153,\n      \"tokenQuantity\": 2065.73600519117,\n      \"tokenQuantityAfterFees\": 722.5341721874956,\n      \"numberOfTransactions\": 7142.263721882499,\n      \"numberOfUsers\": 2908.1377519534267,\n      \"numberOfRecipients\": 2008.6953777607087,\n      \"status\": \"UNDER_INSPECTION\"\n    },\n    {\n      \"batchId\": 4991.964590205277,\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"sourceChain\": \"boba\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"destinationChain\": \"ethereum\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"departTimestampSec\": 7275.9157665058365,\n      \"disembarkTimestampSec\": 5823.42859756868,\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"batchNumber\": 4183.037354619892,\n      \"startIndex\": 842.0320085295463,\n      \"endIndex\": 3080.2528185656506,\n      \"batchHash\": \"string\",\n      \"departTxHash\": \"string\",\n      \"disembarkTxHash\": \"string\",\n      \"minEmbarkTimestampSec\": 1308.142519449128,\n      \"maxEmbarkTimestampSec\": 6556.848553717927,\n      \"tokenQuantity\": 8038.484734785413,\n      \"tokenQuantityAfterFees\": 3462.1026773317176,\n      \"numberOfTransactions\": 1725.9344863452286,\n      \"numberOfUsers\": 6273.996598898808,\n      \"numberOfRecipients\": 3291.7173293464975,\n      \"status\": \"DISEMBARKED\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "965c8bcd-eecd-42b6-986e-4a30ad9ba11c",
+          "name": "Returns details about a single FraxFerry trip",
+          "request": {
+            "name": "Returns details about a single FraxFerry trip",
+            "description": {
+              "content": "Returns details about a single FraxFerry trip",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxferry",
+                "trips",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "destChain",
+                  "value": "<string>",
+                  "description": "The name of the destination blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "key": "ferryKey",
+                  "value": "<string>",
+                  "description": "The unique key for the Ferry, a set of contracts for a single token on two different chains."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batchId",
+                  "description": "(Required) The batch ID number, or 'pending' for embarked, but not departed, trips."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a05644db-8a7c-41a0-93f2-74441ed4adcb",
+              "name": "Returns details about a single FraxFerry trip.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxferry",
+                    "trips",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "destChain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ferryKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batchId",
+                      "description": "(Required) The batch ID number, or 'pending' for embarked, but not departed, trips."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trip\": {\n    \"batchId\": 6882.3422584886175,\n    \"ferryKey\": \"string\",\n    \"name\": \"string\",\n    \"sourceChain\": \"fraxtal\",\n    \"sourceContractAddress\": \"string\",\n    \"sourceContractNativeAddress\": \"string\",\n    \"destinationChain\": \"aurora\",\n    \"destinationContractAddress\": \"string\",\n    \"destinationContractNativeAddress\": \"string\",\n    \"departTimestampSec\": 8133.132435602463,\n    \"disembarkTimestampSec\": 3376.1923043729325,\n    \"sourceTokenAddress\": \"string\",\n    \"sourceTokenNativeAddress\": \"string\",\n    \"destinationTokenAddress\": \"string\",\n    \"destinationTokenNativeAddress\": \"string\",\n    \"tokenSymbol\": \"string\",\n    \"batchNumber\": 298.35589394173303,\n    \"startIndex\": 118.37324586585373,\n    \"endIndex\": 8272.093915943273,\n    \"batchHash\": \"string\",\n    \"departTxHash\": \"string\",\n    \"disembarkTxHash\": \"string\",\n    \"minEmbarkTimestampSec\": 8041.382689004771,\n    \"maxEmbarkTimestampSec\": 4683.584538416178,\n    \"tokenQuantity\": 7488.839141780533,\n    \"tokenQuantityAfterFees\": 709.938013763477,\n    \"numberOfTransactions\": 4642.742924163309,\n    \"numberOfUsers\": 9796.230255095139,\n    \"numberOfRecipients\": 7462.478468993195,\n    \"status\": \"UNDER_INSPECTION\"\n  },\n  \"transactions\": [\n    {\n      \"userAddress\": \"string\",\n      \"userNativeAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"recipientNativeAddress\": \"string\",\n      \"embarkTransactionChain\": \"fraxtal_testnet\",\n      \"embarkTransactionHash\": \"string\",\n      \"embarkTimestampSec\": 4770.950632545734,\n      \"tokenQuantityRaw\": \"string\",\n      \"tokenQuantityDec\": 2577.632763534384,\n      \"tokenQuantityAfterFeeRaw\": \"string\",\n      \"tokenQuantityAfterFeeDec\": 3780.6496742774966,\n      \"ferryTransactionIndex\": 1591.630249274113\n    },\n    {\n      \"userAddress\": \"string\",\n      \"userNativeAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"recipientNativeAddress\": \"string\",\n      \"embarkTransactionChain\": \"optimism\",\n      \"embarkTransactionHash\": \"string\",\n      \"embarkTimestampSec\": 5904.0615293637,\n      \"tokenQuantityRaw\": \"string\",\n      \"tokenQuantityDec\": 6542.3477134176965,\n      \"tokenQuantityAfterFeeRaw\": \"string\",\n      \"tokenQuantityAfterFeeDec\": 5035.241222772174,\n      \"ferryTransactionIndex\": 5595.4325925602125\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7ad08a8-be62-433f-9a43-7177b1379e44",
+          "name": "Returns a list of all Frax Ferry summary info",
+          "request": {
+            "name": "Returns a list of all Frax Ferry summary info",
+            "description": {
+              "content": "Returns a list of all Frax Ferry summary info",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxferry",
+                "ferry"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3dc1a869-1c22-4c93-82de-51b34cb1c12a",
+              "name": "Returns a list of all Frax Ferry summary info.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxferry",
+                    "ferry"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"sourceChain\": \"avalanche\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"moonbeam\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"feeMin\": \"string\",\n      \"feeMax\": \"string\",\n      \"feeRate\": \"string\",\n      \"departIntervalSec\": 7242.893766004618,\n      \"disembarkIntervalSec\": 6431.479604535426,\n      \"tokenQuantity24h\": 3348.9730988277865,\n      \"fees24h\": 2563.5645996207336,\n      \"transactionQuantity24h\": 3992.7041722425806,\n      \"tokenQuantity7d\": 1757.5397745047028,\n      \"fees7d\": 6382.972526302387,\n      \"transactionQuantity7d\": 4228.03131032686,\n      \"tokenQuantity30d\": 4721.4660134106525,\n      \"fees30d\": 77.0280580441518,\n      \"transactionQuantity30d\": 9795.306611040129,\n      \"tokenQuantityAll\": 7824.676701347301,\n      \"feesAll\": 3354.2091516160167,\n      \"transactionQuantityAll\": 8826.726193050989,\n      \"destinationContractBalance\": 59.704053347102715,\n      \"sourceContractBalance\": 4060.3394566200013\n    },\n    {\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"sourceChain\": \"polygon_zkevm\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"holesky\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"feeMin\": \"string\",\n      \"feeMax\": \"string\",\n      \"feeRate\": \"string\",\n      \"departIntervalSec\": 3711.83488497048,\n      \"disembarkIntervalSec\": 8069.991369922573,\n      \"tokenQuantity24h\": 6569.331954310513,\n      \"fees24h\": 3984.6494663251265,\n      \"transactionQuantity24h\": 5924.2226768682185,\n      \"tokenQuantity7d\": 2227.5219863529874,\n      \"fees7d\": 4696.994691462578,\n      \"transactionQuantity7d\": 6611.521884665284,\n      \"tokenQuantity30d\": 6902.3614560935775,\n      \"fees30d\": 9098.284351368377,\n      \"transactionQuantity30d\": 5110.937220907743,\n      \"tokenQuantityAll\": 5287.170523482298,\n      \"feesAll\": 8359.714570755845,\n      \"transactionQuantityAll\": 2634.9740057406825,\n      \"destinationContractBalance\": 7895.995255726503,\n      \"sourceContractBalance\": 6258.979506242164\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bcb67e48-91b3-4059-a5c8-ac9fb7969d62",
+          "name": "Returns details about a Frax Ferry",
+          "request": {
+            "name": "Returns details about a Frax Ferry",
+            "description": {
+              "content": "Returns details about a Frax Ferry",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxferry",
+                "ferry",
+                ":ferryKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ferryKey",
+                  "description": "(Required) The unique key for the Ferry, a set of contracts for a single token on two different chains."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c034ddd-cd9c-47dc-b5ef-90b59e86906c",
+              "name": "Returns details about a Frax Ferry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxferry",
+                    "ferry",
+                    ":ferryKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ferryKey",
+                      "description": "(Required) The unique key for the Ferry, a set of contracts for a single token on two different chains."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ferryInfo\": [\n    {\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"sourceChain\": \"boba\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"holesky\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"feeMin\": \"string\",\n      \"feeMax\": \"string\",\n      \"feeRate\": \"string\",\n      \"departIntervalSec\": 5797.329257808489,\n      \"disembarkIntervalSec\": 3154.286623738818,\n      \"tokenQuantity24h\": 8859.094791879941,\n      \"fees24h\": 201.62354812003903,\n      \"transactionQuantity24h\": 2791.1104982788515,\n      \"tokenQuantity7d\": 4812.401900721465,\n      \"fees7d\": 7939.2367193651025,\n      \"transactionQuantity7d\": 9023.174520113136,\n      \"tokenQuantity30d\": 6138.4822307902705,\n      \"fees30d\": 652.4787701511681,\n      \"transactionQuantity30d\": 4519.149796623664,\n      \"tokenQuantityAll\": 8939.55373038008,\n      \"feesAll\": 3465.368172741484,\n      \"transactionQuantityAll\": 6214.611820910445,\n      \"destinationContractBalance\": 7580.266288894974,\n      \"sourceContractBalance\": 8426.298675929766\n    },\n    {\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"sourceChain\": \"polygon\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"boba\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"feeMin\": \"string\",\n      \"feeMax\": \"string\",\n      \"feeRate\": \"string\",\n      \"departIntervalSec\": 8851.938381495887,\n      \"disembarkIntervalSec\": 6239.937105697101,\n      \"tokenQuantity24h\": 7751.834102453959,\n      \"fees24h\": 202.97959340530468,\n      \"transactionQuantity24h\": 3661.2670729945353,\n      \"tokenQuantity7d\": 349.44284177197414,\n      \"fees7d\": 6928.41320664102,\n      \"transactionQuantity7d\": 5657.848196410529,\n      \"tokenQuantity30d\": 2038.9667644830422,\n      \"fees30d\": 2497.3806348523285,\n      \"transactionQuantity30d\": 3784.5879879030863,\n      \"tokenQuantityAll\": 6357.4575608986925,\n      \"feesAll\": 7671.4818810517445,\n      \"transactionQuantityAll\": 7523.487920633674,\n      \"destinationContractBalance\": 5644.468988363621,\n      \"sourceContractBalance\": 3725.642610033942\n    }\n  ],\n  \"trips\": [\n    {\n      \"trip\": {\n        \"batchId\": 7655.969829650947,\n        \"ferryKey\": \"string\",\n        \"name\": \"string\",\n        \"sourceChain\": \"harmony\",\n        \"sourceContractAddress\": \"string\",\n        \"sourceContractNativeAddress\": \"string\",\n        \"destinationChain\": \"harmony\",\n        \"destinationContractAddress\": \"string\",\n        \"destinationContractNativeAddress\": \"string\",\n        \"departTimestampSec\": 498.31656616473043,\n        \"disembarkTimestampSec\": 7248.487175931052,\n        \"sourceTokenAddress\": \"string\",\n        \"sourceTokenNativeAddress\": \"string\",\n        \"destinationTokenAddress\": \"string\",\n        \"destinationTokenNativeAddress\": \"string\",\n        \"tokenSymbol\": \"string\",\n        \"batchNumber\": 4148.022016274822,\n        \"startIndex\": 6116.015661382235,\n        \"endIndex\": 4041.467443636787,\n        \"batchHash\": \"string\",\n        \"departTxHash\": \"string\",\n        \"disembarkTxHash\": \"string\",\n        \"minEmbarkTimestampSec\": 5675.735548140765,\n        \"maxEmbarkTimestampSec\": 1211.3406155891726,\n        \"tokenQuantity\": 6725.93568809654,\n        \"tokenQuantityAfterFees\": 9730.519127843254,\n        \"numberOfTransactions\": 7753.705718347717,\n        \"numberOfUsers\": 9803.471451406054,\n        \"numberOfRecipients\": 8228.111507632955,\n        \"status\": \"UNDER_INSPECTION\"\n      },\n      \"transactions\": [\n        {\n          \"userAddress\": \"string\",\n          \"userNativeAddress\": \"string\",\n          \"recipientAddress\": \"string\",\n          \"recipientNativeAddress\": \"string\",\n          \"embarkTransactionChain\": \"fantom\",\n          \"embarkTransactionHash\": \"string\",\n          \"embarkTimestampSec\": 7151.826717946218,\n          \"tokenQuantityRaw\": \"string\",\n          \"tokenQuantityDec\": 9152.612053535246,\n          \"tokenQuantityAfterFeeRaw\": \"string\",\n          \"tokenQuantityAfterFeeDec\": 4548.11966712004,\n          \"ferryTransactionIndex\": 4357.592948335001\n        },\n        {\n          \"userAddress\": \"string\",\n          \"userNativeAddress\": \"string\",\n          \"recipientAddress\": \"string\",\n          \"recipientNativeAddress\": \"string\",\n          \"embarkTransactionChain\": \"moonriver\",\n          \"embarkTransactionHash\": \"string\",\n          \"embarkTimestampSec\": 5977.527430584016,\n          \"tokenQuantityRaw\": \"string\",\n          \"tokenQuantityDec\": 1625.8530743168565,\n          \"tokenQuantityAfterFeeRaw\": \"string\",\n          \"tokenQuantityAfterFeeDec\": 9791.473994058488,\n          \"ferryTransactionIndex\": 3440.202418829884\n        }\n      ]\n    },\n    {\n      \"trip\": {\n        \"batchId\": 1892.9390305608329,\n        \"ferryKey\": \"string\",\n        \"name\": \"string\",\n        \"sourceChain\": \"stable\",\n        \"sourceContractAddress\": \"string\",\n        \"sourceContractNativeAddress\": \"string\",\n        \"destinationChain\": \"bsc\",\n        \"destinationContractAddress\": \"string\",\n        \"destinationContractNativeAddress\": \"string\",\n        \"departTimestampSec\": 6602.687416352301,\n        \"disembarkTimestampSec\": 2964.4657909886896,\n        \"sourceTokenAddress\": \"string\",\n        \"sourceTokenNativeAddress\": \"string\",\n        \"destinationTokenAddress\": \"string\",\n        \"destinationTokenNativeAddress\": \"string\",\n        \"tokenSymbol\": \"string\",\n        \"batchNumber\": 9885.027581446411,\n        \"startIndex\": 8767.068577331167,\n        \"endIndex\": 2831.848054387448,\n        \"batchHash\": \"string\",\n        \"departTxHash\": \"string\",\n        \"disembarkTxHash\": \"string\",\n        \"minEmbarkTimestampSec\": 7126.626877970653,\n        \"maxEmbarkTimestampSec\": 6791.993961637578,\n        \"tokenQuantity\": 163.01391383788166,\n        \"tokenQuantityAfterFees\": 222.52051281821727,\n        \"numberOfTransactions\": 5940.338894091248,\n        \"numberOfUsers\": 1320.741031635172,\n        \"numberOfRecipients\": 8004.561124692537,\n        \"status\": \"UNDER_INSPECTION\"\n      },\n      \"transactions\": [\n        {\n          \"userAddress\": \"string\",\n          \"userNativeAddress\": \"string\",\n          \"recipientAddress\": \"string\",\n          \"recipientNativeAddress\": \"string\",\n          \"embarkTransactionChain\": \"optimism\",\n          \"embarkTransactionHash\": \"string\",\n          \"embarkTimestampSec\": 6387.757164067298,\n          \"tokenQuantityRaw\": \"string\",\n          \"tokenQuantityDec\": 790.649334801109,\n          \"tokenQuantityAfterFeeRaw\": \"string\",\n          \"tokenQuantityAfterFeeDec\": 7206.7355488505655,\n          \"ferryTransactionIndex\": 6478.413774196695\n        },\n        {\n          \"userAddress\": \"string\",\n          \"userNativeAddress\": \"string\",\n          \"recipientAddress\": \"string\",\n          \"recipientNativeAddress\": \"string\",\n          \"embarkTransactionChain\": \"fraxtal\",\n          \"embarkTransactionHash\": \"string\",\n          \"embarkTimestampSec\": 4832.327488006308,\n          \"tokenQuantityRaw\": \"string\",\n          \"tokenQuantityDec\": 474.2700143229539,\n          \"tokenQuantityAfterFeeRaw\": \"string\",\n          \"tokenQuantityAfterFeeDec\": 6004.949369189235,\n          \"ferryTransactionIndex\": 2213.0694778337825\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f6427c0-af54-4523-b9e0-1a17f17a850b",
+          "name": "Returns a list of Frax Ferry transactions for the given criteria",
+          "request": {
+            "name": "Returns a list of Frax Ferry transactions for the given criteria",
+            "description": {
+              "content": "Returns a list of Frax Ferry transactions for the given criteria",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxferry",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "The hex address of the user. Input is case insensitive."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2507a27f-1fc7-43a9-9acd-55d2974547d3",
+              "name": "Returns a list of Frax Ferry transactions for the given criteria.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxferry",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"uid\": 4833.843443259654,\n      \"userAddress\": \"string\",\n      \"userNativeAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"recipientNativeAddress\": \"string\",\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"sourceChain\": \"boba\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"ethereum\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"embarkTimestampSec\": 4158.572882913007,\n      \"departTimestampSec\": 575.6246323635684,\n      \"disembarkTimestampSec\": 9648.71862577603,\n      \"tokenQuantityRaw\": \"string\",\n      \"tokenQuantityDec\": 1466.996496107441,\n      \"tokenQuantityAfterFeeRaw\": \"string\",\n      \"tokenQuantityAfterFeeDec\": 5014.232180514442,\n      \"cancelChainTransactionId\": 2693.8561064759547,\n      \"batchId\": 9999.777757171085,\n      \"ferryTransactionIndex\": 5471.702498740459,\n      \"batchNumber\": 298.2238984142993,\n      \"startIndex\": 7790.495041861954,\n      \"endIndex\": 4468.536539241022,\n      \"batchHash\": \"string\",\n      \"embarkTransactionHash\": \"string\",\n      \"departTransactionHash\": \"string\",\n      \"disembarkTransactionHash\": \"string\",\n      \"status\": \"JETTISONED\"\n    },\n    {\n      \"uid\": 5248.497811375368,\n      \"userAddress\": \"string\",\n      \"userNativeAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"recipientNativeAddress\": \"string\",\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"sourceChain\": \"aurora\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"stable\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"embarkTimestampSec\": 1744.6763291531643,\n      \"departTimestampSec\": 4616.373237515274,\n      \"disembarkTimestampSec\": 8369.969481859685,\n      \"tokenQuantityRaw\": \"string\",\n      \"tokenQuantityDec\": 2623.735615074303,\n      \"tokenQuantityAfterFeeRaw\": \"string\",\n      \"tokenQuantityAfterFeeDec\": 4160.363561708275,\n      \"cancelChainTransactionId\": 9752.83192852931,\n      \"batchId\": 2171.363781288862,\n      \"ferryTransactionIndex\": 5077.6580207625075,\n      \"batchNumber\": 4995.704448110333,\n      \"startIndex\": 4294.295611798698,\n      \"endIndex\": 8878.699083092453,\n      \"batchHash\": \"string\",\n      \"embarkTransactionHash\": \"string\",\n      \"departTransactionHash\": \"string\",\n      \"disembarkTransactionHash\": \"string\",\n      \"status\": \"LAST_CALL\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a548c8b-f1f4-4f04-8da6-89700b674d5f",
+          "name": "Returns a list of Frax Ferry transaction volume info",
+          "request": {
+            "name": "Returns a list of Frax Ferry transaction volume info",
+            "description": {
+              "content": "Returns a list of Frax Ferry transaction volume info",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxferry",
+                "transactions",
+                "volume"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b1f644a-0af3-47f9-b2f5-82935b8430a8",
+              "name": "Returns a list of Frax Ferry transaction volume info.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxferry",
+                    "transactions",
+                    "volume"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"userAddress\": \"string\",\n      \"userNativeAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"recipientNativeAddress\": \"string\",\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"sourceChain\": \"polygon\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"optimism\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"tokenQuantityDec\": 1357.2705137479136,\n      \"transactionCount\": 8116.471497573981\n    },\n    {\n      \"userAddress\": \"string\",\n      \"userNativeAddress\": \"string\",\n      \"recipientAddress\": \"string\",\n      \"recipientNativeAddress\": \"string\",\n      \"ferryKey\": \"string\",\n      \"name\": \"string\",\n      \"sourceChain\": \"avalanche\",\n      \"sourceContractAddress\": \"string\",\n      \"sourceContractNativeAddress\": \"string\",\n      \"sourceTokenAddress\": \"string\",\n      \"sourceTokenNativeAddress\": \"string\",\n      \"destinationChain\": \"polygon_zkevm\",\n      \"destinationContractAddress\": \"string\",\n      \"destinationContractNativeAddress\": \"string\",\n      \"destinationTokenAddress\": \"string\",\n      \"destinationTokenNativeAddress\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"tokenQuantityDec\": 4901.323470848612,\n      \"transactionCount\": 5028.562768927672\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a09e95bd-3e09-49fd-a88b-42c6d3692269",
+          "name": "Returns Frax Ferry overall transactions, token quantities, and USD value",
+          "request": {
+            "name": "Returns Frax Ferry overall transactions, token quantities, and USD value",
+            "description": {
+              "content": "Returns Frax Ferry overall transactions, token quantities, and USD value",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxferry",
+                "historical-stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "timeUnitGrouping",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe unit"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6f7ea12-a6fa-431a-bbfc-1f18bba6b92b",
+              "name": "Returns Frax Ferry overall transactions, token quantities, and USD value.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxferry",
+                    "historical-stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "timeUnitGrouping",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timeGrouping\": \"year\",\n  \"details\": [\n    {\n      \"embarkTimestamp\": \"2010-04-06T18:08:46.322Z\",\n      \"tokenSymbol\": \"string\",\n      \"destinationChain\": \"fantom\",\n      \"transactionCount\": 8437.086121276492,\n      \"tokenQuantityDec\": 1775.3381580198468,\n      \"totalValueUsd\": 5749.407341674123,\n      \"totalFeesUsd\": 1368.9722429071926\n    },\n    {\n      \"embarkTimestamp\": \"1951-12-21T00:56:59.085Z\",\n      \"tokenSymbol\": \"string\",\n      \"destinationChain\": \"stable\",\n      \"transactionCount\": 4604.124213963536,\n      \"tokenQuantityDec\": 8126.189158103216,\n      \"totalValueUsd\": 6127.054728132888,\n      \"totalFeesUsd\": 6812.530235729567\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b1359db5-4a2b-41f6-aaad-33369e854227",
+    "name": "Frax Finance v1-gauge v2-fraxferry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

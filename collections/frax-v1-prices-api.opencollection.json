@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v1-prices API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v1-prices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1Controller_getCoinStats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/priceitems/coin-stats"
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getCirculatingFxsDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/priceitems/circulating-fxs-details"
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getCirculatingFpisDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/priceitems/circulating-fpis-details"
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getDailyCoinStats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/priceitems/daily-coin-stats/:coinType",
+            "params": [
+              {
+                "name": "coinType",
+                "value": "",
+                "type": "path",
+                "description": "FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getCoinTotalSupply",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/priceitems/total-supply/:coinType",
+            "params": [
+              {
+                "name": "coinType",
+                "value": "",
+                "type": "path",
+                "description": "FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getCoinCirculatingSupply",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/priceitems/circulating-supply/:coinType",
+            "params": [
+              {
+                "name": "coinType",
+                "value": "",
+                "type": "path",
+                "description": "FPI, FPIS, FRAX, FXS, frxETH, or sfrxETH"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getPriceItems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/priceitems/:filter",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "path",
+                "description": "Timeframe"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

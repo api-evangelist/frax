@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-fpifpis API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-fpifpis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns FPI and CPI related stats.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fpifpis/fpi-stats"
+          },
+          "docs": "Returns FPI and CPI related stats."
+        },
+        {
+          "info": {
+            "name": "Get the balance sheet (assets and liabilities) data for FPI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fpifpis/fpi-collateral"
+          },
+          "docs": "Get the balance sheet (assets and liabilities) data for FPI."
+        },
+        {
+          "info": {
+            "name": "Get the latest FPI and FPIS summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fpifpis/summary/latest"
+          },
+          "docs": "Get the latest FPI and FPIS summary data."
+        },
+        {
+          "info": {
+            "name": "Returns a list historical FPI and FPIS summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fpifpis/summary/history",
+            "params": [
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          },
+          "docs": "Returns a list historical FPI and FPIS summary data."
+        },
+        {
+          "info": {
+            "name": "Shows how FPI and FPIS are used across all chains.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fpifpis/distribution/:token",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "FPI or FPIS. Case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns the latest token distribution for FPI or FPIS, showcasing where the token is used across multiple chains. Example distribution categories include Fraxlend, Curve, or Fraxswap."
+        },
+        {
+          "info": {
+            "name": "Shows the monthly income and expenses of the FPI protocol.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fpifpis/income-expense/summary"
+          },
+          "docs": "Shows the monthly income and expenses of the FPI protocol."
+        },
+        {
+          "info": {
+            "name": "Shows daily, more detailed income and expenses of the FPI protocol.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fpifpis/income-expense/detail",
+            "params": [
+              {
+                "name": "month",
+                "value": "",
+                "type": "query",
+                "description": "The numerical month"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "The numerical year"
+              }
+            ]
+          },
+          "docs": "Shows daily, more detailed income and expenses of the FPI protocol."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

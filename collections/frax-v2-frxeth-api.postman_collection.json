@@ -1,0 +1,1090 @@
+{
+  "item": [
+    {
+      "id": "b4ab22d9-564a-4cb9-8cde-7e0988c7ad12",
+      "name": "v2-frxeth",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "84abe0c0-77f2-46f3-a69d-b3917b73491c",
+          "name": "Returns a list of Ethereum validators and their statuses/balances.",
+          "request": {
+            "name": "Returns a list of Ethereum validators and their statuses/balances.",
+            "description": {
+              "content": "Returns a list of Ethereum validators and their statuses/balances.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "validators"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "ethereum",
+                  "description": "The name of the blockchain/network."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2147b66-b5ea-43b8-9451-72872572135b",
+              "name": "Returns a list of Ethereum validators and their statuses/balances.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "validators"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"validators\": [\n    {\n      \"publicKey\": \"string\",\n      \"statusCode\": \"active\",\n      \"activationEpoch\": 7108.385201865795,\n      \"activationTimestamp\": \"1969-10-01T20:57:46.008Z\",\n      \"activationTimestampSec\": 2332.301227321588,\n      \"balance\": \"string\",\n      \"balanceDec\": 5591.791849639579,\n      \"effectiveBalance\": \"string\",\n      \"effectiveBalanceDec\": 9951.528815044041,\n      \"blocksProposed\": 7255.525125453505,\n      \"feesReceived\": 7063.126955946156,\n      \"estimatedActivationTimestamp\": \"2026-07-13T12:40:47.449Z\"\n    },\n    {\n      \"publicKey\": \"string\",\n      \"statusCode\": \"exited\",\n      \"activationEpoch\": 2642.097517331545,\n      \"activationTimestamp\": \"1947-03-02T05:23:45.728Z\",\n      \"activationTimestampSec\": 9015.278751401387,\n      \"balance\": \"string\",\n      \"balanceDec\": 7929.273792529489,\n      \"effectiveBalance\": \"string\",\n      \"effectiveBalanceDec\": 2877.469562769438,\n      \"blocksProposed\": 561.266890027895,\n      \"feesReceived\": 8308.731646616965,\n      \"estimatedActivationTimestamp\": \"1956-03-29T06:13:51.845Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fcc354af-afaf-4712-883e-f2f0da489798",
+          "name": "Returns a list historical frxETH, sfrxETH, and validator summary data.",
+          "request": {
+            "name": "Returns a list historical frxETH, sfrxETH, and validator summary data.",
+            "description": {
+              "content": "Returns a list historical frxETH, sfrxETH, and validator summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "summary",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fdc4f2b8-c6c0-4b00-8b63-d8207e9784d1",
+              "name": "Returns a list historical frxETH, sfrxETH, and validator summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "summary",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"intervalTimestamp\": \"2007-09-06T02:50:45.764Z\",\n      \"blockNumber\": 1691.1315989051045,\n      \"epoch\": 6372.936242500506,\n      \"frxethTotalSupply\": 2915.7556895623206,\n      \"sfrxethTotalAssets\": 430.2852400074342,\n      \"sfrxethStoredTotalAssets\": 6431.684604305188,\n      \"sfrxethTotalSupply\": 2566.0504408644956,\n      \"sfrxethFrxethPrice\": 6404.189019453715,\n      \"sfrxethApr\": 8120.442202120991,\n      \"frxethEthCurvePrice\": 9441.433207353546,\n      \"frxethEthCurveLpSupply\": 3981.9002459248877,\n      \"frxethEthCurveEthBalance\": 8136.760020901485,\n      \"frxethEthCurveFrxethBalance\": 8074.376779092536,\n      \"frxethEthCurveRatio\": 7106.140384274252,\n      \"frxethEthCurveTotalApr\": 4992.995262366252,\n      \"frxethEthCurveAprBreakdown\": {\n        \"key_0\": 2385.540576395735,\n        \"key_1\": 4512.437524057329\n      },\n      \"frxethEthCurve\": {\n        \"price\": 3775.2305676496358,\n        \"virtualPrice\": 7805.629024872877,\n        \"ratio\": 70.98270940743222,\n        \"lpSupply\": 7444.529678925149,\n        \"frxethBalance\": 8615.49732980687,\n        \"otherTokenBalance\": 876.2159179298245,\n        \"aprTotal\": 6032.213569123826,\n        \"aprBreakdown\": {\n          \"key_0\": 2014.3054050111975\n        }\n      },\n      \"frxethWethCurve\": {\n        \"price\": 1650.6079780976822,\n        \"virtualPrice\": 1441.4737767632257,\n        \"ratio\": 8859.449313381458,\n        \"lpSupply\": 1711.8286039137565,\n        \"frxethBalance\": 9248.2321819987,\n        \"otherTokenBalance\": 9554.92088295072,\n        \"aprTotal\": 397.835792417125,\n        \"aprBreakdown\": {\n          \"key_0\": 8226.180480674637,\n          \"key_1\": 3217.151066090859,\n          \"key_2\": 8932.690309496962\n        }\n      },\n      \"frxethStethCurve\": {\n        \"price\": 6120.62576420459,\n        \"virtualPrice\": 9089.599140783801,\n        \"ratio\": 8636.121190685486,\n        \"lpSupply\": 3667.456725525348,\n        \"frxethBalance\": 4675.724789474054,\n        \"otherTokenBalance\": 3355.1704472978327,\n        \"aprTotal\": 8372.072953007611,\n        \"aprBreakdown\": {\n          \"key_0\": 1658.520939997299,\n          \"key_1\": 7413.083543526039,\n          \"key_2\": 911.9715129089278\n        }\n      },\n      \"wfrxethEzethCurve\": {\n        \"price\": 9580.597587724715,\n        \"virtualPrice\": 4832.49278933412,\n        \"ratio\": 4833.185819312827,\n        \"lpSupply\": 2149.333152244709,\n        \"frxethBalance\": 5688.318624174896,\n        \"otherTokenBalance\": 5774.034821243641,\n        \"aprTotal\": 514.8520579949723,\n        \"aprBreakdown\": {\n          \"key_0\": 866.9401138008903,\n          \"key_1\": 4271.083278569663\n        }\n      },\n      \"activeValidatorCt\": 2978.767298990237,\n      \"pendingValidatorCt\": 3302.345987457962,\n      \"totalValidatorBalance\": 4313.132951598647,\n      \"validatorMarketShare\": 1814.0188352974717,\n      \"cumulativeValidatorBeaconRewards\": 7154.402732368338,\n      \"cumulativeValidatorTipsAndMev\": 260.16334793998675,\n      \"cumulativeBlocksProduced\": 3053.1934491788147,\n      \"ethPriceUsd\": 5457.796076423807,\n      \"otherLsdExchangeRates\": {\n        \"key_0\": 34.629543381328176,\n        \"key_1\": 2687.48533085157,\n        \"key_2\": 2820.771131843377\n      }\n    },\n    {\n      \"intervalTimestamp\": \"1963-11-16T08:41:09.530Z\",\n      \"blockNumber\": 4136.582223196075,\n      \"epoch\": 5549.826945601506,\n      \"frxethTotalSupply\": 4297.992527887939,\n      \"sfrxethTotalAssets\": 7928.608467068339,\n      \"sfrxethStoredTotalAssets\": 8504.281561348655,\n      \"sfrxethTotalSupply\": 3103.004881079784,\n      \"sfrxethFrxethPrice\": 699.6419193807635,\n      \"sfrxethApr\": 2524.2233505218837,\n      \"frxethEthCurvePrice\": 6459.960283632473,\n      \"frxethEthCurveLpSupply\": 5717.581241970523,\n      \"frxethEthCurveEthBalance\": 8191.444860651534,\n      \"frxethEthCurveFrxethBalance\": 3785.4090901927916,\n      \"frxethEthCurveRatio\": 5799.638702934942,\n      \"frxethEthCurveTotalApr\": 5988.353188615737,\n      \"frxethEthCurveAprBreakdown\": {\n        \"key_0\": 7141.030764675585,\n        \"key_1\": 6252.450846830009,\n        \"key_2\": 2310.1566837343735\n      },\n      \"frxethEthCurve\": {\n        \"price\": 9187.709316680253,\n        \"virtualPrice\": 7693.750185384592,\n        \"ratio\": 8074.121005127866,\n        \"lpSupply\": 8632.396113583178,\n        \"frxethBalance\": 9702.569355406918,\n        \"otherTokenBalance\": 5715.462925429391,\n        \"aprTotal\": 4184.701500876114,\n        \"aprBreakdown\": {\n          \"key_0\": 1331.3493358910223,\n          \"key_1\": 9854.755591059093\n        }\n      },\n      \"frxethWethCurve\": {\n        \"price\": 1370.4598672028378,\n        \"virtualPrice\": 5276.218387754881,\n        \"ratio\": 2392.4512114342187,\n        \"lpSupply\": 4409.990834721617,\n        \"frxethBalance\": 6689.909268588143,\n        \"otherTokenBalance\": 4036.8327486555036,\n        \"aprTotal\": 1349.241423962183,\n        \"aprBreakdown\": {\n          \"key_0\": 2351.4341386840188,\n          \"key_1\": 859.5667236283233,\n          \"key_2\": 5299.247969382515,\n          \"key_3\": 3317.800384034404\n        }\n      },\n      \"frxethStethCurve\": {\n        \"price\": 5720.783907150503,\n        \"virtualPrice\": 5808.589200364418,\n        \"ratio\": 4515.4451157525245,\n        \"lpSupply\": 2137.161844210832,\n        \"frxethBalance\": 168.6931180126705,\n        \"otherTokenBalance\": 6310.0404634548295,\n        \"aprTotal\": 9233.46991539748,\n        \"aprBreakdown\": {\n          \"key_0\": 1730.2115179472876,\n          \"key_1\": 3317.9743224231984,\n          \"key_2\": 7871.384646380993\n        }\n      },\n      \"wfrxethEzethCurve\": {\n        \"price\": 2370.6525268938703,\n        \"virtualPrice\": 1610.3113360607101,\n        \"ratio\": 2117.35906553258,\n        \"lpSupply\": 954.0689256304014,\n        \"frxethBalance\": 1868.6666526066565,\n        \"otherTokenBalance\": 6649.995178916252,\n        \"aprTotal\": 8384.588821555686,\n        \"aprBreakdown\": {\n          \"key_0\": 2635.338756430731,\n          \"key_1\": 159.92244048536497,\n          \"key_2\": 1936.2654526227452\n        }\n      },\n      \"activeValidatorCt\": 6952.2779614772035,\n      \"pendingValidatorCt\": 842.933292076744,\n      \"totalValidatorBalance\": 7388.693652506035,\n      \"validatorMarketShare\": 81.37165714837136,\n      \"cumulativeValidatorBeaconRewards\": 3224.600504499906,\n      \"cumulativeValidatorTipsAndMev\": 7056.271202519795,\n      \"cumulativeBlocksProduced\": 5791.599701114354,\n      \"ethPriceUsd\": 2277.2025798963223,\n      \"otherLsdExchangeRates\": {\n        \"key_0\": 4297.440005885916,\n        \"key_1\": 8024.514069478935,\n        \"key_2\": 6391.324386154027\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6552c951-fd3e-4223-bef6-73da084b8432",
+          "name": "Get the latest frxETH, sfrxETH, and validator summary data.",
+          "request": {
+            "name": "Get the latest frxETH, sfrxETH, and validator summary data.",
+            "description": {
+              "content": "Get the latest frxETH, sfrxETH, and validator summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "summary",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54c2e23c-ccd9-4ef3-8b02-96b879a0a968",
+              "name": "Get the latest frxETH, sfrxETH, and validator summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "summary",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"intervalTimestamp\": \"2018-03-29T07:12:45.005Z\",\n  \"blockNumber\": 8791.41964405264,\n  \"epoch\": 6115.190518556984,\n  \"frxethTotalSupply\": 1473.6083413238887,\n  \"sfrxethTotalAssets\": 6242.992671985118,\n  \"sfrxethStoredTotalAssets\": 4649.02077707325,\n  \"sfrxethTotalSupply\": 5521.05143476599,\n  \"sfrxethFrxethPrice\": 4602.581557958021,\n  \"sfrxethApr\": 7738.880544076236,\n  \"frxethEthCurvePrice\": 7684.440213229457,\n  \"frxethEthCurveLpSupply\": 1419.7532176539141,\n  \"frxethEthCurveEthBalance\": 6719.649169783338,\n  \"frxethEthCurveFrxethBalance\": 239.10785243118292,\n  \"frxethEthCurveRatio\": 3112.885344679116,\n  \"frxethEthCurveTotalApr\": 7257.997643758343,\n  \"frxethEthCurveAprBreakdown\": {\n    \"key_0\": 1732.7973593937818\n  },\n  \"frxethEthCurve\": {\n    \"price\": 8901.303798715453,\n    \"virtualPrice\": 824.4477857468669,\n    \"ratio\": 640.5053115334102,\n    \"lpSupply\": 3962.4382533761805,\n    \"frxethBalance\": 3683.8715937802435,\n    \"otherTokenBalance\": 9389.31465161073,\n    \"aprTotal\": 4603.84264985941,\n    \"aprBreakdown\": {\n      \"key_0\": 1827.3194426454543\n    }\n  },\n  \"frxethWethCurve\": {\n    \"price\": 7227.694774118253,\n    \"virtualPrice\": 1270.5973433843565,\n    \"ratio\": 3092.1157505848796,\n    \"lpSupply\": 7565.565398468881,\n    \"frxethBalance\": 372.8431539159538,\n    \"otherTokenBalance\": 3831.3613403996583,\n    \"aprTotal\": 963.3885913505625,\n    \"aprBreakdown\": {\n      \"key_0\": 8833.057203316677,\n      \"key_1\": 133.65697914142217,\n      \"key_2\": 9314.398910705715,\n      \"key_3\": 3217.6669634407926,\n      \"key_4\": 6345.096407628297\n    }\n  },\n  \"frxethStethCurve\": {\n    \"price\": 1430.584988407484,\n    \"virtualPrice\": 6875.243536526005,\n    \"ratio\": 3591.816208998514,\n    \"lpSupply\": 7022.575222351415,\n    \"frxethBalance\": 1844.5278824824707,\n    \"otherTokenBalance\": 5861.74964036815,\n    \"aprTotal\": 5301.419640798517,\n    \"aprBreakdown\": {\n      \"key_0\": 1328.9248965803479\n    }\n  },\n  \"wfrxethEzethCurve\": {\n    \"price\": 4347.694423477578,\n    \"virtualPrice\": 8918.053438884654,\n    \"ratio\": 968.1328182383108,\n    \"lpSupply\": 6739.292002124155,\n    \"frxethBalance\": 6889.14344559683,\n    \"otherTokenBalance\": 4407.809303162403,\n    \"aprTotal\": 8901.471963802685,\n    \"aprBreakdown\": {\n      \"key_0\": 9748.930400880072,\n      \"key_1\": 0.2834938628126782,\n      \"key_2\": 4338.6067480363845,\n      \"key_3\": 9793.428423380314\n    }\n  },\n  \"activeValidatorCt\": 5196.1050796418895,\n  \"pendingValidatorCt\": 6433.62565719693,\n  \"totalValidatorBalance\": 9787.162767806938,\n  \"validatorMarketShare\": 9346.766902075733,\n  \"cumulativeValidatorBeaconRewards\": 7228.898409502996,\n  \"cumulativeValidatorTipsAndMev\": 3012.11549067707,\n  \"cumulativeBlocksProduced\": 8691.460007098694,\n  \"ethPriceUsd\": 4732.527977175163,\n  \"otherLsdExchangeRates\": {\n    \"key_0\": 9473.61244967796,\n    \"key_1\": 5133.491510961598\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5631e1bb-5076-4f05-9130-e08130a6eb86",
+          "name": "Get the balance sheet (assets and liabilities) data for frxETH.",
+          "request": {
+            "name": "Get the balance sheet (assets and liabilities) data for frxETH.",
+            "description": {
+              "content": "Get the balance sheet (assets and liabilities) data for frxETH.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "collateral"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "04bc0d36-0287-4a19-b052-76a90e70d115",
+              "name": "Get the balance sheet (assets and liabilities) data for frxETH.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "collateral"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ethPrice\": 5647.930584926831,\n  \"updatedAtBlock\": 2604.837878076973,\n  \"updatedAtTimestampSec\": 3925.556160121777,\n  \"assets\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"priceInEth\": 4461.894839264124,\n      \"amount\": 5621.137550135982,\n      \"valueInEth\": 6818.162100885477\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"priceInEth\": 4165.282122445871,\n      \"amount\": 6589.40055121508,\n      \"valueInEth\": 5863.055537985208\n    }\n  ],\n  \"liabilities\": [\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"priceInEth\": 5246.225768634359,\n      \"amount\": 3903.124021939468,\n      \"valueInEth\": 4702.244200231959\n    },\n    {\n      \"key\": \"string\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"priceInEth\": 1080.4066534280887,\n      \"amount\": 5599.848906812717,\n      \"valueInEth\": 3040.602180594365\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13494f04-37dd-44c4-8fef-71c5ae299a1d",
+          "name": "Get the validator geographic and client diversity of frxETH.",
+          "request": {
+            "name": "Get the validator geographic and client diversity of frxETH.",
+            "description": {
+              "content": "Get the validator geographic and client diversity of frxETH.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "diversity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ed06561-7ed5-468a-95aa-a810e2c0f808",
+              "name": "Get the validator geographic and client diversity of frxETH.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "diversity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"countryDistributionPerc\": {},\n  \"consensusClientDistributionPerc\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f072241-99f4-4ae6-97f5-2b5fbfba0c61",
+          "name": "List the staking reward cycles and the amount of frxETH rewards allocated toward sfrxETH, the protocol fees, and insurance.",
+          "request": {
+            "name": "List the staking reward cycles and the amount of frxETH rewards allocated toward sfrxETH, the protocol fees, and insurance.",
+            "description": {
+              "content": "List the staking reward cycles and the amount of frxETH rewards allocated toward sfrxETH, the protocol fees, and insurance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "staking-reward-cycles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b259ee7f-515b-4c5f-acb8-eb81ff784d24",
+              "name": "List the staking reward cycles and the amount of frxETH rewards allocated toward sfrxETH, the protocol fees, and insurance.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "staking-reward-cycles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"summary\": {\n    \"totalCycles\": 6445.053793019547,\n    \"latestCycleStartTimestamp\": \"1970-01-10T17:14:12.137Z\",\n    \"cumulativeAmount\": 5788.392005934644,\n    \"cumulativeAmountBreakdown\": {\n      \"sfrxeth\": 6490.83379150182,\n      \"protocol\": 5324.536799745837,\n      \"insurance\": 8215.537924404645\n    }\n  },\n  \"cycles\": [\n    {\n      \"id\": 4275.892941965931,\n      \"startTimestamp\": \"1951-01-31T08:01:36.420Z\",\n      \"startBlock\": 4157.137154146533,\n      \"endTimestamp\": \"1976-10-17T00:08:47.123Z\",\n      \"endBlock\": 8154.696699238068,\n      \"txHash\": \"string\",\n      \"txTimestamp\": \"1977-05-20T13:48:46.552Z\",\n      \"totalAmount\": 4322.413265331667,\n      \"amountBreakdown\": {\n        \"sfrxeth\": 5852.835976449844,\n        \"protocol\": 2488.9002088171965,\n        \"insurance\": 850.5199815818598\n      }\n    },\n    {\n      \"id\": 4949.2874028389115,\n      \"startTimestamp\": \"1955-03-19T23:54:51.556Z\",\n      \"startBlock\": 2850.224522446756,\n      \"endTimestamp\": \"1956-11-11T14:17:36.364Z\",\n      \"endBlock\": 1242.437905205136,\n      \"txHash\": \"string\",\n      \"txTimestamp\": \"1981-07-13T21:32:43.125Z\",\n      \"totalAmount\": 2559.870252058726,\n      \"amountBreakdown\": {\n        \"sfrxeth\": 7591.3531906966155,\n        \"protocol\": 9397.399000555859,\n        \"insurance\": 2486.44027299154\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e15d25ba-3a9a-4eee-aace-e880d899be23",
+          "name": "Get frxETH redemption ticket NFTs that have not been redeemed yet.",
+          "request": {
+            "name": "Get frxETH redemption ticket NFTs that have not been redeemed yet.",
+            "description": {
+              "content": "Get frxETH redemption ticket NFTs that have not been redeemed yet.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "frxeth-redemptions",
+                "tickets",
+                "active"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "ethereum",
+                  "description": "The name of the blockchain/network."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f61c01f-ef99-4ada-8626-94678374d764",
+              "name": "Get frxETH redemption ticket NFTs that have not been redeemed yet.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "frxeth-redemptions",
+                    "tickets",
+                    "active"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tickets\": [\n    {\n      \"chain\": \"ethereum\",\n      \"contractAddress\": \"string\",\n      \"nftTokenId\": 5208.513738479875,\n      \"createdAt\": \"1953-05-04T04:20:26.720Z\",\n      \"maturesAt\": \"2018-11-11T21:25:52.739Z\",\n      \"redeemedAt\": \"2020-09-17T00:31:23.660Z\",\n      \"amountIn\": 2175.2927888957975,\n      \"fee\": 2500.466312235916,\n      \"penalty\": 3996.6527559811793,\n      \"amountOut\": 7833.101093514488,\n      \"callerAddress\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"receiverAddress\": \"string\",\n      \"amountE18\": \"string\"\n    },\n    {\n      \"chain\": \"ethereum\",\n      \"contractAddress\": \"string\",\n      \"nftTokenId\": 2391.662856867448,\n      \"createdAt\": \"2020-05-11T16:22:44.035Z\",\n      \"maturesAt\": \"1956-11-15T03:42:33.167Z\",\n      \"redeemedAt\": \"1985-07-13T09:27:25.035Z\",\n      \"amountIn\": 9599.680788297206,\n      \"fee\": 755.5522496670796,\n      \"penalty\": 3344.100213677863,\n      \"amountOut\": 2353.682562466022,\n      \"callerAddress\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"receiverAddress\": \"string\",\n      \"amountE18\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a82e4c73-d143-4ace-b231-b2db90fc79d2",
+          "name": "Get frxETH redemption ticket NFTs that have been redeemed.",
+          "request": {
+            "name": "Get frxETH redemption ticket NFTs that have been redeemed.",
+            "description": {
+              "content": "Get frxETH redemption ticket NFTs that have been redeemed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "frxeth-redemptions",
+                "tickets",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "ethereum",
+                  "description": "The name of the blockchain/network."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aac79158-8699-421b-bac3-c3d1b0d36b1c",
+              "name": "Get frxETH redemption ticket NFTs that have been redeemed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "frxeth-redemptions",
+                    "tickets",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tickets\": [\n    {\n      \"chain\": \"ethereum\",\n      \"contractAddress\": \"string\",\n      \"nftTokenId\": 8473.609430670473,\n      \"createdAt\": \"2010-11-29T07:52:52.651Z\",\n      \"maturesAt\": \"2016-03-13T20:16:57.135Z\",\n      \"redeemedAt\": \"1951-05-28T20:55:18.862Z\",\n      \"amountIn\": 3405.5693121985078,\n      \"fee\": 4825.288973904356,\n      \"penalty\": 3487.5653269476447,\n      \"amountOut\": 7342.082241576051,\n      \"callerAddress\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"receiverAddress\": \"string\",\n      \"amountE18\": \"string\"\n    },\n    {\n      \"chain\": \"ethereum\",\n      \"contractAddress\": \"string\",\n      \"nftTokenId\": 1661.4252600582001,\n      \"createdAt\": \"1997-05-08T00:16:15.839Z\",\n      \"maturesAt\": \"1975-06-03T16:18:12.574Z\",\n      \"redeemedAt\": \"2012-12-16T20:26:08.492Z\",\n      \"amountIn\": 2171.0084042614762,\n      \"fee\": 6549.5897836912745,\n      \"penalty\": 8462.730821771775,\n      \"amountOut\": 3076.028487644238,\n      \"callerAddress\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"receiverAddress\": \"string\",\n      \"amountE18\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5fa2b57-879b-4c61-ab8c-b8ea281d6d45",
+          "name": "Get the latest ETH balance and accounting state of the frxETH redemption contract.",
+          "request": {
+            "name": "Get the latest ETH balance and accounting state of the frxETH redemption contract.",
+            "description": {
+              "content": "Get the latest ETH balance and accounting state of the frxETH redemption contract.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "frxeth-redemptions",
+                "latest-state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "ethereum",
+                  "description": "The name of the blockchain/network."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "78a33938-fddd-49ca-ada4-7626384f9178",
+              "name": "Get the latest ETH balance and accounting state of the frxETH redemption contract.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "frxeth-redemptions",
+                    "latest-state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ethInContract\": 141.16117497417812,\n  \"frxethInContract\": 741.1151029728236,\n  \"ethLiabilities\": 1816.4024745011209,\n  \"unclaimedFees\": 1417.9818405242784,\n  \"nextNftId\": 330.7278837881711,\n  \"queueLengthSec\": 7832.964452283047,\n  \"earlyExitPenaltyPerc\": 3660.2441143835294,\n  \"redemptionFeePerc\": 7142.281869627939\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f284ac4a-1969-4a89-903f-d5b4f2d592d3",
+          "name": "Get frxETH redemption ticket NFTs and transaction details for a user.",
+          "request": {
+            "name": "Get frxETH redemption ticket NFTs and transaction details for a user.",
+            "description": {
+              "content": "Get frxETH redemption ticket NFTs and transaction details for a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "user",
+                ":userAddress",
+                "frxeth-redemptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "ethereum",
+                  "description": "The name of the blockchain/network."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userAddress",
+                  "description": "(Required) The hex address of the user. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e35ac800-3fa6-4331-a040-017780ccacb7",
+              "name": "Get frxETH redemption ticket NFTs and transaction details for a user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "user",
+                    ":userAddress",
+                    "frxeth-redemptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userAddress",
+                      "description": "(Required) The hex address of the user. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userAddress\": \"string\",\n  \"tickets\": [\n    {\n      \"chain\": \"ethereum\",\n      \"contractAddress\": \"string\",\n      \"nftTokenId\": 3310.8701508556824,\n      \"createdAt\": \"2004-06-04T04:12:13.420Z\",\n      \"maturesAt\": \"1973-06-22T11:11:18.117Z\",\n      \"redeemedAt\": \"1996-12-13T19:08:45.040Z\",\n      \"amountIn\": 5563.510662853109,\n      \"fee\": 4780.983532712041,\n      \"penalty\": 3435.5919515177256,\n      \"amountOut\": 3439.6222071832926,\n      \"callerAddress\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"receiverAddress\": \"string\",\n      \"amountE18\": \"string\",\n      \"transactions\": [\n        {\n          \"chain\": \"ethereum\",\n          \"transactionHash\": \"string\",\n          \"blockNumber\": 5389.776373706122,\n          \"transactionTimestamp\": \"1959-02-19T03:41:39.047Z\",\n          \"contractAddress\": \"string\",\n          \"logIndex\": 4085.287370776058,\n          \"nftTokenId\": 9153.02774810994,\n          \"transactionType\": \"redeem\",\n          \"amount\": 7381.918915571394,\n          \"callerAddress\": \"string\",\n          \"ownerAddress\": \"string\",\n          \"receiverAddress\": \"string\"\n        },\n        {\n          \"chain\": \"ethereum\",\n          \"transactionHash\": \"string\",\n          \"blockNumber\": 4007.8634026084824,\n          \"transactionTimestamp\": \"1973-02-12T09:59:51.728Z\",\n          \"contractAddress\": \"string\",\n          \"logIndex\": 1573.0872977404297,\n          \"nftTokenId\": 6578.445994393669,\n          \"transactionType\": \"transfer_out\",\n          \"amount\": 5563.649757589381,\n          \"callerAddress\": \"string\",\n          \"ownerAddress\": \"string\",\n          \"receiverAddress\": \"string\"\n        }\n      ]\n    },\n    {\n      \"chain\": \"ethereum\",\n      \"contractAddress\": \"string\",\n      \"nftTokenId\": 5266.647839594426,\n      \"createdAt\": \"1964-12-16T13:03:11.053Z\",\n      \"maturesAt\": \"2012-03-08T06:32:59.763Z\",\n      \"redeemedAt\": \"2008-01-28T04:46:59.597Z\",\n      \"amountIn\": 7083.108169931149,\n      \"fee\": 8969.269834418656,\n      \"penalty\": 8279.523296856898,\n      \"amountOut\": 2597.8646723682587,\n      \"callerAddress\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"receiverAddress\": \"string\",\n      \"amountE18\": \"string\",\n      \"transactions\": [\n        {\n          \"chain\": \"ethereum\",\n          \"transactionHash\": \"string\",\n          \"blockNumber\": 7280.942081090995,\n          \"transactionTimestamp\": \"2025-05-27T19:03:29.447Z\",\n          \"contractAddress\": \"string\",\n          \"logIndex\": 1594.793559575719,\n          \"nftTokenId\": 6822.209800296586,\n          \"transactionType\": \"transfer_in\",\n          \"amount\": 1756.2447261672698,\n          \"callerAddress\": \"string\",\n          \"ownerAddress\": \"string\",\n          \"receiverAddress\": \"string\"\n        },\n        {\n          \"chain\": \"ethereum\",\n          \"transactionHash\": \"string\",\n          \"blockNumber\": 9077.995069984643,\n          \"transactionTimestamp\": \"1948-04-26T14:41:53.488Z\",\n          \"contractAddress\": \"string\",\n          \"logIndex\": 8549.565047117763,\n          \"nftTokenId\": 1460.317603516287,\n          \"transactionType\": \"enter\",\n          \"amount\": 5386.4794316829575,\n          \"callerAddress\": \"string\",\n          \"ownerAddress\": \"string\",\n          \"receiverAddress\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "746fa8cb-9313-4423-8ac4-045974806b9d",
+          "name": "Returns all-time sfrxETH gains, profit, etc and the latest balance info for the user.",
+          "request": {
+            "name": "Returns all-time sfrxETH gains, profit, etc and the latest balance info for the user.",
+            "description": {
+              "content": "Returns all-time sfrxETH gains, profit, etc and the latest balance info for the user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "user",
+                ":userAddress",
+                "sfrxeth-summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "ethereum",
+                  "description": "The name of the blockchain/network."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userAddress",
+                  "description": "(Required) The hex address of the user. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d5335e9-4fae-44d0-ba91-f7d90da1b6d2",
+              "name": "Returns all-time sfrxETH gains, profit, etc and the latest balance info for the user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "user",
+                    ":userAddress",
+                    "sfrxeth-summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userAddress",
+                      "description": "(Required) The hex address of the user. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userAddress\": \"string\",\n  \"positionSummary\": {\n    \"latestUnitPriceUsd\": 4491.464959718862,\n    \"latestUnitPriceFrxeth\": 2925.9350694307573,\n    \"latestPriceAsOfTimestamp\": \"1966-04-06T08:18:38.720Z\",\n    \"totalUnrealizedFrxethBasis\": 8360.065229080039,\n    \"totalUnrealizedFrxethValue\": 4135.76364654361,\n    \"totalUnrealizedFrxethGain\": 5988.173157695662,\n    \"lots\": [\n      {\n        \"blockNumber\": 2724.5051623937334,\n        \"timestamp\": \"1989-08-23T23:20:26.523Z\",\n        \"timestampSec\": 9408.134235501018,\n        \"quantitySfrxethOriginal\": 8110.9601707207175,\n        \"quantitySfrxethRemaining\": 6497.986308377302,\n        \"unitCostUsd\": 3099.135870810348,\n        \"unitCostFrxeth\": 5.9593376344746485,\n        \"realizedMarketValueUsd\": 6226.752549472118,\n        \"realizedMarketValueFrxeth\": 6607.430988589934,\n        \"unrealizedMarketValueUsd\": 1973.9852835663442,\n        \"unrealizedMarketValueFrxeth\": 3522.655270263404,\n        \"unrealizedFrxethGain\": 1162.5917339808345\n      },\n      {\n        \"blockNumber\": 3017.016638556375,\n        \"timestamp\": \"2005-12-20T11:47:15.362Z\",\n        \"timestampSec\": 5082.860191844208,\n        \"quantitySfrxethOriginal\": 8997.51826832136,\n        \"quantitySfrxethRemaining\": 2237.3994894346706,\n        \"unitCostUsd\": 1152.0413664556595,\n        \"unitCostFrxeth\": 7664.557653675269,\n        \"realizedMarketValueUsd\": 3998.911753251063,\n        \"realizedMarketValueFrxeth\": 1668.8016392570992,\n        \"unrealizedMarketValueUsd\": 3752.447981561772,\n        \"unrealizedMarketValueFrxeth\": 6492.234125852569,\n        \"unrealizedFrxethGain\": 2548.978291486439\n      }\n    ]\n  },\n  \"balanceSummary\": {\n    \"sfrxethBalanceE18\": \"string\",\n    \"sfrxethBalanceDec\": 8338.63841020944,\n    \"balanceBreakdownE18\": {\n      \"key_0\": \"string\"\n    },\n    \"balanceBreakdownDec\": {\n      \"key_0\": 7118.224026371081\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e82190c-fea3-4216-bee9-d3606541eb9b",
+          "name": "Get the daily sfrxETH earnings for a user.",
+          "request": {
+            "name": "Get the daily sfrxETH earnings for a user.",
+            "description": {
+              "content": "Get the daily sfrxETH earnings for a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "frxeth",
+                "user",
+                ":userAddress",
+                "sfrxeth-daily-earnings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "ethereum",
+                  "description": "The name of the blockchain/network."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userAddress",
+                  "description": "(Required) The hex address of the user. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe6e833e-0475-4b5f-bbc8-7d588a46fe14",
+              "name": "Get the daily sfrxETH earnings for a user.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "frxeth",
+                    "user",
+                    ":userAddress",
+                    "sfrxeth-daily-earnings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userAddress",
+                      "description": "(Required) The hex address of the user. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userAddress\": \"string\",\n  \"dailyData\": [\n    {\n      \"timestamp\": \"1950-02-12T19:30:33.624Z\",\n      \"timestampSec\": 1448.19454310381,\n      \"eodSfrxethBalanceTotal\": 5449.5436220845495,\n      \"eodSfrxethBalanceBreakdown\": {\n        \"key_0\": 6014.48845375047\n      },\n      \"earnings\": 2157.795940402395\n    },\n    {\n      \"timestamp\": \"1947-04-24T16:46:46.201Z\",\n      \"timestampSec\": 7088.306039414984,\n      \"eodSfrxethBalanceTotal\": 8292.020096864084,\n      \"eodSfrxethBalanceBreakdown\": {\n        \"key_0\": 9311.118299216183\n      },\n      \"earnings\": 5617.5776313030065\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "00af64c6-18c3-43b0-ae91-f1280d6d7fbd",
+    "name": "Frax Finance v1-gauge v2-frxeth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

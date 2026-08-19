@@ -1,0 +1,342 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-fraxswap API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-fraxswap",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of Fraxswap tokens for the optionally-given request parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/tokens",
+            "params": [
+              {
+                "name": "chain",
+                "value": "",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              },
+              {
+                "name": "address",
+                "value": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0",
+                "type": "query",
+                "description": "The hex address of the token. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns a list of Fraxswap tokens for the optionally-given request parameters"
+        },
+        {
+          "info": {
+            "name": "Returns a list of Fraxswap tokens for a specific token address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/tokens/:tokenAddress",
+            "params": [
+              {
+                "name": "tokenAddress",
+                "value": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0",
+                "type": "path",
+                "description": "The hex address of the token. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns a list of Fraxswap tokens for a specific token address."
+        },
+        {
+          "info": {
+            "name": "Returns a list of pools for a specific Fraxswap token address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/tokens/:tokenAddress/pools",
+            "params": [
+              {
+                "name": "tokenAddress",
+                "value": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0",
+                "type": "path",
+                "description": "The hex address of the token. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns a list of pools for a specific Fraxswap token address."
+        },
+        {
+          "info": {
+            "name": "Returns a summary of activity for the token by day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/tokens/:tokenAddress/history",
+            "params": [
+              {
+                "name": "tokenAddress",
+                "value": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0",
+                "type": "path",
+                "description": "The hex address of the token. Input is case insensitive."
+              },
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          },
+          "docs": "Returns a summary of activity for the token by day."
+        },
+        {
+          "info": {
+            "name": "Returns a list of Fraxswap liquidity pools for the optionally-given request parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/pools",
+            "params": [
+              {
+                "name": "chain",
+                "value": "",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query",
+                "description": "The hex address of the token. Input is case insensitive."
+              },
+              {
+                "name": "pool",
+                "value": "0x8206412c107eF1aDb70B9277974f5163760E128E",
+                "type": "query",
+                "description": "The hex address of the pool. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns a list of Fraxswap liquidity pools for the optionally-given request parameters."
+        },
+        {
+          "info": {
+            "name": "Returns a list of Fraxswap pools for a specific pool address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/pools/:poolAddress",
+            "params": [
+              {
+                "name": "poolAddress",
+                "value": "0x8206412c107eF1aDb70B9277974f5163760E128E",
+                "type": "path",
+                "description": "The hex address of the pool. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns a list of Fraxswap pools for a specific pool address."
+        },
+        {
+          "info": {
+            "name": "Returns a summary of activity for the pool by day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/pools/:poolAddress/history",
+            "params": [
+              {
+                "name": "poolAddress",
+                "value": "0x8206412c107eF1aDb70B9277974f5163760E128E",
+                "type": "path",
+                "description": "The hex address of the pool. Input is case insensitive."
+              },
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          },
+          "docs": "Returns a summary of activity for the pool by day."
+        },
+        {
+          "info": {
+            "name": "Returns a list of Fraxswap transactions for the optionally-given request parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/transactions",
+            "params": [
+              {
+                "name": "chain",
+                "value": "",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query",
+                "description": "The hex address of the token. Input is case insensitive."
+              },
+              {
+                "name": "pool",
+                "value": "",
+                "type": "query",
+                "description": "The hex address of the pool. Input is case insensitive."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Transaction type"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Pass a cursor to get the next set of records."
+              },
+              {
+                "name": "ct",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return. Defaults to 50. Max value 100."
+              }
+            ]
+          },
+          "docs": "Returns a list of Fraxswap transactions for the optionally-given request parameters."
+        },
+        {
+          "info": {
+            "name": "Returns a list of Fraxswap TWAMM orders for the optionally-given request parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/twamm-orders",
+            "params": [
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              },
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "The hex address of the user. Input is case insensitive."
+              },
+              {
+                "name": "pool",
+                "value": "0x8206412c107eF1aDb70B9277974f5163760E128E",
+                "type": "query",
+                "description": "The hex address of the pool. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns a list of Fraxswap TWAMM orders for the optionally-given request parameters."
+        },
+        {
+          "info": {
+            "name": "Return details of a single Fraxswap TWAMM order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/twamm-orders/:chain/:pool/:orderId",
+            "params": [
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "path",
+                "description": "The name of the blockchain/network."
+              },
+              {
+                "name": "pool",
+                "value": "0x8206412c107eF1aDb70B9277974f5163760E128E",
+                "type": "path",
+                "description": "The hex address of the pool. Input is case insensitive."
+              },
+              {
+                "name": "orderId",
+                "value": "81",
+                "type": "path",
+                "description": "The order ID."
+              }
+            ]
+          },
+          "docs": "Return details of a single Fraxswap TWAMM order."
+        },
+        {
+          "info": {
+            "name": "Return daily TWAMM data of a single Fraxswap TWAMM order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/twamm-orders/:chain/:pool/:orderId/history",
+            "params": [
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "path",
+                "description": "The name of the blockchain/network."
+              },
+              {
+                "name": "pool",
+                "value": "0x8206412c107eF1aDb70B9277974f5163760E128E",
+                "type": "path",
+                "description": "The hex address of the pool. Input is case insensitive."
+              },
+              {
+                "name": "orderId",
+                "value": "81",
+                "type": "path",
+                "description": "The order ID."
+              }
+            ]
+          },
+          "docs": "Return daily TWAMM data of a single Fraxswap TWAMM order."
+        },
+        {
+          "info": {
+            "name": "Returns a summary of activity across all chains by day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxswap/history",
+            "params": [
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          },
+          "docs": "Returns a summary of activity across all chains by day."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

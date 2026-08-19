@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v1-staking API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v1-staking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns locked stake data for a token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.frax.finance/v1/lockedstakedata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns locked stake data for a token."
+        },
+        {
+          "info": {
+            "name": "V1Controller_getPools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/pools"
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getPoolByFarmAddress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/pools/:farmAddress",
+            "params": [
+              {
+                "name": "farmAddress",
+                "value": "0x3F2E53B1A3036Fd33F3c2f3cC49daB26A88DF2e0",
+                "type": "path",
+                "description": "The hex address of the farm. Input is case insensitive."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Returns stake data for a token and timeframe.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.frax.finance/v1/stakedata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns stake data for a token and timeframe."
+        },
+        {
+          "info": {
+            "name": "Returns stake choices.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/stakedata/choices"
+          },
+          "docs": "Returns stake choices."
+        },
+        {
+          "info": {
+            "name": "Returns stake data for a user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.frax.finance/v1/stakedata/user-stake-info",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns stake data for a user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

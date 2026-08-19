@@ -1,0 +1,572 @@
+{
+  "item": [
+    {
+      "id": "0294d935-d976-465e-acda-a3ad659b9bfe",
+      "name": "v2-gov",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "49e40998-d83f-4abc-82b5-03aa9efc5904",
+          "name": "Returns a list of all frxGov Safes",
+          "request": {
+            "name": "Returns a list of all frxGov Safes",
+            "description": {
+              "content": "Returns a list of all frxGov Safes",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gov",
+                ":protocol",
+                "safes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "protocol",
+                  "description": "(Required) The name of the protocol."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2736372c-2afa-4ad0-b636-d1b9fd54f220",
+              "name": "Returns a list of all frxGov Safes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gov",
+                    ":protocol",
+                    "safes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "protocol",
+                      "description": "(Required) The name of the protocol."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"safes\": [\n    {\n      \"address\": \"string\",\n      \"chain\": \"boba\",\n      \"protocol\": \"fpi\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"version\": \"string\",\n      \"defaultProductType\": \"fpis\",\n      \"registeredAt\": \"2008-03-28T11:11:42.750Z\"\n    },\n    {\n      \"address\": \"string\",\n      \"chain\": \"holesky\",\n      \"protocol\": \"frax\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"version\": \"string\",\n      \"defaultProductType\": \"fpi\",\n      \"registeredAt\": \"1986-03-03T13:03:14.087Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2bdf0bd-d72a-4143-84f9-c9495d8b0ce4",
+          "name": "Returns details about a frxGov Safe",
+          "request": {
+            "name": "Returns details about a frxGov Safe",
+            "description": {
+              "content": "Returns details about a frxGov Safe",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gov",
+                ":protocol",
+                "safes",
+                ":chain",
+                ":safeAddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "protocol",
+                  "description": "(Required) The name of the protocol."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "safeAddress",
+                  "description": "(Required) The hex address of the safe. Input is case insensitive."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chain",
+                  "description": "(Required) The name of the blockchain/network."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26690134-0e32-4c7c-ae6a-29549faff786",
+              "name": "Returns details about a frxGov Safe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gov",
+                    ":protocol",
+                    "safes",
+                    ":chain",
+                    ":safeAddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "protocol",
+                      "description": "(Required) The name of the protocol."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "safeAddress",
+                      "description": "(Required) The hex address of the safe. Input is case insensitive."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chain",
+                      "description": "(Required) The name of the blockchain/network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"string\",\n  \"chain\": \"zksync\",\n  \"protocol\": \"frax\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"version\": \"string\",\n  \"defaultProductType\": \"general\",\n  \"registeredAt\": \"1989-06-01T13:28:41.542Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "934afa13-90de-4e40-b522-f2b432901cad",
+          "name": "Returns a list of all frxGov proposals",
+          "request": {
+            "name": "Returns a list of all frxGov proposals",
+            "description": {
+              "content": "Returns a list of all frxGov proposals",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gov",
+                ":protocol",
+                "proposals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "protocol",
+                  "description": "(Required) The name of the protocol."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ca5d709-f389-444c-9e72-6a926385e421",
+              "name": "Returns a list of all frxGov proposals",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gov",
+                    ":protocol",
+                    "proposals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "protocol",
+                      "description": "(Required) The name of the protocol."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"proposals\": [\n    {\n      \"proposalId\": \"string\",\n      \"chain\": \"polygon_zkevm\",\n      \"governorAddress\": \"string\",\n      \"governorType\": \"alpha\",\n      \"protocol\": \"fpi\",\n      \"product\": \"fraxferry\",\n      \"safeAddress\": \"string\",\n      \"safeNonce\": 9668.545039586797,\n      \"proposerAddress\": \"string\",\n      \"createdAt\": \"1961-01-06T12:03:01.840Z\",\n      \"safeSubmittedAt\": \"1947-12-20T21:24:19.891Z\",\n      \"safeVetoSubmittedAt\": \"2024-04-17T16:11:10.078Z\",\n      \"voteStartsAt\": \"2016-02-07T03:58:37.043Z\",\n      \"voteEndsAt\": \"1970-05-26T20:37:59.818Z\",\n      \"description\": \"string\",\n      \"outcome\": \"aborted\",\n      \"latestStatus\": \"succeeded\",\n      \"latestStatusTimestamp\": \"1979-10-07T04:54:23.664Z\",\n      \"votesFor\": 9690.531565562442,\n      \"votesAgainst\": 5240.346941979834,\n      \"votesAbstain\": 2675.6968405448533,\n      \"votesTotal\": 3584.4747836183865,\n      \"votesUpdatedAt\": \"1980-05-08T08:52:15.471Z\",\n      \"quorum\": 2274.554653900418,\n      \"safeExecutedAt\": \"1961-03-16T12:04:39.898Z\",\n      \"safeTxHash\": \"string\",\n      \"safeVetoTxHash\": \"string\"\n    },\n    {\n      \"proposalId\": \"string\",\n      \"chain\": \"bsc\",\n      \"governorAddress\": \"string\",\n      \"governorType\": \"alpha\",\n      \"protocol\": \"fpi\",\n      \"product\": \"fpi\",\n      \"safeAddress\": \"string\",\n      \"safeNonce\": 6528.36557701334,\n      \"proposerAddress\": \"string\",\n      \"createdAt\": \"2009-03-20T01:25:59.392Z\",\n      \"safeSubmittedAt\": \"1954-02-11T08:18:27.936Z\",\n      \"safeVetoSubmittedAt\": \"2017-11-04T19:29:28.372Z\",\n      \"voteStartsAt\": \"1988-09-03T09:06:58.106Z\",\n      \"voteEndsAt\": \"1996-05-26T09:32:08.949Z\",\n      \"description\": \"string\",\n      \"outcome\": \"aborted\",\n      \"latestStatus\": \"defeated\",\n      \"latestStatusTimestamp\": \"1987-08-24T16:16:21.765Z\",\n      \"votesFor\": 5446.952818880102,\n      \"votesAgainst\": 9855.736931838324,\n      \"votesAbstain\": 322.8386175946929,\n      \"votesTotal\": 8866.893564154705,\n      \"votesUpdatedAt\": \"1962-01-27T00:33:29.153Z\",\n      \"quorum\": 833.4041655088265,\n      \"safeExecutedAt\": \"1976-10-19T22:48:52.615Z\",\n      \"safeTxHash\": \"string\",\n      \"safeVetoTxHash\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29f28756-c69c-42f9-80fb-ef22012ad152",
+          "name": "Returns details about a frxGov proposal",
+          "request": {
+            "name": "Returns details about a frxGov proposal",
+            "description": {
+              "content": "Returns details about a frxGov proposal",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gov",
+                ":protocol",
+                "proposals",
+                ":chain",
+                ":governorAddress",
+                ":proposalId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "protocol",
+                  "description": "(Required) The name of the protocol."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "proposalId",
+                  "description": "(Required) The frxGov proposal ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "governorAddress",
+                  "description": "(Required) The frxGov governor address."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chain",
+                  "description": "(Required) The name of the blockchain/network."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "afd48dea-3b26-48aa-9e96-35d928f95d7a",
+              "name": "Returns details about a frxGov proposal",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gov",
+                    ":protocol",
+                    "proposals",
+                    ":chain",
+                    ":governorAddress",
+                    ":proposalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "protocol",
+                      "description": "(Required) The name of the protocol."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "proposalId",
+                      "description": "(Required) The frxGov proposal ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "governorAddress",
+                      "description": "(Required) The frxGov governor address."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chain",
+                      "description": "(Required) The name of the blockchain/network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"summary\": {\n    \"proposalId\": \"string\",\n    \"chain\": \"bsc\",\n    \"governorAddress\": \"string\",\n    \"governorType\": \"omega\",\n    \"protocol\": \"fpi\",\n    \"product\": \"fpis\",\n    \"safeAddress\": \"string\",\n    \"safeNonce\": 6352.5685327143765,\n    \"proposerAddress\": \"string\",\n    \"createdAt\": \"1957-12-25T19:00:30.822Z\",\n    \"safeSubmittedAt\": \"1959-11-27T02:41:47.420Z\",\n    \"safeVetoSubmittedAt\": \"2021-11-27T13:30:04.533Z\",\n    \"voteStartsAt\": \"1987-10-06T14:30:46.577Z\",\n    \"voteEndsAt\": \"1959-03-14T12:10:17.769Z\",\n    \"description\": \"string\",\n    \"outcome\": \"approved\",\n    \"latestStatus\": \"succeeded\",\n    \"latestStatusTimestamp\": \"2002-12-11T08:12:24.293Z\",\n    \"votesFor\": 8347.191177806862,\n    \"votesAgainst\": 7369.034429208829,\n    \"votesAbstain\": 1539.589281450826,\n    \"votesTotal\": 508.5888372776448,\n    \"votesUpdatedAt\": \"1976-03-28T13:40:43.908Z\",\n    \"quorum\": 1207.0281019557815,\n    \"safeExecutedAt\": \"1957-09-11T08:54:33.480Z\",\n    \"safeTxHash\": \"string\",\n    \"safeVetoTxHash\": \"string\"\n  },\n  \"status\": {\n    \"pending\": \"1958-04-12T03:47:03.191Z\",\n    \"active\": \"2018-01-13T16:27:30.195Z\",\n    \"canceled\": \"1990-09-22T16:24:42.745Z\",\n    \"succeeded\": \"2021-12-21T20:15:39.971Z\",\n    \"defeated\": \"1962-12-26T07:18:39.634Z\",\n    \"queued\": \"1966-03-06T17:39:52.978Z\",\n    \"executed\": \"2002-04-03T13:28:28.242Z\"\n  },\n  \"transactions\": [\n    {\n      \"txIdx\": 7236.140734894543,\n      \"targetAddress\": \"string\",\n      \"value\": \"string\",\n      \"callData\": \"string\",\n      \"decodedTx\": \"string\"\n    },\n    {\n      \"txIdx\": 2780.3012342212064,\n      \"targetAddress\": \"string\",\n      \"value\": \"string\",\n      \"callData\": \"string\",\n      \"decodedTx\": \"string\"\n    }\n  ],\n  \"votes\": [\n    {\n      \"voterAddress\": \"string\",\n      \"votesFor\": \"string\",\n      \"votesForDec\": 8378.23043125819,\n      \"votesAgainst\": \"string\",\n      \"votesAgainstDec\": 1289.333626785355,\n      \"votesAbstain\": \"string\",\n      \"votesAbstainDec\": 2942.073303038605,\n      \"reason\": \"string\",\n      \"timestamp\": \"1957-11-23T00:13:13.313Z\",\n      \"blockNumber\": 1801.646639783171\n    },\n    {\n      \"voterAddress\": \"string\",\n      \"votesFor\": \"string\",\n      \"votesForDec\": 1802.90519065179,\n      \"votesAgainst\": \"string\",\n      \"votesAgainstDec\": 9871.159321959321,\n      \"votesAbstain\": \"string\",\n      \"votesAbstainDec\": 9741.353719649669,\n      \"reason\": \"string\",\n      \"timestamp\": \"1949-08-23T23:39:30.492Z\",\n      \"blockNumber\": 5023.351257939207\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "847d9e53-807f-4b36-b431-313ced8c5d99",
+          "name": "Returns a list of all frxGov voters",
+          "request": {
+            "name": "Returns a list of all frxGov voters",
+            "description": {
+              "content": "Returns a list of all frxGov voters",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gov",
+                ":protocol",
+                "voters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "protocol",
+                  "description": "(Required) The name of the protocol."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "096c5525-ea57-4d32-88ae-0f4da945d238",
+              "name": "Returns a list of all frxGov voters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gov",
+                    ":protocol",
+                    "voters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "protocol",
+                      "description": "(Required) The name of the protocol."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voters\": [\n    {\n      \"address\": \"string\",\n      \"protocol\": \"frax\",\n      \"lockEndsAt\": \"1956-07-12T20:51:52.346Z\",\n      \"latestVefxsBalance\": 1029.9587570180236,\n      \"delegateeAddress\": \"string\",\n      \"delegateeEffectiveAt\": \"2002-01-17T04:01:50.336Z\",\n      \"futureDelegateeAddress\": \"string\",\n      \"futureDelegateeEffectiveAt\": \"1974-10-06T18:46:24.631Z\",\n      \"latestVotingWeight\": 4953.286875719498\n    },\n    {\n      \"address\": \"string\",\n      \"protocol\": \"frax\",\n      \"lockEndsAt\": \"1992-09-07T15:51:31.414Z\",\n      \"latestVefxsBalance\": 3726.970269016533,\n      \"delegateeAddress\": \"string\",\n      \"delegateeEffectiveAt\": \"2013-05-15T17:16:40.535Z\",\n      \"futureDelegateeAddress\": \"string\",\n      \"futureDelegateeEffectiveAt\": \"1975-03-08T09:15:43.870Z\",\n      \"latestVotingWeight\": 9683.969020226732\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7c9123ac-db5d-4c44-9325-061824147c91",
+    "name": "Frax Finance v1-gauge v2-gov API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

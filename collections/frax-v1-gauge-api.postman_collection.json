@@ -1,0 +1,190 @@
+{
+  "item": [
+    {
+      "id": "b9fc4231-4c31-4a0e-b79c-691fd453f930",
+      "name": "v1-gauge",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "faa436c1-0df1-4e45-9445-9bbb040911ac",
+          "name": "V1Controller get Gauge Info",
+          "request": {
+            "name": "V1Controller get Gauge Info",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "gauge",
+                "info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dfeed80c-1729-4bac-b5f5-b1687a97c622",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gauge",
+                    "info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"gauge_index\": 7265.891423844121,\n    \"address\": \"string\",\n    \"gauge_weight\": \"string\",\n    \"relative_weight_now_raw\": \"string\",\n    \"relative_weight_now_pct\": 9687.610100255237,\n    \"relative_weight_next_raw\": \"string\",\n    \"relative_weight_next_pct\": 631.139276790963,\n    \"fxs_now\": 66.76227358871523,\n    \"fxs_next\": 3078.06182853424\n  },\n  {\n    \"name\": \"string\",\n    \"gauge_index\": 5355.2607723991205,\n    \"address\": \"string\",\n    \"gauge_weight\": \"string\",\n    \"relative_weight_now_raw\": \"string\",\n    \"relative_weight_now_pct\": 8151.182833326535,\n    \"relative_weight_next_raw\": \"string\",\n    \"relative_weight_next_pct\": 1228.770320439213,\n    \"fxs_now\": 130.34681635236578,\n    \"fxs_next\": 2656.5357059168073\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b419c34-9e5f-4191-8a3e-5eb10575eb7a",
+          "name": "V1Controller get Gauge Voter Info",
+          "request": {
+            "name": "V1Controller get Gauge Voter Info",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "gauge",
+                "voter-info",
+                ":address"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "address",
+                  "description": "(Required) Address"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "078bb770-d822-4cec-a07e-7994a33a4768",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gauge",
+                    "voter-info",
+                    ":address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) Address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"string\",\n  \"votes\": [\n    {\n      \"gauge_address\": \"string\",\n      \"gauge_name\": \"string\",\n      \"vefxs_represented\": 959.3503281474402,\n      \"weight\": 8755.447435471067,\n      \"weight_pct\": 477.2251980607656,\n      \"last_vote_timestamp\": 9200.682185593145\n    },\n    {\n      \"gauge_address\": \"string\",\n      \"gauge_name\": \"string\",\n      \"vefxs_represented\": 7208.393604029558,\n      \"weight\": 4208.897252483536,\n      \"weight_pct\": 6683.534235906408,\n      \"last_vote_timestamp\": 9837.569495325964\n    }\n  ],\n  \"pct_weight_used\": 6225.889238184161\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fc6b0297-5b34-4b51-a178-fb13de060938",
+    "name": "Frax Finance v1-gauge API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

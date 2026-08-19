@@ -1,0 +1,143 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-gov API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-gov",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of all frxGov Safes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gov/:protocol/safes",
+            "params": [
+              {
+                "name": "protocol",
+                "value": "",
+                "type": "path",
+                "description": "The name of the protocol."
+              }
+            ]
+          },
+          "docs": "Returns a list of all frxGov Safes"
+        },
+        {
+          "info": {
+            "name": "Returns details about a frxGov Safe",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gov/:protocol/safes/:chain/:safeAddress",
+            "params": [
+              {
+                "name": "protocol",
+                "value": "",
+                "type": "path",
+                "description": "The name of the protocol."
+              },
+              {
+                "name": "safeAddress",
+                "value": "",
+                "type": "path",
+                "description": "The hex address of the safe. Input is case insensitive."
+              },
+              {
+                "name": "chain",
+                "value": "",
+                "type": "path",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Returns details about a frxGov Safe"
+        },
+        {
+          "info": {
+            "name": "Returns a list of all frxGov proposals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gov/:protocol/proposals",
+            "params": [
+              {
+                "name": "protocol",
+                "value": "",
+                "type": "path",
+                "description": "The name of the protocol."
+              }
+            ]
+          },
+          "docs": "Returns a list of all frxGov proposals"
+        },
+        {
+          "info": {
+            "name": "Returns details about a frxGov proposal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gov/:protocol/proposals/:chain/:governorAddress/:proposalId",
+            "params": [
+              {
+                "name": "protocol",
+                "value": "",
+                "type": "path",
+                "description": "The name of the protocol."
+              },
+              {
+                "name": "proposalId",
+                "value": "",
+                "type": "path",
+                "description": "The frxGov proposal ID."
+              },
+              {
+                "name": "governorAddress",
+                "value": "",
+                "type": "path",
+                "description": "The frxGov governor address."
+              },
+              {
+                "name": "chain",
+                "value": "",
+                "type": "path",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Returns details about a frxGov proposal"
+        },
+        {
+          "info": {
+            "name": "Returns a list of all frxGov voters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/gov/:protocol/voters",
+            "params": [
+              {
+                "name": "protocol",
+                "value": "",
+                "type": "path",
+                "description": "The name of the protocol."
+              }
+            ]
+          },
+          "docs": "Returns a list of all frxGov voters"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

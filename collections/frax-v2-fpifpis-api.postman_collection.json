@@ -1,0 +1,610 @@
+{
+  "item": [
+    {
+      "id": "32ea74aa-5644-45d6-b0d3-380ce9fcdbd1",
+      "name": "v2-fpifpis",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b3c7c38c-efc0-43bb-b947-3b002a1ffb43",
+          "name": "Returns FPI and CPI related stats.",
+          "request": {
+            "name": "Returns FPI and CPI related stats.",
+            "description": {
+              "content": "Returns FPI and CPI related stats.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fpifpis",
+                "fpi-stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9f8778a-e34e-44ae-ab68-281990b86ef6",
+              "name": "Returns FPI and CPI related stats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fpifpis",
+                    "fpi-stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"stats\": {\n    \"fpi\": {\n      \"totalSupply\": 3142.197733705333,\n      \"totalUsdValue\": 6378.702958312791,\n      \"baseMonth\": 3504.3604527007155,\n      \"baseYear\": 3960.803431621378,\n      \"baseCpi\": 5299.356698631959,\n      \"currMonth\": 2262.42497538768,\n      \"currYear\": 65.19132922918503,\n      \"lastCpi\": 4851.587160551033,\n      \"currCpi\": 4546.877874464538,\n      \"currPegprice\": 333.9271093655383,\n      \"targetPegPrice\": 9920.513046762133,\n      \"lastPegPrice\": 2210.4293868731816,\n      \"lastPegUpdateTimestampSec\": 9884.109163253126,\n      \"rampPeriodSec\": 7483.252753439098,\n      \"pctChangeMom\": 1797.1013380420031,\n      \"pctSinceInception\": 6134.862611331152\n    },\n    \"cpi\": {\n      \"dateString\": \"string\",\n      \"dateMonth\": 1328.7959668060955,\n      \"dateYear\": 5037.094800697476,\n      \"unadjustedIndex\": 5424.370610252983,\n      \"yoyChangePct\": 9255.081527744813,\n      \"breakdown\": [\n        {\n          \"name\": \"string\",\n          \"relativeImportance\": 5359.883990051581,\n          \"unadjustedIndex\": 7807.573290094178\n        },\n        {\n          \"name\": \"string\",\n          \"relativeImportance\": 6056.178809111749,\n          \"unadjustedIndex\": 6207.618910310941\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3aba9764-f9fa-4576-a3dc-da140e9dff10",
+          "name": "Get the balance sheet (assets and liabilities) data for FPI.",
+          "request": {
+            "name": "Get the balance sheet (assets and liabilities) data for FPI.",
+            "description": {
+              "content": "Get the balance sheet (assets and liabilities) data for FPI.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fpifpis",
+                "fpi-collateral"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af5e0be1-e397-417e-9bb6-bf368851c020",
+              "name": "Get the balance sheet (assets and liabilities) data for FPI.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fpifpis",
+                    "fpi-collateral"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"updatedAtBlock\": 8470.030875186701,\n  \"updatedAtTimestampSec\": 1915.4724248767618,\n  \"assets\": [\n    {\n      \"key\": \"string\",\n      \"chain\": \"fraxtal_testnet\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenPrice\": 3554.2780920697846,\n      \"tokenQuantity\": 6168.075445735593,\n      \"valueUsd\": 6086.360128555696,\n      \"description\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"chain\": \"polygon_zkevm\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenPrice\": 315.3665662771243,\n      \"tokenQuantity\": 9544.916590007428,\n      \"valueUsd\": 6945.6906865672545,\n      \"description\": \"string\"\n    }\n  ],\n  \"liabilities\": [\n    {\n      \"key\": \"string\",\n      \"chain\": \"harmony\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenPrice\": 4978.4929930504195,\n      \"tokenQuantity\": 718.38204047875,\n      \"valueUsd\": 3821.4346649288077,\n      \"description\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"chain\": \"moonriver\",\n      \"name\": \"string\",\n      \"ownerAddress\": \"string\",\n      \"tokenName\": \"string\",\n      \"tokenSymbol\": \"string\",\n      \"tokenAddress\": \"string\",\n      \"tokenPrice\": 8235.990388288152,\n      \"tokenQuantity\": 387.99349027934915,\n      \"valueUsd\": 484.9110141057622,\n      \"description\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04b99363-c41d-446c-9bd0-38f4329dac42",
+          "name": "Get the latest FPI and FPIS summary data.",
+          "request": {
+            "name": "Get the latest FPI and FPIS summary data.",
+            "description": {
+              "content": "Get the latest FPI and FPIS summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fpifpis",
+                "summary",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "834d6256-e64b-4723-82fa-213467cfd956",
+              "name": "Get the latest FPI and FPIS summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fpifpis",
+                    "summary",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"summary\": {\n    \"intervalTimestamp\": \"1956-10-23T09:02:35.546Z\",\n    \"blockNumber\": 6066.757715929261,\n    \"fpiTotalSupply\": 4924.597364093084,\n    \"fpiCirculatingSupply\": 6231.506329535131,\n    \"fpiMintCap\": 3519.3357098701504,\n    \"fpiPegPrice\": 570.3581538589275,\n    \"fpiUniV3OraclePrice\": 5053.37726046879,\n    \"fpiBackingValueUsd\": 351.50139871036765,\n    \"fpiBackingBreakdown\": {\n      \"key_0\": 9188.696709113881,\n      \"key_1\": 7128.54259149039\n    },\n    \"fpifraxCurveOraclePrice\": 5343.672138371225,\n    \"fpifraxLpSupply\": 953.8865542552699,\n    \"fpifraxCurveFraxBalance\": 6923.332004869653,\n    \"fpifraxCurveFpiBalance\": 9477.192934524724,\n    \"fpifraxCurveRatio\": 4340.19084744637,\n    \"fpifraxCurveTotalApr\": 2335.722217679281,\n    \"fpifraxCurveAprBreakdown\": {\n      \"key_0\": 7803.178642635978,\n      \"key_1\": 2770.1769653854303\n    },\n    \"fpifraxCurveVirtualPrice\": 7185.162221776793,\n    \"fpisTotalSupply\": 5133.631995896281,\n    \"fpisCirculatingSupply\": 2204.638036513894,\n    \"fpisPrice\": 7010.477718410651,\n    \"vefpisTotalSupply\": 6372.03603685254,\n    \"vefpisFpisLocked\": 8837.396499707585,\n    \"vefpisTotalApr\": 1186.132228618949\n  },\n  \"extra\": {\n    \"unclaimedRewards\": {\n      \"details\": {\n        \"description\": \"string\",\n        \"tokenSymbol\": \"string\",\n        \"tokenName\": \"string\",\n        \"tokenQuantity\": 4542.256357056953,\n        \"tokenValueUsd\": 6449.01778569764\n      },\n      \"tokenValueUsd\": {\n        \"key_0\": 9489.857040221472,\n        \"key_1\": 2461.9698129771305,\n        \"key_2\": 9230.056846669828\n      },\n      \"totalValueUsd\": 2078.872670132914\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57f8c298-d053-49ab-afd0-5579541de5da",
+          "name": "Returns a list historical FPI and FPIS summary data.",
+          "request": {
+            "name": "Returns a list historical FPI and FPIS summary data.",
+            "description": {
+              "content": "Returns a list historical FPI and FPIS summary data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fpifpis",
+                "summary",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0766e038-bc0f-4f3e-84b9-c59d89b13fe9",
+              "name": "Returns a list historical FPI and FPIS summary data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fpifpis",
+                    "summary",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"intervalTimestamp\": \"1988-05-17T14:01:33.238Z\",\n      \"blockNumber\": 5541.619984539967,\n      \"fpiTotalSupply\": 875.149658155151,\n      \"fpiCirculatingSupply\": 4607.15983049702,\n      \"fpiMintCap\": 4115.935800759718,\n      \"fpiPegPrice\": 8813.168414675789,\n      \"fpiUniV3OraclePrice\": 3351.1430294249813,\n      \"fpiBackingValueUsd\": 996.1789191040804,\n      \"fpiBackingBreakdown\": {\n        \"key_0\": 1808.3631491239605,\n        \"key_1\": 4073.777823024094\n      },\n      \"fpifraxCurveOraclePrice\": 7522.796222226429,\n      \"fpifraxLpSupply\": 2278.905953157082,\n      \"fpifraxCurveFraxBalance\": 8361.80717253441,\n      \"fpifraxCurveFpiBalance\": 2558.7226546445186,\n      \"fpifraxCurveRatio\": 6441.827897478995,\n      \"fpifraxCurveTotalApr\": 5381.163326349745,\n      \"fpifraxCurveAprBreakdown\": {\n        \"key_0\": 6275.051544632792\n      },\n      \"fpifraxCurveVirtualPrice\": 5643.588881478854,\n      \"fpisTotalSupply\": 3191.383901338528,\n      \"fpisCirculatingSupply\": 1441.626705304726,\n      \"fpisPrice\": 6400.549889615462,\n      \"vefpisTotalSupply\": 8345.538703933462,\n      \"vefpisFpisLocked\": 984.6727252477672,\n      \"vefpisTotalApr\": 2267.4865470437176\n    },\n    {\n      \"intervalTimestamp\": \"2000-05-10T01:28:21.943Z\",\n      \"blockNumber\": 4645.293527552834,\n      \"fpiTotalSupply\": 871.3557404956451,\n      \"fpiCirculatingSupply\": 3333.7824498649184,\n      \"fpiMintCap\": 5372.356325141581,\n      \"fpiPegPrice\": 1111.173155496108,\n      \"fpiUniV3OraclePrice\": 382.463990473213,\n      \"fpiBackingValueUsd\": 4064.8780502404147,\n      \"fpiBackingBreakdown\": {\n        \"key_0\": 1875.9408674354029,\n        \"key_1\": 5519.398498450862,\n        \"key_2\": 266.2511797456557\n      },\n      \"fpifraxCurveOraclePrice\": 3857.9589717007566,\n      \"fpifraxLpSupply\": 8274.873469497372,\n      \"fpifraxCurveFraxBalance\": 2053.22009288708,\n      \"fpifraxCurveFpiBalance\": 9163.520479809225,\n      \"fpifraxCurveRatio\": 1450.153230477732,\n      \"fpifraxCurveTotalApr\": 912.8457124874967,\n      \"fpifraxCurveAprBreakdown\": {\n        \"key_0\": 4973.542634198118,\n        \"key_1\": 6279.667586351928\n      },\n      \"fpifraxCurveVirtualPrice\": 7637.933663334715,\n      \"fpisTotalSupply\": 7351.748472987288,\n      \"fpisCirculatingSupply\": 1444.025894536981,\n      \"fpisPrice\": 9105.130429376735,\n      \"vefpisTotalSupply\": 9603.845193021523,\n      \"vefpisFpisLocked\": 2642.6050025852187,\n      \"vefpisTotalApr\": 8349.27990987196\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d1ecd99-2808-41c6-950c-9dfb57edc7d8",
+          "name": "Shows how FPI and FPIS are used across all chains.",
+          "request": {
+            "name": "Shows how FPI and FPIS are used across all chains.",
+            "description": {
+              "content": "Returns the latest token distribution for FPI or FPIS, showcasing where the token is used across multiple chains. Example distribution categories include Fraxlend, Curve, or Fraxswap.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fpifpis",
+                "distribution",
+                ":token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) FPI or FPIS. Case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "afa1e70f-ec75-4648-afbb-97bc7e1354e2",
+              "name": "Returns the latest token distribution for FPI or FPIS, showcasing where the token is used across multiple chains. Example distribution categories include Fraxlend, Curve, or Fraxswap.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fpifpis",
+                    "distribution",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) FPI or FPIS. Case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"FPI\",\n  \"updatedAtBlock\": 7286.898164055615,\n  \"updatedAtTimestampSec\": 6191.915515319853,\n  \"items\": [\n    {\n      \"address\": \"string\",\n      \"addressDescription\": \"string\",\n      \"category\": \"string\",\n      \"chain\": \"fantom\",\n      \"contractAddress\": \"string\",\n      \"label\": \"string\",\n      \"quantity\": 4569.987540623562,\n      \"segment\": \"string\"\n    },\n    {\n      \"address\": \"string\",\n      \"addressDescription\": \"string\",\n      \"category\": \"string\",\n      \"chain\": \"moonbeam\",\n      \"contractAddress\": \"string\",\n      \"label\": \"string\",\n      \"quantity\": 6219.469433252382,\n      \"segment\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b8f55a3-be63-404c-ae6c-f117ace8c1b6",
+          "name": "Shows the monthly income and expenses of the FPI protocol.",
+          "request": {
+            "name": "Shows the monthly income and expenses of the FPI protocol.",
+            "description": {
+              "content": "Shows the monthly income and expenses of the FPI protocol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fpifpis",
+                "income-expense",
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5810a451-c8db-4de9-aa5e-fc89dc38d65a",
+              "name": "Shows the monthly income and expenses of the FPI protocol.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fpifpis",
+                    "income-expense",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"months\": [\n    {\n      \"key\": \"string\",\n      \"year\": 9158.378313292676,\n      \"month\": 8315.235110365255,\n      \"totalIncome\": 4486.633301543149,\n      \"totalExpense\": 1102.4764204679461,\n      \"totalProfitOrLoss\": 7107.376876200552,\n      \"items\": [\n        {\n          \"chain\": \"fantom\",\n          \"type\": \"income\",\n          \"categoryKey\": \"string\",\n          \"category\": \"sfrax_rewards\",\n          \"amountUsd\": 6840.009467596373\n        },\n        {\n          \"chain\": \"optimism\",\n          \"type\": \"expense\",\n          \"categoryKey\": \"string\",\n          \"category\": \"mint_fees\",\n          \"amountUsd\": 9232.550065977051\n        }\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"year\": 9751.448266567657,\n      \"month\": 6021.503997020023,\n      \"totalIncome\": 8278.843828684187,\n      \"totalExpense\": 4218.067842525404,\n      \"totalProfitOrLoss\": 4506.251866039146,\n      \"items\": [\n        {\n          \"chain\": \"arbitrum\",\n          \"type\": \"expense\",\n          \"categoryKey\": \"string\",\n          \"category\": \"sfrax_rewards\",\n          \"amountUsd\": 9114.495820204043\n        },\n        {\n          \"chain\": \"harmony\",\n          \"type\": \"expense\",\n          \"categoryKey\": \"string\",\n          \"category\": \"sfrax_rewards\",\n          \"amountUsd\": 3312.51928666252\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "687ff9bc-30b3-4509-97e2-10231a077f6d",
+          "name": "Shows daily, more detailed income and expenses of the FPI protocol.",
+          "request": {
+            "name": "Shows daily, more detailed income and expenses of the FPI protocol.",
+            "description": {
+              "content": "Shows daily, more detailed income and expenses of the FPI protocol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fpifpis",
+                "income-expense",
+                "detail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "month",
+                  "value": "<number>",
+                  "description": "(Required) The numerical month"
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<number>",
+                  "description": "(Required) The numerical year"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d0f8e34-6ab9-451f-bcd2-8190b4b82341",
+              "name": "Shows daily, more detailed income and expenses of the FPI protocol.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fpifpis",
+                    "income-expense",
+                    "detail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "month",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"details\": [\n    {\n      \"timestampSec\": 4325.624806307409,\n      \"chain\": \"fantom\",\n      \"block\": 3456.324939796669,\n      \"txHash\": \"string\",\n      \"contractAddress\": \"string\",\n      \"type\": \"income\",\n      \"category\": \"unknown\",\n      \"tokenSymbol\": \"string\",\n      \"amount\": 8497.66672304246,\n      \"amountUsd\": 4946.269175323818,\n      \"notes\": \"string\"\n    },\n    {\n      \"timestampSec\": 2856.5466613585068,\n      \"chain\": \"polygon\",\n      \"block\": 5680.539265109813,\n      \"txHash\": \"string\",\n      \"contractAddress\": \"string\",\n      \"type\": \"income\",\n      \"category\": \"mint_fees\",\n      \"tokenSymbol\": \"string\",\n      \"amount\": 5469.789819341804,\n      \"amountUsd\": 9708.451769743271,\n      \"notes\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "44ee445c-3043-4d77-a766-e6e4aef5ad44",
+    "name": "Frax Finance v1-gauge v2-fpifpis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

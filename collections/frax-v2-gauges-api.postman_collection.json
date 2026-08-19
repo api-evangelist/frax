@@ -1,0 +1,680 @@
+{
+  "item": [
+    {
+      "id": "19110b7d-3e83-4332-afba-fd1e6d31816f",
+      "name": "v2-gauges",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "efe3451a-8128-4bb7-9087-12d72990292c",
+          "name": "Returns a list of gauges.",
+          "request": {
+            "name": "Returns a list of gauges.",
+            "description": {
+              "content": "Returns a list of gauges.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "725974db-4fde-47d3-b630-c03d2db61d87",
+              "name": "Returns a list of gauges.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"gauges\": [\n    {\n      \"address\": \"string\",\n      \"addressChecksum\": \"string\",\n      \"name\": \"string\",\n      \"label\": \"string\",\n      \"inceptionTransactionHash\": \"string\",\n      \"inceptionBlockNumber\": 7800.966939162466,\n      \"effectiveDate\": \"1974-01-21T07:11:55.642Z\",\n      \"endTransactionHash\": \"string\",\n      \"endBlockNumber\": 9407.014866829331,\n      \"endDate\": \"1968-06-13T14:31:57.264Z\"\n    },\n    {\n      \"address\": \"string\",\n      \"addressChecksum\": \"string\",\n      \"name\": \"string\",\n      \"label\": \"string\",\n      \"inceptionTransactionHash\": \"string\",\n      \"inceptionBlockNumber\": 2692.8923332007294,\n      \"effectiveDate\": \"1963-01-22T18:12:10.973Z\",\n      \"endTransactionHash\": \"string\",\n      \"endBlockNumber\": 9656.246200824493,\n      \"endDate\": \"1989-07-04T03:18:43.482Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bd0a315-e3fe-4d96-9949-392df03cc056",
+          "name": "Returns basic information about a gauge.",
+          "request": {
+            "name": "Returns basic information about a gauge.",
+            "description": {
+              "content": "Returns basic information about a gauge.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges",
+                ":gaugeAddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gaugeAddress",
+                  "description": "(Required) The address of the gauge. Example: `0x127963a74c07f72d862f2bdc225226c3251bd117`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55c79eee-cb73-4788-97a4-d936b16b37fe",
+              "name": "Returns basic information about a gauge.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges",
+                    ":gaugeAddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gaugeAddress",
+                      "description": "(Required) The address of the gauge. Example: `0x127963a74c07f72d862f2bdc225226c3251bd117`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"string\",\n  \"addressChecksum\": \"string\",\n  \"name\": \"string\",\n  \"label\": \"string\",\n  \"inceptionTransactionHash\": \"string\",\n  \"inceptionBlockNumber\": 6628.673851068787,\n  \"effectiveDate\": \"1981-05-12T21:01:40.124Z\",\n  \"endTransactionHash\": \"string\",\n  \"endBlockNumber\": 3822.2291514561825,\n  \"endDate\": \"1963-10-03T00:19:06.230Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3d1ac0b-ccd4-43c0-b4d5-8c3cadb11f81",
+          "name": "Returns a list of gauge voting cycles and their starting/ending blocks.",
+          "request": {
+            "name": "Returns a list of gauge voting cycles and their starting/ending blocks.",
+            "description": {
+              "content": "Returns a list of gauge voting cycles and their starting/ending blocks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges",
+                "cycles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a49e40a-5bc2-4afe-addb-50fc763cbfb4",
+              "name": "Returns a list of gauge voting cycles and their starting/ending blocks.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges",
+                    "cycles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cycles\": [\n    {\n      \"cycleKey\": \"string\",\n      \"startingTimestampSec\": 6891.8720412468,\n      \"startingTimestamp\": \"1957-11-27T08:05:58.003Z\",\n      \"endingTimestampSec\": 4671.694489655491,\n      \"endingTimestamp\": \"2017-06-30T09:40:08.212Z\",\n      \"startingBlock\": 4192.420343103519,\n      \"endingBlock\": 3407.5693437017317,\n      \"isActive\": true,\n      \"isFuture\": true\n    },\n    {\n      \"cycleKey\": \"string\",\n      \"startingTimestampSec\": 616.9165151783907,\n      \"startingTimestamp\": \"1958-12-31T23:24:49.275Z\",\n      \"endingTimestampSec\": 8887.997173853253,\n      \"endingTimestamp\": \"1959-11-25T08:00:17.630Z\",\n      \"startingBlock\": 4728.494770759252,\n      \"endingBlock\": 2875.81160924968,\n      \"isActive\": false,\n      \"isFuture\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3bf8cf63-7c56-47af-97e3-55f59bff9ad0",
+          "name": "Returns a summarized list of each gauge cycle voting outcome.",
+          "request": {
+            "name": "Returns a summarized list of each gauge cycle voting outcome.",
+            "description": {
+              "content": "Returns a summarized list of each gauge cycle voting outcome.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges",
+                "cycles",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eee3d2f6-5db0-4a46-9bfc-fb0ea04254ee",
+              "name": "Returns a summarized list of each gauge cycle voting outcome.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges",
+                    "cycles",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cycles\": [\n    {\n      \"key\": \"string\",\n      \"blockNumber\": 1623.3043812085734,\n      \"timestampSeconds\": 226.87761576595244,\n      \"timestamp\": \"1988-02-14T03:23:14.078Z\",\n      \"userVefxsSupply\": 4029.2718050059816,\n      \"contractVefxsSupply\": 2682.227041993833,\n      \"totalUserVefxsVoted\": 5228.171578439686,\n      \"totalAppliedVefxsVoted\": 3589.822750767696,\n      \"numberOfUniqueVoters\": 8349.128697891318,\n      \"numberOfVoteTransactions\": 8125.812655596196,\n      \"gauges\": [\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeAddressChecksum\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 8560.562373797944,\n          \"gaugeWeightPerc\": 4630.934787503988,\n          \"fxsReward\": 9997.554588175797,\n          \"userVefxsVoted\": 6138.830788886078,\n          \"adjustedGaugeWeightVefxsVoted\": 5749.151915847224,\n          \"gaugeWeightVefxsVoted\": 4879.054098188792,\n          \"numberOfVoters\": 6443.46136115215,\n          \"voteDecreaseCount\": 2640.1142948800084,\n          \"voteIncreaseCount\": 1665.794089341307,\n          \"voteUnchangedCount\": 9998.790682713001,\n          \"voteCarryoverCount\": 7924.889029549245,\n          \"voterAddresses\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeAddressChecksum\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 1644.0688382483559,\n          \"gaugeWeightPerc\": 2086.0901820581403,\n          \"fxsReward\": 9394.01460004851,\n          \"userVefxsVoted\": 5379.855797033027,\n          \"adjustedGaugeWeightVefxsVoted\": 6462.52767660517,\n          \"gaugeWeightVefxsVoted\": 4710.071885239648,\n          \"numberOfVoters\": 4490.968187170763,\n          \"voteDecreaseCount\": 5331.95595272845,\n          \"voteIncreaseCount\": 2210.6218894885,\n          \"voteUnchangedCount\": 514.2536451617275,\n          \"voteCarryoverCount\": 5292.499262493766,\n          \"voterAddresses\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"key\": \"string\",\n      \"blockNumber\": 6108.319953233939,\n      \"timestampSeconds\": 2380.824120496654,\n      \"timestamp\": \"1998-01-10T01:32:45.537Z\",\n      \"userVefxsSupply\": 5949.957488029686,\n      \"contractVefxsSupply\": 1007.7385490577929,\n      \"totalUserVefxsVoted\": 9107.816501114898,\n      \"totalAppliedVefxsVoted\": 8017.753259363473,\n      \"numberOfUniqueVoters\": 3292.8130545985355,\n      \"numberOfVoteTransactions\": 4787.456191830355,\n      \"gauges\": [\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeAddressChecksum\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 6281.415287564629,\n          \"gaugeWeightPerc\": 4845.474321243019,\n          \"fxsReward\": 7220.903687743262,\n          \"userVefxsVoted\": 625.2379079919401,\n          \"adjustedGaugeWeightVefxsVoted\": 6133.377082162452,\n          \"gaugeWeightVefxsVoted\": 9339.227477027374,\n          \"numberOfVoters\": 8272.577790134945,\n          \"voteDecreaseCount\": 9513.74558440349,\n          \"voteIncreaseCount\": 2036.0305694830772,\n          \"voteUnchangedCount\": 4118.126433052897,\n          \"voteCarryoverCount\": 2946.14129488574,\n          \"voterAddresses\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeAddressChecksum\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 538.818280124016,\n          \"gaugeWeightPerc\": 4324.391327433059,\n          \"fxsReward\": 9438.627873535172,\n          \"userVefxsVoted\": 2250.412520454003,\n          \"adjustedGaugeWeightVefxsVoted\": 5725.987538037146,\n          \"gaugeWeightVefxsVoted\": 7239.241149707213,\n          \"numberOfVoters\": 5819.855464615299,\n          \"voteDecreaseCount\": 9007.30880534904,\n          \"voteIncreaseCount\": 5750.217881898428,\n          \"voteUnchangedCount\": 2197.899276494403,\n          \"voteCarryoverCount\": 9896.735726026483,\n          \"voterAddresses\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31143dbc-b41c-4aab-bdc0-5757f4f646fb",
+          "name": "Returns the estimated outcome of the upcoming gauge cycle.",
+          "request": {
+            "name": "Returns the estimated outcome of the upcoming gauge cycle.",
+            "description": {
+              "content": "Returns the estimated outcome of the upcoming gauge cycle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges",
+                "cycles",
+                "next"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88de7d22-d1af-4d82-adbf-5cdf6a24b769",
+              "name": "Returns the estimated outcome of the upcoming gauge cycle.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges",
+                    "cycles",
+                    "next"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cycleKey\": \"string\",\n  \"cycleStartTimestampSec\": 8728.216269267523,\n  \"asOfTimestampSec\": 5063.37675809325,\n  \"vefxsSupply\": 4504.017108919051,\n  \"vefxsVoted\": 5560.316363062772,\n  \"allocationBreakdown\": {\n    \"carryover\": 3641.331126976727,\n    \"locked\": 1858.225014484769,\n    \"changed\": 4412.689765206025\n  },\n  \"gauges\": [\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"weight\": 8343.23853438029,\n      \"weightPerc\": 1990.9481096869274,\n      \"fxsReward\": 563.9107132891053,\n      \"voters\": [\n        {\n          \"voterAddress\": \"string\",\n          \"vefxsWeight\": 9477.957312762535,\n          \"weightPerc\": 555.2336642637057,\n          \"lastVoteTimestampSec\": 6467.946530038666,\n          \"asOfTimestampSec\": 3433.6261401385095\n        },\n        {\n          \"voterAddress\": \"string\",\n          \"vefxsWeight\": 7171.74004861901,\n          \"weightPerc\": 6685.676299141909,\n          \"lastVoteTimestampSec\": 1231.849751312244,\n          \"asOfTimestampSec\": 5171.069792579975\n        }\n      ]\n    },\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"weight\": 6455.2255150670035,\n      \"weightPerc\": 480.9792158417869,\n      \"fxsReward\": 8373.200932306714,\n      \"voters\": [\n        {\n          \"voterAddress\": \"string\",\n          \"vefxsWeight\": 1752.3254049010684,\n          \"weightPerc\": 3432.1661472907363,\n          \"lastVoteTimestampSec\": 1701.3016907746326,\n          \"asOfTimestampSec\": 788.0256649398742\n        },\n        {\n          \"voterAddress\": \"string\",\n          \"vefxsWeight\": 2719.880948614285,\n          \"weightPerc\": 6882.241912936275,\n          \"lastVoteTimestampSec\": 4768.949984534979,\n          \"asOfTimestampSec\": 1851.6087486327003\n        }\n      ]\n    }\n  ],\n  \"transactions\": [\n    {\n      \"voterAddress\": \"string\",\n      \"gaugeAddress\": \"string\",\n      \"transactionHash\": \"string\",\n      \"blockNumber\": 9127.945048169988,\n      \"contractAddress\": \"string\",\n      \"weightPercentage\": 170.62308374957368,\n      \"transactionType\": \"add_gauge\",\n      \"transactionTimestampSeconds\": 7450.450046602836,\n      \"transactionTimestamp\": \"1948-06-16T13:45:28.421Z\"\n    },\n    {\n      \"voterAddress\": \"string\",\n      \"gaugeAddress\": \"string\",\n      \"transactionHash\": \"string\",\n      \"blockNumber\": 2648.7839039283667,\n      \"contractAddress\": \"string\",\n      \"weightPercentage\": 9528.067300245657,\n      \"transactionType\": \"vote\",\n      \"transactionTimestampSeconds\": 8949.440297524538,\n      \"transactionTimestamp\": \"1991-08-11T02:58:25.483Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1ca08ef-83c5-4783-ada2-92ecb356f5b0",
+          "name": "Returns detailed outcome of a gauge cycle.",
+          "request": {
+            "name": "Returns detailed outcome of a gauge cycle.",
+            "description": {
+              "content": "Returns detailed outcome of a gauge cycle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges",
+                "cycles",
+                ":cycleKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cycleKey",
+                  "description": "(Required) The unique identifier of the gauge voting cycle. Example: `2022-C07`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ad03caa-cacd-4e4b-be24-f06210e574f4",
+              "name": "Returns detailed outcome of a gauge cycle.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges",
+                    "cycles",
+                    ":cycleKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cycleKey",
+                      "description": "(Required) The unique identifier of the gauge voting cycle. Example: `2022-C07`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cycle\": {\n    \"key\": \"string\",\n    \"blockNumber\": 9717.113855079091,\n    \"timestampSeconds\": 8936.423302229783,\n    \"timestamp\": \"1970-07-29T19:17:52.562Z\",\n    \"userVefxsSupply\": 3911.298351628206,\n    \"contractVefxsSupply\": 7004.666324627421,\n    \"totalUserVefxsVoted\": 2889.075393457555,\n    \"totalAppliedVefxsVoted\": 8017.541999324035,\n    \"numberOfUniqueVoters\": 3584.5226334847725,\n    \"numberOfVoteTransactions\": 1685.4442350025256,\n    \"gauges\": [\n      {\n        \"gaugeAddress\": \"string\",\n        \"gaugeAddressChecksum\": \"string\",\n        \"gaugeName\": \"string\",\n        \"gaugeWeight\": 1776.9886315541382,\n        \"gaugeWeightPerc\": 4002.497516767172,\n        \"fxsReward\": 4204.972251555436,\n        \"userVefxsVoted\": 7743.5964988561345,\n        \"adjustedGaugeWeightVefxsVoted\": 4466.026061011827,\n        \"gaugeWeightVefxsVoted\": 1908.8548093838442,\n        \"numberOfVoters\": 3642.327412074128,\n        \"voteDecreaseCount\": 4101.758950658411,\n        \"voteIncreaseCount\": 4115.803541446478,\n        \"voteUnchangedCount\": 5362.467395652991,\n        \"voteCarryoverCount\": 8734.519411693489,\n        \"voterAddresses\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"gaugeAddress\": \"string\",\n        \"gaugeAddressChecksum\": \"string\",\n        \"gaugeName\": \"string\",\n        \"gaugeWeight\": 7102.166310482051,\n        \"gaugeWeightPerc\": 7061.670737279614,\n        \"fxsReward\": 956.5556584690848,\n        \"userVefxsVoted\": 4950.828622737436,\n        \"adjustedGaugeWeightVefxsVoted\": 9142.730869850488,\n        \"gaugeWeightVefxsVoted\": 4674.377794031555,\n        \"numberOfVoters\": 4235.711583031604,\n        \"voteDecreaseCount\": 8863.340200523726,\n        \"voteIncreaseCount\": 2975.511886749277,\n        \"voteUnchangedCount\": 5986.965417926346,\n        \"voteCarryoverCount\": 9336.02624635774,\n        \"voterAddresses\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ]\n  },\n  \"voters\": [\n    {\n      \"asOfTimestamp\": \"1994-07-06T00:47:13.988Z\",\n      \"voterAddress\": \"string\",\n      \"vefxsBalance\": 742.7725943390328,\n      \"lockEndTimestamp\": \"2002-05-17T23:25:42.533Z\",\n      \"availableVefxs\": 8129.7881192929435,\n      \"gaugeWeight\": 4358.7197169108495,\n      \"lastVotedTimestamp\": \"1962-01-29T16:50:44.055Z\",\n      \"potentialGaugeWeight\": 6599.054927763966,\n      \"vefxsWeight\": 5987.115939547293,\n      \"gaugeAllocation\": [\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 5127.029335948884,\n          \"weightPerc\": 1534.646918738195,\n          \"lastVotedTimestampSec\": 1204.0513175503354\n        },\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 6195.805720660275,\n          \"weightPerc\": 8581.846408027142,\n          \"lastVotedTimestampSec\": 412.25058570505956\n        }\n      ]\n    },\n    {\n      \"asOfTimestamp\": \"1995-03-18T10:30:22.188Z\",\n      \"voterAddress\": \"string\",\n      \"vefxsBalance\": 4150.765115799892,\n      \"lockEndTimestamp\": \"1988-03-09T00:36:46.258Z\",\n      \"availableVefxs\": 3590.443524945538,\n      \"gaugeWeight\": 928.7779852436473,\n      \"lastVotedTimestamp\": \"2015-01-19T05:39:15.715Z\",\n      \"potentialGaugeWeight\": 1842.1622949926875,\n      \"vefxsWeight\": 1556.7803529190016,\n      \"gaugeAllocation\": [\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 5847.442543087223,\n          \"weightPerc\": 5138.873271606736,\n          \"lastVotedTimestampSec\": 2400.1948343882264\n        },\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 4887.889932872258,\n          \"weightPerc\": 1695.7436533120785,\n          \"lastVotedTimestampSec\": 4534.929866231093\n        }\n      ]\n    }\n  ],\n  \"transactions\": [\n    {\n      \"voterAddress\": \"string\",\n      \"gaugeAddress\": \"string\",\n      \"transactionHash\": \"string\",\n      \"blockNumber\": 6180.297885842444,\n      \"contractAddress\": \"string\",\n      \"weightPercentage\": 4503.667008537809,\n      \"transactionType\": \"gauge_relative_write\",\n      \"transactionTimestampSeconds\": 5573.7807536038345,\n      \"transactionTimestamp\": \"2010-12-16T04:01:14.347Z\"\n    },\n    {\n      \"voterAddress\": \"string\",\n      \"gaugeAddress\": \"string\",\n      \"transactionHash\": \"string\",\n      \"blockNumber\": 7427.247101024377,\n      \"contractAddress\": \"string\",\n      \"weightPercentage\": 3815.4996033887255,\n      \"transactionType\": \"add_gauge\",\n      \"transactionTimestampSeconds\": 5488.557070499105,\n      \"transactionTimestamp\": \"1963-09-24T16:08:27.564Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "551eb100-0f9c-41a2-8fb1-e75d22360210",
+          "name": "Returns a daily summary of gauge voting allocations for a particular cycle.",
+          "request": {
+            "name": "Returns a daily summary of gauge voting allocations for a particular cycle.",
+            "description": {
+              "content": "Returns a daily summary of gauge voting allocations for a particular cycle.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges",
+                "cycles",
+                ":cycleKey",
+                "daily"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cycleKey",
+                  "description": "(Required) The unique identifier of the gauge voting cycle. Example: `2022-C07`."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "305d571e-14d5-4106-921c-838f145f3e5d",
+              "name": "Returns a daily summary of gauge voting allocations for a particular cycle.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges",
+                    "cycles",
+                    ":cycleKey",
+                    "daily"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cycleKey",
+                      "description": "(Required) The unique identifier of the gauge voting cycle. Example: `2022-C07`."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cycleKey\": \"string\",\n  \"days\": [\n    {\n      \"blockNumber\": 3824.280467492668,\n      \"timestampSec\": 3394.5819291015423,\n      \"timestamp\": \"1984-06-12T09:42:20.525Z\",\n      \"vefxsTotalSupply\": 6842.79996232036,\n      \"gauges\": [\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 4745.225236063892,\n          \"weightPercentage\": 5001.10632744026,\n          \"vefxsVoted\": 2701.1032544979553\n        },\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 5929.749683588087,\n          \"weightPercentage\": 9220.003099921383,\n          \"vefxsVoted\": 8953.933656478215\n        }\n      ]\n    },\n    {\n      \"blockNumber\": 1310.3048685301133,\n      \"timestampSec\": 649.4134690792297,\n      \"timestamp\": \"1995-12-01T21:54:45.376Z\",\n      \"vefxsTotalSupply\": 6851.79749477952,\n      \"gauges\": [\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 3320.383166130202,\n          \"weightPercentage\": 7369.399910477365,\n          \"vefxsVoted\": 3247.264216134538\n        },\n        {\n          \"gaugeAddress\": \"string\",\n          \"gaugeName\": \"string\",\n          \"gaugeWeight\": 4803.282266138624,\n          \"weightPercentage\": 4407.535878090948,\n          \"vefxsVoted\": 2267.9573094162265\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c178637-d788-471a-bb46-b30f8c9e3e70",
+          "name": "List of voting and non-voting veFXS addresses.",
+          "request": {
+            "name": "List of voting and non-voting veFXS addresses.",
+            "description": {
+              "content": "List of voting and non-voting veFXS addresses.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "gauges",
+                "voter-participation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e2774a78-1212-445a-8b05-81e0b50cda21",
+              "name": "List of voting and non-voting veFXS addresses.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gauges",
+                    "voter-participation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"asOfTimestamp\": \"1962-05-03T16:08:43.298Z\",\n  \"voters\": [\n    {\n      \"voterAddress\": \"string\",\n      \"vefxsBalance\": 4016.413613850999,\n      \"lockEndTimestamp\": \"2013-11-12T08:39:04.771Z\",\n      \"availableVefxs\": 249.02739622267745,\n      \"gaugeWeight\": 2054.453834041747,\n      \"lastVotedTimestamp\": \"2009-04-10T15:07:02.573Z\",\n      \"potentialGaugeWeight\": 7930.6918782057965,\n      \"vefxsWeight\": 8153.936913739091\n    },\n    {\n      \"voterAddress\": \"string\",\n      \"vefxsBalance\": 2323.9898116621684,\n      \"lockEndTimestamp\": \"1973-03-24T10:44:39.476Z\",\n      \"availableVefxs\": 9174.206741324393,\n      \"gaugeWeight\": 6575.08587013509,\n      \"lastVotedTimestamp\": \"1972-03-22T04:27:02.375Z\",\n      \"potentialGaugeWeight\": 8126.544539467077,\n      \"vefxsWeight\": 291.62377551622984\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c726f18d-030c-4578-8fce-66bbc22c3caf",
+    "name": "Frax Finance v1-gauge v2-gauges API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

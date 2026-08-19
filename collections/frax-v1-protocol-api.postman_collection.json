@@ -1,0 +1,342 @@
+{
+  "item": [
+    {
+      "id": "65deaabb-6bda-4fd3-af71-bab006e9e551",
+      "name": "v1-protocol",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1dfdc1b-3cc5-46ba-8dfc-699c07e3bb9d",
+          "name": "V1Controller get AMO Allocations",
+          "request": {
+            "name": "V1Controller get AMO Allocations",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "amodata_v2",
+                "amo-allocations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85017a8d-83d7-4433-a583-cfaea9c239c9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "amodata_v2",
+                    "amo-allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"blockNum\": 9509.810232314572,\n  \"timestamp\": 2539.2272898737856,\n  \"curve\": {},\n  \"investor\": {},\n  \"lending\": {},\n  \"liquidity\": {},\n  \"combined\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "960120d5-f223-4b71-a4a9-c8a2066574cf",
+          "name": "V1Controller get AMO Data",
+          "request": {
+            "name": "V1Controller get AMO Data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "amodata_v2",
+                ":filter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filter",
+                  "description": "(Required) Timeframe"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0049bbab-dbfe-4c03-a477-f0c3c45f7dbd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "amodata_v2",
+                    ":filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filter",
+                      "description": "(Required) Timeframe"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"full_items\": [\n    {\n      \"blockNum\": 1152.1703705700493,\n      \"timestamp\": 649.4051161432258,\n      \"version\": 714.180660763446,\n      \"curve\": {},\n      \"investor\": {},\n      \"lending\": {},\n      \"liquidity\": {},\n      \"combined\": {}\n    },\n    {\n      \"blockNum\": 9239.649968053152,\n      \"timestamp\": 1100.7947611729508,\n      \"version\": 9190.684419172656,\n      \"curve\": {},\n      \"investor\": {},\n      \"lending\": {},\n      \"liquidity\": {},\n      \"combined\": {}\n    }\n  ],\n  \"chartjs\": {\n    \"curve\": {},\n    \"investor\": {},\n    \"lending\": {},\n    \"liquidity\": {},\n    \"combined\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "476be19d-25e6-4a2e-ab2e-9a3d8e4f99ad",
+          "name": "V1Controller get Collateral Data",
+          "request": {
+            "name": "V1Controller get Collateral Data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "collateraldata",
+                ":filter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filter",
+                  "description": "(Required) Timeframe"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "edf9bbc9-ccc8-4828-822e-280d65f0bcbe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "collateraldata",
+                    ":filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filter",
+                      "description": "(Required) Timeframe"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"history\": {\n    \"full_items\": [\n      {\n        \"blockNum\": 5258.603949733815,\n        \"timestamp\": 585.56965478059,\n        \"decentralization_ratio\": 1374.600990139182,\n        \"ratio\": 4347.9072613354465,\n        \"total_dollar_value\": 2563.232410304475\n      },\n      {\n        \"blockNum\": 4580.9889941408865,\n        \"timestamp\": 3238.833760779346,\n        \"decentralization_ratio\": 591.4036189910632,\n        \"ratio\": 6865.879634299294,\n        \"total_dollar_value\": 264.39121487602745\n      }\n    ],\n    \"chartjs\": {}\n  },\n  \"pie_data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4568bc54-8946-4c71-acd2-7a91b76971ec",
+          "name": "V1Controller get Combined Data",
+          "request": {
+            "name": "V1Controller get Combined Data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "combineddata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8a22a4c3-be47-4cc2-8f12-149184ff6177",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "combineddata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "baf03a13-120e-4be6-a6b6-906f0f507fa8",
+    "name": "Frax Finance v1-gauge v1-protocol API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

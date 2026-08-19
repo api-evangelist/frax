@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v1-gauge",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1Controller_getGaugeInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/gauge/info"
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getGaugeVoterInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/gauge/voter-info/:address",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "path",
+                "description": "Address"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

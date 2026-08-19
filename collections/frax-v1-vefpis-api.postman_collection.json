@@ -1,0 +1,186 @@
+{
+  "item": [
+    {
+      "id": "10304815-f215-46e3-aca3-516c43646c2b",
+      "name": "v1-vefpis",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d1d7730-25cf-4c07-ae8a-d5de4ff95c1e",
+          "name": "V1Controller get Locked Ve FPIS Data",
+          "request": {
+            "name": "V1Controller get Locked Ve FPIS Data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "lockedvefpisdata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2370dae8-1fc1-4bf7-9926-6105f00c35e7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "lockedvefpisdata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\",\n  \"unlocked_sum\": 5955.2774083640825,\n  \"locked_sum\": 2219.7678600582162,\n  \"buckets\": [\n    {\n      \"_id\": \"string\",\n      \"count\": 2694.8838301888954,\n      \"total\": 9373.235583083722\n    },\n    {\n      \"_id\": \"string\",\n      \"count\": 22.870506127834478,\n      \"total\": 7003.667310704354\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cf7f327-792d-4e68-af04-8cace2f37b93",
+          "name": "V1Controller get Ve FPIS Data",
+          "request": {
+            "name": "V1Controller get Ve FPIS Data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vefpisdata",
+                ":filter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "filter",
+                  "description": "(Required) Timeframe"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4d27f46d-b1e0-45ec-843c-e254235c0f9e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vefpisdata",
+                    ":filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "filter",
+                      "description": "(Required) Timeframe"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"full_items\": [\n    {\n      \"blockNum\": 2646.6608263835,\n      \"timestamp\": 961.9231891636925,\n      \"vefpis_supply\": 4419.746795473455,\n      \"fpis_locked\": 2148.7342706948143,\n      \"fpis_locked_pct_of_circulating\": 7194.754578146638,\n      \"fpis_locked_pct_of_total\": 657.4101986303838,\n      \"avg_lock_time_yrs\": 1448.983616978451,\n      \"pct_participating\": 6751.37334985556,\n      \"yield_value_usd\": 6444.74407875308,\n      \"apr\": 6675.745194800571\n    },\n    {\n      \"blockNum\": 8931.870203281676,\n      \"timestamp\": 2026.681684528081,\n      \"vefpis_supply\": 9407.337712799897,\n      \"fpis_locked\": 7643.0002978931,\n      \"fpis_locked_pct_of_circulating\": 488.68475620552965,\n      \"fpis_locked_pct_of_total\": 6287.97168587511,\n      \"avg_lock_time_yrs\": 9963.066313817608,\n      \"pct_participating\": 7053.148039776681,\n      \"yield_value_usd\": 1730.1211332772127,\n      \"apr\": 2118.684448639402\n    }\n  ],\n  \"chartjs\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e926a5a0-4b4f-4da7-b5f9-b36d03375f5a",
+    "name": "Frax Finance v1-gauge v1-vefpis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-sfrxusd API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-sfrxusd",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns the latest sfrxUSD balance sheet data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/sfrxusd/balance-sheet/latest"
+          },
+          "docs": "Returns the latest sfrxUSD balance sheet data"
+        },
+        {
+          "info": {
+            "name": "Returns a CSV of the latest sfrxUSD balance sheet data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/sfrxusd/balance-sheet/latest/export"
+          },
+          "docs": "Returns a CSV of the latest sfrxUSD balance sheet data"
+        },
+        {
+          "info": {
+            "name": "Get the latest sfrxUSD summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/sfrxusd/summary-stats/latest"
+          },
+          "docs": "Get the latest sfrxUSD summary data."
+        },
+        {
+          "info": {
+            "name": "Returns a list historical sfrxUSD summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/sfrxusd/summary-stats/history",
+            "params": [
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          },
+          "docs": "Returns a list historical sfrxUSD summary data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

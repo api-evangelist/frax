@@ -1,0 +1,232 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-frxeth API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-frxeth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of Ethereum validators and their statuses/balances.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/validators",
+            "params": [
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Returns a list of Ethereum validators and their statuses/balances."
+        },
+        {
+          "info": {
+            "name": "Returns a list historical frxETH, sfrxETH, and validator summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/summary/history",
+            "params": [
+              {
+                "name": "range",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe"
+              }
+            ]
+          },
+          "docs": "Returns a list historical frxETH, sfrxETH, and validator summary data."
+        },
+        {
+          "info": {
+            "name": "Get the latest frxETH, sfrxETH, and validator summary data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/summary/latest"
+          },
+          "docs": "Get the latest frxETH, sfrxETH, and validator summary data."
+        },
+        {
+          "info": {
+            "name": "Get the balance sheet (assets and liabilities) data for frxETH.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/collateral"
+          },
+          "docs": "Get the balance sheet (assets and liabilities) data for frxETH."
+        },
+        {
+          "info": {
+            "name": "Get the validator geographic and client diversity of frxETH.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/diversity"
+          },
+          "docs": "Get the validator geographic and client diversity of frxETH."
+        },
+        {
+          "info": {
+            "name": "List the staking reward cycles and the amount of frxETH rewards allocated toward sfrxETH, the protocol fees, and insurance.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/staking-reward-cycles"
+          },
+          "docs": "List the staking reward cycles and the amount of frxETH rewards allocated toward sfrxETH, the protocol fees, and insurance."
+        },
+        {
+          "info": {
+            "name": "Get frxETH redemption ticket NFTs that have not been redeemed yet.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/frxeth-redemptions/tickets/active",
+            "params": [
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Get frxETH redemption ticket NFTs that have not been redeemed yet."
+        },
+        {
+          "info": {
+            "name": "Get frxETH redemption ticket NFTs that have been redeemed.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/frxeth-redemptions/tickets/history",
+            "params": [
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Get frxETH redemption ticket NFTs that have been redeemed."
+        },
+        {
+          "info": {
+            "name": "Get the latest ETH balance and accounting state of the frxETH redemption contract.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/frxeth-redemptions/latest-state",
+            "params": [
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Get the latest ETH balance and accounting state of the frxETH redemption contract."
+        },
+        {
+          "info": {
+            "name": "Get frxETH redemption ticket NFTs and transaction details for a user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/user/:userAddress/frxeth-redemptions",
+            "params": [
+              {
+                "name": "userAddress",
+                "value": "0x5180db0237291A6449DdA9ed33aD90a38787621c",
+                "type": "path",
+                "description": "The hex address of the user. Input is case insensitive."
+              },
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Get frxETH redemption ticket NFTs and transaction details for a user."
+        },
+        {
+          "info": {
+            "name": "Returns all-time sfrxETH gains, profit, etc and the latest balance info for the user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/user/:userAddress/sfrxeth-summary",
+            "params": [
+              {
+                "name": "userAddress",
+                "value": "0x5180db0237291A6449DdA9ed33aD90a38787621c",
+                "type": "path",
+                "description": "The hex address of the user. Input is case insensitive."
+              },
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Returns all-time sfrxETH gains, profit, etc and the latest balance info for the user."
+        },
+        {
+          "info": {
+            "name": "Get the daily sfrxETH earnings for a user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/frxeth/user/:userAddress/sfrxeth-daily-earnings",
+            "params": [
+              {
+                "name": "userAddress",
+                "value": "0x5180db0237291A6449DdA9ed33aD90a38787621c",
+                "type": "path",
+                "description": "The hex address of the user. Input is case insensitive."
+              },
+              {
+                "name": "chain",
+                "value": "ethereum",
+                "type": "query",
+                "description": "The name of the blockchain/network."
+              }
+            ]
+          },
+          "docs": "Get the daily sfrxETH earnings for a user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

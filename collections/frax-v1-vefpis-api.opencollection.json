@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v1-vefpis API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v1-vefpis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1Controller_getLockedVeFPISData",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/lockedvefpisdata"
+          }
+        },
+        {
+          "info": {
+            "name": "V1Controller_getVeFPISData",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v1/vefpisdata/:filter",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "path",
+                "description": "Timeframe"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

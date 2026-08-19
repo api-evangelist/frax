@@ -1,0 +1,165 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-fraxferry API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-fraxferry",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of departed Frax Ferry trips for the optionally-given request parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxferry/trips",
+            "params": [
+              {
+                "name": "srcChain",
+                "value": "",
+                "type": "query",
+                "description": "The name of the source blockchain/network."
+              },
+              {
+                "name": "destChain",
+                "value": "",
+                "type": "query",
+                "description": "The name of the destination blockchain/network."
+              },
+              {
+                "name": "tokenSymbol",
+                "value": "",
+                "type": "query",
+                "description": "The token symbol."
+              },
+              {
+                "name": "ferryKey",
+                "value": "",
+                "type": "query",
+                "description": "The unique key for the Ferry, a set of contracts for a single token on two different chains."
+              }
+            ]
+          },
+          "docs": "Returns a list of departed Frax Ferry trips for the optionally-given request parameters"
+        },
+        {
+          "info": {
+            "name": "Returns details about a single FraxFerry trip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxferry/trips/:batchId",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path",
+                "description": "The batch ID number, or 'pending' for embarked, but not departed, trips."
+              },
+              {
+                "name": "destChain",
+                "value": "",
+                "type": "query",
+                "description": "The name of the destination blockchain/network."
+              },
+              {
+                "name": "ferryKey",
+                "value": "",
+                "type": "query",
+                "description": "The unique key for the Ferry, a set of contracts for a single token on two different chains."
+              }
+            ]
+          },
+          "docs": "Returns details about a single FraxFerry trip"
+        },
+        {
+          "info": {
+            "name": "Returns a list of all Frax Ferry summary info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxferry/ferry"
+          },
+          "docs": "Returns a list of all Frax Ferry summary info"
+        },
+        {
+          "info": {
+            "name": "Returns details about a Frax Ferry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxferry/ferry/:ferryKey",
+            "params": [
+              {
+                "name": "ferryKey",
+                "value": "",
+                "type": "path",
+                "description": "The unique key for the Ferry, a set of contracts for a single token on two different chains."
+              }
+            ]
+          },
+          "docs": "Returns details about a Frax Ferry"
+        },
+        {
+          "info": {
+            "name": "Returns a list of Frax Ferry transactions for the given criteria",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxferry/transactions",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query",
+                "description": "The hex address of the user. Input is case insensitive."
+              }
+            ]
+          },
+          "docs": "Returns a list of Frax Ferry transactions for the given criteria"
+        },
+        {
+          "info": {
+            "name": "Returns a list of Frax Ferry transaction volume info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxferry/transactions/volume"
+          },
+          "docs": "Returns a list of Frax Ferry transaction volume info"
+        },
+        {
+          "info": {
+            "name": "Returns Frax Ferry overall transactions, token quantities, and USD value",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/fraxferry/historical-stats",
+            "params": [
+              {
+                "name": "timeUnitGrouping",
+                "value": "",
+                "type": "query",
+                "description": "Timeframe unit"
+              }
+            ]
+          },
+          "docs": "Returns Frax Ferry overall transactions, token quantities, and USD value"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

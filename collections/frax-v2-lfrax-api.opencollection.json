@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Frax Finance v1-gauge v2-lfrax API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "v2-lfrax",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns the latest Legacy Frax Dollar balance sheet data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/lfrax/balance-sheet/latest"
+          },
+          "docs": "Returns the latest Legacy Frax Dollar balance sheet data"
+        },
+        {
+          "info": {
+            "name": "Returns a CSV of the latest Legacy Frax Dollar balance sheet data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.frax.finance/v2/lfrax/balance-sheet/latest/export"
+          },
+          "docs": "Returns a CSV of the latest Legacy Frax Dollar balance sheet data"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1302 @@
+{
+  "item": [
+    {
+      "id": "ae689752-72dd-4183-a98b-e4233d590759",
+      "name": "v2-fraxswap",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "21e931d9-a3ae-4b89-a5a9-a2ec96b86438",
+          "name": "Returns a list of Fraxswap tokens for the optionally-given request parameters",
+          "request": {
+            "name": "Returns a list of Fraxswap tokens for the optionally-given request parameters",
+            "description": {
+              "content": "Returns a list of Fraxswap tokens for the optionally-given request parameters",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "tokens"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "<string>",
+                  "description": "The name of the blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "The hex address of the token. Input is case insensitive."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99536b8c-e3a3-4473-bec9-f3e9b71202f2",
+              "name": "Returns a list of Fraxswap tokens for the optionally-given request parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "tokens"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address",
+                      "value": "0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tokens\": [\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"decimals\": 8388.195900813162,\n      \"symbol\": \"string\",\n      \"chain\": \"optimism\",\n      \"tvl\": 654.7583135475498,\n      \"price\": 5416.694167433654,\n      \"volumeAdd24H\": 3937.730249174046,\n      \"volumeAdd7D\": 6536.481890004896,\n      \"volumeAddAllTime\": 6592.80228206302,\n      \"volumeRemove24H\": 9931.748449158655,\n      \"volumeRemove7D\": 3295.038715282188,\n      \"volumeRemoveAllTime\": 6130.422648464243,\n      \"volumeSwap24H\": 214.445631858764,\n      \"volumeSwap7D\": 8534.019556853356,\n      \"volumeSwapAllTime\": 1995.6940807226754,\n      \"fees24H\": 1102.6817369976582,\n      \"fees7D\": 9355.868156365657,\n      \"feesAllTime\": 3626.1724841162822,\n      \"swapTransactionCount24H\": 9323.946387985212,\n      \"swapTransactionCount7D\": 8165.609394710861,\n      \"swapTransactionCountAllTime\": 7727.802217118676,\n      \"liquidityTransactionCount24H\": 126.92539179195106,\n      \"liquidityTransactionCount7D\": 5589.572453649445,\n      \"liquidityTransactionCountAllTime\": 2480.3706545817618\n    },\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"decimals\": 1159.9768771717522,\n      \"symbol\": \"string\",\n      \"chain\": \"fraxtal_testnet\",\n      \"tvl\": 8327.568224364066,\n      \"price\": 4700.826399645366,\n      \"volumeAdd24H\": 7391.532116230977,\n      \"volumeAdd7D\": 9172.6237835657,\n      \"volumeAddAllTime\": 2429.3685467344894,\n      \"volumeRemove24H\": 7656.343541999461,\n      \"volumeRemove7D\": 8184.56052918433,\n      \"volumeRemoveAllTime\": 5902.887050920097,\n      \"volumeSwap24H\": 6452.770153835137,\n      \"volumeSwap7D\": 9932.692348037852,\n      \"volumeSwapAllTime\": 5606.120957786104,\n      \"fees24H\": 1084.9190421464561,\n      \"fees7D\": 9826.536982231833,\n      \"feesAllTime\": 3964.97062502028,\n      \"swapTransactionCount24H\": 2409.6257816644284,\n      \"swapTransactionCount7D\": 4972.935358096601,\n      \"swapTransactionCountAllTime\": 3861.773374145625,\n      \"liquidityTransactionCount24H\": 3286.061704638453,\n      \"liquidityTransactionCount7D\": 3273.6187177343836,\n      \"liquidityTransactionCountAllTime\": 5047.763323429442\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79fc7c85-4d48-4cc7-b510-36aeb42d3796",
+          "name": "Returns a list of Fraxswap tokens for a specific token address",
+          "request": {
+            "name": "Returns a list of Fraxswap tokens for a specific token address",
+            "description": {
+              "content": "Returns a list of Fraxswap tokens for a specific token address.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "tokens",
+                ":tokenAddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tokenAddress",
+                  "description": "(Required) The hex address of the token. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c28e201-cda5-4082-8359-f3d772165f1c",
+              "name": "Returns a list of Fraxswap tokens for a specific token address.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "tokens",
+                    ":tokenAddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tokenAddress",
+                      "description": "(Required) The hex address of the token. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tokens\": [\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"decimals\": 9.47987287762686,\n      \"symbol\": \"string\",\n      \"chain\": \"fraxtal\",\n      \"tvl\": 9923.663850127006,\n      \"price\": 175.55357140693673,\n      \"volumeAdd24H\": 4350.531694068077,\n      \"volumeAdd7D\": 2000.0682842257168,\n      \"volumeAddAllTime\": 2918.9045033109373,\n      \"volumeRemove24H\": 8799.023607057012,\n      \"volumeRemove7D\": 1264.8882242696368,\n      \"volumeRemoveAllTime\": 4538.0223878469615,\n      \"volumeSwap24H\": 4152.698616542091,\n      \"volumeSwap7D\": 559.3367274231964,\n      \"volumeSwapAllTime\": 1388.1173638592004,\n      \"fees24H\": 7908.461849160203,\n      \"fees7D\": 9832.79895114789,\n      \"feesAllTime\": 8462.824486311692,\n      \"swapTransactionCount24H\": 2124.965257544462,\n      \"swapTransactionCount7D\": 4343.564243813053,\n      \"swapTransactionCountAllTime\": 3488.773883083367,\n      \"liquidityTransactionCount24H\": 4498.948712820304,\n      \"liquidityTransactionCount7D\": 2330.6723732913283,\n      \"liquidityTransactionCountAllTime\": 9925.068874919554\n    },\n    {\n      \"address\": \"string\",\n      \"name\": \"string\",\n      \"decimals\": 2016.983571181038,\n      \"symbol\": \"string\",\n      \"chain\": \"moonbeam\",\n      \"tvl\": 7532.364063262531,\n      \"price\": 7450.152912936352,\n      \"volumeAdd24H\": 3115.7741688093943,\n      \"volumeAdd7D\": 1549.6539553991906,\n      \"volumeAddAllTime\": 3507.7283704658726,\n      \"volumeRemove24H\": 8739.507932212286,\n      \"volumeRemove7D\": 86.3928195505781,\n      \"volumeRemoveAllTime\": 9822.367716614837,\n      \"volumeSwap24H\": 1280.340029465935,\n      \"volumeSwap7D\": 286.5237083073291,\n      \"volumeSwapAllTime\": 1916.697050663605,\n      \"fees24H\": 5335.033875523817,\n      \"fees7D\": 1185.4727869565218,\n      \"feesAllTime\": 5903.701976177686,\n      \"swapTransactionCount24H\": 1437.1532519456553,\n      \"swapTransactionCount7D\": 9648.53293138204,\n      \"swapTransactionCountAllTime\": 6667.028759406834,\n      \"liquidityTransactionCount24H\": 5436.345430099292,\n      \"liquidityTransactionCount7D\": 4687.05413908192,\n      \"liquidityTransactionCountAllTime\": 9769.627139023334\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d31c50e8-f18f-41ed-8f39-877b44d5c2cc",
+          "name": "Returns a list of pools for a specific Fraxswap token address",
+          "request": {
+            "name": "Returns a list of pools for a specific Fraxswap token address",
+            "description": {
+              "content": "Returns a list of pools for a specific Fraxswap token address.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "tokens",
+                ":tokenAddress",
+                "pools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tokenAddress",
+                  "description": "(Required) The hex address of the token. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ca98d85-96ad-4a03-8622-8b71525ae8f4",
+              "name": "Returns a list of pools for a specific Fraxswap token address.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "tokens",
+                    ":tokenAddress",
+                    "pools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tokenAddress",
+                      "description": "(Required) The hex address of the token. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pools\": [\n    {\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"createdAtTimestamp\": \"1983-09-11T14:52:56.041Z\",\n      \"createdAtBlock\": 2195.8829863550177,\n      \"createdAtTransactionHash\": \"string\",\n      \"chain\": \"avalanche\",\n      \"token0Address\": \"string\",\n      \"token0Symbol\": \"string\",\n      \"token0AmountLocked\": 7021.030569542254,\n      \"token0AmountLockedAmm\": 8976.569324965347,\n      \"token0AmountLockedTwamm\": 6626.608151353491,\n      \"token1Address\": \"string\",\n      \"token1Symbol\": \"string\",\n      \"token1AmountLocked\": 3602.8011748395816,\n      \"token1AmountLockedAmm\": 4652.558312833594,\n      \"token1AmountLockedTwamm\": 3322.7594175947393,\n      \"feePercentage\": 224.59750153569823,\n      \"tvl\": 3950.908614284484,\n      \"volumeAdd24H\": 1084.5704699176174,\n      \"volumeAdd7D\": 4776.630974112828,\n      \"volumeAddAllTime\": 8180.98831411835,\n      \"volumeRemove24H\": 6088.764166136511,\n      \"volumeRemove7D\": 7497.883251010915,\n      \"volumeRemoveAllTime\": 9511.357122848716,\n      \"volumeSwap24H\": 6833.084218351328,\n      \"volumeSwap7D\": 192.05892307518567,\n      \"volumeSwapAllTime\": 5446.89509549731,\n      \"fees24H\": 2733.740310580952,\n      \"fees7D\": 8660.10871954078,\n      \"feesAllTime\": 6691.491329864295,\n      \"swapTransactionCount24H\": 7298.108423492377,\n      \"swapTransactionCount7D\": 8011.836427342507,\n      \"swapTransactionCountAllTime\": 6006.187122151411,\n      \"liquidityTransactionCount24H\": 5927.891032454265,\n      \"liquidityTransactionCount7D\": 4314.610774222678,\n      \"liquidityTransactionCountAllTime\": 9394.75859113051\n    },\n    {\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"createdAtTimestamp\": \"1967-01-16T09:46:11.241Z\",\n      \"createdAtBlock\": 6307.84274698347,\n      \"createdAtTransactionHash\": \"string\",\n      \"chain\": \"ethereum\",\n      \"token0Address\": \"string\",\n      \"token0Symbol\": \"string\",\n      \"token0AmountLocked\": 8749.555140154238,\n      \"token0AmountLockedAmm\": 4987.67210116009,\n      \"token0AmountLockedTwamm\": 3382.72336986028,\n      \"token1Address\": \"string\",\n      \"token1Symbol\": \"string\",\n      \"token1AmountLocked\": 5586.9798616424205,\n      \"token1AmountLockedAmm\": 1508.0756557939158,\n      \"token1AmountLockedTwamm\": 1308.2053503440427,\n      \"feePercentage\": 140.84636275078165,\n      \"tvl\": 7582.460048025501,\n      \"volumeAdd24H\": 3778.1653764828084,\n      \"volumeAdd7D\": 3273.2482325727187,\n      \"volumeAddAllTime\": 3599.6757047548535,\n      \"volumeRemove24H\": 5369.844212746263,\n      \"volumeRemove7D\": 6792.05453323805,\n      \"volumeRemoveAllTime\": 1995.6231077172627,\n      \"volumeSwap24H\": 2668.378326369134,\n      \"volumeSwap7D\": 1244.7882738348437,\n      \"volumeSwapAllTime\": 1636.2368520924565,\n      \"fees24H\": 7544.287283042886,\n      \"fees7D\": 525.8755269788351,\n      \"feesAllTime\": 4878.921530659804,\n      \"swapTransactionCount24H\": 9044.891267620167,\n      \"swapTransactionCount7D\": 6418.101390851449,\n      \"swapTransactionCountAllTime\": 1314.9373384289975,\n      \"liquidityTransactionCount24H\": 5348.999228183312,\n      \"liquidityTransactionCount7D\": 1155.3640085172678,\n      \"liquidityTransactionCountAllTime\": 7200.847203508355\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c8e1459-85ba-4b77-a3b6-45317c1451de",
+          "name": "Returns a summary of activity for the token by day",
+          "request": {
+            "name": "Returns a summary of activity for the token by day",
+            "description": {
+              "content": "Returns a summary of activity for the token by day.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "tokens",
+                ":tokenAddress",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tokenAddress",
+                  "description": "(Required) The hex address of the token. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4343aca2-7662-40ba-b642-cca6505d0ef9",
+              "name": "Returns a summary of activity for the token by day.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "tokens",
+                    ":tokenAddress",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tokenAddress",
+                      "description": "(Required) The hex address of the token. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"intervalTimestamp\": 7057.015033757346,\n      \"addVolumeUsdAmount\": 160.63065266951116,\n      \"removeVolumeUsdAmount\": 2209.2541203997184,\n      \"feeUsdAmount\": 4008.3793631742383,\n      \"liquidityTransactionCount\": 738.220614407582,\n      \"swapTransactionCount\": 358.69883330956867,\n      \"swapVolumeUsdAmount\": 3088.466933410022,\n      \"liquidityUsdAmount\": 9982.066712616515,\n      \"tokenLockedAmount\": 150.78061839908784\n    },\n    {\n      \"intervalTimestamp\": 8798.673322444893,\n      \"addVolumeUsdAmount\": 7863.1457644954635,\n      \"removeVolumeUsdAmount\": 2505.8315165766853,\n      \"feeUsdAmount\": 6270.374063698105,\n      \"liquidityTransactionCount\": 8054.898979876774,\n      \"swapTransactionCount\": 3204.490289620705,\n      \"swapVolumeUsdAmount\": 5417.520493249909,\n      \"liquidityUsdAmount\": 5988.08730636269,\n      \"tokenLockedAmount\": 6647.417745596291\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ddfadff-67e6-441d-8da3-0fadada28a56",
+          "name": "Returns a list of Fraxswap liquidity pools for the optionally-given request parameters",
+          "request": {
+            "name": "Returns a list of Fraxswap liquidity pools for the optionally-given request parameters",
+            "description": {
+              "content": "Returns a list of Fraxswap liquidity pools for the optionally-given request parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "pools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "<string>",
+                  "description": "The name of the blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "The hex address of the token. Input is case insensitive."
+                },
+                {
+                  "disabled": false,
+                  "key": "pool",
+                  "value": "<string>",
+                  "description": "The hex address of the pool. Input is case insensitive."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5153c82e-8c71-450b-b152-e056bdb0db61",
+              "name": "Returns a list of Fraxswap liquidity pools for the optionally-given request parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "pools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pool",
+                      "value": "0x8206412c107eF1aDb70B9277974f5163760E128E"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pools\": [\n    {\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"createdAtTimestamp\": \"1985-03-14T10:29:08.200Z\",\n      \"createdAtBlock\": 7555.948640441245,\n      \"createdAtTransactionHash\": \"string\",\n      \"chain\": \"fraxtal_testnet\",\n      \"token0Address\": \"string\",\n      \"token0Symbol\": \"string\",\n      \"token0AmountLocked\": 4459.961998416724,\n      \"token0AmountLockedAmm\": 2346.047791793172,\n      \"token0AmountLockedTwamm\": 5927.06076803754,\n      \"token1Address\": \"string\",\n      \"token1Symbol\": \"string\",\n      \"token1AmountLocked\": 6203.9793410641905,\n      \"token1AmountLockedAmm\": 3765.0419085030785,\n      \"token1AmountLockedTwamm\": 3507.2096543786147,\n      \"feePercentage\": 5655.392497850515,\n      \"tvl\": 7951.809028535231,\n      \"volumeAdd24H\": 2516.33871741635,\n      \"volumeAdd7D\": 5505.020268510352,\n      \"volumeAddAllTime\": 7500.742251678967,\n      \"volumeRemove24H\": 7653.855291688301,\n      \"volumeRemove7D\": 7571.7719078249,\n      \"volumeRemoveAllTime\": 9609.66627537129,\n      \"volumeSwap24H\": 8426.78800356923,\n      \"volumeSwap7D\": 7693.78985592914,\n      \"volumeSwapAllTime\": 5263.332066059339,\n      \"fees24H\": 2048.535867130512,\n      \"fees7D\": 55.38601626695616,\n      \"feesAllTime\": 5804.054707564303,\n      \"swapTransactionCount24H\": 7576.69038057433,\n      \"swapTransactionCount7D\": 5517.790242510101,\n      \"swapTransactionCountAllTime\": 4990.183489823015,\n      \"liquidityTransactionCount24H\": 6337.1940261544705,\n      \"liquidityTransactionCount7D\": 5302.998183194595,\n      \"liquidityTransactionCountAllTime\": 5982.105443774856\n    },\n    {\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"createdAtTimestamp\": \"1950-11-07T09:13:52.421Z\",\n      \"createdAtBlock\": 8984.933548910207,\n      \"createdAtTransactionHash\": \"string\",\n      \"chain\": \"fraxtal\",\n      \"token0Address\": \"string\",\n      \"token0Symbol\": \"string\",\n      \"token0AmountLocked\": 4821.9780145953155,\n      \"token0AmountLockedAmm\": 1207.3953148182227,\n      \"token0AmountLockedTwamm\": 329.55657404381776,\n      \"token1Address\": \"string\",\n      \"token1Symbol\": \"string\",\n      \"token1AmountLocked\": 543.4956915018519,\n      \"token1AmountLockedAmm\": 7193.812913450985,\n      \"token1AmountLockedTwamm\": 1143.3834514098407,\n      \"feePercentage\": 8734.035074411115,\n      \"tvl\": 8472.166655414494,\n      \"volumeAdd24H\": 356.25614979767903,\n      \"volumeAdd7D\": 1531.9037380323498,\n      \"volumeAddAllTime\": 11.808563634509994,\n      \"volumeRemove24H\": 6828.529716935295,\n      \"volumeRemove7D\": 3228.137583408648,\n      \"volumeRemoveAllTime\": 6690.951679142728,\n      \"volumeSwap24H\": 7089.082681334904,\n      \"volumeSwap7D\": 4412.551571502234,\n      \"volumeSwapAllTime\": 4632.589829777164,\n      \"fees24H\": 4648.368455891749,\n      \"fees7D\": 4832.842980477403,\n      \"feesAllTime\": 4039.259323897971,\n      \"swapTransactionCount24H\": 9281.556238782376,\n      \"swapTransactionCount7D\": 2514.508195492776,\n      \"swapTransactionCountAllTime\": 3712.480478871527,\n      \"liquidityTransactionCount24H\": 6724.865415157009,\n      \"liquidityTransactionCount7D\": 5416.1620116133345,\n      \"liquidityTransactionCountAllTime\": 4565.309824549872\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb07909f-0dd1-4f6a-add3-8ab4a88c3ad9",
+          "name": "Returns a list of Fraxswap pools for a specific pool address",
+          "request": {
+            "name": "Returns a list of Fraxswap pools for a specific pool address",
+            "description": {
+              "content": "Returns a list of Fraxswap pools for a specific pool address.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "pools",
+                ":poolAddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "poolAddress",
+                  "description": "(Required) The hex address of the pool. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0df49cdc-5a67-483a-8eae-9b426fe8fac8",
+              "name": "Returns a list of Fraxswap pools for a specific pool address.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "pools",
+                    ":poolAddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "poolAddress",
+                      "description": "(Required) The hex address of the pool. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pools\": [\n    {\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"createdAtTimestamp\": \"1985-03-14T10:29:08.200Z\",\n      \"createdAtBlock\": 7555.948640441245,\n      \"createdAtTransactionHash\": \"string\",\n      \"chain\": \"fraxtal_testnet\",\n      \"token0Address\": \"string\",\n      \"token0Symbol\": \"string\",\n      \"token0AmountLocked\": 4459.961998416724,\n      \"token0AmountLockedAmm\": 2346.047791793172,\n      \"token0AmountLockedTwamm\": 5927.06076803754,\n      \"token1Address\": \"string\",\n      \"token1Symbol\": \"string\",\n      \"token1AmountLocked\": 6203.9793410641905,\n      \"token1AmountLockedAmm\": 3765.0419085030785,\n      \"token1AmountLockedTwamm\": 3507.2096543786147,\n      \"feePercentage\": 5655.392497850515,\n      \"tvl\": 7951.809028535231,\n      \"volumeAdd24H\": 2516.33871741635,\n      \"volumeAdd7D\": 5505.020268510352,\n      \"volumeAddAllTime\": 7500.742251678967,\n      \"volumeRemove24H\": 7653.855291688301,\n      \"volumeRemove7D\": 7571.7719078249,\n      \"volumeRemoveAllTime\": 9609.66627537129,\n      \"volumeSwap24H\": 8426.78800356923,\n      \"volumeSwap7D\": 7693.78985592914,\n      \"volumeSwapAllTime\": 5263.332066059339,\n      \"fees24H\": 2048.535867130512,\n      \"fees7D\": 55.38601626695616,\n      \"feesAllTime\": 5804.054707564303,\n      \"swapTransactionCount24H\": 7576.69038057433,\n      \"swapTransactionCount7D\": 5517.790242510101,\n      \"swapTransactionCountAllTime\": 4990.183489823015,\n      \"liquidityTransactionCount24H\": 6337.1940261544705,\n      \"liquidityTransactionCount7D\": 5302.998183194595,\n      \"liquidityTransactionCountAllTime\": 5982.105443774856\n    },\n    {\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"createdAtTimestamp\": \"1950-11-07T09:13:52.421Z\",\n      \"createdAtBlock\": 8984.933548910207,\n      \"createdAtTransactionHash\": \"string\",\n      \"chain\": \"fraxtal\",\n      \"token0Address\": \"string\",\n      \"token0Symbol\": \"string\",\n      \"token0AmountLocked\": 4821.9780145953155,\n      \"token0AmountLockedAmm\": 1207.3953148182227,\n      \"token0AmountLockedTwamm\": 329.55657404381776,\n      \"token1Address\": \"string\",\n      \"token1Symbol\": \"string\",\n      \"token1AmountLocked\": 543.4956915018519,\n      \"token1AmountLockedAmm\": 7193.812913450985,\n      \"token1AmountLockedTwamm\": 1143.3834514098407,\n      \"feePercentage\": 8734.035074411115,\n      \"tvl\": 8472.166655414494,\n      \"volumeAdd24H\": 356.25614979767903,\n      \"volumeAdd7D\": 1531.9037380323498,\n      \"volumeAddAllTime\": 11.808563634509994,\n      \"volumeRemove24H\": 6828.529716935295,\n      \"volumeRemove7D\": 3228.137583408648,\n      \"volumeRemoveAllTime\": 6690.951679142728,\n      \"volumeSwap24H\": 7089.082681334904,\n      \"volumeSwap7D\": 4412.551571502234,\n      \"volumeSwapAllTime\": 4632.589829777164,\n      \"fees24H\": 4648.368455891749,\n      \"fees7D\": 4832.842980477403,\n      \"feesAllTime\": 4039.259323897971,\n      \"swapTransactionCount24H\": 9281.556238782376,\n      \"swapTransactionCount7D\": 2514.508195492776,\n      \"swapTransactionCountAllTime\": 3712.480478871527,\n      \"liquidityTransactionCount24H\": 6724.865415157009,\n      \"liquidityTransactionCount7D\": 5416.1620116133345,\n      \"liquidityTransactionCountAllTime\": 4565.309824549872\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e61f030-59b4-4b9c-abfb-be59118623ee",
+          "name": "Returns a summary of activity for the pool by day",
+          "request": {
+            "name": "Returns a summary of activity for the pool by day",
+            "description": {
+              "content": "Returns a summary of activity for the pool by day.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "pools",
+                ":poolAddress",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "poolAddress",
+                  "description": "(Required) The hex address of the pool. Input is case insensitive."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b6e3915-b5ee-4766-bd63-c3cdcbe31cbf",
+              "name": "Returns a summary of activity for the pool by day.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "pools",
+                    ":poolAddress",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "poolAddress",
+                      "description": "(Required) The hex address of the pool. Input is case insensitive."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"intervalTimestamp\": 5998.260301216236,\n      \"addVolumeUsdAmount\": 2898.9366270288165,\n      \"removeVolumeUsdAmount\": 2837.298917821217,\n      \"feeUsdAmount\": 8904.996165657945,\n      \"liquidityTransactionCount\": 242.48618954915148,\n      \"swapTransactionCount\": 9117.373592199954,\n      \"swapVolumeUsdAmount\": 8449.391705960381,\n      \"token0LiquidityUsdAmount\": 966.5452620299153,\n      \"token0LockedAmount\": 318.7959619954739,\n      \"token1LiquidityUsdAmount\": 8370.53469385662,\n      \"token1LockedAmount\": 6044.363654162096\n    },\n    {\n      \"intervalTimestamp\": 8956.042215036538,\n      \"addVolumeUsdAmount\": 6500.613509687747,\n      \"removeVolumeUsdAmount\": 614.8375561280195,\n      \"feeUsdAmount\": 4489.972166586013,\n      \"liquidityTransactionCount\": 8643.57391967328,\n      \"swapTransactionCount\": 6811.092553022972,\n      \"swapVolumeUsdAmount\": 5634.797861518784,\n      \"token0LiquidityUsdAmount\": 5574.289428283793,\n      \"token0LockedAmount\": 3810.877817196985,\n      \"token1LiquidityUsdAmount\": 3593.0894382951874,\n      \"token1LockedAmount\": 731.9984703618177\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1aae528-9de7-4de6-ac0b-b92c257dba1c",
+          "name": "Returns a list of Fraxswap transactions for the optionally-given request parameters",
+          "request": {
+            "name": "Returns a list of Fraxswap transactions for the optionally-given request parameters",
+            "description": {
+              "content": "Returns a list of Fraxswap transactions for the optionally-given request parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "<string>",
+                  "description": "The name of the blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "The hex address of the token. Input is case insensitive."
+                },
+                {
+                  "disabled": false,
+                  "key": "pool",
+                  "value": "<string>",
+                  "description": "The hex address of the pool. Input is case insensitive."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Transaction type"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "Pass a cursor to get the next set of records."
+                },
+                {
+                  "disabled": false,
+                  "key": "ct",
+                  "value": "<number>",
+                  "description": "Number of records to return. Defaults to 50. Max value 100."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8261c8f-d01b-4340-827f-df513c29006b",
+              "name": "Returns a list of Fraxswap transactions for the optionally-given request parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pool",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ct",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"transactionHash\": \"string\",\n      \"transactionType\": \"string\",\n      \"transactionTimestamp\": \"1964-03-20T20:33:32.291Z\",\n      \"blockNumber\": 3705.2007134898836,\n      \"userAddress\": \"string\",\n      \"poolAddress\": \"string\",\n      \"token0Address\": \"string\",\n      \"token1Address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"token0DeltaAmount\": 2661.5728878022746,\n      \"token1DeltaAmount\": 6570.529929346939,\n      \"globalSequence\": 5944.3729455510675,\n      \"token0UsdAmount\": 6245.550751145077,\n      \"token1UsdAmount\": 9461.76026406993,\n      \"feeUsdAmount\": 7284.955124594657,\n      \"chain\": \"fraxtal\"\n    },\n    {\n      \"transactionHash\": \"string\",\n      \"transactionType\": \"string\",\n      \"transactionTimestamp\": \"1998-11-09T02:18:24.075Z\",\n      \"blockNumber\": 7537.1920959322915,\n      \"userAddress\": \"string\",\n      \"poolAddress\": \"string\",\n      \"token0Address\": \"string\",\n      \"token1Address\": \"string\",\n      \"contractAddress\": \"string\",\n      \"token0DeltaAmount\": 8709.59433509024,\n      \"token1DeltaAmount\": 2766.738309294773,\n      \"globalSequence\": 441.3361222462686,\n      \"token0UsdAmount\": 5852.794396522565,\n      \"token1UsdAmount\": 808.1288587261914,\n      \"feeUsdAmount\": 5817.852028018014,\n      \"chain\": \"fantom\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5cf0ce7-df0c-4a11-92a0-03a574380e61",
+          "name": "Returns a list of Fraxswap TWAMM orders for the optionally-given request parameters",
+          "request": {
+            "name": "Returns a list of Fraxswap TWAMM orders for the optionally-given request parameters",
+            "description": {
+              "content": "Returns a list of Fraxswap TWAMM orders for the optionally-given request parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "twamm-orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "<string>",
+                  "description": "The name of the blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>",
+                  "description": "The hex address of the user. Input is case insensitive."
+                },
+                {
+                  "disabled": false,
+                  "key": "pool",
+                  "value": "<string>",
+                  "description": "The hex address of the pool. Input is case insensitive."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d842b4f-d6c4-4f37-9b56-45cf0b0115e8",
+              "name": "Returns a list of Fraxswap TWAMM orders for the optionally-given request parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "twamm-orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "ethereum"
+                    },
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pool",
+                      "value": "0x8206412c107eF1aDb70B9277974f5163760E128E"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orders\": [\n    {\n      \"chain\": \"harmony\",\n      \"isOpen\": true,\n      \"orderId\": 4244.852307227306,\n      \"poolId\": 1015.908745384756,\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"userAddress\": \"string\",\n      \"status\": \"string\",\n      \"startAt\": \"1952-05-11T06:27:51.163Z\",\n      \"endAt\": \"2021-04-05T04:19:09.494Z\",\n      \"token0Symbol\": \"string\",\n      \"token0Address\": \"string\",\n      \"token0Collected\": 4723.577914106773,\n      \"token0RewardClaimable\": 7706.179561035573,\n      \"token0RemainingToSell\": 3556.646903355518,\n      \"token0SwapAmount\": 1144.0694680555441,\n      \"token1Symbol\": \"string\",\n      \"token1Address\": \"string\",\n      \"token1Collected\": 6773.683283877171,\n      \"token1RewardClaimable\": 4831.157175868151,\n      \"token1RemainingToSell\": 6759.197228787633,\n      \"token1SwapAmount\": 8877.687915922672,\n      \"lastUpdatedAt\": \"1954-10-30T00:40:34.952Z\"\n    },\n    {\n      \"chain\": \"avalanche\",\n      \"isOpen\": true,\n      \"orderId\": 2112.2126072959745,\n      \"poolId\": 6500.908535648713,\n      \"poolAddress\": \"string\",\n      \"poolName\": \"string\",\n      \"userAddress\": \"string\",\n      \"status\": \"string\",\n      \"startAt\": \"1980-05-26T13:06:09.232Z\",\n      \"endAt\": \"1982-08-02T08:28:59.207Z\",\n      \"token0Symbol\": \"string\",\n      \"token0Address\": \"string\",\n      \"token0Collected\": 3118.790307979108,\n      \"token0RewardClaimable\": 8027.049362700203,\n      \"token0RemainingToSell\": 9981.35163740118,\n      \"token0SwapAmount\": 2631.106560324867,\n      \"token1Symbol\": \"string\",\n      \"token1Address\": \"string\",\n      \"token1Collected\": 7144.356315692831,\n      \"token1RewardClaimable\": 585.2678155644709,\n      \"token1RemainingToSell\": 6009.463367166262,\n      \"token1SwapAmount\": 6609.714840183764,\n      \"lastUpdatedAt\": \"1972-05-07T02:00:43.900Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a92b23c7-bd24-4172-b68f-35cf13a7dca9",
+          "name": "Return details of a single Fraxswap TWAMM order",
+          "request": {
+            "name": "Return details of a single Fraxswap TWAMM order",
+            "description": {
+              "content": "Return details of a single Fraxswap TWAMM order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "twamm-orders",
+                ":chain",
+                ":pool",
+                ":orderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chain",
+                  "description": "(Required) The name of the blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pool",
+                  "description": "(Required) The hex address of the pool. Input is case insensitive."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) The order ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bf60dd6d-527b-4f43-8a71-00134cf9b942",
+              "name": "Return details of a single Fraxswap TWAMM order.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "twamm-orders",
+                    ":chain",
+                    ":pool",
+                    ":orderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chain",
+                      "description": "(Required) The name of the blockchain/network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pool",
+                      "description": "(Required) The hex address of the pool. Input is case insensitive."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) The order ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"chain\": \"fraxtal\",\n  \"orderId\": 1649.2208924503982,\n  \"status\": \"string\",\n  \"startAt\": \"1979-11-01T20:33:06.785Z\",\n  \"originalEndAt\": \"1951-05-31T00:30:00.239Z\",\n  \"endAt\": \"1961-10-27T01:30:56.792Z\",\n  \"poolAddress\": \"string\",\n  \"poolName\": \"string\",\n  \"userAddress\": \"string\",\n  \"token0Address\": \"string\",\n  \"token0Symbol\": \"string\",\n  \"token0Name\": \"string\",\n  \"token0Decimals\": 9649.758341410397,\n  \"token0Initial\": 1085.4953220960429,\n  \"token0RewardClaimable\": 2021.4171768493038,\n  \"token0Collected\": 3289.3105441695893,\n  \"token0RemainingToSell\": 7690.856325382839,\n  \"token0SaleRate\": 270.70014039893067,\n  \"token1Address\": \"string\",\n  \"token1Symbol\": \"string\",\n  \"token1Name\": \"string\",\n  \"token1Decimals\": 1733.3344509102344,\n  \"token1Initial\": 9022.480748819018,\n  \"token1RewardClaimable\": 7305.413076557374,\n  \"token1Collected\": 4469.712203262629,\n  \"token1RemainingToSell\": 3534.691709184037,\n  \"token1SaleRate\": 893.954760297665,\n  \"updatedAt\": \"1960-01-05T19:39:30.830Z\",\n  \"transactions\": [\n    {\n      \"transactionHash\": \"string\",\n      \"timestamp\": \"1987-02-14T05:38:52.283Z\",\n      \"transactionType\": \"string\",\n      \"token0Quantity\": 784.4018487954263,\n      \"token1Quantity\": 2322.6048223430653\n    },\n    {\n      \"transactionHash\": \"string\",\n      \"timestamp\": \"1968-02-16T09:49:11.441Z\",\n      \"transactionType\": \"string\",\n      \"token0Quantity\": 4663.451952690632,\n      \"token1Quantity\": 3178.4281109038116\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d79bae1-a7bc-4e02-b4a1-c21480417fd3",
+          "name": "Return daily TWAMM data of a single Fraxswap TWAMM order",
+          "request": {
+            "name": "Return daily TWAMM data of a single Fraxswap TWAMM order",
+            "description": {
+              "content": "Return daily TWAMM data of a single Fraxswap TWAMM order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "twamm-orders",
+                ":chain",
+                ":pool",
+                ":orderId",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chain",
+                  "description": "(Required) The name of the blockchain/network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pool",
+                  "description": "(Required) The hex address of the pool. Input is case insensitive."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) The order ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "387bedcc-7495-48c0-9013-e86906678ce7",
+              "name": "Return daily TWAMM data of a single Fraxswap TWAMM order.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "twamm-orders",
+                    ":chain",
+                    ":pool",
+                    ":orderId",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chain",
+                      "description": "(Required) The name of the blockchain/network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pool",
+                      "description": "(Required) The hex address of the pool. Input is case insensitive."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) The order ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"orderId\": 3825.444501265228,\n  \"chain\": \"holesky\",\n  \"poolAddress\": \"string\",\n  \"poolName\": \"string\",\n  \"userAddress\": \"string\",\n  \"token0Address\": \"string\",\n  \"token0Symbol\": \"string\",\n  \"token1Address\": \"string\",\n  \"token1Symbol\": \"string\",\n  \"items\": [\n    {\n      \"intervalTimestamp\": 6697.595003125749,\n      \"token0\": {\n        \"collected\": 9171.520589135294,\n        \"claimable\": 3384.875030533645,\n        \"cumulativeEarned\": 5094.739953742097,\n        \"remaining\": 4856.452042351558,\n        \"sold\": 2097.5439163835817,\n        \"bought\": 3877.9606486271177\n      },\n      \"token1\": {\n        \"collected\": 2108.4988535919224,\n        \"claimable\": 4175.598275586984,\n        \"cumulativeEarned\": 4369.87291842515,\n        \"remaining\": 155.8696241123858,\n        \"sold\": 4814.497273421946,\n        \"bought\": 6397.140836448847\n      }\n    },\n    {\n      \"intervalTimestamp\": 7642.254551064818,\n      \"token0\": {\n        \"collected\": 3123.4074641656093,\n        \"claimable\": 6857.567330911049,\n        \"cumulativeEarned\": 6699.730916442664,\n        \"remaining\": 8114.011433485185,\n        \"sold\": 3439.3691802419667,\n        \"bought\": 6092.927339508468\n      },\n      \"token1\": {\n        \"collected\": 9616.403649036412,\n        \"claimable\": 5231.835852798366,\n        \"cumulativeEarned\": 2987.0437608913257,\n        \"remaining\": 2556.4691489241764,\n        \"sold\": 9247.151963890019,\n        \"bought\": 73.11057751862138\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "399fa555-b539-4021-bcad-170d5f360978",
+          "name": "Returns a summary of activity across all chains by day",
+          "request": {
+            "name": "Returns a summary of activity across all chains by day",
+            "description": {
+              "content": "Returns a summary of activity across all chains by day.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "fraxswap",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "range",
+                  "value": "<string>",
+                  "description": "(Required) Timeframe"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f344581-49e5-4986-b812-e23e66318d63",
+              "name": "Returns a summary of activity across all chains by day.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "fraxswap",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "range",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"intervalTimestamp\": 1613.1716411816021,\n      \"addVolumeUsdAmount\": 2327.3143621774807,\n      \"removeVolumeUsdAmount\": 6221.836569541498,\n      \"feeUsdAmount\": 691.8506336125785,\n      \"liquidityTransactionCount\": 4445.151247192013,\n      \"swapTransactionCount\": 7664.514592040674,\n      \"swapVolumeUsdAmount\": 807.5148031085711,\n      \"chain\": \"moonriver\",\n      \"liquidityUsdAmount\": 2124.1566486510064\n    },\n    {\n      \"intervalTimestamp\": 8438.996834229334,\n      \"addVolumeUsdAmount\": 6883.113875269651,\n      \"removeVolumeUsdAmount\": 260.1003112510969,\n      \"feeUsdAmount\": 9318.552414920263,\n      \"liquidityTransactionCount\": 6889.4523300557985,\n      \"swapTransactionCount\": 8366.721341375107,\n      \"swapVolumeUsdAmount\": 8814.498005512909,\n      \"chain\": \"harmony\",\n      \"liquidityUsdAmount\": 355.65688490786454\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.frax.finance",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c3d08814-0adb-41df-8df5-9379e6d6df2c",
+    "name": "Frax Finance v1-gauge v2-fraxswap API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Frax Finance API\n\nContact Support:\n Name: Frax Finance\n Email: no-reply@frax.finance",
+      "type": "text/plain"
+    }
+  }
+}
