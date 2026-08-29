@@ -7,6 +7,18 @@ description: >
   operates Algorithmic Market Operations (AMOs) to manage collateral and generate
   revenue, and exposes public REST APIs for querying token supply, collateral
   ratios, AMO positions, pool APRs, and frxETH staking analytics.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: open
