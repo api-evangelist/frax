@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Frax Finance v1-gauge v2-gauges API
+  title: Frax Finance V2 Gauges API
   description: The Frax Finance API
-  version: '1.0'
+  version: '2.0'
   contact:
     name: Frax Finance
     url: https://docs.frax.finance
@@ -15,7 +15,7 @@ paths:
   /v2/gauges:
     get:
       operationId: listGauges
-      summary: Returns a list of gauges.
+      summary: Returns a list of gauges
       description: Returns a list of gauges.
       parameters: []
       responses:
@@ -30,7 +30,7 @@ paths:
   /v2/gauges/{gaugeAddress}:
     get:
       operationId: getGaugeBasicInfo
-      summary: Returns basic information about a gauge.
+      summary: Returns basic information about a gauge
       description: Returns basic information about a gauge.
       parameters:
       - name: gaugeAddress
@@ -54,7 +54,7 @@ paths:
   /v2/gauges/cycles:
     get:
       operationId: listGaugeCycles
-      summary: Returns a list of gauge voting cycles and their starting/ending blocks.
+      summary: Returns a list of gauge voting cycles and their starting/ending blocks
       description: Returns a list of gauge voting cycles and their starting/ending blocks.
       parameters: []
       responses:
@@ -69,7 +69,7 @@ paths:
   /v2/gauges/cycles/history:
     get:
       operationId: listGaugeCycleHistoricalOutcome
-      summary: Returns a summarized list of each gauge cycle voting outcome.
+      summary: Returns a summarized list of each gauge cycle voting outcome
       description: Returns a summarized list of each gauge cycle voting outcome.
       parameters: []
       responses:
@@ -84,7 +84,7 @@ paths:
   /v2/gauges/cycles/next:
     get:
       operationId: getGaugeNextCycleEstimate
-      summary: Returns the estimated outcome of the upcoming gauge cycle.
+      summary: Returns the estimated outcome of the upcoming gauge cycle
       description: Returns the estimated outcome of the upcoming gauge cycle.
       parameters: []
       responses:
@@ -99,7 +99,7 @@ paths:
   /v2/gauges/cycles/{cycleKey}:
     get:
       operationId: getGaugeCycleByKey
-      summary: Returns detailed outcome of a gauge cycle.
+      summary: Returns detailed outcome of a gauge cycle
       description: Returns detailed outcome of a gauge cycle.
       parameters:
       - name: cycleKey
@@ -123,7 +123,7 @@ paths:
   /v2/gauges/cycles/{cycleKey}/daily:
     get:
       operationId: listGaugeCycleDailyData
-      summary: Returns a daily summary of gauge voting allocations for a particular cycle.
+      summary: Returns a daily summary of gauge voting allocations for a particular cycle
       description: Returns a daily summary of gauge voting allocations for a particular cycle.
       parameters:
       - name: cycleKey
@@ -147,7 +147,7 @@ paths:
   /v2/gauges/voter-participation:
     get:
       operationId: listGaugeVoterParticipation
-      summary: List of voting and non-voting veFXS addresses.
+      summary: List of voting and non-voting veFXS addresses
       description: List of voting and non-voting veFXS addresses.
       parameters: []
       responses:
@@ -161,99 +161,48 @@ paths:
       - v2-gauges
 components:
   schemas:
-    GaugeNextCycleEstimateGaugeVoterDetail:
+    GaugeBasicInfo:
       type: object
       properties:
-        voterAddress:
+        address:
           type: string
-        vefxsWeight:
-          type: number
-        weightPerc:
-          type: number
-        lastVoteTimestampSec:
-          type: number
-        asOfTimestampSec:
-          type: number
-      required:
-      - voterAddress
-      - vefxsWeight
-      - weightPerc
-      - lastVoteTimestampSec
-      - asOfTimestampSec
-    GaugeNextCycleEstimateAllocationBreakdown:
-      type: object
-      properties:
-        carryover:
-          type: number
-        locked:
-          type: number
-        changed:
-          type: number
-      required:
-      - carryover
-      - locked
-      - changed
-    GaugeCycleDefinition:
-      type: object
-      properties:
-        cycleKey:
+        addressChecksum:
           type: string
-          description: The unique identifier of the cycle voting period.
-        startingTimestampSec:
+        name:
+          type: string
+        label:
+          type: string
+        inceptionTransactionHash:
+          type: string
+        inceptionBlockNumber:
           type: number
-          description: The timestamp (seconds) when the voting period begins.
-        startingTimestamp:
+        effectiveDate:
           format: date-time
           type: string
-          description: The timestamp (ISO) when the voting period begins.
-        endingTimestampSec:
-          type: number
-          description: The timestamp (seconds) when the voting period ends.
-        endingTimestamp:
+        endTransactionHash:
+          type:
+          - string
+          - 'null'
+        endBlockNumber:
+          type:
+          - number
+          - 'null'
+        endDate:
           format: date-time
-          type: string
-          description: The timestamp (ISO) when the voting period ends.
-        startingBlock:
-          type: number
-          description: The block number at which the voting period begins.
-        endingBlock:
-          type: number
-          description: The block number at which the voting period ends.
-        isActive:
-          type: boolean
-          description: Indicates whether the voting cycle is active at the time of this request.
-        isFuture:
-          type: boolean
-          description: Indicates whether the voting cycle occurs in the future at the time of this request.
+          type:
+          - string
+          - 'null'
       required:
-      - cycleKey
-      - startingTimestampSec
-      - startingTimestamp
-      - endingTimestampSec
-      - endingTimestamp
-      - startingBlock
-      - endingBlock
-      - isActive
-      - isFuture
-    GaugeCycleDailyGaugeAllocation:
-      type: object
-      properties:
-        gaugeAddress:
-          type: string
-        gaugeName:
-          type: string
-        gaugeWeight:
-          type: number
-        weightPercentage:
-          type: number
-        vefxsVoted:
-          type: number
-      required:
-      - gaugeAddress
-      - gaugeName
-      - gaugeWeight
-      - weightPercentage
-      - vefxsVoted
+      - address
+      - addressChecksum
+      - name
+      - label
+      - inceptionTransactionHash
+      - inceptionBlockNumber
+      - effectiveDate
+      - endTransactionHash
+      - endBlockNumber
+      - endDate
     GaugeVoterParticipationOverviewResponse:
       type: object
       properties:
@@ -268,50 +217,16 @@ components:
       required:
       - asOfTimestamp
       - voters
-    GaugeCycleVoter:
+    ListGaugesResponse:
       type: object
       properties:
-        asOfTimestamp:
-          format: date-time
-          type: string
-        voterAddress:
-          type: string
-        vefxsBalance:
-          type: number
-        lockEndTimestamp:
-          format: date-time
-          type: string
-        availableVefxs:
-          type: number
-        gaugeWeight:
-          type: number
-          nullable: true
-        lastVotedTimestamp:
-          format: date-time
-          type: string
-          nullable: true
-        potentialGaugeWeight:
-          type: number
-          nullable: true
-        vefxsWeight:
-          type: number
-          nullable: true
-        gaugeAllocation:
-          description: A list of all gauge allocations for the voter.
+        gauges:
+          description: List of gauges.
           type: array
           items:
-            $ref: '#/components/schemas/GaugeCycleVoterGaugeAllocation'
+            $ref: '#/components/schemas/GaugeBasicInfo'
       required:
-      - asOfTimestamp
-      - voterAddress
-      - vefxsBalance
-      - lockEndTimestamp
-      - availableVefxs
-      - gaugeWeight
-      - lastVotedTimestamp
-      - potentialGaugeWeight
-      - vefxsWeight
-      - gaugeAllocation
+      - gauges
     GaugeCycleDefinitionResponse:
       type: object
       properties:
@@ -387,105 +302,46 @@ components:
       - voteUnchangedCount
       - voteCarryoverCount
       - voterAddresses
-    GaugeVoterSummaryInfo:
+    GaugeCycleTransaction:
       type: object
       properties:
         voterAddress:
           type: string
-        vefxsBalance:
+        gaugeAddress:
+          type: string
+        transactionHash:
+          type: string
+        blockNumber:
           type: number
-        lockEndTimestamp:
+        contractAddress:
+          type: string
+        weightPercentage:
+          type:
+          - number
+          - 'null'
+        transactionType:
+          type: string
+          enum:
+          - vote
+          - gauge_relative_write
+          - checkpoint_gauge
+          - add_gauge
+          - change_global_emission_rate
+        transactionTimestampSeconds:
+          type: number
+        transactionTimestamp:
           format: date-time
           type: string
-        availableVefxs:
-          type: number
-        gaugeWeight:
-          type: number
-          nullable: true
-        lastVotedTimestamp:
-          format: date-time
-          type: string
-          nullable: true
-        potentialGaugeWeight:
-          type: number
-          nullable: true
-        vefxsWeight:
-          type: number
-          nullable: true
       required:
       - voterAddress
-      - vefxsBalance
-      - lockEndTimestamp
-      - availableVefxs
-      - gaugeWeight
-      - lastVotedTimestamp
-      - potentialGaugeWeight
-      - vefxsWeight
-    ListGaugesResponse:
-      type: object
-      properties:
-        gauges:
-          description: List of gauges.
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeBasicInfo'
-      required:
-      - gauges
-    GaugeCycleHistoricalOverviewResponse:
-      type: object
-      properties:
-        cycles:
-          description: Array containing the outcome of historical gauge cycles.
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeCycleOutcome'
-      required:
-      - cycles
-    GaugeCycleOutcomeResponse:
-      type: object
-      properties:
-        cycle:
-          description: A collection of key statistics documenting the outcome of a selected gauge cycle.
-          allOf:
-          - $ref: '#/components/schemas/GaugeCycleOutcome'
-        voters:
-          description: A list of voters and their weights.
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeCycleVoter'
-        transactions:
-          description: A list of transactions that occurred during the gauge cycle voting period.
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeCycleTransaction'
-      required:
-      - cycle
-      - voters
-      - transactions
-    GaugeNextCycleEstimateGaugeDetail:
-      type: object
-      properties:
-        address:
-          type: string
-        name:
-          type: string
-        weight:
-          type: number
-        weightPerc:
-          type: number
-        fxsReward:
-          type: number
-        voters:
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeNextCycleEstimateGaugeVoterDetail'
-      required:
-      - address
-      - name
-      - weight
-      - weightPerc
-      - fxsReward
-      - voters
+      - gaugeAddress
+      - transactionHash
+      - blockNumber
+      - contractAddress
+      - weightPercentage
+      - transactionType
+      - transactionTimestampSeconds
+      - transactionTimestamp
     GaugeCycleOutcome:
       type: object
       properties:
@@ -534,45 +390,6 @@ components:
       - numberOfUniqueVoters
       - numberOfVoteTransactions
       - gauges
-    GaugeBasicInfo:
-      type: object
-      properties:
-        address:
-          type: string
-        addressChecksum:
-          type: string
-        name:
-          type: string
-        label:
-          type: string
-        inceptionTransactionHash:
-          type: string
-        inceptionBlockNumber:
-          type: number
-        effectiveDate:
-          format: date-time
-          type: string
-        endTransactionHash:
-          type: string
-          nullable: true
-        endBlockNumber:
-          type: number
-          nullable: true
-        endDate:
-          format: date-time
-          type: string
-          nullable: true
-      required:
-      - address
-      - addressChecksum
-      - name
-      - label
-      - inceptionTransactionHash
-      - inceptionBlockNumber
-      - effectiveDate
-      - endTransactionHash
-      - endBlockNumber
-      - endDate
     GaugeNextCycleEstimateResponse:
       type: object
       properties:
@@ -607,7 +424,7 @@ components:
       - allocationBreakdown
       - gauges
       - transactions
-    GaugeCycleVoterGaugeAllocation:
+    GaugeCycleDailyGaugeAllocation:
       type: object
       properties:
         gaugeAddress:
@@ -616,55 +433,87 @@ components:
           type: string
         gaugeWeight:
           type: number
-        weightPerc:
+        weightPercentage:
           type: number
-        lastVotedTimestampSec:
+        vefxsVoted:
           type: number
       required:
       - gaugeAddress
       - gaugeName
       - gaugeWeight
-      - weightPerc
-      - lastVotedTimestampSec
-    GaugeCycleTransaction:
+      - weightPercentage
+      - vefxsVoted
+    GaugeNextCycleEstimateAllocationBreakdown:
       type: object
       properties:
-        voterAddress:
-          type: string
-        gaugeAddress:
-          type: string
-        transactionHash:
-          type: string
-        blockNumber:
+        carryover:
           type: number
-        contractAddress:
-          type: string
-        weightPercentage:
+        locked:
           type: number
-          nullable: true
-        transactionType:
-          type: string
-          enum:
-          - vote
-          - gauge_relative_write
-          - checkpoint_gauge
-          - add_gauge
-          - change_global_emission_rate
-        transactionTimestampSeconds:
+        changed:
           type: number
-        transactionTimestamp:
+      required:
+      - carryover
+      - locked
+      - changed
+    GaugeCycleHistoricalOverviewResponse:
+      type: object
+      properties:
+        cycles:
+          description: Array containing the outcome of historical gauge cycles.
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeCycleOutcome'
+      required:
+      - cycles
+    GaugeCycleVoter:
+      type: object
+      properties:
+        asOfTimestamp:
           format: date-time
           type: string
+        voterAddress:
+          type: string
+        vefxsBalance:
+          type: number
+        lockEndTimestamp:
+          format: date-time
+          type: string
+        availableVefxs:
+          type: number
+        gaugeWeight:
+          type:
+          - number
+          - 'null'
+        lastVotedTimestamp:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        potentialGaugeWeight:
+          type:
+          - number
+          - 'null'
+        vefxsWeight:
+          type:
+          - number
+          - 'null'
+        gaugeAllocation:
+          description: A list of all gauge allocations for the voter.
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeCycleVoterGaugeAllocation'
       required:
+      - asOfTimestamp
       - voterAddress
-      - gaugeAddress
-      - transactionHash
-      - blockNumber
-      - contractAddress
-      - weightPercentage
-      - transactionType
-      - transactionTimestampSeconds
-      - transactionTimestamp
+      - vefxsBalance
+      - lockEndTimestamp
+      - availableVefxs
+      - gaugeWeight
+      - lastVotedTimestamp
+      - potentialGaugeWeight
+      - vefxsWeight
+      - gaugeAllocation
     GaugeCycleDailySummary:
       type: object
       properties:
@@ -688,6 +537,68 @@ components:
       - timestamp
       - vefxsTotalSupply
       - gauges
+    GaugeNextCycleEstimateGaugeDetail:
+      type: object
+      properties:
+        address:
+          type: string
+        name:
+          type: string
+        weight:
+          type: number
+        weightPerc:
+          type: number
+        fxsReward:
+          type: number
+        voters:
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeNextCycleEstimateGaugeVoterDetail'
+      required:
+      - address
+      - name
+      - weight
+      - weightPerc
+      - fxsReward
+      - voters
+    GaugeVoterSummaryInfo:
+      type: object
+      properties:
+        voterAddress:
+          type: string
+        vefxsBalance:
+          type: number
+        lockEndTimestamp:
+          format: date-time
+          type: string
+        availableVefxs:
+          type: number
+        gaugeWeight:
+          type:
+          - number
+          - 'null'
+        lastVotedTimestamp:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        potentialGaugeWeight:
+          type:
+          - number
+          - 'null'
+        vefxsWeight:
+          type:
+          - number
+          - 'null'
+      required:
+      - voterAddress
+      - vefxsBalance
+      - lockEndTimestamp
+      - availableVefxs
+      - gaugeWeight
+      - lastVotedTimestamp
+      - potentialGaugeWeight
+      - vefxsWeight
     GaugeCycleDailySummaryResponse:
       type: object
       properties:
@@ -701,6 +612,107 @@ components:
       required:
       - cycleKey
       - days
+    GaugeNextCycleEstimateGaugeVoterDetail:
+      type: object
+      properties:
+        voterAddress:
+          type: string
+        vefxsWeight:
+          type: number
+        weightPerc:
+          type: number
+        lastVoteTimestampSec:
+          type: number
+        asOfTimestampSec:
+          type: number
+      required:
+      - voterAddress
+      - vefxsWeight
+      - weightPerc
+      - lastVoteTimestampSec
+      - asOfTimestampSec
+    GaugeCycleDefinition:
+      type: object
+      properties:
+        cycleKey:
+          type: string
+          description: The unique identifier of the cycle voting period.
+        startingTimestampSec:
+          type: number
+          description: The timestamp (seconds) when the voting period begins.
+        startingTimestamp:
+          format: date-time
+          type: string
+          description: The timestamp (ISO) when the voting period begins.
+        endingTimestampSec:
+          type: number
+          description: The timestamp (seconds) when the voting period ends.
+        endingTimestamp:
+          format: date-time
+          type: string
+          description: The timestamp (ISO) when the voting period ends.
+        startingBlock:
+          type: number
+          description: The block number at which the voting period begins.
+        endingBlock:
+          type: number
+          description: The block number at which the voting period ends.
+        isActive:
+          type: boolean
+          description: Indicates whether the voting cycle is active at the time of this request.
+        isFuture:
+          type: boolean
+          description: Indicates whether the voting cycle occurs in the future at the time of this request.
+      required:
+      - cycleKey
+      - startingTimestampSec
+      - startingTimestamp
+      - endingTimestampSec
+      - endingTimestamp
+      - startingBlock
+      - endingBlock
+      - isActive
+      - isFuture
+    GaugeCycleOutcomeResponse:
+      type: object
+      properties:
+        cycle:
+          description: A collection of key statistics documenting the outcome of a selected gauge cycle.
+          allOf:
+          - $ref: '#/components/schemas/GaugeCycleOutcome'
+        voters:
+          description: A list of voters and their weights.
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeCycleVoter'
+        transactions:
+          description: A list of transactions that occurred during the gauge cycle voting period.
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeCycleTransaction'
+      required:
+      - cycle
+      - voters
+      - transactions
+    GaugeCycleVoterGaugeAllocation:
+      type: object
+      properties:
+        gaugeAddress:
+          type: string
+        gaugeName:
+          type: string
+        gaugeWeight:
+          type: number
+        weightPerc:
+          type: number
+        lastVotedTimestampSec:
+          type: number
+      required:
+      - gaugeAddress
+      - gaugeName
+      - gaugeWeight
+      - weightPerc
+      - lastVotedTimestampSec
 externalDocs:
-  description: Open V2 Docs
-  url: /v2/docs
+  description: Open V1 Docs
+  url: /v1/docs

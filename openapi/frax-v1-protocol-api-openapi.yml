@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Frax Finance v1-gauge v1-protocol API
+  title: Frax Finance V1 Protocol API
   description: The Frax Finance API
   version: '1.0'
   contact:
@@ -25,6 +25,8 @@ paths:
                 $ref: '#/components/schemas/AMOAllocationsResponse'
       tags:
       - v1-protocol
+      summary: V1 controller get AMO allocations
+      x-summary-source: derived
   /v1/amodata_v2/{filter}:
     get:
       operationId: V1Controller_getAMOData
@@ -55,6 +57,8 @@ paths:
                 $ref: '#/components/schemas/AMODataResponse'
       tags:
       - v1-protocol
+      summary: V1 controller get AMO data
+      x-summary-source: derived
   /v1/collateraldata/{filter}:
     get:
       operationId: V1Controller_getCollateralData
@@ -85,6 +89,8 @@ paths:
                 $ref: '#/components/schemas/CollateralDataResponse'
       tags:
       - v1-protocol
+      summary: V1 controller get collateral data
+      x-summary-source: derived
   /v1/combineddata:
     get:
       operationId: V1Controller_getCombinedData
@@ -98,6 +104,8 @@ paths:
                 $ref: '#/components/schemas/CombinedDataResponse'
       tags:
       - v1-protocol
+      summary: V1 controller get combined data
+      x-summary-source: derived
 components:
   schemas:
     AMODataItemV2:
@@ -128,6 +136,49 @@ components:
       - lending
       - liquidity
       - combined
+    PriceHistoryPack:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollateralItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
+    ChartJSDataPackV2:
+      type: object
+      properties:
+        curve:
+          type: object
+        investor:
+          type: object
+        lending:
+          type: object
+        liquidity:
+          type: object
+        combined:
+          type: object
+      required:
+      - curve
+      - investor
+      - lending
+      - liquidity
+      - combined
+    AMODataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AMODataItemV2'
+        chartjs:
+          $ref: '#/components/schemas/ChartJSDataPackV2'
+      required:
+      - full_items
+      - chartjs
     AMOAllocationsResponse:
       type: object
       properties:
@@ -153,37 +204,6 @@ components:
       - lending
       - liquidity
       - combined
-    ChartJSDataPackV2:
-      type: object
-      properties:
-        curve:
-          type: object
-        investor:
-          type: object
-        lending:
-          type: object
-        liquidity:
-          type: object
-        combined:
-          type: object
-      required:
-      - curve
-      - investor
-      - lending
-      - liquidity
-      - combined
-    PriceHistoryPack:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollateralItem'
-        chartjs:
-          type: object
-      required:
-      - full_items
-      - chartjs
     CombinedDataResponse:
       type: object
       properties: {}
@@ -216,18 +236,6 @@ components:
       - decentralization_ratio
       - ratio
       - total_dollar_value
-    AMODataResponse:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/AMODataItemV2'
-        chartjs:
-          $ref: '#/components/schemas/ChartJSDataPackV2'
-      required:
-      - full_items
-      - chartjs
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

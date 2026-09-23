@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Frax Finance v1-gauge v2-gov API
+  title: Frax Finance V2 Gov API
   description: The Frax Finance API
-  version: '1.0'
+  version: '2.0'
   contact:
     name: Frax Finance
     url: https://docs.frax.finance
@@ -16,7 +16,6 @@ paths:
     get:
       operationId: listAllFraxGovSafes
       summary: Returns a list of all frxGov Safes
-      description: Returns a list of all frxGov Safes
       parameters:
       - name: protocol
         required: true
@@ -40,7 +39,6 @@ paths:
     get:
       operationId: getFraxGovSafe
       summary: Returns details about a frxGov Safe
-      description: Returns details about a frxGov Safe
       parameters:
       - name: protocol
         required: true
@@ -99,7 +97,6 @@ paths:
     get:
       operationId: listAllFraxGovProposals
       summary: Returns a list of all frxGov proposals
-      description: Returns a list of all frxGov proposals
       parameters:
       - name: protocol
         required: true
@@ -123,7 +120,6 @@ paths:
     get:
       operationId: getFraxGovProposal
       summary: Returns details about a frxGov proposal
-      description: Returns details about a frxGov proposal
       parameters:
       - name: protocol
         required: true
@@ -191,7 +187,6 @@ paths:
     get:
       operationId: listAllFraxGovVoters
       summary: Returns a list of all frxGov voters
-      description: Returns a list of all frxGov voters
       parameters:
       - name: protocol
         required: true
@@ -213,16 +208,38 @@ paths:
       - v2-gov
 components:
   schemas:
-    FraxGovVoterListResponse:
+    FraxGovSafeListResponse:
       type: object
       properties:
-        voters:
-          description: Array of frxGov voters.
+        safes:
+          description: Array of frxGov Safes.
           type: array
           items:
-            $ref: '#/components/schemas/FraxGovVoter'
+            $ref: '#/components/schemas/FraxGovSafe'
       required:
-      - voters
+      - safes
+    FraxGovProposalDetail:
+      type: object
+      properties:
+        summary:
+          description: frxGov proposal summary item.
+          allOf:
+          - $ref: '#/components/schemas/FraxGovProposalSummary'
+        status:
+          $ref: '#/components/schemas/FraxGovProposalStatus'
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalTransaction'
+        votes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalDetailVote'
+      required:
+      - summary
+      - status
+      - transactions
+      - votes
     FraxGovSafe:
       type: object
       properties:
@@ -283,6 +300,93 @@ components:
       - version
       - defaultProductType
       - registeredAt
+    FraxGovProposalListResponse:
+      type: object
+      properties:
+        proposals:
+          description: Array of frxGov proposal summary items.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalSummary'
+      required:
+      - proposals
+    FraxGovVoterListResponse:
+      type: object
+      properties:
+        voters:
+          description: Array of frxGov voters.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovVoter'
+      required:
+      - voters
+    FraxGovProposalStatus:
+      type: object
+      properties:
+        pending:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        active:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        canceled:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        succeeded:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        defeated:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        queued:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        executed:
+          format: date-time
+          type:
+          - string
+          - 'null'
+      required:
+      - pending
+      - active
+      - canceled
+      - succeeded
+      - defeated
+      - queued
+      - executed
+    FraxGovProposalTransaction:
+      type: object
+      properties:
+        txIdx:
+          type: number
+        targetAddress:
+          type: string
+        value:
+          type: string
+        callData:
+          type: string
+        decodedTx:
+          type:
+          - string
+          - 'null'
+      required:
+      - txIdx
+      - targetAddress
+      - value
+      - callData
+      - decodedTx
     FraxGovProposalDetailVote:
       type: object
       properties:
@@ -339,12 +443,14 @@ components:
           format: date-time
           type: string
         futureDelegateeAddress:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         futureDelegateeEffectiveAt:
           format: date-time
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         latestVotingWeight:
           type: number
       required:
@@ -357,38 +463,6 @@ components:
       - futureDelegateeAddress
       - futureDelegateeEffectiveAt
       - latestVotingWeight
-    FraxGovProposalDetail:
-      type: object
-      properties:
-        summary:
-          description: frxGov proposal summary item.
-          allOf:
-          - $ref: '#/components/schemas/FraxGovProposalSummary'
-        status:
-          $ref: '#/components/schemas/FraxGovProposalStatus'
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalTransaction'
-        votes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalDetailVote'
-      required:
-      - summary
-      - status
-      - transactions
-      - votes
-    FraxGovSafeListResponse:
-      type: object
-      properties:
-        safes:
-          description: Array of frxGov Safes.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovSafe'
-      required:
-      - safes
     FraxGovProposalSummary:
       type: object
       properties:
@@ -439,11 +513,13 @@ components:
           - fraxlend
           - frxeth
         safeAddress:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         safeNonce:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
         proposerAddress:
           type: string
         createdAt:
@@ -451,13 +527,15 @@ components:
           type: string
         safeSubmittedAt:
           format: date-time
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: ISO Date/Time of the original Safe transaction if it exists. Otherwise is `null`.Transactions submitted directly to the governor would not have a Safe transaction.
         safeVetoSubmittedAt:
           format: date-time
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: ISO Date/Time of the veto transaction if it exists. Otherwise is `null`.
         voteStartsAt:
           format: date-time
@@ -468,12 +546,13 @@ components:
         description:
           type: string
         outcome:
-          type: string
+          type:
+          - string
+          - 'null'
           enum:
           - rejected
           - approved
           - aborted
-          nullable: true
         latestStatus:
           type: string
           enum:
@@ -507,14 +586,17 @@ components:
           description: The minimum amount of voting weight for the proposal to be valid.Alpha proposals have a very high quorum, while Omega proposals have a lower one.
         safeExecutedAt:
           format: date-time
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         safeTxHash:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         safeVetoTxHash:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       required:
       - proposalId
       - chain
@@ -543,75 +625,6 @@ components:
       - safeExecutedAt
       - safeTxHash
       - safeVetoTxHash
-    FraxGovProposalTransaction:
-      type: object
-      properties:
-        txIdx:
-          type: number
-        targetAddress:
-          type: string
-        value:
-          type: string
-        callData:
-          type: string
-        decodedTx:
-          type: string
-          nullable: true
-      required:
-      - txIdx
-      - targetAddress
-      - value
-      - callData
-      - decodedTx
-    FraxGovProposalStatus:
-      type: object
-      properties:
-        pending:
-          format: date-time
-          type: string
-          nullable: true
-        active:
-          format: date-time
-          type: string
-          nullable: true
-        canceled:
-          format: date-time
-          type: string
-          nullable: true
-        succeeded:
-          format: date-time
-          type: string
-          nullable: true
-        defeated:
-          format: date-time
-          type: string
-          nullable: true
-        queued:
-          format: date-time
-          type: string
-          nullable: true
-        executed:
-          format: date-time
-          type: string
-          nullable: true
-      required:
-      - pending
-      - active
-      - canceled
-      - succeeded
-      - defeated
-      - queued
-      - executed
-    FraxGovProposalListResponse:
-      type: object
-      properties:
-        proposals:
-          description: Array of frxGov proposal summary items.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalSummary'
-      required:
-      - proposals
 externalDocs:
-  description: Open V2 Docs
-  url: /v2/docs
+  description: Open V1 Docs
+  url: /v1/docs

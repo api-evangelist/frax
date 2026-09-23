@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Frax Finance v1-gauge v1-vefxs API
+  title: Frax Finance V1 Vefxs API
   description: The Frax Finance API
   version: '1.0'
   contact:
@@ -25,6 +25,8 @@ paths:
                 $ref: '#/components/schemas/LockedVeFXSDataResponse'
       tags:
       - v1-vefxs
+      summary: V1 controller get locked ve FXS data
+      x-summary-source: derived
   /v1/vefxsdata/{filter}:
     get:
       operationId: V1Controller_getVeFXSData
@@ -55,6 +57,8 @@ paths:
                 $ref: '#/components/schemas/VefxsDataResponse'
       tags:
       - v1-vefxs
+      summary: V1 controller get ve FXS data
+      x-summary-source: derived
 components:
   schemas:
     LockedVeFXSDataResponse:
@@ -75,6 +79,19 @@ components:
       - unlocked_sum
       - locked_sum
       - buckets
+    LockedVefxsStakeBucketAggregate:
+      type: object
+      properties:
+        _id:
+          type: string
+        count:
+          type: number
+        total:
+          type: number
+      required:
+      - _id
+      - count
+      - total
     VefxsItem:
       type: object
       properties:
@@ -121,19 +138,6 @@ components:
       required:
       - full_items
       - chartjs
-    LockedVefxsStakeBucketAggregate:
-      type: object
-      properties:
-        _id:
-          type: string
-        count:
-          type: number
-        total:
-          type: number
-      required:
-      - _id
-      - count
-      - total
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs
