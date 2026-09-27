@@ -61,6 +61,18 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    VefxsDataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/VefxsItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
     LockedVeFXSDataResponse:
       type: object
       properties:
@@ -126,18 +138,6 @@ components:
       - pct_participating
       - yield_value_usd
       - apr
-    VefxsDataResponse:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/VefxsItem'
-        chartjs:
-          type: object
-      required:
-      - full_items
-      - chartjs
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

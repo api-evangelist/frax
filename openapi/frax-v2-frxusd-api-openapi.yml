@@ -149,16 +149,6 @@ components:
       - totalLiabilities
       - assets
       - liabilities
-    FrxusdSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of frxUSD summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxusdSummaryInfo'
-      required:
-      - items
     FrxusdBalanceSheetItem:
       type: object
       properties:
@@ -218,6 +208,16 @@ components:
       - tokenQuantity
       - tokenQuantityE18
       - description
+    FrxusdSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of frxUSD summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdSummaryInfo'
+      required:
+      - items
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

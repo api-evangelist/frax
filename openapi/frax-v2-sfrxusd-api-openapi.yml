@@ -88,95 +88,6 @@ paths:
       - v2-sfrxusd
 components:
   schemas:
-    SfrxusdSummaryInfo:
-      type: object
-      properties:
-        intervalTimestamp:
-          format: date-time
-          type: string
-        blockNumberEthereum:
-          type: number
-        blockNumberFraxtal:
-          type: number
-        sfrxusdCirculatingSupply:
-          type: number
-        sfrxusdCirculatingMarketCap:
-          type: number
-        sfrxusdTotalSupply:
-          type: number
-        sfrxusdTotalMarketCap:
-          type: number
-        frxusdPerSfrxusd:
-          type: number
-        sfrxusdApr:
-          type: number
-        sfrxusdApy:
-          type: number
-        frxusdPrice:
-          type: number
-        sfrxusdPrice:
-          type: number
-      required:
-      - intervalTimestamp
-      - blockNumberEthereum
-      - blockNumberFraxtal
-      - sfrxusdCirculatingSupply
-      - sfrxusdCirculatingMarketCap
-      - sfrxusdTotalSupply
-      - sfrxusdTotalMarketCap
-      - frxusdPerSfrxusd
-      - sfrxusdApr
-      - sfrxusdApy
-      - frxusdPrice
-      - sfrxusdPrice
-    SfrxusdBalanceSheetLatestResponse:
-      type: object
-      properties:
-        asOfBlock:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        asOfTimestamp:
-          format: date-time
-          type: string
-        tokenPriceUsd:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        totalAssets:
-          type: number
-        totalLiabilities:
-          type: number
-        assets:
-          description: List of sfrxUSD balance sheet assets.
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
-        liabilities:
-          description: List of sfrxUSD balance sheet liabilities.
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
-      required:
-      - asOfBlock
-      - asOfTimestamp
-      - tokenPriceUsd
-      - totalAssets
-      - totalLiabilities
-      - assets
-      - liabilities
-    SfrxusdSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of sfrxUSD summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxusdSummaryInfo'
-      required:
-      - items
     SfrxusdBalanceSheetItem:
       type: object
       properties:
@@ -236,6 +147,95 @@ components:
       - tokenQuantity
       - tokenQuantityE18
       - description
+    SfrxusdSummaryInfo:
+      type: object
+      properties:
+        intervalTimestamp:
+          format: date-time
+          type: string
+        blockNumberEthereum:
+          type: number
+        blockNumberFraxtal:
+          type: number
+        sfrxusdCirculatingSupply:
+          type: number
+        sfrxusdCirculatingMarketCap:
+          type: number
+        sfrxusdTotalSupply:
+          type: number
+        sfrxusdTotalMarketCap:
+          type: number
+        frxusdPerSfrxusd:
+          type: number
+        sfrxusdApr:
+          type: number
+        sfrxusdApy:
+          type: number
+        frxusdPrice:
+          type: number
+        sfrxusdPrice:
+          type: number
+      required:
+      - intervalTimestamp
+      - blockNumberEthereum
+      - blockNumberFraxtal
+      - sfrxusdCirculatingSupply
+      - sfrxusdCirculatingMarketCap
+      - sfrxusdTotalSupply
+      - sfrxusdTotalMarketCap
+      - frxusdPerSfrxusd
+      - sfrxusdApr
+      - sfrxusdApy
+      - frxusdPrice
+      - sfrxusdPrice
+    SfrxusdSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of sfrxUSD summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdSummaryInfo'
+      required:
+      - items
+    SfrxusdBalanceSheetLatestResponse:
+      type: object
+      properties:
+        asOfBlock:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        asOfTimestamp:
+          format: date-time
+          type: string
+        tokenPriceUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        totalAssets:
+          type: number
+        totalLiabilities:
+          type: number
+        assets:
+          description: List of sfrxUSD balance sheet assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
+        liabilities:
+          description: List of sfrxUSD balance sheet liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
+      required:
+      - asOfBlock
+      - asOfTimestamp
+      - tokenPriceUsd
+      - totalAssets
+      - totalLiabilities
+      - assets
+      - liabilities
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

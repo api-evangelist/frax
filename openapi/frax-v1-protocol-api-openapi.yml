@@ -108,6 +108,47 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    AMODataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AMODataItemV2'
+        chartjs:
+          $ref: '#/components/schemas/ChartJSDataPackV2'
+      required:
+      - full_items
+      - chartjs
+    CollateralItem:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        decentralization_ratio:
+          type: number
+        ratio:
+          type: number
+        total_dollar_value:
+          type: number
+      required:
+      - blockNum
+      - timestamp
+      - decentralization_ratio
+      - ratio
+      - total_dollar_value
+    CollateralDataResponse:
+      type: object
+      properties:
+        history:
+          $ref: '#/components/schemas/PriceHistoryPack'
+        pie_data:
+          type: object
+      required:
+      - history
+      - pie_data
     AMODataItemV2:
       type: object
       properties:
@@ -148,6 +189,9 @@ components:
       required:
       - full_items
       - chartjs
+    CombinedDataResponse:
+      type: object
+      properties: {}
     ChartJSDataPackV2:
       type: object
       properties:
@@ -167,18 +211,6 @@ components:
       - lending
       - liquidity
       - combined
-    AMODataResponse:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/AMODataItemV2'
-        chartjs:
-          $ref: '#/components/schemas/ChartJSDataPackV2'
-      required:
-      - full_items
-      - chartjs
     AMOAllocationsResponse:
       type: object
       properties:
@@ -204,38 +236,6 @@ components:
       - lending
       - liquidity
       - combined
-    CombinedDataResponse:
-      type: object
-      properties: {}
-    CollateralDataResponse:
-      type: object
-      properties:
-        history:
-          $ref: '#/components/schemas/PriceHistoryPack'
-        pie_data:
-          type: object
-      required:
-      - history
-      - pie_data
-    CollateralItem:
-      type: object
-      properties:
-        blockNum:
-          type: number
-        timestamp:
-          type: number
-        decentralization_ratio:
-          type: number
-        ratio:
-          type: number
-        total_dollar_value:
-          type: number
-      required:
-      - blockNum
-      - timestamp
-      - decentralization_ratio
-      - ratio
-      - total_dollar_value
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

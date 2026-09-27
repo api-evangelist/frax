@@ -313,31 +313,6 @@ components:
       - tokenQuantityAfterFeeRaw
       - tokenQuantityAfterFeeDec
       - ferryTransactionIndex
-    FraxFerryTransactionResponse:
-      type: object
-      properties:
-        transactions:
-          description: Array of Frax Ferry transaction information.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxFerryTransactionInfo'
-      required:
-      - transactions
-    FraxFerryTripDetailResponse:
-      type: object
-      properties:
-        trip:
-          description: Summary info for the specific Frax Ferry trip.
-          allOf:
-          - $ref: '#/components/schemas/FraxFerryTrip'
-        transactions:
-          description: Array of Frax Ferry trip transactions.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxFerryTripTransaction'
-      required:
-      - trip
-      - transactions
     FraxFerryTransactionInfo:
       type: object
       properties:
@@ -542,6 +517,167 @@ components:
       required:
       - timeGrouping
       - details
+    FraxFerrySummaryInfo:
+      type: object
+      properties:
+        ferryKey:
+          type: string
+        name:
+          type: string
+        tokenSymbol:
+          type: string
+        sourceChain:
+          type: string
+          description: The name of the source blockchain/network.
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        sourceContractAddress:
+          type: string
+        sourceContractNativeAddress:
+          type: string
+          description: The native address.
+        sourceTokenAddress:
+          type: string
+        sourceTokenNativeAddress:
+          type: string
+          description: The native address.
+        destinationChain:
+          type: string
+          description: The name of the destination blockchain/network.
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        destinationContractAddress:
+          type: string
+        destinationContractNativeAddress:
+          type: string
+          description: The native address.
+        destinationTokenAddress:
+          type: string
+        destinationTokenNativeAddress:
+          type: string
+          description: The native address.
+        feeMin:
+          type: string
+          description: The minimum fee subtracted from the quantity of the source token. Returned as a BigNumber.
+        feeMax:
+          type: string
+          description: The maximum fee subtracted from the quantity of the source token. Returned as a BigNumber.
+        feeRate:
+          type: string
+          description: The rate (per 10,000 and bounded by the min/max fee constants) used to calculate the fee that gets subtracted from the quantity of the source token. Returned as a BigNumber.
+        departIntervalSec:
+          type: number
+          description: The minimum amount of time the ferry waits between departing.
+        disembarkIntervalSec:
+          type: number
+          description: The minimum amount of time the ferry waits between disembarking.
+        tokenQuantity24h:
+          type: number
+        fees24h:
+          type: number
+        transactionQuantity24h:
+          type: number
+        tokenQuantity7d:
+          type: number
+        fees7d:
+          type: number
+        transactionQuantity7d:
+          type: number
+        tokenQuantity30d:
+          type: number
+        fees30d:
+          type: number
+        transactionQuantity30d:
+          type: number
+        tokenQuantityAll:
+          type: number
+        feesAll:
+          type: number
+        transactionQuantityAll:
+          type: number
+        destinationContractBalance:
+          type: number
+        sourceContractBalance:
+          type: number
+      required:
+      - ferryKey
+      - name
+      - tokenSymbol
+      - sourceChain
+      - sourceContractAddress
+      - sourceContractNativeAddress
+      - sourceTokenAddress
+      - sourceTokenNativeAddress
+      - destinationChain
+      - destinationContractAddress
+      - destinationContractNativeAddress
+      - destinationTokenAddress
+      - destinationTokenNativeAddress
+      - feeMin
+      - feeMax
+      - feeRate
+      - departIntervalSec
+      - disembarkIntervalSec
+      - tokenQuantity24h
+      - fees24h
+      - transactionQuantity24h
+      - tokenQuantity7d
+      - fees7d
+      - transactionQuantity7d
+      - tokenQuantity30d
+      - fees30d
+      - transactionQuantity30d
+      - tokenQuantityAll
+      - feesAll
+      - transactionQuantityAll
+      - destinationContractBalance
+      - sourceContractBalance
+    FraxFerrySummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: Array of Frax Ferry summary information.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerrySummaryInfo'
+      required:
+      - items
     FraxFerryTrip:
       type: object
       properties:
@@ -710,234 +846,6 @@ components:
       - numberOfUsers
       - numberOfRecipients
       - status
-    FraxFerrySummaryInfo:
-      type: object
-      properties:
-        ferryKey:
-          type: string
-        name:
-          type: string
-        tokenSymbol:
-          type: string
-        sourceChain:
-          type: string
-          description: The name of the source blockchain/network.
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        sourceContractAddress:
-          type: string
-        sourceContractNativeAddress:
-          type: string
-          description: The native address.
-        sourceTokenAddress:
-          type: string
-        sourceTokenNativeAddress:
-          type: string
-          description: The native address.
-        destinationChain:
-          type: string
-          description: The name of the destination blockchain/network.
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        destinationContractAddress:
-          type: string
-        destinationContractNativeAddress:
-          type: string
-          description: The native address.
-        destinationTokenAddress:
-          type: string
-        destinationTokenNativeAddress:
-          type: string
-          description: The native address.
-        feeMin:
-          type: string
-          description: The minimum fee subtracted from the quantity of the source token. Returned as a BigNumber.
-        feeMax:
-          type: string
-          description: The maximum fee subtracted from the quantity of the source token. Returned as a BigNumber.
-        feeRate:
-          type: string
-          description: The rate (per 10,000 and bounded by the min/max fee constants) used to calculate the fee that gets subtracted from the quantity of the source token. Returned as a BigNumber.
-        departIntervalSec:
-          type: number
-          description: The minimum amount of time the ferry waits between departing.
-        disembarkIntervalSec:
-          type: number
-          description: The minimum amount of time the ferry waits between disembarking.
-        tokenQuantity24h:
-          type: number
-        fees24h:
-          type: number
-        transactionQuantity24h:
-          type: number
-        tokenQuantity7d:
-          type: number
-        fees7d:
-          type: number
-        transactionQuantity7d:
-          type: number
-        tokenQuantity30d:
-          type: number
-        fees30d:
-          type: number
-        transactionQuantity30d:
-          type: number
-        tokenQuantityAll:
-          type: number
-        feesAll:
-          type: number
-        transactionQuantityAll:
-          type: number
-        destinationContractBalance:
-          type: number
-        sourceContractBalance:
-          type: number
-      required:
-      - ferryKey
-      - name
-      - tokenSymbol
-      - sourceChain
-      - sourceContractAddress
-      - sourceContractNativeAddress
-      - sourceTokenAddress
-      - sourceTokenNativeAddress
-      - destinationChain
-      - destinationContractAddress
-      - destinationContractNativeAddress
-      - destinationTokenAddress
-      - destinationTokenNativeAddress
-      - feeMin
-      - feeMax
-      - feeRate
-      - departIntervalSec
-      - disembarkIntervalSec
-      - tokenQuantity24h
-      - fees24h
-      - transactionQuantity24h
-      - tokenQuantity7d
-      - fees7d
-      - transactionQuantity7d
-      - tokenQuantity30d
-      - fees30d
-      - transactionQuantity30d
-      - tokenQuantityAll
-      - feesAll
-      - transactionQuantityAll
-      - destinationContractBalance
-      - sourceContractBalance
-    FraxFerryTripsResponse:
-      type: object
-      properties:
-        trips:
-          description: Array of Frax Ferry trips.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxFerryTrip'
-      required:
-      - trips
-    FraxFerryAggregateStatsInfo:
-      type: object
-      properties:
-        embarkTimestamp:
-          format: date-time
-          type:
-          - string
-          - 'null'
-          description: The truncated date for the requested time unit grouping.Value is `null` when requesting all-time data
-        tokenSymbol:
-          type: string
-        destinationChain:
-          type: string
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        transactionCount:
-          type: number
-        tokenQuantityDec:
-          type: number
-        totalValueUsd:
-          type: number
-          description: Sum of the value of the transactions at the time they embark (before fees)
-        totalFeesUsd:
-          type: number
-          description: Sum of the value of the fees paid
-      required:
-      - embarkTimestamp
-      - tokenSymbol
-      - destinationChain
-      - transactionCount
-      - tokenQuantityDec
-      - totalValueUsd
-      - totalFeesUsd
-    FraxFerryDetailResponse:
-      type: object
-      properties:
-        ferryInfo:
-          description: Frax Ferry summary information. Contains two entries (one for each source chain).
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxFerrySummaryInfo'
-        trips:
-          description: Frax Ferry trip details with transactions.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxFerryTripDetailResponse'
-      required:
-      - ferryInfo
-      - trips
     FraxFerryTransactionVolumeInfo:
       type: object
       properties:
@@ -1039,16 +947,32 @@ components:
       - tokenSymbol
       - tokenQuantityDec
       - transactionCount
-    FraxFerrySummaryInfoResponse:
+    FraxFerryDetailResponse:
       type: object
       properties:
-        items:
-          description: Array of Frax Ferry summary information.
+        ferryInfo:
+          description: Frax Ferry summary information. Contains two entries (one for each source chain).
           type: array
           items:
             $ref: '#/components/schemas/FraxFerrySummaryInfo'
+        trips:
+          description: Frax Ferry trip details with transactions.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTripDetailResponse'
       required:
-      - items
+      - ferryInfo
+      - trips
+    FraxFerryTransactionResponse:
+      type: object
+      properties:
+        transactions:
+          description: Array of Frax Ferry transaction information.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTransactionInfo'
+      required:
+      - transactions
     FraxFerryTransactionVolumeResponse:
       type: object
       properties:
@@ -1059,6 +983,82 @@ components:
             $ref: '#/components/schemas/FraxFerryTransactionVolumeInfo'
       required:
       - items
+    FraxFerryTripsResponse:
+      type: object
+      properties:
+        trips:
+          description: Array of Frax Ferry trips.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTrip'
+      required:
+      - trips
+    FraxFerryAggregateStatsInfo:
+      type: object
+      properties:
+        embarkTimestamp:
+          format: date-time
+          type:
+          - string
+          - 'null'
+          description: The truncated date for the requested time unit grouping.Value is `null` when requesting all-time data
+        tokenSymbol:
+          type: string
+        destinationChain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        transactionCount:
+          type: number
+        tokenQuantityDec:
+          type: number
+        totalValueUsd:
+          type: number
+          description: Sum of the value of the transactions at the time they embark (before fees)
+        totalFeesUsd:
+          type: number
+          description: Sum of the value of the fees paid
+      required:
+      - embarkTimestamp
+      - tokenSymbol
+      - destinationChain
+      - transactionCount
+      - tokenQuantityDec
+      - totalValueUsd
+      - totalFeesUsd
+    FraxFerryTripDetailResponse:
+      type: object
+      properties:
+        trip:
+          description: Summary info for the specific Frax Ferry trip.
+          allOf:
+          - $ref: '#/components/schemas/FraxFerryTrip'
+        transactions:
+          description: Array of Frax Ferry trip transactions.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxFerryTripTransaction'
+      required:
+      - trip
+      - transactions
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

@@ -259,6 +259,22 @@ apis:
     url: openapi/frax-v2-sfrxusd-api-openapi.yml
   - type: Documentation
     url: https://docs.frax.finance/smart-contracts/api
+- name: Frax Finance GraphQL API
+  description: GraphQL subgraph for Fraxswap on Ethereum, exposing pairs, tokens, swaps, liquidity positions,
+    TWAMM long-term orders, and protocol-level analytics via The Graph.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.frax.finance
+  baseURL: https://gateway.thegraph.com/api/{api-key}/subgraphs/id/fraxswap-ethereum
+  tags:
+  - GraphQL
+  - Subgraph
+  - DeFi
+  properties:
+  - type: GraphQL
+    url: https://api-evangelist.github.io/frax/graphql/frax-finance-schema.graphql
+  - type: GraphQLDocumentation
+    url: https://api-evangelist.github.io/frax/graphql/frax-finance-graphql.md
+  aid: frax:frax-finance-graphql-api
 common:
   - type: AgenticAccess
     url: agentic-access/frax-agentic-access.yml

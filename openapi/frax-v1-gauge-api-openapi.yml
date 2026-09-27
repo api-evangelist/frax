@@ -52,6 +52,21 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    GaugeVoterInfoResponse:
+      type: object
+      properties:
+        address:
+          type: string
+        votes:
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeVoteDTO'
+        pct_weight_used:
+          type: number
+      required:
+      - address
+      - votes
+      - pct_weight_used
     GaugeSlice:
       type: object
       properties:
@@ -86,21 +101,6 @@ components:
       - relative_weight_next_pct
       - fxs_now
       - fxs_next
-    GaugeVoterInfoResponse:
-      type: object
-      properties:
-        address:
-          type: string
-        votes:
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeVoteDTO'
-        pct_weight_used:
-          type: number
-      required:
-      - address
-      - votes
-      - pct_weight_used
     GaugeVoteDTO:
       type: object
       properties:
