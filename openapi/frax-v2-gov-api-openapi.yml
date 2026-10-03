@@ -208,16 +208,48 @@ paths:
       - v2-gov
 components:
   schemas:
-    FraxGovProposalListResponse:
+    FraxGovProposalDetail:
       type: object
       properties:
-        proposals:
-          description: Array of frxGov proposal summary items.
+        summary:
+          description: frxGov proposal summary item.
+          allOf:
+          - $ref: '#/components/schemas/FraxGovProposalSummary'
+        status:
+          $ref: '#/components/schemas/FraxGovProposalStatus'
+        transactions:
           type: array
           items:
-            $ref: '#/components/schemas/FraxGovProposalSummary'
+            $ref: '#/components/schemas/FraxGovProposalTransaction'
+        votes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalDetailVote'
       required:
-      - proposals
+      - summary
+      - status
+      - transactions
+      - votes
+    FraxGovVoterListResponse:
+      type: object
+      properties:
+        voters:
+          description: Array of frxGov voters.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovVoter'
+      required:
+      - voters
+    FraxGovSafeListResponse:
+      type: object
+      properties:
+        safes:
+          description: Array of frxGov Safes.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovSafe'
+      required:
+      - safes
     FraxGovVoter:
       type: object
       properties:
@@ -259,6 +291,97 @@ components:
       - futureDelegateeAddress
       - futureDelegateeEffectiveAt
       - latestVotingWeight
+    FraxGovProposalListResponse:
+      type: object
+      properties:
+        proposals:
+          description: Array of frxGov proposal summary items.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalSummary'
+      required:
+      - proposals
+    FraxGovProposalDetailVote:
+      type: object
+      properties:
+        voterAddress:
+          type: string
+        votesFor:
+          type: string
+        votesForDec:
+          type: number
+        votesAgainst:
+          type: string
+        votesAgainstDec:
+          type: number
+        votesAbstain:
+          type: string
+        votesAbstainDec:
+          type: number
+        reason:
+          type: string
+        timestamp:
+          format: date-time
+          type: string
+        blockNumber:
+          type: number
+      required:
+      - voterAddress
+      - votesFor
+      - votesForDec
+      - votesAgainst
+      - votesAgainstDec
+      - votesAbstain
+      - votesAbstainDec
+      - reason
+      - timestamp
+      - blockNumber
+    FraxGovProposalStatus:
+      type: object
+      properties:
+        pending:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        active:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        canceled:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        succeeded:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        defeated:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        queued:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        executed:
+          format: date-time
+          type:
+          - string
+          - 'null'
+      required:
+      - pending
+      - active
+      - canceled
+      - succeeded
+      - defeated
+      - queued
+      - executed
     FraxGovSafe:
       type: object
       properties:
@@ -319,107 +442,6 @@ components:
       - version
       - defaultProductType
       - registeredAt
-    FraxGovSafeListResponse:
-      type: object
-      properties:
-        safes:
-          description: Array of frxGov Safes.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovSafe'
-      required:
-      - safes
-    FraxGovProposalDetailVote:
-      type: object
-      properties:
-        voterAddress:
-          type: string
-        votesFor:
-          type: string
-        votesForDec:
-          type: number
-        votesAgainst:
-          type: string
-        votesAgainstDec:
-          type: number
-        votesAbstain:
-          type: string
-        votesAbstainDec:
-          type: number
-        reason:
-          type: string
-        timestamp:
-          format: date-time
-          type: string
-        blockNumber:
-          type: number
-      required:
-      - voterAddress
-      - votesFor
-      - votesForDec
-      - votesAgainst
-      - votesAgainstDec
-      - votesAbstain
-      - votesAbstainDec
-      - reason
-      - timestamp
-      - blockNumber
-    FraxGovVoterListResponse:
-      type: object
-      properties:
-        voters:
-          description: Array of frxGov voters.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovVoter'
-      required:
-      - voters
-    FraxGovProposalStatus:
-      type: object
-      properties:
-        pending:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        active:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        canceled:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        succeeded:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        defeated:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        queued:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        executed:
-          format: date-time
-          type:
-          - string
-          - 'null'
-      required:
-      - pending
-      - active
-      - canceled
-      - succeeded
-      - defeated
-      - queued
-      - executed
     FraxGovProposalTransaction:
       type: object
       properties:
@@ -441,28 +463,6 @@ components:
       - value
       - callData
       - decodedTx
-    FraxGovProposalDetail:
-      type: object
-      properties:
-        summary:
-          description: frxGov proposal summary item.
-          allOf:
-          - $ref: '#/components/schemas/FraxGovProposalSummary'
-        status:
-          $ref: '#/components/schemas/FraxGovProposalStatus'
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalTransaction'
-        votes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalDetailVote'
-      required:
-      - summary
-      - status
-      - transactions
-      - votes
     FraxGovProposalSummary:
       type: object
       properties:

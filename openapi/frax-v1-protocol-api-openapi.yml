@@ -108,6 +108,25 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ChartJSDataPackV2:
+      type: object
+      properties:
+        curve:
+          type: object
+        investor:
+          type: object
+        lending:
+          type: object
+        liquidity:
+          type: object
+        combined:
+          type: object
+      required:
+      - curve
+      - investor
+      - lending
+      - liquidity
+      - combined
     AMODataResponse:
       type: object
       properties:
@@ -139,16 +158,6 @@ components:
       - decentralization_ratio
       - ratio
       - total_dollar_value
-    CollateralDataResponse:
-      type: object
-      properties:
-        history:
-          $ref: '#/components/schemas/PriceHistoryPack'
-        pie_data:
-          type: object
-      required:
-      - history
-      - pie_data
     AMODataItemV2:
       type: object
       properties:
@@ -177,40 +186,19 @@ components:
       - lending
       - liquidity
       - combined
-    PriceHistoryPack:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollateralItem'
-        chartjs:
-          type: object
-      required:
-      - full_items
-      - chartjs
     CombinedDataResponse:
       type: object
       properties: {}
-    ChartJSDataPackV2:
+    CollateralDataResponse:
       type: object
       properties:
-        curve:
-          type: object
-        investor:
-          type: object
-        lending:
-          type: object
-        liquidity:
-          type: object
-        combined:
+        history:
+          $ref: '#/components/schemas/PriceHistoryPack'
+        pie_data:
           type: object
       required:
-      - curve
-      - investor
-      - lending
-      - liquidity
-      - combined
+      - history
+      - pie_data
     AMOAllocationsResponse:
       type: object
       properties:
@@ -236,6 +224,18 @@ components:
       - lending
       - liquidity
       - combined
+    PriceHistoryPack:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollateralItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

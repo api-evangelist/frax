@@ -136,110 +136,6 @@ paths:
       - v1-staking
 components:
   schemas:
-    LockedStakeDataResponse:
-      type: object
-      properties:
-        token:
-          type: string
-        unlocked_sum:
-          type: number
-        locked_sum:
-          type: number
-        buckets:
-          type: array
-          items:
-            $ref: '#/components/schemas/LockedStakeBucketAggregate'
-      required:
-      - token
-      - unlocked_sum
-      - locked_sum
-      - buckets
-    StakingItem:
-      type: object
-      properties:
-        blockNum:
-          type: number
-        timestamp:
-          type: number
-        token:
-          type: string
-        supply:
-          type: number
-        boosted_supply:
-          type: number
-        lp_price:
-          type: number
-        lp_token_supply:
-          type: number
-        tvl:
-          type: number
-        reward_value_usd:
-          type: number
-        reward_duration:
-          type: number
-        apy:
-          type: number
-        apy_max:
-          type: number
-        reward_breakdown:
-          $ref: '#/components/schemas/StakingRewardApyBreakdown'
-        is_stale:
-          type: boolean
-      required:
-      - blockNum
-      - timestamp
-      - token
-      - supply
-      - boosted_supply
-      - lp_price
-      - lp_token_supply
-      - tvl
-      - reward_value_usd
-      - reward_duration
-      - apy
-      - apy_max
-      - is_stale
-    ChartJSData:
-      type: object
-      properties:
-        labels:
-          additionalProperties:
-            oneOf:
-            - type: string
-            - type: number
-            - type: boolean
-          type: array
-          items:
-            type: object
-        data:
-          additionalProperties:
-            oneOf:
-            - type: string
-            - type: number
-            - type: boolean
-          type: array
-          items:
-            type: object
-        range:
-          $ref: '#/components/schemas/ChartJSDataRange'
-      required:
-      - labels
-      - data
-      - range
-    StakingRewardApyBreakdown:
-      type: object
-      properties:
-        fees:
-          type: array
-          items:
-            $ref: '#/components/schemas/StakingRewardFee'
-        tokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/StakingRewardToken'
-      required:
-      - fees
-      - tokens
     UserStakeInfoResponse:
       type: object
       properties:
@@ -283,114 +179,6 @@ components:
       - locked_total
       - locked_total_usd_value
       - locked_stakes
-    CoinGeckoPoolDataItem:
-      type: object
-      properties:
-        identifier:
-          type: string
-        chain:
-          type: string
-        platform:
-          type: string
-        pair:
-          type: string
-        pairLink:
-          type: string
-        lp_address:
-          type: string
-        farm_address:
-          type: string
-        logo:
-          type: string
-        pool_tokens:
-          type: array
-          items:
-            type: string
-        pool_rewards:
-          type: array
-          items:
-            type: string
-        liquidity_locked:
-          type: number
-        apy:
-          type: number
-        apy_max:
-          type: number
-        reward_breakdown:
-          $ref: '#/components/schemas/StakingRewardApyBreakdown'
-        is_deprecated:
-          type: boolean
-        is_stale:
-          type: boolean
-      required:
-      - identifier
-      - chain
-      - platform
-      - pair
-      - pairLink
-      - logo
-      - pool_tokens
-      - pool_rewards
-      - liquidity_locked
-      - apy
-      - apy_max
-      - is_deprecated
-      - is_stale
-    LockedStake:
-      type: object
-      properties:
-        amount:
-          type: string
-        dollar_value:
-          type: number
-        ending_timestamp:
-          type: string
-        kek_id:
-          type: string
-        liquidity:
-          type: string
-        lock_multiplier:
-          type: string
-        multiplier:
-          type: string
-        start_timestamp:
-          type: string
-        tick_lower:
-          type: number
-        tick_upper:
-          type: number
-        token_id:
-          type: number
-      required:
-      - amount
-      - dollar_value
-      - ending_timestamp
-      - kek_id
-      - liquidity
-      - lock_multiplier
-      - multiplier
-      - start_timestamp
-      - tick_lower
-      - tick_upper
-      - token_id
-    StakeInfoResponse:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/StakingItem'
-        chartjs:
-          additionalProperties:
-            oneOf:
-            - type: string
-            - type: number
-            - type: boolean
-          allOf:
-          - $ref: '#/components/schemas/ChartJSData'
-      required:
-      - full_items
-      - chartjs
     LockedStakeBucketAggregate:
       type: object
       properties:
@@ -404,146 +192,6 @@ components:
       - _id
       - count
       - total
-    StakingRewardToken:
-      type: object
-      properties:
-        symbol:
-          type: string
-        display_name:
-          type: string
-        apr_min_pct:
-          type: number
-        apr_max_pct:
-          type: number
-        token_price:
-          type: number
-        tokens_per_day:
-          type: number
-        usd_val_per_day:
-          type: number
-      required:
-      - symbol
-      - display_name
-      - apr_min_pct
-      - apr_max_pct
-      - token_price
-      - tokens_per_day
-      - usd_val_per_day
-    StakeInfoRequest:
-      type: object
-      properties:
-        token:
-          type: string
-          description: Token
-        filter:
-          type: string
-          description: Timeframe
-          enum:
-          - all-time
-          - 1-year
-          - 6-months
-          - 3-months
-          - 1-month
-          - 1-week
-          - 1-day
-          - 8-hours
-          - 1-hour
-          - 15-minutes
-      required:
-      - token
-      - filter
-    StakingRewardFee:
-      type: object
-      properties:
-        symbol:
-          type: string
-        display_name:
-          type: string
-        apr_min_pct:
-          type: number
-        apr_max_pct:
-          type: number
-        lp_price:
-          type: number
-        avg_lp_per_day:
-          type: number
-        avg_volume_per_day_usd:
-          type: number
-        avg_provider_fees_per_day_usd:
-          type: number
-      required:
-      - symbol
-      - display_name
-      - apr_min_pct
-      - apr_max_pct
-      - lp_price
-      - avg_lp_per_day
-      - avg_volume_per_day_usd
-      - avg_provider_fees_per_day_usd
-    LockedStakeDataRequest:
-      type: object
-      properties:
-        token:
-          type: string
-          description: Staking choice
-      required:
-      - token
-    StakeChoiceGovernanceSnapshotInfo:
-      type: object
-      properties:
-        fipId:
-          type: string
-        fipHash:
-          type: string
-      required:
-      - fipId
-      - fipHash
-    UserStakeInfoRequest:
-      type: object
-      properties:
-        the_chain:
-          type: string
-          description: The chain
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        staking_choice:
-          type: string
-          description: Staking choice
-        staker_address:
-          type: string
-          description: Staker address
-      required:
-      - the_chain
-      - staking_choice
-      - staker_address
-    StakeChoiceGovernanceInfo:
-      type: object
-      properties:
-        create:
-          $ref: '#/components/schemas/StakeChoiceGovernanceSnapshotInfo'
-        kill:
-          $ref: '#/components/schemas/StakeChoiceGovernanceSnapshotInfo'
-      required:
-      - create
-      - kill
     StakeChoice:
       type: object
       properties:
@@ -685,6 +333,61 @@ components:
       - reward_token_bridge_types
       - version
       - governance
+    StakingItem:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        token:
+          type: string
+        supply:
+          type: number
+        boosted_supply:
+          type: number
+        lp_price:
+          type: number
+        lp_token_supply:
+          type: number
+        tvl:
+          type: number
+        reward_value_usd:
+          type: number
+        reward_duration:
+          type: number
+        apy:
+          type: number
+        apy_max:
+          type: number
+        reward_breakdown:
+          $ref: '#/components/schemas/StakingRewardApyBreakdown'
+        is_stale:
+          type: boolean
+      required:
+      - blockNum
+      - timestamp
+      - token
+      - supply
+      - boosted_supply
+      - lp_price
+      - lp_token_supply
+      - tvl
+      - reward_value_usd
+      - reward_duration
+      - apy
+      - apy_max
+      - is_stale
+    ChartJSDataRange:
+      type: object
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+      required:
+      - min
+      - max
     StakeChoicesResponse:
       type: object
       properties:
@@ -694,6 +397,295 @@ components:
             $ref: '#/components/schemas/StakeChoice'
       required:
       - choices
+    UserStakeInfoRequest:
+      type: object
+      properties:
+        the_chain:
+          type: string
+          description: The chain
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        staking_choice:
+          type: string
+          description: Staking choice
+        staker_address:
+          type: string
+          description: Staker address
+      required:
+      - the_chain
+      - staking_choice
+      - staker_address
+    StakeChoiceGovernanceSnapshotInfo:
+      type: object
+      properties:
+        fipId:
+          type: string
+        fipHash:
+          type: string
+      required:
+      - fipId
+      - fipHash
+    StakingRewardToken:
+      type: object
+      properties:
+        symbol:
+          type: string
+        display_name:
+          type: string
+        apr_min_pct:
+          type: number
+        apr_max_pct:
+          type: number
+        token_price:
+          type: number
+        tokens_per_day:
+          type: number
+        usd_val_per_day:
+          type: number
+      required:
+      - symbol
+      - display_name
+      - apr_min_pct
+      - apr_max_pct
+      - token_price
+      - tokens_per_day
+      - usd_val_per_day
+    ChartJSData:
+      type: object
+      properties:
+        labels:
+          additionalProperties:
+            oneOf:
+            - type: string
+            - type: number
+            - type: boolean
+          type: array
+          items:
+            type: object
+        data:
+          additionalProperties:
+            oneOf:
+            - type: string
+            - type: number
+            - type: boolean
+          type: array
+          items:
+            type: object
+        range:
+          $ref: '#/components/schemas/ChartJSDataRange'
+      required:
+      - labels
+      - data
+      - range
+    StakingRewardApyBreakdown:
+      type: object
+      properties:
+        fees:
+          type: array
+          items:
+            $ref: '#/components/schemas/StakingRewardFee'
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/StakingRewardToken'
+      required:
+      - fees
+      - tokens
+    StakeInfoRequest:
+      type: object
+      properties:
+        token:
+          type: string
+          description: Token
+        filter:
+          type: string
+          description: Timeframe
+          enum:
+          - all-time
+          - 1-year
+          - 6-months
+          - 3-months
+          - 1-month
+          - 1-week
+          - 1-day
+          - 8-hours
+          - 1-hour
+          - 15-minutes
+      required:
+      - token
+      - filter
+    StakeChoiceGovernanceInfo:
+      type: object
+      properties:
+        create:
+          $ref: '#/components/schemas/StakeChoiceGovernanceSnapshotInfo'
+        kill:
+          $ref: '#/components/schemas/StakeChoiceGovernanceSnapshotInfo'
+      required:
+      - create
+      - kill
+    StakingRewardFee:
+      type: object
+      properties:
+        symbol:
+          type: string
+        display_name:
+          type: string
+        apr_min_pct:
+          type: number
+        apr_max_pct:
+          type: number
+        lp_price:
+          type: number
+        avg_lp_per_day:
+          type: number
+        avg_volume_per_day_usd:
+          type: number
+        avg_provider_fees_per_day_usd:
+          type: number
+      required:
+      - symbol
+      - display_name
+      - apr_min_pct
+      - apr_max_pct
+      - lp_price
+      - avg_lp_per_day
+      - avg_volume_per_day_usd
+      - avg_provider_fees_per_day_usd
+    LockedStakeDataRequest:
+      type: object
+      properties:
+        token:
+          type: string
+          description: Staking choice
+      required:
+      - token
+    LockedStakeDataResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        unlocked_sum:
+          type: number
+        locked_sum:
+          type: number
+        buckets:
+          type: array
+          items:
+            $ref: '#/components/schemas/LockedStakeBucketAggregate'
+      required:
+      - token
+      - unlocked_sum
+      - locked_sum
+      - buckets
+    CoinGeckoPoolDataItem:
+      type: object
+      properties:
+        identifier:
+          type: string
+        chain:
+          type: string
+        platform:
+          type: string
+        pair:
+          type: string
+        pairLink:
+          type: string
+        lp_address:
+          type: string
+        farm_address:
+          type: string
+        logo:
+          type: string
+        pool_tokens:
+          type: array
+          items:
+            type: string
+        pool_rewards:
+          type: array
+          items:
+            type: string
+        liquidity_locked:
+          type: number
+        apy:
+          type: number
+        apy_max:
+          type: number
+        reward_breakdown:
+          $ref: '#/components/schemas/StakingRewardApyBreakdown'
+        is_deprecated:
+          type: boolean
+        is_stale:
+          type: boolean
+      required:
+      - identifier
+      - chain
+      - platform
+      - pair
+      - pairLink
+      - logo
+      - pool_tokens
+      - pool_rewards
+      - liquidity_locked
+      - apy
+      - apy_max
+      - is_deprecated
+      - is_stale
+    LockedStake:
+      type: object
+      properties:
+        amount:
+          type: string
+        dollar_value:
+          type: number
+        ending_timestamp:
+          type: string
+        kek_id:
+          type: string
+        liquidity:
+          type: string
+        lock_multiplier:
+          type: string
+        multiplier:
+          type: string
+        start_timestamp:
+          type: string
+        tick_lower:
+          type: number
+        tick_upper:
+          type: number
+        token_id:
+          type: number
+      required:
+      - amount
+      - dollar_value
+      - ending_timestamp
+      - kek_id
+      - liquidity
+      - lock_multiplier
+      - multiplier
+      - start_timestamp
+      - tick_lower
+      - tick_upper
+      - token_id
     RewardInfo:
       type: object
       properties:
@@ -719,16 +711,24 @@ components:
       - reward_balance
       - reward_usd_value
       - reward_rate
-    ChartJSDataRange:
+    StakeInfoResponse:
       type: object
       properties:
-        min:
-          type: number
-        max:
-          type: number
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/StakingItem'
+        chartjs:
+          additionalProperties:
+            oneOf:
+            - type: string
+            - type: number
+            - type: boolean
+          allOf:
+          - $ref: '#/components/schemas/ChartJSData'
       required:
-      - min
-      - max
+      - full_items
+      - chartjs
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

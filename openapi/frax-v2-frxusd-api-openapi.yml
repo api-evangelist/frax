@@ -88,29 +88,16 @@ paths:
       - v2-frxusd
 components:
   schemas:
-    FrxusdSummaryInfo:
+    FrxusdSummaryInfoResponse:
       type: object
       properties:
-        intervalTimestamp:
-          format: date-time
-          type: string
-        blockNumberEthereum:
-          type: number
-        blockNumberFraxtal:
-          type: number
-        frxusdCirculatingSupply:
-          type: number
-        frxusdTotalSupply:
-          type: number
-        frxusdPrice:
-          type: number
+        items:
+          description: List of frxUSD summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdSummaryInfo'
       required:
-      - intervalTimestamp
-      - blockNumberEthereum
-      - blockNumberFraxtal
-      - frxusdCirculatingSupply
-      - frxusdTotalSupply
-      - frxusdPrice
+      - items
     FrxusdBalanceSheetLatestResponse:
       type: object
       properties:
@@ -149,6 +136,29 @@ components:
       - totalLiabilities
       - assets
       - liabilities
+    FrxusdSummaryInfo:
+      type: object
+      properties:
+        intervalTimestamp:
+          format: date-time
+          type: string
+        blockNumberEthereum:
+          type: number
+        blockNumberFraxtal:
+          type: number
+        frxusdCirculatingSupply:
+          type: number
+        frxusdTotalSupply:
+          type: number
+        frxusdPrice:
+          type: number
+      required:
+      - intervalTimestamp
+      - blockNumberEthereum
+      - blockNumberFraxtal
+      - frxusdCirculatingSupply
+      - frxusdTotalSupply
+      - frxusdPrice
     FrxusdBalanceSheetItem:
       type: object
       properties:
@@ -208,16 +218,6 @@ components:
       - tokenQuantity
       - tokenQuantityE18
       - description
-    FrxusdSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of frxUSD summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxusdSummaryInfo'
-      required:
-      - items
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

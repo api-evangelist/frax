@@ -138,86 +138,28 @@ paths:
       - v2-frax
 components:
   schemas:
-    FraxBalanceSheetLatestResponse:
+    SfraxUserBalanceSummary:
       type: object
       properties:
-        asOfBlock:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        asOfTimestamp:
-          format: date-time
+        sfraxBalanceE18:
           type: string
-        tokenPriceUsd:
+        sfraxBalanceDec:
+          type: number
+        balanceBreakdownE18:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: string
+        balanceBreakdownDec:
           type: object
           additionalProperties:
             oneOf:
             - type: number
-        categorySummaryUsd:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        totalAssets:
-          type: number
-        totalLiabilities:
-          type: number
-        totalLockedLiquidity:
-          type: number
-        assets:
-          description: List of FRAX balance sheet assets.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxBalanceSheetItem'
-        liabilities:
-          description: List of FRAX balance sheet liabilities.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxBalanceSheetItem'
       required:
-      - asOfBlock
-      - asOfTimestamp
-      - tokenPriceUsd
-      - categorySummaryUsd
-      - totalAssets
-      - totalLiabilities
-      - totalLockedLiquidity
-      - assets
-      - liabilities
-    SfraxUserDailyEarningsItem:
-      type: object
-      properties:
-        timestamp:
-          format: date-time
-          type: string
-        timestampSec:
-          type: number
-        eodSfraxBalanceTotal:
-          type: number
-        eodSfraxBalanceBreakdown:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        earnings:
-          type: number
-      required:
-      - timestamp
-      - timestampSec
-      - eodSfraxBalanceTotal
-      - eodSfraxBalanceBreakdown
-      - earnings
-    SfraxSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of sFRAX summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/SfraxSummaryInfo'
-      required:
-      - items
+      - sfraxBalanceE18
+      - sfraxBalanceDec
+      - balanceBreakdownE18
+      - balanceBreakdownDec
     SfraxUserLot:
       type: object
       properties:
@@ -259,6 +201,18 @@ components:
       - unrealizedMarketValueUsd
       - unrealizedMarketValueFrax
       - unrealizedFraxGain
+    SfraxUserDailyEarningsResponse:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        dailyData:
+          type: array
+          items:
+            $ref: '#/components/schemas/SfraxUserDailyEarningsItem'
+      required:
+      - userAddress
+      - dailyData
     SfraxUserPositionSummary:
       type: object
       properties:
@@ -378,40 +332,6 @@ components:
       - sfraxApr
       - sfraxApy
       - fraxPriceUsd
-    SfraxUserDailyEarningsResponse:
-      type: object
-      properties:
-        userAddress:
-          type: string
-        dailyData:
-          type: array
-          items:
-            $ref: '#/components/schemas/SfraxUserDailyEarningsItem'
-      required:
-      - userAddress
-      - dailyData
-    SfraxUserBalanceSummary:
-      type: object
-      properties:
-        sfraxBalanceE18:
-          type: string
-        sfraxBalanceDec:
-          type: number
-        balanceBreakdownE18:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: string
-        balanceBreakdownDec:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-      required:
-      - sfraxBalanceE18
-      - sfraxBalanceDec
-      - balanceBreakdownE18
-      - balanceBreakdownDec
     SfraxUserSummaryResponse:
       type: object
       properties:
@@ -425,6 +345,86 @@ components:
       - userAddress
       - positionSummary
       - balanceSummary
+    FraxBalanceSheetLatestResponse:
+      type: object
+      properties:
+        asOfBlock:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        asOfTimestamp:
+          format: date-time
+          type: string
+        tokenPriceUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        categorySummaryUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        totalAssets:
+          type: number
+        totalLiabilities:
+          type: number
+        totalLockedLiquidity:
+          type: number
+        assets:
+          description: List of FRAX balance sheet assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBalanceSheetItem'
+        liabilities:
+          description: List of FRAX balance sheet liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBalanceSheetItem'
+      required:
+      - asOfBlock
+      - asOfTimestamp
+      - tokenPriceUsd
+      - categorySummaryUsd
+      - totalAssets
+      - totalLiabilities
+      - totalLockedLiquidity
+      - assets
+      - liabilities
+    SfraxUserDailyEarningsItem:
+      type: object
+      properties:
+        timestamp:
+          format: date-time
+          type: string
+        timestampSec:
+          type: number
+        eodSfraxBalanceTotal:
+          type: number
+        eodSfraxBalanceBreakdown:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        earnings:
+          type: number
+      required:
+      - timestamp
+      - timestampSec
+      - eodSfraxBalanceTotal
+      - eodSfraxBalanceBreakdown
+      - earnings
+    SfraxSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of sFRAX summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfraxSummaryInfo'
+      required:
+      - items
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

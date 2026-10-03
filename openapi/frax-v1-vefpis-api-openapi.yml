@@ -61,6 +61,19 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    LockedVefpisStakeBucketAggregate:
+      type: object
+      properties:
+        _id:
+          type: string
+        count:
+          type: number
+        total:
+          type: number
+      required:
+      - _id
+      - count
+      - total
     VefpisItem:
       type: object
       properties:
@@ -125,19 +138,6 @@ components:
       - unlocked_sum
       - locked_sum
       - buckets
-    LockedVefpisStakeBucketAggregate:
-      type: object
-      properties:
-        _id:
-          type: string
-        count:
-          type: number
-        total:
-          type: number
-      required:
-      - _id
-      - count
-      - total
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs
