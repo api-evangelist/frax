@@ -208,134 +208,6 @@ paths:
       - v2-gov
 components:
   schemas:
-    FraxGovProposalDetail:
-      type: object
-      properties:
-        summary:
-          description: frxGov proposal summary item.
-          allOf:
-          - $ref: '#/components/schemas/FraxGovProposalSummary'
-        status:
-          $ref: '#/components/schemas/FraxGovProposalStatus'
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalTransaction'
-        votes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalDetailVote'
-      required:
-      - summary
-      - status
-      - transactions
-      - votes
-    FraxGovVoterListResponse:
-      type: object
-      properties:
-        voters:
-          description: Array of frxGov voters.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovVoter'
-      required:
-      - voters
-    FraxGovSafeListResponse:
-      type: object
-      properties:
-        safes:
-          description: Array of frxGov Safes.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovSafe'
-      required:
-      - safes
-    FraxGovVoter:
-      type: object
-      properties:
-        address:
-          type: string
-        protocol:
-          type: string
-          enum:
-          - frax
-          - fpi
-        lockEndsAt:
-          format: date-time
-          type: string
-        latestVefxsBalance:
-          type: number
-        delegateeAddress:
-          type: string
-        delegateeEffectiveAt:
-          format: date-time
-          type: string
-        futureDelegateeAddress:
-          type:
-          - string
-          - 'null'
-        futureDelegateeEffectiveAt:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        latestVotingWeight:
-          type: number
-      required:
-      - address
-      - protocol
-      - lockEndsAt
-      - latestVefxsBalance
-      - delegateeAddress
-      - delegateeEffectiveAt
-      - futureDelegateeAddress
-      - futureDelegateeEffectiveAt
-      - latestVotingWeight
-    FraxGovProposalListResponse:
-      type: object
-      properties:
-        proposals:
-          description: Array of frxGov proposal summary items.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxGovProposalSummary'
-      required:
-      - proposals
-    FraxGovProposalDetailVote:
-      type: object
-      properties:
-        voterAddress:
-          type: string
-        votesFor:
-          type: string
-        votesForDec:
-          type: number
-        votesAgainst:
-          type: string
-        votesAgainstDec:
-          type: number
-        votesAbstain:
-          type: string
-        votesAbstainDec:
-          type: number
-        reason:
-          type: string
-        timestamp:
-          format: date-time
-          type: string
-        blockNumber:
-          type: number
-      required:
-      - voterAddress
-      - votesFor
-      - votesForDec
-      - votesAgainst
-      - votesAgainstDec
-      - votesAbstain
-      - votesAbstainDec
-      - reason
-      - timestamp
-      - blockNumber
     FraxGovProposalStatus:
       type: object
       properties:
@@ -382,87 +254,83 @@ components:
       - defeated
       - queued
       - executed
-    FraxGovSafe:
+    FraxGovProposalListResponse:
       type: object
       properties:
-        address:
+        proposals:
+          description: Array of frxGov proposal summary items.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalSummary'
+      required:
+      - proposals
+    FraxGovProposalDetail:
+      type: object
+      properties:
+        summary:
+          description: frxGov proposal summary item.
+          allOf:
+          - $ref: '#/components/schemas/FraxGovProposalSummary'
+        status:
+          $ref: '#/components/schemas/FraxGovProposalStatus'
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalTransaction'
+        votes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovProposalDetailVote'
+      required:
+      - summary
+      - status
+      - transactions
+      - votes
+    FraxGovSafeListResponse:
+      type: object
+      properties:
+        safes:
+          description: Array of frxGov Safes.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovSafe'
+      required:
+      - safes
+    FraxGovProposalDetailVote:
+      type: object
+      properties:
+        voterAddress:
           type: string
-        chain:
+        votesFor:
           type: string
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        protocol:
+        votesForDec:
+          type: number
+        votesAgainst:
           type: string
-          enum:
-          - frax
-          - fpi
-        name:
+        votesAgainstDec:
+          type: number
+        votesAbstain:
           type: string
-        description:
+        votesAbstainDec:
+          type: number
+        reason:
           type: string
-        version:
-          type: string
-        defaultProductType:
-          type: string
-          enum:
-          - general
-          - fpi
-          - fpis
-          - frax
-          - fraxferry
-          - fraxlend
-          - frxeth
-        registeredAt:
+        timestamp:
           format: date-time
           type: string
-      required:
-      - address
-      - chain
-      - protocol
-      - name
-      - description
-      - version
-      - defaultProductType
-      - registeredAt
-    FraxGovProposalTransaction:
-      type: object
-      properties:
-        txIdx:
+        blockNumber:
           type: number
-        targetAddress:
-          type: string
-        value:
-          type: string
-        callData:
-          type: string
-        decodedTx:
-          type:
-          - string
-          - 'null'
       required:
-      - txIdx
-      - targetAddress
-      - value
-      - callData
-      - decodedTx
+      - voterAddress
+      - votesFor
+      - votesForDec
+      - votesAgainst
+      - votesAgainstDec
+      - votesAbstain
+      - votesAbstainDec
+      - reason
+      - timestamp
+      - blockNumber
     FraxGovProposalSummary:
       type: object
       properties:
@@ -625,6 +493,138 @@ components:
       - safeExecutedAt
       - safeTxHash
       - safeVetoTxHash
+    FraxGovVoterListResponse:
+      type: object
+      properties:
+        voters:
+          description: Array of frxGov voters.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxGovVoter'
+      required:
+      - voters
+    FraxGovVoter:
+      type: object
+      properties:
+        address:
+          type: string
+        protocol:
+          type: string
+          enum:
+          - frax
+          - fpi
+        lockEndsAt:
+          format: date-time
+          type: string
+        latestVefxsBalance:
+          type: number
+        delegateeAddress:
+          type: string
+        delegateeEffectiveAt:
+          format: date-time
+          type: string
+        futureDelegateeAddress:
+          type:
+          - string
+          - 'null'
+        futureDelegateeEffectiveAt:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        latestVotingWeight:
+          type: number
+      required:
+      - address
+      - protocol
+      - lockEndsAt
+      - latestVefxsBalance
+      - delegateeAddress
+      - delegateeEffectiveAt
+      - futureDelegateeAddress
+      - futureDelegateeEffectiveAt
+      - latestVotingWeight
+    FraxGovSafe:
+      type: object
+      properties:
+        address:
+          type: string
+        chain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        protocol:
+          type: string
+          enum:
+          - frax
+          - fpi
+        name:
+          type: string
+        description:
+          type: string
+        version:
+          type: string
+        defaultProductType:
+          type: string
+          enum:
+          - general
+          - fpi
+          - fpis
+          - frax
+          - fraxferry
+          - fraxlend
+          - frxeth
+        registeredAt:
+          format: date-time
+          type: string
+      required:
+      - address
+      - chain
+      - protocol
+      - name
+      - description
+      - version
+      - defaultProductType
+      - registeredAt
+    FraxGovProposalTransaction:
+      type: object
+      properties:
+        txIdx:
+          type: number
+        targetAddress:
+          type: string
+        value:
+          type: string
+        callData:
+          type: string
+        decodedTx:
+          type:
+          - string
+          - 'null'
+      required:
+      - txIdx
+      - targetAddress
+      - value
+      - callData
+      - decodedTx
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

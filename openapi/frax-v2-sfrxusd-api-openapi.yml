@@ -157,6 +157,44 @@ components:
       - tokenQuantity
       - tokenQuantityE18
       - description
+    SfrxusdBalanceSheetLatestResponse:
+      type: object
+      properties:
+        asOfBlock:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        asOfTimestamp:
+          format: date-time
+          type: string
+        tokenPriceUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        totalAssets:
+          type: number
+        totalLiabilities:
+          type: number
+        assets:
+          description: List of sfrxUSD balance sheet assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
+        liabilities:
+          description: List of sfrxUSD balance sheet liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
+      required:
+      - asOfBlock
+      - asOfTimestamp
+      - tokenPriceUsd
+      - totalAssets
+      - totalLiabilities
+      - assets
+      - liabilities
     SfrxusdSummaryInfo:
       type: object
       properties:
@@ -198,44 +236,6 @@ components:
       - sfrxusdApy
       - frxusdPrice
       - sfrxusdPrice
-    SfrxusdBalanceSheetLatestResponse:
-      type: object
-      properties:
-        asOfBlock:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        asOfTimestamp:
-          format: date-time
-          type: string
-        tokenPriceUsd:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        totalAssets:
-          type: number
-        totalLiabilities:
-          type: number
-        assets:
-          description: List of sfrxUSD balance sheet assets.
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
-        liabilities:
-          description: List of sfrxUSD balance sheet liabilities.
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxusdBalanceSheetItem'
-      required:
-      - asOfBlock
-      - asOfTimestamp
-      - tokenPriceUsd
-      - totalAssets
-      - totalLiabilities
-      - assets
-      - liabilities
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

@@ -61,6 +61,36 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    VefxsDataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/VefxsItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
+    LockedVeFXSDataResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        unlocked_sum:
+          type: number
+        locked_sum:
+          type: number
+        buckets:
+          type: array
+          items:
+            $ref: '#/components/schemas/LockedVefxsStakeBucketAggregate'
+      required:
+      - token
+      - unlocked_sum
+      - locked_sum
+      - buckets
     VefxsItem:
       type: object
       properties:
@@ -95,36 +125,6 @@ components:
       - pct_participating
       - yield_value_usd
       - apr
-    VefxsDataResponse:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/VefxsItem'
-        chartjs:
-          type: object
-      required:
-      - full_items
-      - chartjs
-    LockedVeFXSDataResponse:
-      type: object
-      properties:
-        token:
-          type: string
-        unlocked_sum:
-          type: number
-        locked_sum:
-          type: number
-        buckets:
-          type: array
-          items:
-            $ref: '#/components/schemas/LockedVefxsStakeBucketAggregate'
-      required:
-      - token
-      - unlocked_sum
-      - locked_sum
-      - buckets
     LockedVefxsStakeBucketAggregate:
       type: object
       properties:

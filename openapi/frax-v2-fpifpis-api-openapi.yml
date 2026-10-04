@@ -155,6 +155,19 @@ paths:
       - v2-fpifpis
 components:
   schemas:
+    CPIBreakdownItem:
+      type: object
+      properties:
+        name:
+          type: string
+        relativeImportance:
+          type: number
+        unadjustedIndex:
+          type: number
+      required:
+      - name
+      - relativeImportance
+      - unadjustedIndex
     FpiFpisLatestSummaryInfoResponse:
       type: object
       properties:
@@ -169,148 +182,6 @@ components:
       required:
       - summary
       - extra
-    FpiFpisHistoricalSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of FPI and FPIS summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/FpiFpisSummaryItem'
-      required:
-      - items
-    FpiStats:
-      type: object
-      properties:
-        fpi:
-          $ref: '#/components/schemas/FPISummary'
-        cpi:
-          $ref: '#/components/schemas/CPISummary'
-      required:
-      - fpi
-      - cpi
-    FpiIncomeExpenseSummaryResponse:
-      type: object
-      properties:
-        months:
-          type: array
-          items:
-            $ref: '#/components/schemas/FpiIncomeExpenseSummaryMonth'
-      required:
-      - months
-    FpiStatsResponse:
-      type: object
-      properties:
-        stats:
-          description: FPI Stats.
-          allOf:
-          - $ref: '#/components/schemas/FpiStats'
-      required:
-      - stats
-    CPISummary:
-      type: object
-      properties:
-        dateString:
-          type: string
-        dateMonth:
-          type: number
-        dateYear:
-          type: number
-        unadjustedIndex:
-          type: number
-        yoyChangePct:
-          type: number
-        breakdown:
-          type: array
-          items:
-            $ref: '#/components/schemas/CPIBreakdownItem'
-      required:
-      - dateString
-      - dateMonth
-      - dateYear
-      - unadjustedIndex
-      - yoyChangePct
-      - breakdown
-    FpiFpisRewardTokenInfo:
-      type: object
-      properties:
-        description:
-          type: string
-        tokenSymbol:
-          type: string
-        tokenName:
-          type: string
-        tokenQuantity:
-          type: number
-        tokenValueUsd:
-          type: number
-      required:
-      - description
-      - tokenSymbol
-      - tokenName
-      - tokenQuantity
-      - tokenValueUsd
-    FpiIncomeExpenseDetailResponse:
-      type: object
-      properties:
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/FpiIncomeExpenseDetail'
-      required:
-      - details
-    FPISummary:
-      type: object
-      properties:
-        totalSupply:
-          type: number
-        totalUsdValue:
-          type: number
-        baseMonth:
-          type: number
-        baseYear:
-          type: number
-        baseCpi:
-          type: number
-        currMonth:
-          type: number
-        currYear:
-          type: number
-        lastCpi:
-          type: number
-        currCpi:
-          type: number
-        currPegprice:
-          type: number
-        targetPegPrice:
-          type: number
-        lastPegPrice:
-          type: number
-        lastPegUpdateTimestampSec:
-          type: number
-        rampPeriodSec:
-          type: number
-        pctChangeMom:
-          type: number
-        pctSinceInception:
-          type: number
-      required:
-      - totalSupply
-      - totalUsdValue
-      - baseMonth
-      - baseYear
-      - baseCpi
-      - currMonth
-      - currYear
-      - lastCpi
-      - currCpi
-      - currPegprice
-      - targetPegPrice
-      - lastPegPrice
-      - lastPegUpdateTimestampSec
-      - rampPeriodSec
-      - pctChangeMom
-      - pctSinceInception
     FpiFpisDistributionResponse:
       type: object
       properties:
@@ -348,174 +219,6 @@ components:
       - details
       - tokenValueUsd
       - totalValueUsd
-    FpiFpisSummaryExtraData:
-      type: object
-      properties:
-        unclaimedRewards:
-          $ref: '#/components/schemas/FpiFpisRewardTokenSummary'
-      required:
-      - unclaimedRewards
-    FpiFpisDistributionItem:
-      type: object
-      properties:
-        address:
-          type: string
-        addressDescription:
-          type: string
-        category:
-          type: string
-        chain:
-          type: string
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        contractAddress:
-          type: string
-        label:
-          type: string
-        quantity:
-          type: number
-        segment:
-          type: string
-      required:
-      - address
-      - addressDescription
-      - category
-      - chain
-      - contractAddress
-      - label
-      - quantity
-      - segment
-    FpiIncomeExpenseSummaryMonth:
-      type: object
-      properties:
-        key:
-          type: string
-          description: YYYY-MM format
-        year:
-          type: number
-        month:
-          type: number
-        totalIncome:
-          type: number
-        totalExpense:
-          type: number
-        totalProfitOrLoss:
-          type: number
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/FpiIncomeExpenseSummaryMonthItem'
-      required:
-      - key
-      - year
-      - month
-      - totalIncome
-      - totalExpense
-      - totalProfitOrLoss
-      - items
-    CPIBreakdownItem:
-      type: object
-      properties:
-        name:
-          type: string
-        relativeImportance:
-          type: number
-        unadjustedIndex:
-          type: number
-      required:
-      - name
-      - relativeImportance
-      - unadjustedIndex
-    FpiCollateralResponse:
-      type: object
-      properties:
-        updatedAtBlock:
-          type: number
-        updatedAtTimestampSec:
-          type: number
-        assets:
-          description: List of FPI collateral assets.
-          type: array
-          items:
-            $ref: '#/components/schemas/FpiCollateralItem'
-        liabilities:
-          description: List of FPI collateral liabilities.
-          type: array
-          items:
-            $ref: '#/components/schemas/FpiCollateralItem'
-      required:
-      - updatedAtBlock
-      - updatedAtTimestampSec
-      - assets
-      - liabilities
-    FpiIncomeExpenseSummaryMonthItem:
-      type: object
-      properties:
-        chain:
-          type: string
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        type:
-          type: string
-          enum:
-          - income
-          - expense
-        categoryKey:
-          type: string
-          description: The unique identifier of the income/expense source.
-        category:
-          type: string
-          enum:
-          - mint_fees
-          - redeem_fees
-          - staking
-          - peg_change
-          - sfrax_rewards
-          - unknown
-        amountUsd:
-          type: number
-      required:
-      - chain
-      - type
-      - categoryKey
-      - category
-      - amountUsd
     FpiFpisSummaryItem:
       type: object
       properties:
@@ -596,6 +299,135 @@ components:
       - vefpisTotalSupply
       - vefpisFpisLocked
       - vefpisTotalApr
+    FpiCollateralResponse:
+      type: object
+      properties:
+        updatedAtBlock:
+          type: number
+        updatedAtTimestampSec:
+          type: number
+        assets:
+          description: List of FPI collateral assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/FpiCollateralItem'
+        liabilities:
+          description: List of FPI collateral liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/FpiCollateralItem'
+      required:
+      - updatedAtBlock
+      - updatedAtTimestampSec
+      - assets
+      - liabilities
+    FpiCollateralItem:
+      type: object
+      properties:
+        key:
+          type: string
+        chain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        name:
+          type: string
+        ownerAddress:
+          type: string
+        tokenName:
+          type: string
+        tokenSymbol:
+          type: string
+        tokenAddress:
+          type: string
+        tokenPrice:
+          type: number
+        tokenQuantity:
+          type: number
+        valueUsd:
+          type: number
+        description:
+          type: string
+      required:
+      - key
+      - chain
+      - name
+      - ownerAddress
+      - tokenName
+      - tokenSymbol
+      - tokenAddress
+      - tokenPrice
+      - tokenQuantity
+      - valueUsd
+      - description
+    FpiIncomeExpenseSummaryMonthItem:
+      type: object
+      properties:
+        chain:
+          type: string
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        type:
+          type: string
+          enum:
+          - income
+          - expense
+        categoryKey:
+          type: string
+          description: The unique identifier of the income/expense source.
+        category:
+          type: string
+          enum:
+          - mint_fees
+          - redeem_fees
+          - staking
+          - peg_change
+          - sfrax_rewards
+          - unknown
+        amountUsd:
+          type: number
+      required:
+      - chain
+      - type
+      - categoryKey
+      - category
+      - amountUsd
     FpiIncomeExpenseDetail:
       type: object
       properties:
@@ -663,10 +495,184 @@ components:
       - amount
       - amountUsd
       - notes
-    FpiCollateralItem:
+    FPISummary:
+      type: object
+      properties:
+        totalSupply:
+          type: number
+        totalUsdValue:
+          type: number
+        baseMonth:
+          type: number
+        baseYear:
+          type: number
+        baseCpi:
+          type: number
+        currMonth:
+          type: number
+        currYear:
+          type: number
+        lastCpi:
+          type: number
+        currCpi:
+          type: number
+        currPegprice:
+          type: number
+        targetPegPrice:
+          type: number
+        lastPegPrice:
+          type: number
+        lastPegUpdateTimestampSec:
+          type: number
+        rampPeriodSec:
+          type: number
+        pctChangeMom:
+          type: number
+        pctSinceInception:
+          type: number
+      required:
+      - totalSupply
+      - totalUsdValue
+      - baseMonth
+      - baseYear
+      - baseCpi
+      - currMonth
+      - currYear
+      - lastCpi
+      - currCpi
+      - currPegprice
+      - targetPegPrice
+      - lastPegPrice
+      - lastPegUpdateTimestampSec
+      - rampPeriodSec
+      - pctChangeMom
+      - pctSinceInception
+    FpiFpisHistoricalSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of FPI and FPIS summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/FpiFpisSummaryItem'
+      required:
+      - items
+    FpiStats:
+      type: object
+      properties:
+        fpi:
+          $ref: '#/components/schemas/FPISummary'
+        cpi:
+          $ref: '#/components/schemas/CPISummary'
+      required:
+      - fpi
+      - cpi
+    CPISummary:
+      type: object
+      properties:
+        dateString:
+          type: string
+        dateMonth:
+          type: number
+        dateYear:
+          type: number
+        unadjustedIndex:
+          type: number
+        yoyChangePct:
+          type: number
+        breakdown:
+          type: array
+          items:
+            $ref: '#/components/schemas/CPIBreakdownItem'
+      required:
+      - dateString
+      - dateMonth
+      - dateYear
+      - unadjustedIndex
+      - yoyChangePct
+      - breakdown
+    FpiStatsResponse:
+      type: object
+      properties:
+        stats:
+          description: FPI Stats.
+          allOf:
+          - $ref: '#/components/schemas/FpiStats'
+      required:
+      - stats
+    FpiIncomeExpenseSummaryMonth:
       type: object
       properties:
         key:
+          type: string
+          description: YYYY-MM format
+        year:
+          type: number
+        month:
+          type: number
+        totalIncome:
+          type: number
+        totalExpense:
+          type: number
+        totalProfitOrLoss:
+          type: number
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/FpiIncomeExpenseSummaryMonthItem'
+      required:
+      - key
+      - year
+      - month
+      - totalIncome
+      - totalExpense
+      - totalProfitOrLoss
+      - items
+    FpiIncomeExpenseSummaryResponse:
+      type: object
+      properties:
+        months:
+          type: array
+          items:
+            $ref: '#/components/schemas/FpiIncomeExpenseSummaryMonth'
+      required:
+      - months
+    FpiIncomeExpenseDetailResponse:
+      type: object
+      properties:
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/FpiIncomeExpenseDetail'
+      required:
+      - details
+    FpiFpisRewardTokenInfo:
+      type: object
+      properties:
+        description:
+          type: string
+        tokenSymbol:
+          type: string
+        tokenName:
+          type: string
+        tokenQuantity:
+          type: number
+        tokenValueUsd:
+          type: number
+      required:
+      - description
+      - tokenSymbol
+      - tokenName
+      - tokenQuantity
+      - tokenValueUsd
+    FpiFpisDistributionItem:
+      type: object
+      properties:
+        address:
+          type: string
+        addressDescription:
+          type: string
+        category:
           type: string
         chain:
           type: string
@@ -690,36 +696,30 @@ components:
           - solana
           - stable
           - zksync
-        name:
+        contractAddress:
           type: string
-        ownerAddress:
+        label:
           type: string
-        tokenName:
-          type: string
-        tokenSymbol:
-          type: string
-        tokenAddress:
-          type: string
-        tokenPrice:
+        quantity:
           type: number
-        tokenQuantity:
-          type: number
-        valueUsd:
-          type: number
-        description:
+        segment:
           type: string
       required:
-      - key
+      - address
+      - addressDescription
+      - category
       - chain
-      - name
-      - ownerAddress
-      - tokenName
-      - tokenSymbol
-      - tokenAddress
-      - tokenPrice
-      - tokenQuantity
-      - valueUsd
-      - description
+      - contractAddress
+      - label
+      - quantity
+      - segment
+    FpiFpisSummaryExtraData:
+      type: object
+      properties:
+        unclaimedRewards:
+          $ref: '#/components/schemas/FpiFpisRewardTokenSummary'
+      required:
+      - unclaimedRewards
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

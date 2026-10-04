@@ -150,107 +150,43 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    FraxBondTransaction:
+    FraxBondInfo:
       type: object
       properties:
-        transactionHash:
-          type: string
-        transactionTimestamp:
-          type: string
-        auctionAddress:
-          type: string
-        auctionNumber:
+        id:
           type: number
-        tokenBuyAmount:
-          type: number
-        tokenSellAmount:
-          type: number
-        bondSymbol:
-          type: string
-        bondAddress:
-          type: string
-        senderAddress:
-          type: string
-        recipientAddress:
-          type: string
-        lastPrice:
-          type: number
-        slippagePerSellToken:
-          type: number
+          description: Index of the bond for a particular factory address. The first bond starts with an `id` of `0` and it increments for each new bond after.
         chain:
           type: string
           enum:
           - ethereum
           - fraxtal
-        txIdx:
-          type: number
-        logIdx:
-          type: number
-      required:
-      - transactionHash
-      - transactionTimestamp
-      - auctionAddress
-      - auctionNumber
-      - tokenBuyAmount
-      - tokenSellAmount
-      - bondSymbol
-      - bondAddress
-      - senderAddress
-      - recipientAddress
-      - lastPrice
-      - slippagePerSellToken
-      - chain
-      - txIdx
-      - logIdx
-    FraxBondInfoResponse:
-      type: object
-      properties:
-        fxb:
-          $ref: '#/components/schemas/FraxBondInfo'
-        auctions:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxBondAuctionInfo'
-      required:
-      - fxb
-      - auctions
-    FraxBondAuctionDetailResponse:
-      type: object
-      properties:
-        fxb:
-          $ref: '#/components/schemas/FraxBondInfo'
-        auction:
-          $ref: '#/components/schemas/FraxBondAuctionInfo'
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxBondTransaction'
-      required:
-      - fxb
-      - auction
-      - transactions
-    ListAllFraxBondsResponse:
-      type: object
-      properties:
-        bonds:
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxBondInfo'
-      required:
-      - bonds
-    FraxBondSummaryItem:
-      type: object
-      properties:
-        timestampISO:
+        symbol:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        createdTimestamp:
           format: date-time
           type: string
-        fxbData:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/FraxBondSummaryItemData'
+        maturityTimestamp:
+          format: date-time
+          type: string
+        maturity:
+          type: string
+        factoryAddress:
+          type: string
       required:
-      - timestampISO
-      - fxbData
+      - id
+      - chain
+      - symbol
+      - name
+      - address
+      - createdTimestamp
+      - maturityTimestamp
+      - maturity
+      - factoryAddress
     FraxBondAuctionInfo:
       type: object
       properties:
@@ -341,6 +277,18 @@ components:
             $ref: '#/components/schemas/FraxBondAuction'
       required:
       - auctions
+    FraxBondInfoResponse:
+      type: object
+      properties:
+        fxb:
+          $ref: '#/components/schemas/FraxBondInfo'
+        auctions:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBondAuctionInfo'
+      required:
+      - fxb
+      - auctions
     FraxBondTransactionsResponse:
       type: object
       properties:
@@ -351,42 +299,6 @@ components:
             $ref: '#/components/schemas/FraxBondTransaction'
       required:
       - transactions
-    FraxBondSummaryHistoryResponse:
-      type: object
-      properties:
-        fxbs:
-          description: Array of FXBs included in the response, formatted as their maturity date yyyy-MM-dd.
-          type: array
-          items:
-            type: string
-        items:
-          description: Array of historical FXB summary stats.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxBondSummaryItem'
-      required:
-      - fxbs
-      - items
-    FraxBondSummaryItemData:
-      type: object
-      properties:
-        price:
-          type: number
-          description: The price of the FXB from a variety of sources, including Curve and auction transactions.
-        ytm:
-          type: number
-          description: The yield to maturity of the FXB based on the price and time remaining.
-        circulatingSupply:
-          type: number
-          description: The total supply that is not held by Frax-protocol-related contracts/addresses. I.e., the supply held by users.
-        totalSupply:
-          type: number
-          description: The total supply of the ERC20 FXB token.
-      required:
-      - price
-      - ytm
-      - circulatingSupply
-      - totalSupply
     FraxBondAuction:
       type: object
       properties:
@@ -471,43 +383,131 @@ components:
       - hasExpired
       - hasEnded
       - bond
-    FraxBondInfo:
+    FraxBondSummaryItemData:
       type: object
       properties:
-        id:
+        price:
           type: number
-          description: Index of the bond for a particular factory address. The first bond starts with an `id` of `0` and it increments for each new bond after.
+          description: The price of the FXB from a variety of sources, including Curve and auction transactions.
+        ytm:
+          type: number
+          description: The yield to maturity of the FXB based on the price and time remaining.
+        circulatingSupply:
+          type: number
+          description: The total supply that is not held by Frax-protocol-related contracts/addresses. I.e., the supply held by users.
+        totalSupply:
+          type: number
+          description: The total supply of the ERC20 FXB token.
+      required:
+      - price
+      - ytm
+      - circulatingSupply
+      - totalSupply
+    FraxBondTransaction:
+      type: object
+      properties:
+        transactionHash:
+          type: string
+        transactionTimestamp:
+          type: string
+        auctionAddress:
+          type: string
+        auctionNumber:
+          type: number
+        tokenBuyAmount:
+          type: number
+        tokenSellAmount:
+          type: number
+        bondSymbol:
+          type: string
+        bondAddress:
+          type: string
+        senderAddress:
+          type: string
+        recipientAddress:
+          type: string
+        lastPrice:
+          type: number
+        slippagePerSellToken:
+          type: number
         chain:
           type: string
           enum:
           - ethereum
           - fraxtal
-        symbol:
-          type: string
-        name:
-          type: string
-        address:
-          type: string
-        createdTimestamp:
-          format: date-time
-          type: string
-        maturityTimestamp:
-          format: date-time
-          type: string
-        maturity:
-          type: string
-        factoryAddress:
-          type: string
+        txIdx:
+          type: number
+        logIdx:
+          type: number
       required:
-      - id
+      - transactionHash
+      - transactionTimestamp
+      - auctionAddress
+      - auctionNumber
+      - tokenBuyAmount
+      - tokenSellAmount
+      - bondSymbol
+      - bondAddress
+      - senderAddress
+      - recipientAddress
+      - lastPrice
+      - slippagePerSellToken
       - chain
-      - symbol
-      - name
-      - address
-      - createdTimestamp
-      - maturityTimestamp
-      - maturity
-      - factoryAddress
+      - txIdx
+      - logIdx
+    FraxBondSummaryHistoryResponse:
+      type: object
+      properties:
+        fxbs:
+          description: Array of FXBs included in the response, formatted as their maturity date yyyy-MM-dd.
+          type: array
+          items:
+            type: string
+        items:
+          description: Array of historical FXB summary stats.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBondSummaryItem'
+      required:
+      - fxbs
+      - items
+    ListAllFraxBondsResponse:
+      type: object
+      properties:
+        bonds:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBondInfo'
+      required:
+      - bonds
+    FraxBondSummaryItem:
+      type: object
+      properties:
+        timestampISO:
+          format: date-time
+          type: string
+        fxbData:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/FraxBondSummaryItemData'
+      required:
+      - timestampISO
+      - fxbData
+    FraxBondAuctionDetailResponse:
+      type: object
+      properties:
+        fxb:
+          $ref: '#/components/schemas/FraxBondInfo'
+        auction:
+          $ref: '#/components/schemas/FraxBondAuctionInfo'
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxBondTransaction'
+      required:
+      - fxb
+      - auction
+      - transactions
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

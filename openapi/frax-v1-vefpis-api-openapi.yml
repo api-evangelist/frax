@@ -61,19 +61,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    LockedVefpisStakeBucketAggregate:
-      type: object
-      properties:
-        _id:
-          type: string
-        count:
-          type: number
-        total:
-          type: number
-      required:
-      - _id
-      - count
-      - total
     VefpisItem:
       type: object
       properties:
@@ -120,6 +107,19 @@ components:
       required:
       - full_items
       - chartjs
+    LockedVefpisStakeBucketAggregate:
+      type: object
+      properties:
+        _id:
+          type: string
+        count:
+          type: number
+        total:
+          type: number
+      required:
+      - _id
+      - count
+      - total
     LockedVeFPISDataResponse:
       type: object
       properties:

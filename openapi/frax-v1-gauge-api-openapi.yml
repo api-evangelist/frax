@@ -52,43 +52,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    GaugeVoterInfoResponse:
-      type: object
-      properties:
-        address:
-          type: string
-        votes:
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeVoteDTO'
-        pct_weight_used:
-          type: number
-      required:
-      - address
-      - votes
-      - pct_weight_used
-    GaugeVoteDTO:
-      type: object
-      properties:
-        gauge_address:
-          type: string
-        gauge_name:
-          type: string
-        vefxs_represented:
-          type: number
-        weight:
-          type: number
-        weight_pct:
-          type: number
-        last_vote_timestamp:
-          type: number
-      required:
-      - gauge_address
-      - gauge_name
-      - vefxs_represented
-      - weight
-      - weight_pct
-      - last_vote_timestamp
     GaugeSlice:
       type: object
       properties:
@@ -123,6 +86,43 @@ components:
       - relative_weight_next_pct
       - fxs_now
       - fxs_next
+    GaugeVoteDTO:
+      type: object
+      properties:
+        gauge_address:
+          type: string
+        gauge_name:
+          type: string
+        vefxs_represented:
+          type: number
+        weight:
+          type: number
+        weight_pct:
+          type: number
+        last_vote_timestamp:
+          type: number
+      required:
+      - gauge_address
+      - gauge_name
+      - vefxs_represented
+      - weight
+      - weight_pct
+      - last_vote_timestamp
+    GaugeVoterInfoResponse:
+      type: object
+      properties:
+        address:
+          type: string
+        votes:
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeVoteDTO'
+        pct_weight_used:
+          type: number
+      required:
+      - address
+      - votes
+      - pct_weight_used
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

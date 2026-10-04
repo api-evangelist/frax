@@ -88,54 +88,6 @@ paths:
       - v2-frxusd
 components:
   schemas:
-    FrxusdSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of frxUSD summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxusdSummaryInfo'
-      required:
-      - items
-    FrxusdBalanceSheetLatestResponse:
-      type: object
-      properties:
-        asOfBlock:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        asOfTimestamp:
-          format: date-time
-          type: string
-        tokenPriceUsd:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        totalAssets:
-          type: number
-        totalLiabilities:
-          type: number
-        assets:
-          description: List of frxUSD balance sheet assets.
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxusdBalanceSheetItem'
-        liabilities:
-          description: List of frxUSD balance sheet liabilities.
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxusdBalanceSheetItem'
-      required:
-      - asOfBlock
-      - asOfTimestamp
-      - tokenPriceUsd
-      - totalAssets
-      - totalLiabilities
-      - assets
-      - liabilities
     FrxusdSummaryInfo:
       type: object
       properties:
@@ -218,6 +170,54 @@ components:
       - tokenQuantity
       - tokenQuantityE18
       - description
+    FrxusdSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of frxUSD summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdSummaryInfo'
+      required:
+      - items
+    FrxusdBalanceSheetLatestResponse:
+      type: object
+      properties:
+        asOfBlock:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        asOfTimestamp:
+          format: date-time
+          type: string
+        tokenPriceUsd:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        totalAssets:
+          type: number
+        totalLiabilities:
+          type: number
+        assets:
+          description: List of frxUSD balance sheet assets.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdBalanceSheetItem'
+        liabilities:
+          description: List of frxUSD balance sheet liabilities.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxusdBalanceSheetItem'
+      required:
+      - asOfBlock
+      - asOfTimestamp
+      - tokenPriceUsd
+      - totalAssets
+      - totalLiabilities
+      - assets
+      - liabilities
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

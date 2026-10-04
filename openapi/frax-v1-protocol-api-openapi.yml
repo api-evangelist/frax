@@ -108,6 +108,21 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CombinedDataResponse:
+      type: object
+      properties: {}
+    PriceHistoryPack:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollateralItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
     ChartJSDataPackV2:
       type: object
       properties:
@@ -127,18 +142,31 @@ components:
       - lending
       - liquidity
       - combined
-    AMODataResponse:
+    AMOAllocationsResponse:
       type: object
       properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/AMODataItemV2'
-        chartjs:
-          $ref: '#/components/schemas/ChartJSDataPackV2'
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        curve:
+          type: object
+        investor:
+          type: object
+        lending:
+          type: object
+        liquidity:
+          type: object
+        combined:
+          type: object
       required:
-      - full_items
-      - chartjs
+      - blockNum
+      - timestamp
+      - curve
+      - investor
+      - lending
+      - liquidity
+      - combined
     CollateralItem:
       type: object
       properties:
@@ -158,6 +186,18 @@ components:
       - decentralization_ratio
       - ratio
       - total_dollar_value
+    AMODataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AMODataItemV2'
+        chartjs:
+          $ref: '#/components/schemas/ChartJSDataPackV2'
+      required:
+      - full_items
+      - chartjs
     AMODataItemV2:
       type: object
       properties:
@@ -186,9 +226,6 @@ components:
       - lending
       - liquidity
       - combined
-    CombinedDataResponse:
-      type: object
-      properties: {}
     CollateralDataResponse:
       type: object
       properties:
@@ -199,43 +236,6 @@ components:
       required:
       - history
       - pie_data
-    AMOAllocationsResponse:
-      type: object
-      properties:
-        blockNum:
-          type: number
-        timestamp:
-          type: number
-        curve:
-          type: object
-        investor:
-          type: object
-        lending:
-          type: object
-        liquidity:
-          type: object
-        combined:
-          type: object
-      required:
-      - blockNum
-      - timestamp
-      - curve
-      - investor
-      - lending
-      - liquidity
-      - combined
-    PriceHistoryPack:
-      type: object
-      properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollateralItem'
-        chartjs:
-          type: object
-      required:
-      - full_items
-      - chartjs
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs
