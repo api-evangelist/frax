@@ -30,3 +30,18 @@ plans:
       requests: null
       period: null
       notes: No publicly documented rate limits; Cloudflare edge protection in place
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units:
+  - period
+  plans:
+  - name: Public (Free)
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - period
+    periods: []
