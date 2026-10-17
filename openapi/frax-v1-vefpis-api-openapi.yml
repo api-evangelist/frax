@@ -25,7 +25,7 @@ paths:
                 $ref: '#/components/schemas/LockedVeFPISDataResponse'
       tags:
       - v1-vefpis
-      summary: V1 controller get locked ve FPIS data
+      summary: V1Controller get locked ve FPIS data
       x-summary-source: derived
   /v1/vefpisdata/{filter}:
     get:
@@ -57,7 +57,7 @@ paths:
                 $ref: '#/components/schemas/VefpisDataResponse'
       tags:
       - v1-vefpis
-      summary: V1 controller get ve FPIS data
+      summary: V1Controller get ve FPIS data
       x-summary-source: derived
 components:
   schemas:

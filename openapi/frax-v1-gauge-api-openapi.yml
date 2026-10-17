@@ -27,7 +27,7 @@ paths:
                   $ref: '#/components/schemas/GaugeSlice'
       tags:
       - v1-gauge
-      summary: V1 controller get gauge info
+      summary: V1Controller get gauge info
       x-summary-source: derived
   /v1/gauge/voter-info/{address}:
     get:
@@ -48,10 +48,25 @@ paths:
                 $ref: '#/components/schemas/GaugeVoterInfoResponse'
       tags:
       - v1-gauge
-      summary: V1 controller get gauge voter info
+      summary: V1Controller get gauge voter info
       x-summary-source: derived
 components:
   schemas:
+    GaugeVoterInfoResponse:
+      type: object
+      properties:
+        address:
+          type: string
+        votes:
+          type: array
+          items:
+            $ref: '#/components/schemas/GaugeVoteDTO'
+        pct_weight_used:
+          type: number
+      required:
+      - address
+      - votes
+      - pct_weight_used
     GaugeSlice:
       type: object
       properties:
@@ -108,21 +123,6 @@ components:
       - weight
       - weight_pct
       - last_vote_timestamp
-    GaugeVoterInfoResponse:
-      type: object
-      properties:
-        address:
-          type: string
-        votes:
-          type: array
-          items:
-            $ref: '#/components/schemas/GaugeVoteDTO'
-        pct_weight_used:
-          type: number
-      required:
-      - address
-      - votes
-      - pct_weight_used
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

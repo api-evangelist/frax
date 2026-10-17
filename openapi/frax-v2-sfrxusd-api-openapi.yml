@@ -88,16 +88,6 @@ paths:
       - v2-sfrxusd
 components:
   schemas:
-    SfrxusdSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of sfrxUSD summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxusdSummaryInfo'
-      required:
-      - items
     SfrxusdBalanceSheetItem:
       type: object
       properties:
@@ -157,6 +147,16 @@ components:
       - tokenQuantity
       - tokenQuantityE18
       - description
+    SfrxusdSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of sfrxUSD summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxusdSummaryInfo'
+      required:
+      - items
     SfrxusdBalanceSheetLatestResponse:
       type: object
       properties:

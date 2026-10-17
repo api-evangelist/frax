@@ -309,6 +309,77 @@ paths:
       - v2-frxeth
 components:
   schemas:
+    FrxethStakingRewardCyclesResponse:
+      type: object
+      properties:
+        summary:
+          $ref: '#/components/schemas/FrxethStakingRewardCyclesSummary'
+        cycles:
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxethStakingRewardCycle'
+      required:
+      - summary
+      - cycles
+    FrxethUserRedemptionTransaction:
+      type: object
+      properties:
+        chain:
+          type: string
+          enum:
+          - ethereum
+        transactionHash:
+          type: string
+        blockNumber:
+          type: number
+        transactionTimestamp:
+          format: date-time
+          type: string
+        contractAddress:
+          type: string
+        logIndex:
+          type: number
+        nftTokenId:
+          type: number
+        transactionType:
+          type: string
+          enum:
+          - enter
+          - redeem
+          - redeem_early
+          - transfer_out
+          - transfer_in
+        amount:
+          type: number
+        callerAddress:
+          type: string
+        ownerAddress:
+          type: string
+        receiverAddress:
+          type: string
+      required:
+      - chain
+      - transactionHash
+      - blockNumber
+      - transactionTimestamp
+      - contractAddress
+      - logIndex
+      - nftTokenId
+      - transactionType
+      - amount
+      - callerAddress
+      - ownerAddress
+      - receiverAddress
+    FrxethSummaryInfoResponse:
+      type: object
+      properties:
+        items:
+          description: List of frxETH and sfrxETH summary info.
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxethSummaryInfo'
+      required:
+      - items
     FrxethRedemptionTicketListResponse:
       type: object
       properties:
@@ -371,150 +442,6 @@ components:
       - ownerAddress
       - receiverAddress
       - amountE18
-    FrxethSummaryInfoResponse:
-      type: object
-      properties:
-        items:
-          description: List of frxETH and sfrxETH summary info.
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxethSummaryInfo'
-      required:
-      - items
-    FrxethUserRedemptionTicketWithTransactions:
-      type: object
-      properties:
-        chain:
-          type: string
-          enum:
-          - ethereum
-        contractAddress:
-          type: string
-        nftTokenId:
-          type: number
-        createdAt:
-          format: date-time
-          type: string
-        maturesAt:
-          format: date-time
-          type: string
-        redeemedAt:
-          format: date-time
-          type:
-          - string
-          - 'null'
-        amountIn:
-          type: number
-        fee:
-          type: number
-        penalty:
-          type: number
-        amountOut:
-          type: number
-        callerAddress:
-          type: string
-        ownerAddress:
-          type: string
-        receiverAddress:
-          type: string
-        amountE18:
-          type: string
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxethUserRedemptionTransaction'
-      required:
-      - chain
-      - contractAddress
-      - nftTokenId
-      - createdAt
-      - maturesAt
-      - redeemedAt
-      - amountIn
-      - fee
-      - penalty
-      - amountOut
-      - callerAddress
-      - ownerAddress
-      - receiverAddress
-      - amountE18
-      - transactions
-    SfrxethUserDailyEarningsItem:
-      type: object
-      properties:
-        timestamp:
-          format: date-time
-          type: string
-        timestampSec:
-          type: number
-        eodSfrxethBalanceTotal:
-          type: number
-        eodSfrxethBalanceBreakdown:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-        earnings:
-          type: number
-      required:
-      - timestamp
-      - timestampSec
-      - eodSfrxethBalanceTotal
-      - eodSfrxethBalanceBreakdown
-      - earnings
-    SfrxethUserBalanceSummary:
-      type: object
-      properties:
-        sfrxethBalanceE18:
-          type: string
-        sfrxethBalanceDec:
-          type: number
-        balanceBreakdownE18:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: string
-        balanceBreakdownDec:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-      required:
-      - sfrxethBalanceE18
-      - sfrxethBalanceDec
-      - balanceBreakdownE18
-      - balanceBreakdownDec
-    FrxethCurveLpSummaryInfo:
-      type: object
-      properties:
-        price:
-          type: number
-        virtualPrice:
-          type: number
-        ratio:
-          type: number
-        lpSupply:
-          type: number
-        frxethBalance:
-          type: number
-        otherTokenBalance:
-          type: number
-        aprTotal:
-          type: number
-        aprBreakdown:
-          type: object
-          additionalProperties:
-            oneOf:
-            - type: number
-      required:
-      - price
-      - virtualPrice
-      - ratio
-      - lpSupply
-      - frxethBalance
-      - otherTokenBalance
-      - aprTotal
-      - aprBreakdown
     FrxethCollateralResponse:
       type: object
       properties:
@@ -540,19 +467,6 @@ components:
       - updatedAtTimestampSec
       - assets
       - liabilities
-    FrxethStakingRewardBreakdown:
-      type: object
-      properties:
-        sfrxeth:
-          type: number
-        protocol:
-          type: number
-        insurance:
-          type: number
-      required:
-      - sfrxeth
-      - protocol
-      - insurance
     FrxethSummaryInfo:
       type: object
       properties:
@@ -653,16 +567,28 @@ components:
       - cumulativeBlocksProduced
       - ethPriceUsd
       - otherLsdExchangeRates
-    ListValidatorsResponse:
+    SfrxethUserBalanceSummary:
       type: object
       properties:
-        validators:
-          description: List of validators.
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidatorInfo'
+        sfrxethBalanceE18:
+          type: string
+        sfrxethBalanceDec:
+          type: number
+        balanceBreakdownE18:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: string
+        balanceBreakdownDec:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
       required:
-      - validators
+      - sfrxethBalanceE18
+      - sfrxethBalanceDec
+      - balanceBreakdownE18
+      - balanceBreakdownDec
     FrxethDiversityResponse:
       type: object
       properties:
@@ -675,35 +601,48 @@ components:
       required:
       - countryDistributionPerc
       - consensusClientDistributionPerc
-    FrxethUserRedemptionTransaction:
+    SfrxethUserSummaryResponse:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        positionSummary:
+          $ref: '#/components/schemas/SfrxethUserPositionSummary'
+        balanceSummary:
+          $ref: '#/components/schemas/SfrxethUserBalanceSummary'
+      required:
+      - userAddress
+      - positionSummary
+      - balanceSummary
+    FrxethUserRedemptionTicketWithTransactions:
       type: object
       properties:
         chain:
           type: string
           enum:
           - ethereum
-        transactionHash:
-          type: string
-        blockNumber:
-          type: number
-        transactionTimestamp:
-          format: date-time
-          type: string
         contractAddress:
           type: string
-        logIndex:
-          type: number
         nftTokenId:
           type: number
-        transactionType:
+        createdAt:
+          format: date-time
           type: string
-          enum:
-          - enter
-          - redeem
-          - redeem_early
-          - transfer_out
-          - transfer_in
-        amount:
+        maturesAt:
+          format: date-time
+          type: string
+        redeemedAt:
+          format: date-time
+          type:
+          - string
+          - 'null'
+        amountIn:
+          type: number
+        fee:
+          type: number
+        penalty:
+          type: number
+        amountOut:
           type: number
         callerAddress:
           type: string
@@ -711,60 +650,107 @@ components:
           type: string
         receiverAddress:
           type: string
+        amountE18:
+          type: string
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxethUserRedemptionTransaction'
       required:
       - chain
-      - transactionHash
-      - blockNumber
-      - transactionTimestamp
       - contractAddress
-      - logIndex
       - nftTokenId
-      - transactionType
-      - amount
+      - createdAt
+      - maturesAt
+      - redeemedAt
+      - amountIn
+      - fee
+      - penalty
+      - amountOut
       - callerAddress
       - ownerAddress
       - receiverAddress
-    SfrxethUserLot:
+      - amountE18
+      - transactions
+    FrxethRedemptionLatestStateResponse:
       type: object
       properties:
-        blockNumber:
+        ethInContract:
           type: number
+        frxethInContract:
+          type: number
+        ethLiabilities:
+          type: number
+        unclaimedFees:
+          type: number
+        nextNftId:
+          type: number
+        queueLengthSec:
+          type: number
+        earlyExitPenaltyPerc:
+          type: number
+        redemptionFeePerc:
+          type: number
+      required:
+      - ethInContract
+      - frxethInContract
+      - ethLiabilities
+      - unclaimedFees
+      - nextNftId
+      - queueLengthSec
+      - earlyExitPenaltyPerc
+      - redemptionFeePerc
+    SfrxethUserDailyEarningsItem:
+      type: object
+      properties:
         timestamp:
           format: date-time
           type: string
         timestampSec:
           type: number
-        quantitySfrxethOriginal:
+        eodSfrxethBalanceTotal:
           type: number
-        quantitySfrxethRemaining:
-          type: number
-        unitCostUsd:
-          type: number
-        unitCostFrxeth:
-          type: number
-        realizedMarketValueUsd:
-          type: number
-        realizedMarketValueFrxeth:
-          type: number
-        unrealizedMarketValueUsd:
-          type: number
-        unrealizedMarketValueFrxeth:
-          type: number
-        unrealizedFrxethGain:
+        eodSfrxethBalanceBreakdown:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
+        earnings:
           type: number
       required:
-      - blockNumber
       - timestamp
       - timestampSec
-      - quantitySfrxethOriginal
-      - quantitySfrxethRemaining
-      - unitCostUsd
-      - unitCostFrxeth
-      - realizedMarketValueUsd
-      - realizedMarketValueFrxeth
-      - unrealizedMarketValueUsd
-      - unrealizedMarketValueFrxeth
-      - unrealizedFrxethGain
+      - eodSfrxethBalanceTotal
+      - eodSfrxethBalanceBreakdown
+      - earnings
+    SfrxethUserPositionSummary:
+      type: object
+      properties:
+        latestUnitPriceUsd:
+          type: number
+        latestUnitPriceFrxeth:
+          type: number
+        latestPriceAsOfTimestamp:
+          format: date-time
+          type: string
+        totalUnrealizedFrxethBasis:
+          type: number
+        totalUnrealizedFrxethValue:
+          type: number
+        totalUnrealizedFrxethGain:
+          type: number
+        lots:
+          type: array
+          items:
+            $ref: '#/components/schemas/SfrxethUserLot'
+      required:
+      - latestUnitPriceUsd
+      - latestUnitPriceFrxeth
+      - latestPriceAsOfTimestamp
+      - totalUnrealizedFrxethBasis
+      - totalUnrealizedFrxethValue
+      - totalUnrealizedFrxethGain
+      - lots
     ValidatorInfo:
       type: object
       properties:
@@ -841,58 +827,95 @@ components:
       - blocksProposed
       - feesReceived
       - estimatedActivationTimestamp
-    SfrxethUserDailyEarningsResponse:
+    FrxethCurveLpSummaryInfo:
       type: object
       properties:
-        userAddress:
-          type: string
-        dailyData:
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxethUserDailyEarningsItem'
+        price:
+          type: number
+        virtualPrice:
+          type: number
+        ratio:
+          type: number
+        lpSupply:
+          type: number
+        frxethBalance:
+          type: number
+        otherTokenBalance:
+          type: number
+        aprTotal:
+          type: number
+        aprBreakdown:
+          type: object
+          additionalProperties:
+            oneOf:
+            - type: number
       required:
-      - userAddress
-      - dailyData
-    FrxethCollateralItem:
+      - price
+      - virtualPrice
+      - ratio
+      - lpSupply
+      - frxethBalance
+      - otherTokenBalance
+      - aprTotal
+      - aprBreakdown
+    SfrxethUserLot:
       type: object
       properties:
-        key:
-          type: string
-        name:
-          type: string
-        ownerAddress:
-          type: string
-        tokenName:
-          type: string
-        tokenAddress:
-          type: string
-        priceInEth:
+        blockNumber:
           type: number
-        amount:
+        timestamp:
+          format: date-time
+          type: string
+        timestampSec:
           type: number
-        valueInEth:
+        quantitySfrxethOriginal:
+          type: number
+        quantitySfrxethRemaining:
+          type: number
+        unitCostUsd:
+          type: number
+        unitCostFrxeth:
+          type: number
+        realizedMarketValueUsd:
+          type: number
+        realizedMarketValueFrxeth:
+          type: number
+        unrealizedMarketValueUsd:
+          type: number
+        unrealizedMarketValueFrxeth:
+          type: number
+        unrealizedFrxethGain:
           type: number
       required:
-      - key
-      - name
-      - ownerAddress
-      - tokenName
-      - tokenAddress
-      - priceInEth
-      - amount
-      - valueInEth
-    FrxethUserRedemptionsSummaryResponse:
+      - blockNumber
+      - timestamp
+      - timestampSec
+      - quantitySfrxethOriginal
+      - quantitySfrxethRemaining
+      - unitCostUsd
+      - unitCostFrxeth
+      - realizedMarketValueUsd
+      - realizedMarketValueFrxeth
+      - unrealizedMarketValueUsd
+      - unrealizedMarketValueFrxeth
+      - unrealizedFrxethGain
+    FrxethStakingRewardCyclesSummary:
       type: object
       properties:
-        userAddress:
+        totalCycles:
+          type: number
+        latestCycleStartTimestamp:
+          format: date-time
           type: string
-        tickets:
-          type: array
-          items:
-            $ref: '#/components/schemas/FrxethUserRedemptionTicketWithTransactions'
+        cumulativeAmount:
+          type: number
+        cumulativeAmountBreakdown:
+          $ref: '#/components/schemas/FrxethStakingRewardBreakdown'
       required:
-      - userAddress
-      - tickets
+      - totalCycles
+      - latestCycleStartTimestamp
+      - cumulativeAmount
+      - cumulativeAmountBreakdown
     FrxethStakingRewardCycle:
       type: object
       properties:
@@ -929,104 +952,81 @@ components:
       - txTimestamp
       - totalAmount
       - amountBreakdown
-    FrxethStakingRewardCyclesSummary:
+    FrxethStakingRewardBreakdown:
       type: object
       properties:
-        totalCycles:
+        sfrxeth:
           type: number
-        latestCycleStartTimestamp:
-          format: date-time
+        protocol:
+          type: number
+        insurance:
+          type: number
+      required:
+      - sfrxeth
+      - protocol
+      - insurance
+    FrxethCollateralItem:
+      type: object
+      properties:
+        key:
           type: string
-        cumulativeAmount:
-          type: number
-        cumulativeAmountBreakdown:
-          $ref: '#/components/schemas/FrxethStakingRewardBreakdown'
-      required:
-      - totalCycles
-      - latestCycleStartTimestamp
-      - cumulativeAmount
-      - cumulativeAmountBreakdown
-    SfrxethUserPositionSummary:
-      type: object
-      properties:
-        latestUnitPriceUsd:
-          type: number
-        latestUnitPriceFrxeth:
-          type: number
-        latestPriceAsOfTimestamp:
-          format: date-time
+        name:
           type: string
-        totalUnrealizedFrxethBasis:
+        ownerAddress:
+          type: string
+        tokenName:
+          type: string
+        tokenAddress:
+          type: string
+        priceInEth:
           type: number
-        totalUnrealizedFrxethValue:
+        amount:
           type: number
-        totalUnrealizedFrxethGain:
-          type: number
-        lots:
-          type: array
-          items:
-            $ref: '#/components/schemas/SfrxethUserLot'
-      required:
-      - latestUnitPriceUsd
-      - latestUnitPriceFrxeth
-      - latestPriceAsOfTimestamp
-      - totalUnrealizedFrxethBasis
-      - totalUnrealizedFrxethValue
-      - totalUnrealizedFrxethGain
-      - lots
-    FrxethRedemptionLatestStateResponse:
-      type: object
-      properties:
-        ethInContract:
-          type: number
-        frxethInContract:
-          type: number
-        ethLiabilities:
-          type: number
-        unclaimedFees:
-          type: number
-        nextNftId:
-          type: number
-        queueLengthSec:
-          type: number
-        earlyExitPenaltyPerc:
-          type: number
-        redemptionFeePerc:
+        valueInEth:
           type: number
       required:
-      - ethInContract
-      - frxethInContract
-      - ethLiabilities
-      - unclaimedFees
-      - nextNftId
-      - queueLengthSec
-      - earlyExitPenaltyPerc
-      - redemptionFeePerc
-    SfrxethUserSummaryResponse:
+      - key
+      - name
+      - ownerAddress
+      - tokenName
+      - tokenAddress
+      - priceInEth
+      - amount
+      - valueInEth
+    SfrxethUserDailyEarningsResponse:
       type: object
       properties:
         userAddress:
           type: string
-        positionSummary:
-          $ref: '#/components/schemas/SfrxethUserPositionSummary'
-        balanceSummary:
-          $ref: '#/components/schemas/SfrxethUserBalanceSummary'
-      required:
-      - userAddress
-      - positionSummary
-      - balanceSummary
-    FrxethStakingRewardCyclesResponse:
-      type: object
-      properties:
-        summary:
-          $ref: '#/components/schemas/FrxethStakingRewardCyclesSummary'
-        cycles:
+        dailyData:
           type: array
           items:
-            $ref: '#/components/schemas/FrxethStakingRewardCycle'
+            $ref: '#/components/schemas/SfrxethUserDailyEarningsItem'
       required:
-      - summary
-      - cycles
+      - userAddress
+      - dailyData
+    ListValidatorsResponse:
+      type: object
+      properties:
+        validators:
+          description: List of validators.
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidatorInfo'
+      required:
+      - validators
+    FrxethUserRedemptionsSummaryResponse:
+      type: object
+      properties:
+        userAddress:
+          type: string
+        tickets:
+          type: array
+          items:
+            $ref: '#/components/schemas/FrxethUserRedemptionTicketWithTransactions'
+      required:
+      - userAddress
+      - tickets
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

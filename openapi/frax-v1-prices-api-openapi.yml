@@ -25,7 +25,7 @@ paths:
                 $ref: '#/components/schemas/CoinStatsResponse'
       tags:
       - v1-prices
-      summary: V1 controller get coin stats
+      summary: V1Controller get coin stats
       x-summary-source: derived
   /v1/priceitems/circulating-fxs-details:
     get:
@@ -40,7 +40,7 @@ paths:
                 $ref: '#/components/schemas/FxsSupplyBreakdownResponse'
       tags:
       - v1-prices
-      summary: V1 controller get circulating fxs details
+      summary: V1Controller get circulating fxs details
       x-summary-source: derived
   /v1/priceitems/circulating-fpis-details:
     get:
@@ -55,7 +55,7 @@ paths:
                 $ref: '#/components/schemas/FpisSupplyBreakdownResponse'
       tags:
       - v1-prices
-      summary: V1 controller get circulating fpis details
+      summary: V1Controller get circulating fpis details
       x-summary-source: derived
   /v1/priceitems/daily-coin-stats/{coinType}:
     get:
@@ -83,7 +83,7 @@ paths:
                 $ref: '#/components/schemas/DailyCoinDataResponse'
       tags:
       - v1-prices
-      summary: V1 controller get daily coin stats
+      summary: V1Controller get daily coin stats
       x-summary-source: derived
   /v1/priceitems/total-supply/{coinType}:
     get:
@@ -111,7 +111,7 @@ paths:
                 type: string
       tags:
       - v1-prices
-      summary: V1 controller get coin total supply
+      summary: V1Controller get coin total supply
       x-summary-source: derived
   /v1/priceitems/circulating-supply/{coinType}:
     get:
@@ -139,7 +139,7 @@ paths:
                 type: string
       tags:
       - v1-prices
-      summary: V1 controller get coin circulating supply
+      summary: V1Controller get coin circulating supply
       x-summary-source: derived
   /v1/priceitems/{filter}:
     get:
@@ -171,69 +171,22 @@ paths:
                 $ref: '#/components/schemas/PriceItemsResponse'
       tags:
       - v1-prices
-      summary: V1 controller get price items
+      summary: V1Controller get price items
       x-summary-source: derived
 components:
   schemas:
-    CoinStatsResponse:
+    DailyCoinDataResponse:
       type: object
       properties:
-        FPI:
-          $ref: '#/components/schemas/PriceHistoryItemDTO'
-        FPIS:
-          $ref: '#/components/schemas/PriceHistoryItemDTO'
-        FRAX:
-          $ref: '#/components/schemas/PriceHistoryItemDTO'
-        FXS:
-          $ref: '#/components/schemas/PriceHistoryItemDTO'
-        frxETH:
-          $ref: '#/components/schemas/PriceHistoryItemDTO'
-        sfrxETH:
-          $ref: '#/components/schemas/PriceHistoryItemDTO'
-        Collateral:
-          $ref: '#/components/schemas/CollateralPriceInfoDTO'
-      required:
-      - FPI
-      - FPIS
-      - FRAX
-      - FXS
-      - frxETH
-      - sfrxETH
-      - Collateral
-    FpisSupplyBreakdownResponse:
-      type: object
-      properties:
-        supply:
-          type: number
-        circulatingSupply:
-          type: number
-        balanceBreakdown:
+        coin:
+          type: string
+        data:
           type: array
           items:
-            $ref: '#/components/schemas/BalanceBreakdownDTO'
+            $ref: '#/components/schemas/DailyCoinDataDTO'
       required:
-      - supply
-      - circulatingSupply
-      - balanceBreakdown
-    CollateralPriceInfoDTO:
-      type: object
-      properties:
-        blockNum:
-          type: number
-        timestamp:
-          type: number
-        ratio:
-          type: number
-        total_dollar_value:
-          type: number
-        decentralization_ratio:
-          type: number
-      required:
-      - blockNum
-      - timestamp
-      - ratio
-      - total_dollar_value
-      - decentralization_ratio
+      - coin
+      - data
     BalanceBreakdownDTO:
       type: object
       properties:
@@ -278,7 +231,7 @@ components:
       - market_cap
       - circulating_market_cap
       - fxs_burned_cumulative_sum
-    FxsSupplyBreakdownResponse:
+    FpisSupplyBreakdownResponse:
       type: object
       properties:
         supply:
@@ -293,18 +246,50 @@ components:
       - supply
       - circulatingSupply
       - balanceBreakdown
-    DailyCoinDataResponse:
+    CoinStatsResponse:
       type: object
       properties:
-        coin:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/DailyCoinDataDTO'
+        FPI:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        FPIS:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        FRAX:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        FXS:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        frxETH:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        sfrxETH:
+          $ref: '#/components/schemas/PriceHistoryItemDTO'
+        Collateral:
+          $ref: '#/components/schemas/CollateralPriceInfoDTO'
       required:
-      - coin
-      - data
+      - FPI
+      - FPIS
+      - FRAX
+      - FXS
+      - frxETH
+      - sfrxETH
+      - Collateral
+    CollateralPriceInfoDTO:
+      type: object
+      properties:
+        blockNum:
+          type: number
+        timestamp:
+          type: number
+        ratio:
+          type: number
+        total_dollar_value:
+          type: number
+        decentralization_ratio:
+          type: number
+      required:
+      - blockNum
+      - timestamp
+      - ratio
+      - total_dollar_value
+      - decentralization_ratio
     DailyCoinDataDTO:
       type: object
       properties:
@@ -327,18 +312,21 @@ components:
       - marketCap
       - circulatingSupply
       - circulatingMarketCap
-    PriceHistoryDTO:
+    FxsSupplyBreakdownResponse:
       type: object
       properties:
-        full_items:
+        supply:
+          type: number
+        circulatingSupply:
+          type: number
+        balanceBreakdown:
           type: array
           items:
-            $ref: '#/components/schemas/PriceHistoryItemDTO'
-        chartjs:
-          type: object
+            $ref: '#/components/schemas/BalanceBreakdownDTO'
       required:
-      - full_items
-      - chartjs
+      - supply
+      - circulatingSupply
+      - balanceBreakdown
     PriceItemsResponse:
       type: object
       properties:
@@ -361,6 +349,18 @@ components:
       - fxs
       - frxeth
       - sfrxeth
+    PriceHistoryDTO:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceHistoryItemDTO'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

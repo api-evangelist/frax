@@ -716,94 +716,26 @@ components:
       - liquidityTransactionCount24H
       - liquidityTransactionCount7D
       - liquidityTransactionCountAllTime
-    FraxswapDailyChainData:
+    FraxswapDailyTokenDataResponse:
       type: object
       properties:
-        intervalTimestamp:
-          type: number
-          description: The 24-hour period starting time (UTC).
-        addVolumeUsdAmount:
-          type: number
-          description: Amount of liquidity added (USD).
-        removeVolumeUsdAmount:
-          type: number
-          description: Amount of liquidity removed (USD).
-        feeUsdAmount:
-          type: number
-          description: Amount of fees (USD).
-        liquidityTransactionCount:
-          type: number
-          description: The number of transactions where liquidity was added or removed.
-        swapTransactionCount:
-          type: number
-          description: The number of transactions where tokens were swapped/exchanged.
-        swapVolumeUsdAmount:
-          type: number
-          description: Total dollar-amount traded (USD).
-        chain:
-          type: string
-          description: The name of the blockchain/network.
-          enum:
-          - arbitrum
-          - aurora
-          - avalanche
-          - boba
-          - bsc
-          - ethereum
-          - fantom
-          - fraxtal
-          - fraxtal_testnet
-          - harmony
-          - holesky
-          - moonbeam
-          - moonriver
-          - optimism
-          - polygon
-          - polygon_zkevm
-          - solana
-          - stable
-          - zksync
-        liquidityUsdAmount:
-          type: number
-          description: The total dollar value locked in the pool (USD).
-      required:
-      - intervalTimestamp
-      - addVolumeUsdAmount
-      - removeVolumeUsdAmount
-      - feeUsdAmount
-      - liquidityTransactionCount
-      - swapTransactionCount
-      - swapVolumeUsdAmount
-      - chain
-      - liquidityUsdAmount
-    FraxswapTwammOrdersResponse:
-      type: object
-      properties:
-        orders:
-          description: Array of TWAMM orders.
+        items:
+          description: Array containing daily token data.
           type: array
           items:
-            $ref: '#/components/schemas/FraxswapTwammOrder'
-    FraxswapTwammOrderTransaction:
+            $ref: '#/components/schemas/FraxswapDailyTokenData'
+      required:
+      - items
+    FraxswapDailyChainDataResponse:
       type: object
       properties:
-        transactionHash:
-          type: string
-        timestamp:
-          format: date-time
-          type: string
-        transactionType:
-          type: string
-        token0Quantity:
-          type: number
-        token1Quantity:
-          type: number
+        items:
+          description: Array containing daily chain/network data.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxswapDailyChainData'
       required:
-      - transactionHash
-      - timestamp
-      - transactionType
-      - token0Quantity
-      - token1Quantity
+      - items
     FraxswapTwammOrderDailyHistoryTokenStatsDto:
       type: object
       properties:
@@ -826,9 +758,46 @@ components:
       - remaining
       - sold
       - bought
-    FraxswapTwammOrder:
+    FraxswapTransaction:
       type: object
       properties:
+        transactionHash:
+          type: string
+        transactionType:
+          type: string
+        transactionTimestamp:
+          format: date-time
+          type: string
+        blockNumber:
+          type: number
+        userAddress:
+          type: string
+        poolAddress:
+          type: string
+        token0Address:
+          type: string
+        token1Address:
+          type: string
+        contractAddress:
+          type: string
+        token0DeltaAmount:
+          type: number
+          description: The change in quantity of token0. If being swapped from, this value would be negative.
+        token1DeltaAmount:
+          type: number
+          description: The change in quantity of token1. If being swapped from, this value would be negative.
+        globalSequence:
+          type: number
+          description: A unique identifier used as a cursor during API pagination requests.
+        token0UsdAmount:
+          type: number
+          description: The dollar-value of token0 being swapped (USD).
+        token1UsdAmount:
+          type: number
+          description: The dollar-value of token1 being swapped (USD).
+        feeUsdAmount:
+          type: number
+          description: The dollar-value of the fees charged for this transaction (USD).
         chain:
           type: string
           description: The name of the blockchain/network.
@@ -852,113 +821,23 @@ components:
           - solana
           - stable
           - zksync
-        isOpen:
-          type: boolean
-        orderId:
-          type: number
-        poolId:
-          type: number
-          description: Internal unique identifier of a Fraxswap pool
-        poolAddress:
-          type: string
-        poolName:
-          type: string
-        userAddress:
-          type: string
-        status:
-          type: string
-        startAt:
-          format: date-time
-          type: string
-        endAt:
-          format: date-time
-          type: string
-        token0Symbol:
-          type: string
-        token0Address:
-          type: string
-        token0Collected:
-          type: number
-          description: The quantity of token 0 collected from the order. Can come from collecting proceeds periodically, or can return unconverted tokens if the order is canceled early.
-        token0RewardClaimable:
-          type:
-          - number
-          - 'null'
-          description: The quantity of token 0 that has been purchased and is claimable. Value is null when unknown.
-        token0RemainingToSell:
-          type:
-          - number
-          - 'null'
-          description: The quantity of token 0 that still needs to be sold. Value is null when unknown.
-        token0SwapAmount:
-          type: number
-          description: The original quantity of token 0 to swap over time.
-        token1Symbol:
-          type: string
-        token1Address:
-          type: string
-        token1Collected:
-          type: number
-          description: The quantity of token 1 collected from the order. Can come from collecting proceeds periodically, or can return unconverted tokens if the order is canceled early.
-        token1RewardClaimable:
-          type:
-          - number
-          - 'null'
-          description: The quantity of token 1 that has been purchased and is claimable. Value is null when unknown.
-        token1RemainingToSell:
-          type:
-          - number
-          - 'null'
-          description: The quantity of token 1 that still needs to be sold. Value is null when unknown.
-        token1SwapAmount:
-          type: number
-          description: The original quantity of token 1 to swap over time.
-        lastUpdatedAt:
-          format: date-time
-          type: string
-          description: The last time the on-chain data was synced to this API.
       required:
-      - chain
-      - isOpen
-      - orderId
-      - poolId
-      - poolAddress
-      - poolName
+      - transactionHash
+      - transactionType
+      - transactionTimestamp
+      - blockNumber
       - userAddress
-      - status
-      - startAt
-      - endAt
-      - token0Symbol
+      - poolAddress
       - token0Address
-      - token0Collected
-      - token0RewardClaimable
-      - token0RemainingToSell
-      - token0SwapAmount
-      - token1Symbol
       - token1Address
-      - token1Collected
-      - token1RewardClaimable
-      - token1RemainingToSell
-      - token1SwapAmount
-      - lastUpdatedAt
-    FraxswapDailyTokenDataResponse:
-      type: object
-      properties:
-        items:
-          description: Array containing daily token data.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxswapDailyTokenData'
-      required:
-      - items
-    FraxswapPoolsResponse:
-      type: object
-      properties:
-        pools:
-          description: Array of pools.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxswapPool'
+      - contractAddress
+      - token0DeltaAmount
+      - token1DeltaAmount
+      - globalSequence
+      - token0UsdAmount
+      - token1UsdAmount
+      - feeUsdAmount
+      - chain
     FraxswapTwammOrderDailyHistoryDto:
       type: object
       properties:
@@ -1131,6 +1010,121 @@ components:
       - token1Address
       - token1Symbol
       - items
+    FraxswapTwammOrder:
+      type: object
+      properties:
+        chain:
+          type: string
+          description: The name of the blockchain/network.
+          enum:
+          - arbitrum
+          - aurora
+          - avalanche
+          - boba
+          - bsc
+          - ethereum
+          - fantom
+          - fraxtal
+          - fraxtal_testnet
+          - harmony
+          - holesky
+          - moonbeam
+          - moonriver
+          - optimism
+          - polygon
+          - polygon_zkevm
+          - solana
+          - stable
+          - zksync
+        isOpen:
+          type: boolean
+        orderId:
+          type: number
+        poolId:
+          type: number
+          description: Internal unique identifier of a Fraxswap pool
+        poolAddress:
+          type: string
+        poolName:
+          type: string
+        userAddress:
+          type: string
+        status:
+          type: string
+        startAt:
+          format: date-time
+          type: string
+        endAt:
+          format: date-time
+          type: string
+        token0Symbol:
+          type: string
+        token0Address:
+          type: string
+        token0Collected:
+          type: number
+          description: The quantity of token 0 collected from the order. Can come from collecting proceeds periodically, or can return unconverted tokens if the order is canceled early.
+        token0RewardClaimable:
+          type:
+          - number
+          - 'null'
+          description: The quantity of token 0 that has been purchased and is claimable. Value is null when unknown.
+        token0RemainingToSell:
+          type:
+          - number
+          - 'null'
+          description: The quantity of token 0 that still needs to be sold. Value is null when unknown.
+        token0SwapAmount:
+          type: number
+          description: The original quantity of token 0 to swap over time.
+        token1Symbol:
+          type: string
+        token1Address:
+          type: string
+        token1Collected:
+          type: number
+          description: The quantity of token 1 collected from the order. Can come from collecting proceeds periodically, or can return unconverted tokens if the order is canceled early.
+        token1RewardClaimable:
+          type:
+          - number
+          - 'null'
+          description: The quantity of token 1 that has been purchased and is claimable. Value is null when unknown.
+        token1RemainingToSell:
+          type:
+          - number
+          - 'null'
+          description: The quantity of token 1 that still needs to be sold. Value is null when unknown.
+        token1SwapAmount:
+          type: number
+          description: The original quantity of token 1 to swap over time.
+        lastUpdatedAt:
+          format: date-time
+          type: string
+          description: The last time the on-chain data was synced to this API.
+      required:
+      - chain
+      - isOpen
+      - orderId
+      - poolId
+      - poolAddress
+      - poolName
+      - userAddress
+      - status
+      - startAt
+      - endAt
+      - token0Symbol
+      - token0Address
+      - token0Collected
+      - token0RewardClaimable
+      - token0RemainingToSell
+      - token0SwapAmount
+      - token1Symbol
+      - token1Address
+      - token1Collected
+      - token1RewardClaimable
+      - token1RemainingToSell
+      - token1SwapAmount
+      - lastUpdatedAt
     FraxswapTokensResponse:
       type: object
       properties:
@@ -1141,124 +1135,34 @@ components:
             $ref: '#/components/schemas/FraxswapToken'
       required:
       - tokens
-    FraxswapDailyTokenData:
+    FraxswapTwammOrderTransaction:
       type: object
       properties:
-        intervalTimestamp:
+        transactionHash:
+          type: string
+        timestamp:
+          format: date-time
+          type: string
+        transactionType:
+          type: string
+        token0Quantity:
           type: number
-          description: The 24-hour period starting time (UTC).
-        addVolumeUsdAmount:
+        token1Quantity:
           type: number
-          description: Amount of liquidity added (USD).
-        removeVolumeUsdAmount:
-          type: number
-          description: Amount of liquidity removed (USD).
-        feeUsdAmount:
-          type: number
-          description: Amount of fees (USD).
-        liquidityTransactionCount:
-          type: number
-          description: The number of transactions where liquidity was added or removed.
-        swapTransactionCount:
-          type: number
-          description: The number of transactions where tokens were swapped/exchanged.
-        swapVolumeUsdAmount:
-          type: number
-          description: Total dollar-amount traded (USD).
-        liquidityUsdAmount:
-          type: number
-          description: The total dollar value locked in the pool (USD).
-        tokenLockedAmount:
-          type: number
-          description: The quantity of tokens locked in the pool.
       required:
-      - intervalTimestamp
-      - addVolumeUsdAmount
-      - removeVolumeUsdAmount
-      - feeUsdAmount
-      - liquidityTransactionCount
-      - swapTransactionCount
-      - swapVolumeUsdAmount
-      - liquidityUsdAmount
-      - tokenLockedAmount
-    FraxswapDailyPoolDataResponse:
+      - transactionHash
+      - timestamp
+      - transactionType
+      - token0Quantity
+      - token1Quantity
+    FraxswapTwammOrdersResponse:
       type: object
       properties:
-        items:
-          description: Array containing daily pool data.
+        orders:
+          description: Array of TWAMM orders.
           type: array
           items:
-            $ref: '#/components/schemas/FraxswapDailyPoolData'
-      required:
-      - items
-    FraxswapDailyChainDataResponse:
-      type: object
-      properties:
-        items:
-          description: Array containing daily chain/network data.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxswapDailyChainData'
-      required:
-      - items
-    FraxswapTransactionsResponse:
-      type: object
-      properties:
-        transactions:
-          description: Array of transactions.
-          type: array
-          items:
-            $ref: '#/components/schemas/FraxswapTransaction'
-      required:
-      - transactions
-    FraxswapDailyPoolData:
-      type: object
-      properties:
-        intervalTimestamp:
-          type: number
-          description: The 24-hour period starting time (UTC).
-        addVolumeUsdAmount:
-          type: number
-          description: Amount of liquidity added (USD).
-        removeVolumeUsdAmount:
-          type: number
-          description: Amount of liquidity removed (USD).
-        feeUsdAmount:
-          type: number
-          description: Amount of fees (USD).
-        liquidityTransactionCount:
-          type: number
-          description: The number of transactions where liquidity was added or removed.
-        swapTransactionCount:
-          type: number
-          description: The number of transactions where tokens were swapped/exchanged.
-        swapVolumeUsdAmount:
-          type: number
-          description: Total dollar-amount traded (USD).
-        token0LiquidityUsdAmount:
-          type: number
-          description: The total dollar value of the first token (token0) locked in the pool (USD).
-        token0LockedAmount:
-          type: number
-          description: The quantity of the first token (token0) locked in the pool.
-        token1LiquidityUsdAmount:
-          type: number
-          description: The total dollar value of the second token (token1) locked in the pool (USD).
-        token1LockedAmount:
-          type: number
-          description: The quantity of the second token (token1) locked in the pool.
-      required:
-      - intervalTimestamp
-      - addVolumeUsdAmount
-      - removeVolumeUsdAmount
-      - feeUsdAmount
-      - liquidityTransactionCount
-      - swapTransactionCount
-      - swapVolumeUsdAmount
-      - token0LiquidityUsdAmount
-      - token0LockedAmount
-      - token1LiquidityUsdAmount
-      - token1LockedAmount
+            $ref: '#/components/schemas/FraxswapTwammOrder'
     FraxswapTwammOrderDetailResponse:
       type: object
       properties:
@@ -1380,46 +1284,98 @@ components:
       - token1SaleRate
       - updatedAt
       - transactions
-    FraxswapTransaction:
+    FraxswapDailyPoolDataResponse:
       type: object
       properties:
-        transactionHash:
-          type: string
-        transactionType:
-          type: string
-        transactionTimestamp:
-          format: date-time
-          type: string
-        blockNumber:
+        items:
+          description: Array containing daily pool data.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxswapDailyPoolData'
+      required:
+      - items
+    FraxswapDailyPoolData:
+      type: object
+      properties:
+        intervalTimestamp:
           type: number
-        userAddress:
-          type: string
-        poolAddress:
-          type: string
-        token0Address:
-          type: string
-        token1Address:
-          type: string
-        contractAddress:
-          type: string
-        token0DeltaAmount:
+          description: The 24-hour period starting time (UTC).
+        addVolumeUsdAmount:
           type: number
-          description: The change in quantity of token0. If being swapped from, this value would be negative.
-        token1DeltaAmount:
+          description: Amount of liquidity added (USD).
+        removeVolumeUsdAmount:
           type: number
-          description: The change in quantity of token1. If being swapped from, this value would be negative.
-        globalSequence:
-          type: number
-          description: A unique identifier used as a cursor during API pagination requests.
-        token0UsdAmount:
-          type: number
-          description: The dollar-value of token0 being swapped (USD).
-        token1UsdAmount:
-          type: number
-          description: The dollar-value of token1 being swapped (USD).
+          description: Amount of liquidity removed (USD).
         feeUsdAmount:
           type: number
-          description: The dollar-value of the fees charged for this transaction (USD).
+          description: Amount of fees (USD).
+        liquidityTransactionCount:
+          type: number
+          description: The number of transactions where liquidity was added or removed.
+        swapTransactionCount:
+          type: number
+          description: The number of transactions where tokens were swapped/exchanged.
+        swapVolumeUsdAmount:
+          type: number
+          description: Total dollar-amount traded (USD).
+        token0LiquidityUsdAmount:
+          type: number
+          description: The total dollar value of the first token (token0) locked in the pool (USD).
+        token0LockedAmount:
+          type: number
+          description: The quantity of the first token (token0) locked in the pool.
+        token1LiquidityUsdAmount:
+          type: number
+          description: The total dollar value of the second token (token1) locked in the pool (USD).
+        token1LockedAmount:
+          type: number
+          description: The quantity of the second token (token1) locked in the pool.
+      required:
+      - intervalTimestamp
+      - addVolumeUsdAmount
+      - removeVolumeUsdAmount
+      - feeUsdAmount
+      - liquidityTransactionCount
+      - swapTransactionCount
+      - swapVolumeUsdAmount
+      - token0LiquidityUsdAmount
+      - token0LockedAmount
+      - token1LiquidityUsdAmount
+      - token1LockedAmount
+    FraxswapTransactionsResponse:
+      type: object
+      properties:
+        transactions:
+          description: Array of transactions.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxswapTransaction'
+      required:
+      - transactions
+    FraxswapDailyChainData:
+      type: object
+      properties:
+        intervalTimestamp:
+          type: number
+          description: The 24-hour period starting time (UTC).
+        addVolumeUsdAmount:
+          type: number
+          description: Amount of liquidity added (USD).
+        removeVolumeUsdAmount:
+          type: number
+          description: Amount of liquidity removed (USD).
+        feeUsdAmount:
+          type: number
+          description: Amount of fees (USD).
+        liquidityTransactionCount:
+          type: number
+          description: The number of transactions where liquidity was added or removed.
+        swapTransactionCount:
+          type: number
+          description: The number of transactions where tokens were swapped/exchanged.
+        swapVolumeUsdAmount:
+          type: number
+          description: Total dollar-amount traded (USD).
         chain:
           type: string
           description: The name of the blockchain/network.
@@ -1443,23 +1399,67 @@ components:
           - solana
           - stable
           - zksync
+        liquidityUsdAmount:
+          type: number
+          description: The total dollar value locked in the pool (USD).
       required:
-      - transactionHash
-      - transactionType
-      - transactionTimestamp
-      - blockNumber
-      - userAddress
-      - poolAddress
-      - token0Address
-      - token1Address
-      - contractAddress
-      - token0DeltaAmount
-      - token1DeltaAmount
-      - globalSequence
-      - token0UsdAmount
-      - token1UsdAmount
+      - intervalTimestamp
+      - addVolumeUsdAmount
+      - removeVolumeUsdAmount
       - feeUsdAmount
+      - liquidityTransactionCount
+      - swapTransactionCount
+      - swapVolumeUsdAmount
       - chain
+      - liquidityUsdAmount
+    FraxswapPoolsResponse:
+      type: object
+      properties:
+        pools:
+          description: Array of pools.
+          type: array
+          items:
+            $ref: '#/components/schemas/FraxswapPool'
+    FraxswapDailyTokenData:
+      type: object
+      properties:
+        intervalTimestamp:
+          type: number
+          description: The 24-hour period starting time (UTC).
+        addVolumeUsdAmount:
+          type: number
+          description: Amount of liquidity added (USD).
+        removeVolumeUsdAmount:
+          type: number
+          description: Amount of liquidity removed (USD).
+        feeUsdAmount:
+          type: number
+          description: Amount of fees (USD).
+        liquidityTransactionCount:
+          type: number
+          description: The number of transactions where liquidity was added or removed.
+        swapTransactionCount:
+          type: number
+          description: The number of transactions where tokens were swapped/exchanged.
+        swapVolumeUsdAmount:
+          type: number
+          description: Total dollar-amount traded (USD).
+        liquidityUsdAmount:
+          type: number
+          description: The total dollar value locked in the pool (USD).
+        tokenLockedAmount:
+          type: number
+          description: The quantity of tokens locked in the pool.
+      required:
+      - intervalTimestamp
+      - addVolumeUsdAmount
+      - removeVolumeUsdAmount
+      - feeUsdAmount
+      - liquidityTransactionCount
+      - swapTransactionCount
+      - swapVolumeUsdAmount
+      - liquidityUsdAmount
+      - tokenLockedAmount
 externalDocs:
   description: Open V1 Docs
   url: /v1/docs

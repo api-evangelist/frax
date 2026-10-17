@@ -25,7 +25,7 @@ paths:
                 $ref: '#/components/schemas/AMOAllocationsResponse'
       tags:
       - v1-protocol
-      summary: V1 controller get AMO allocations
+      summary: V1Controller get AMO allocations
       x-summary-source: derived
   /v1/amodata_v2/{filter}:
     get:
@@ -57,7 +57,7 @@ paths:
                 $ref: '#/components/schemas/AMODataResponse'
       tags:
       - v1-protocol
-      summary: V1 controller get AMO data
+      summary: V1Controller get AMO data
       x-summary-source: derived
   /v1/collateraldata/{filter}:
     get:
@@ -89,7 +89,7 @@ paths:
                 $ref: '#/components/schemas/CollateralDataResponse'
       tags:
       - v1-protocol
-      summary: V1 controller get collateral data
+      summary: V1Controller get collateral data
       x-summary-source: derived
   /v1/combineddata:
     get:
@@ -104,13 +104,10 @@ paths:
                 $ref: '#/components/schemas/CombinedDataResponse'
       tags:
       - v1-protocol
-      summary: V1 controller get combined data
+      summary: V1Controller get combined data
       x-summary-source: derived
 components:
   schemas:
-    CombinedDataResponse:
-      type: object
-      properties: {}
     PriceHistoryPack:
       type: object
       properties:
@@ -123,25 +120,9 @@ components:
       required:
       - full_items
       - chartjs
-    ChartJSDataPackV2:
+    CombinedDataResponse:
       type: object
-      properties:
-        curve:
-          type: object
-        investor:
-          type: object
-        lending:
-          type: object
-        liquidity:
-          type: object
-        combined:
-          type: object
-      required:
-      - curve
-      - investor
-      - lending
-      - liquidity
-      - combined
+      properties: {}
     AMOAllocationsResponse:
       type: object
       properties:
@@ -186,18 +167,35 @@ components:
       - decentralization_ratio
       - ratio
       - total_dollar_value
-    AMODataResponse:
+    ChartJSDataPackV2:
       type: object
       properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/AMODataItemV2'
-        chartjs:
-          $ref: '#/components/schemas/ChartJSDataPackV2'
+        curve:
+          type: object
+        investor:
+          type: object
+        lending:
+          type: object
+        liquidity:
+          type: object
+        combined:
+          type: object
       required:
-      - full_items
-      - chartjs
+      - curve
+      - investor
+      - lending
+      - liquidity
+      - combined
+    CollateralDataResponse:
+      type: object
+      properties:
+        history:
+          $ref: '#/components/schemas/PriceHistoryPack'
+        pie_data:
+          type: object
+      required:
+      - history
+      - pie_data
     AMODataItemV2:
       type: object
       properties:
@@ -226,16 +224,18 @@ components:
       - lending
       - liquidity
       - combined
-    CollateralDataResponse:
+    AMODataResponse:
       type: object
       properties:
-        history:
-          $ref: '#/components/schemas/PriceHistoryPack'
-        pie_data:
-          type: object
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AMODataItemV2'
+        chartjs:
+          $ref: '#/components/schemas/ChartJSDataPackV2'
       required:
-      - history
-      - pie_data
+      - full_items
+      - chartjs
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs

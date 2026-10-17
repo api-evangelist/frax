@@ -25,7 +25,7 @@ paths:
                 $ref: '#/components/schemas/LockedVeFXSDataResponse'
       tags:
       - v1-vefxs
-      summary: V1 controller get locked ve FXS data
+      summary: V1Controller get locked ve FXS data
       x-summary-source: derived
   /v1/vefxsdata/{filter}:
     get:
@@ -57,22 +57,23 @@ paths:
                 $ref: '#/components/schemas/VefxsDataResponse'
       tags:
       - v1-vefxs
-      summary: V1 controller get ve FXS data
+      summary: V1Controller get ve FXS data
       x-summary-source: derived
 components:
   schemas:
-    VefxsDataResponse:
+    LockedVefxsStakeBucketAggregate:
       type: object
       properties:
-        full_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/VefxsItem'
-        chartjs:
-          type: object
+        _id:
+          type: string
+        count:
+          type: number
+        total:
+          type: number
       required:
-      - full_items
-      - chartjs
+      - _id
+      - count
+      - total
     LockedVeFXSDataResponse:
       type: object
       properties:
@@ -91,6 +92,18 @@ components:
       - unlocked_sum
       - locked_sum
       - buckets
+    VefxsDataResponse:
+      type: object
+      properties:
+        full_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/VefxsItem'
+        chartjs:
+          type: object
+      required:
+      - full_items
+      - chartjs
     VefxsItem:
       type: object
       properties:
@@ -125,19 +138,6 @@ components:
       - pct_participating
       - yield_value_usd
       - apr
-    LockedVefxsStakeBucketAggregate:
-      type: object
-      properties:
-        _id:
-          type: string
-        count:
-          type: number
-        total:
-          type: number
-      required:
-      - _id
-      - count
-      - total
 externalDocs:
   description: Open V2 Docs
   url: /v2/docs
